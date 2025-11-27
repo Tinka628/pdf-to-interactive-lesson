@@ -112,3 +112,9 @@ export interface CourseStructure {
     module: Module[];
   };
 }
+
+export interface TokenUsage {
+  inputTokens: number;
+  outputTokens: number;
+  totalTokens: number;
+}

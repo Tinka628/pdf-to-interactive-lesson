@@ -10,11 +10,17 @@ import {
   type FlowConfig,
   type SimpleEdge,
   type FlowDiagramLesson,
+  type TokenUsage,
 } from "./types";
 import { createXMLParser, extractJson } from "./utils/xml";
 import { validateLessonsStructure } from "./validate-lesson-structure";
 import { fixLesson } from "./fix-lesson";
 import { createTogetherClient, DEFAULT_MODEL } from "./utils/together";
+
+export interface CreateLessonsResult {
+  module: ModuleWithLessons;
+  tokenUsage: TokenUsage;
+}
 
 export interface LessonProgressCallback {
   (type: string, message: string, data?: any): void;
@@ -25,6 +31,7 @@ export interface CreateLessonsInput {
   content: string;
   apiKey: string;
   model?: string; // Model to use for generation (default: DEFAULT_MODEL)
+  assignedTopics?: string[]; // Topics assigned to this module to prevent overlap
   validateStructure?: boolean; // If true, runs deterministic structure validation (default: true)
   validateContent?: boolean; // If true, runs LLM-based content validation (default: true)
   retryFailures?: boolean; // If true, attempts to fix failed lessons (default: true)
@@ -56,21 +63,39 @@ export async function createLessons({
   content,
   apiKey,
   model = DEFAULT_MODEL,
+  assignedTopics,
   validateStructure = true,
   validateContent = true,
   retryFailures = true,
   maxRetries = 3,
   onProgress,
-}: CreateLessonsInput): Promise<ModuleWithLessons> {
+}: CreateLessonsInput): Promise<CreateLessonsResult> {
   onProgress?.("lesson-start", `Generating lessons for "${module.title}"...`);
   const together = createTogetherClient(apiKey);
   
+  // Track token usage across all LLM calls
+  let totalInputTokens = 0;
+  let totalOutputTokens = 0;
+  
+  // Build topic assignment section if topics are provided
+  const topicAssignment = assignedTopics && assignedTopics.length >= 3
+    ? `
+ASSIGNED TOPICS - You MUST create lessons about these specific topics:
+1. "${assignedTopics[0]}" - use for the short-answer lesson
+2. "${assignedTopics[1]}" - use for the true-false lesson
+3. "${assignedTopics[2]}" - use for the multiple-choice lesson
+${assignedTopics[3] ? `4. "${assignedTopics[3]}" - reserved for flow-diagram lesson` : ''}
+
+Do NOT cover topics outside of this list. Each lesson must focus on its assigned topic.
+`
+    : '';
+
   // Start both standard lesson generation and flow generation concurrently
   const standardLessonsPromise = generateText({
     model: together(model),
     prompt: `Analyse the following content and create 3 lessons for the module "${module.title}".
 Respond only with XML format. Do not include any other text.
-
+${topicAssignment}
 IMPORTANT: You must create exactly ONE lesson for EACH of these question types:
 1. "short-answer" - For open-ended text questions (answer is text)
 2. "true-false" - For true/false questions (answer must be "true" or "false")
@@ -99,7 +124,7 @@ Your response should ONLY contain the XML format following this structure:
     <answer>1</answer>
     <choices>
       <choice>First option</choice>
-      <choice>Second option (CORRECT)</choice>
+      <choice>Second option</choice>
       <choice>Third option</choice>
       <choice>Fourth option</choice>
     </choices>
@@ -123,6 +148,7 @@ ${content}`,
     content,
     apiKey,
     model,
+    assignedTopic: assignedTopics?.[3], // 4th topic is for flow-diagram
   });
 
   // Wait for both to complete
@@ -130,6 +156,17 @@ ${content}`,
     standardLessonsPromise,
     flowGenerationPromise,
   ]);
+
+  // Track tokens from standard lesson generation (cast to any for SDK compatibility)
+  const usage = result.usage as any;
+  totalInputTokens += usage?.inputTokens || 0;
+  totalOutputTokens += usage?.outputTokens || 0;
+  
+  // Track tokens from flow diagram detection
+  if (flowResult?.tokenUsage) {
+    totalInputTokens += flowResult.tokenUsage.inputTokens;
+    totalOutputTokens += flowResult.tokenUsage.outputTokens;
+  }
 
   // Start flow question generation early (doesn't depend on standard lesson processing)
   const flowQuestionPromise = flowResult?.hasFlow && flowResult.flowConfig
@@ -566,7 +603,14 @@ ${content}`,
       total: lessonResults.length,
     });
 
-    return moduleResult;
+    return {
+      module: moduleResult,
+      tokenUsage: {
+        inputTokens: totalInputTokens,
+        outputTokens: totalOutputTokens,
+        totalTokens: totalInputTokens + totalOutputTokens,
+      },
+    };
   } catch (error) {
     console.error("XML parsing error for module:", module.title);
     console.error("Raw response:", result.text.substring(0, 500));
@@ -583,20 +627,22 @@ async function generateFlowDiagram({
   content,
   apiKey,
   model = DEFAULT_MODEL,
+  assignedTopic,
 }: {
   moduleTitle: string;
   content: string;
   apiKey: string;
   model?: string;
-}): Promise<{ hasFlow: boolean; flowConfig?: FlowConfig } | null> {
+  assignedTopic?: string;
+}): Promise<{ hasFlow: boolean; flowConfig?: FlowConfig; tokenUsage?: TokenUsage } | null> {
   const together = createTogetherClient(apiKey);
   
-  try {
-    const result = await generateText({
-      model: together(model),
-      prompt: `Analyze the following content for the module "${moduleTitle}".
+  // If an assigned topic is provided, use it directly
+  const topicInstruction = assignedTopic
+    ? `Create a flow diagram specifically about: "${assignedTopic}"
 
-Determine if this content describes a PROCESS, SYSTEM, or SEQUENTIAL FLOW that would benefit from a visual flow diagram.
+This topic has been assigned to this module. Generate a flow diagram that visualizes this process/concept.`
+    : `Determine if this content describes a PROCESS, SYSTEM, or SEQUENTIAL FLOW that would benefit from a visual flow diagram.
 
 Good candidates include:
 - Step-by-step processes (e.g., photosynthesis, authentication flow)
@@ -605,7 +651,14 @@ Good candidates include:
 - Sequential workflows
 - State transitions
 
-If suitable, generate a flow diagram. If NOT suitable, respond with hasFlow="false".
+If suitable, generate a flow diagram. If NOT suitable, respond with hasFlow="false".`;
+
+  try {
+    const result = await generateText({
+      model: together(model),
+      prompt: `Analyze the following content for the module "${moduleTitle}".
+
+${topicInstruction}
 
 Respond ONLY with XML in this exact format:
 
@@ -638,18 +691,26 @@ Content:
 ${content}`,
     });
 
+    // Cast to any for SDK compatibility
+    const usage = result.usage as any;
+    const tokenUsage: TokenUsage = {
+      inputTokens: usage?.inputTokens || 0,
+      outputTokens: usage?.outputTokens || 0,
+      totalTokens: (usage?.inputTokens || 0) + (usage?.outputTokens || 0),
+    };
+
     // Parse the XML response
     const parser = createXMLParser(["node", "edge"]);
     const flowStructure = parser.parse(result.text);
 
     if (!flowStructure.flow) {
-      return { hasFlow: false };
+      return { hasFlow: false, tokenUsage };
     }
 
     const hasFlow = flowStructure.flow.hasFlow === "true" || flowStructure.flow.hasFlow === true;
     
     if (!hasFlow) {
-      return { hasFlow: false };
+      return { hasFlow: false, tokenUsage };
     }
 
     // Convert XML structure to FlowConfig format
@@ -657,7 +718,7 @@ ${content}`,
     const edges = flowStructure.flow.edges?.edge || flowStructure.flow.edge || [];
 
     if (!Array.isArray(nodes) || nodes.length === 0) {
-      return { hasFlow: false };
+      return { hasFlow: false, tokenUsage };
     }
 
     const flowConfig: FlowConfig = {
@@ -672,6 +733,7 @@ ${content}`,
     return {
       hasFlow: true,
       flowConfig,
+      tokenUsage,
     };
   } catch (error) {
     console.error(`  ❌ Error generating flow diagram for "${moduleTitle}":`, error);

@@ -12,6 +12,36 @@ import { AVAILABLE_MODELS, DEFAULT_MODEL } from "../lib/utils/together";
 
 const VERSION = "1.0.0";
 
+// Model pricing per 1M tokens (input, output)
+const MODEL_PRICING: Record<string, { input: number; output: number }> = {
+  // gpt-oss-120b
+  "openai/gpt-oss-120b": { input: 0.15, output: 0.60 },
+  "gpt-oss-120b": { input: 0.15, output: 0.60 },
+  // deepseek-3.1
+  "deepseek-ai/DeepSeek-V3.1": { input: 0.60, output: 1.70 },
+  "deepseek-3.1": { input: 0.60, output: 1.70 },
+  // glm-4.6
+  "zai-org/GLM-4.6": { input: 0.60, output: 2.20 },
+  "glm-4.6": { input: 0.60, output: 2.20 },
+  // kimi-k2-thinking
+  "moonshotai/Kimi-K2-Thinking": { input: 1.20, output: 4.00 },
+  "kimi-k2-thinking": { input: 1.20, output: 4.00 },
+};
+
+function calculateCost(
+  inputTokens: number,
+  outputTokens: number,
+  model: string
+): { cost: number; hasPricing: boolean } {
+  const pricing = MODEL_PRICING[model];
+  if (!pricing) {
+    return { cost: 0, hasPricing: false };
+  }
+  const inputCost = (inputTokens / 1_000_000) * pricing.input;
+  const outputCost = (outputTokens / 1_000_000) * pricing.output;
+  return { cost: inputCost + outputCost, hasPricing: true };
+}
+
 // Store original console methods
 const originalConsole = {
   log: console.log.bind(console),
@@ -308,11 +338,12 @@ async function runGenerateModules(content: string, args: CliArgs) {
   const startTime = Date.now();
 
   try {
-    const courseStructure = await createModules({
+    const result = await createModules({
       content,
       apiKey: process.env.TOGETHER_API_KEY || "",
       model: args.model,
     });
+    const courseStructure = result.structure;
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     const moduleCount = courseStructure.course.module.length;
@@ -468,7 +499,7 @@ function displayModules(courseStructure: any) {
   console.log("");
 }
 
-function displaySummary(course: { modules: any[] }, args: CliArgs) {
+function displaySummary(course: { modules: any[]; tokenUsage?: { inputTokens: number; outputTokens: number; totalTokens: number } }, args: CliArgs) {
   let total = 0,
     successful = 0,
     fixed = 0,
@@ -501,6 +532,20 @@ function displaySummary(course: { modules: any[] }, args: CliArgs) {
   if (fixed > 0) console.log(`  ${yellow("🔧")} Fixed: ${fixed}`);
   if (failed > 0) console.log(`  ${red("✗")} Failed: ${failed}`);
   if (fixAttempts > 0) console.log(`  ${dim("Fix attempts:")} ${fixAttempts}`);
+  
+  // Display token usage and cost
+  if (course.tokenUsage) {
+    const { inputTokens, outputTokens, totalTokens } = course.tokenUsage;
+    let tokenLine = `  ${dim("Tokens:")} ${totalTokens.toLocaleString()} ${dim(`(in: ${inputTokens.toLocaleString()}, out: ${outputTokens.toLocaleString()})`)}`;
+    
+    // Calculate and display cost if pricing is available
+    const { cost, hasPricing } = calculateCost(inputTokens, outputTokens, args.model);
+    if (hasPricing && cost > 0) {
+      tokenLine += ` ${dim("~")}$${cost.toFixed(4)}`;
+    }
+    
+    console.log(tokenLine);
+  }
 }
 
 function displayCourse(course: { title: string; modules: any[] }) {
