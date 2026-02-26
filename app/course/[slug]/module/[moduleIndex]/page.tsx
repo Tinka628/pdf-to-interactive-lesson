@@ -42,23 +42,45 @@ export default function LessonPage() {
     }
   }, [moduleIndexParam]);
 
-  // Load course and progress from database
+  // Load course and progress from database (or sessionStorage for freshly created courses)
   useEffect(() => {
     const fetchCourseAndProgress = async () => {
       try {
         setLoading(true);
-        
-        // Fetch course data
-        const courseResponse = await fetch(`/api/courses/${slug}`);
-        if (!courseResponse.ok) {
-          setError("Course not found");
-          setLoading(false);
-          return;
-        }
-        const courseData = await courseResponse.json();
-        setCourse(courseData.course);
 
-        // Load user's progress from localStorage
+        let courseObj: Course | null = null;
+        try {
+          const cached = sessionStorage.getItem(`course:${slug}`);
+          if (cached) {
+            courseObj = JSON.parse(cached);
+          }
+        } catch {
+          // sessionStorage unavailable
+        }
+
+        if (!courseObj) {
+          let courseResponse = await fetch(`/api/courses/${slug}`);
+
+          if (courseResponse.status === 404) {
+            await new Promise((r) => setTimeout(r, 1500));
+            courseResponse = await fetch(`/api/courses/${slug}`);
+          }
+
+          if (!courseResponse.ok) {
+            setError(
+              courseResponse.status === 404
+                ? "Course not found"
+                : "Failed to load course"
+            );
+            setLoading(false);
+            return;
+          }
+          const courseData = await courseResponse.json();
+          courseObj = courseData.course;
+        }
+
+        setCourse(courseObj);
+
         const progress = getCourseProgress(slug);
         if (progress) {
           setSavedProgress({

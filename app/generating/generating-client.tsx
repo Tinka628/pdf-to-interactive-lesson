@@ -214,6 +214,17 @@ export function GeneratingPageContent() {
 
         const savedCourse = await saveResponse.json();
         setProgress("Course saved! Redirecting...");
+
+        // Store course data in sessionStorage so the course page can render
+        // immediately without waiting for a DB roundtrip
+        try {
+          sessionStorage.setItem(
+            `course:${savedCourse.slug}`,
+            JSON.stringify(courseData)
+          );
+        } catch {
+          // sessionStorage might be full or unavailable - non-critical
+        }
         
         // Navigate to the course using the slug from the database
         router.push(`/course/${savedCourse.slug}`);

@@ -32,30 +32,50 @@ export default function CoursePage() {
     const fetchCourseAndProgress = async () => {
       try {
         setLoading(true);
-        
-        // Fetch course from database
-        const courseResponse = await fetch(`/api/courses/${slug}`);
-        
-        if (!courseResponse.ok) {
-          if (courseResponse.status === 404) {
-            setError("Course not found");
-          } else {
-            setError("Failed to load course");
+
+        // Check sessionStorage first (set by generating page after creation)
+        let courseObj: Course | null = null;
+        try {
+          const cached = sessionStorage.getItem(`course:${slug}`);
+          if (cached) {
+            courseObj = JSON.parse(cached);
+            sessionStorage.removeItem(`course:${slug}`);
           }
-          setLoading(false);
-          return;
+        } catch {
+          // sessionStorage unavailable - continue with API fetch
         }
 
-        const courseData = await courseResponse.json();
-        setCourse(courseData.course);
-        
-        // Load user's progress from localStorage
+        if (!courseObj) {
+          // Fetch course from database, with one retry on 404
+          // (handles brief DB replication lag after creation)
+          let courseResponse = await fetch(`/api/courses/${slug}`);
+
+          if (courseResponse.status === 404) {
+            await new Promise((r) => setTimeout(r, 1500));
+            courseResponse = await fetch(`/api/courses/${slug}`);
+          }
+
+          if (!courseResponse.ok) {
+            setError(
+              courseResponse.status === 404
+                ? "Course not found"
+                : "Failed to load course"
+            );
+            setLoading(false);
+            return;
+          }
+
+          const courseData = await courseResponse.json();
+          courseObj = courseData.course;
+        }
+
+        setCourse(courseObj);
         refreshProgress();
-        
         setLoading(false);
-        
-        // Update page title dynamically
-        document.title = `${courseData.course.title} | PDF to Interactive Lesson Generator`;
+
+        if (courseObj) {
+          document.title = `${courseObj.title} | PDF to Interactive Lesson Generator`;
+        }
       } catch (err) {
         console.error("Error fetching course:", err);
         setError("Failed to load course. Please check your connection.");
