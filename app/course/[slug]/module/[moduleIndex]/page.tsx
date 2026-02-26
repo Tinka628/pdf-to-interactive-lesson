@@ -45,35 +45,70 @@ export default function LessonPage() {
   // Load course and progress from database
   useEffect(() => {
     const fetchCourseAndProgress = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch course data
-        const courseResponse = await fetch(`/api/courses/${slug}`);
-        if (!courseResponse.ok) {
-          setError("Course not found");
-          setLoading(false);
-          return;
-        }
-        const courseData = await courseResponse.json();
-        setCourse(courseData.course);
+      setLoading(true);
 
-        // Load user's progress from localStorage
-        const progress = getCourseProgress(slug);
-        if (progress) {
-          setSavedProgress({
-            currentModuleIndex: progress.currentModuleIndex,
-            currentLessonIndex: progress.currentLessonIndex,
-            completedModules: progress.completedModules || [],
+      // Retry logic for transient failures (cold starts, replication lag)
+      let courseObj: Course | null = null;
+      let lastError: string | null = null;
+
+      for (let attempt = 0; attempt <= 3; attempt++) {
+        try {
+          const courseResponse = await fetch(`/api/courses/${slug}`, {
+            cache: "no-store",
           });
-        }
+          if (courseResponse.ok) {
+            const courseData = await courseResponse.json();
+            courseObj = courseData.course;
+            break;
+          }
 
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching course:", err);
-        setError("Failed to load course");
-        setLoading(false);
+          if (courseResponse.status === 404 && attempt < 3) {
+            await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+            continue;
+          }
+
+          const body = await courseResponse.json().catch(() => null);
+          lastError = body?.error || `Failed to load course (${courseResponse.status})`;
+          break;
+        } catch {
+          if (attempt < 3) {
+            await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+            continue;
+          }
+          lastError = "Failed to load course. Please check your connection.";
+        }
       }
+
+      // Fall back to sessionStorage if API failed
+      if (!courseObj) {
+        try {
+          const cached = sessionStorage.getItem(`course-data-${slug}`);
+          if (cached) {
+            courseObj = JSON.parse(cached);
+          }
+        } catch {
+          // ignore
+        }
+      }
+
+      if (!courseObj) {
+        setError(lastError || "Course not found");
+        setLoading(false);
+        return;
+      }
+
+      setCourse(courseObj);
+
+      const progress = getCourseProgress(slug);
+      if (progress) {
+        setSavedProgress({
+          currentModuleIndex: progress.currentModuleIndex,
+          currentLessonIndex: progress.currentLessonIndex,
+          completedModules: progress.completedModules || [],
+        });
+      }
+
+      setLoading(false);
     };
 
     fetchCourseAndProgress();
@@ -179,7 +214,9 @@ export default function LessonPage() {
         <Header showNavLinks={true} courseTitle={course?.title} />
         <div className="max-w-xl mx-auto px-6 py-16 flex-grow flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-neutral-900 mb-4">Course not found</h1>
+            <h1 className="text-2xl font-bold text-neutral-900 mb-4">
+              {error?.includes("not found") ? "Course not found" : "Something went wrong"}
+            </h1>
             <p className="text-neutral-600 mb-6">{error || "The course you're looking for doesn't exist."}</p>
             <button
               onClick={() => router.push("/courses")}

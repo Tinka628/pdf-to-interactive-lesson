@@ -31,7 +31,7 @@ export async function GET(
     if (!course) {
       return NextResponse.json(
         { error: "Course not found" },
-        { status: 404 }
+        { status: 404, headers: { "Cache-Control": "no-store" } }
       );
     }
 
@@ -39,7 +39,7 @@ export async function GET(
     if (!course.isPublic) {
       return NextResponse.json(
         { error: "Course is not public" },
-        { status: 403 }
+        { status: 403, headers: { "Cache-Control": "no-store" } }
       );
     }
 
@@ -52,7 +52,6 @@ export async function GET(
       updatedAt: course.updatedAt,
     }, {
       headers: {
-        // Cache for 5 minutes
         "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
       },
     });
@@ -63,13 +62,13 @@ export async function GET(
     if (error instanceof Error && error.message.includes("DATABASE_URL")) {
       return NextResponse.json(
         { error: "Database not configured. Please set DATABASE_URL environment variable." },
-        { status: 500 }
+        { status: 500, headers: { "Cache-Control": "no-store" } }
       );
     }
     
     return NextResponse.json(
       { error: "Failed to fetch course" },
-      { status: 500 }
+      { status: 500, headers: { "Cache-Control": "no-store" } }
     );
   }
 }

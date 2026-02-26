@@ -6,6 +6,43 @@ import { ModulesScreen } from "@/app/components/modules-screen";
 import { getCourseProgress } from "@/lib/course-progress";
 import type { Course } from "@/app/hooks/use-course-navigation";
 
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 1000;
+
+async function fetchCourseWithRetry(
+  slug: string,
+  retries = MAX_RETRIES
+): Promise<{ course: Course; title: string } | { error: string }> {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(`/api/courses/${slug}`, {
+        cache: "no-store",
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        return { course: data.course, title: data.title };
+      }
+
+      if (res.status === 404 && attempt < retries) {
+        await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));
+        continue;
+      }
+
+      const body = await res.json().catch(() => null);
+      const msg = body?.error || `Failed to load course (${res.status})`;
+      return { error: msg };
+    } catch {
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));
+        continue;
+      }
+      return { error: "Failed to load course. Please check your connection." };
+    }
+  }
+  return { error: "Failed to load course after multiple attempts." };
+}
+
 export default function CoursePage() {
   const params = useParams();
   const router = useRouter();
@@ -16,7 +53,6 @@ export default function CoursePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Separate function to refresh progress from localStorage
   const refreshProgress = useCallback(() => {
     const progress = getCourseProgress(slug);
     if (progress) {
@@ -29,47 +65,50 @@ export default function CoursePage() {
   }, [slug]);
 
   useEffect(() => {
-    const fetchCourseAndProgress = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch course from database
-        const courseResponse = await fetch(`/api/courses/${slug}`);
-        
-        if (!courseResponse.ok) {
-          if (courseResponse.status === 404) {
-            setError("Course not found");
-          } else {
-            setError("Failed to load course");
-          }
-          setLoading(false);
-          return;
-        }
+    const loadCourse = async () => {
+      setLoading(true);
 
-        const courseData = await courseResponse.json();
-        setCourse(courseData.course);
-        
-        // Load user's progress from localStorage
-        refreshProgress();
-        
-        setLoading(false);
-        
-        // Update page title dynamically
-        document.title = `${courseData.course.title} | PDF to Interactive Lesson Generator`;
-      } catch (err) {
-        console.error("Error fetching course:", err);
-        setError("Failed to load course. Please check your connection.");
-        setLoading(false);
+      // Check sessionStorage for course data (set after course creation)
+      let sessionCourse: Course | null = null;
+      try {
+        const cached = sessionStorage.getItem(`course-data-${slug}`);
+        if (cached) {
+          sessionCourse = JSON.parse(cached);
+          sessionStorage.removeItem(`course-data-${slug}`);
+        }
+      } catch {
+        // ignore
       }
+
+      const result = await fetchCourseWithRetry(slug);
+
+      if ("course" in result) {
+        setCourse(result.course);
+        refreshProgress();
+        setLoading(false);
+        document.title = `${result.title || result.course?.title} | PDF to Interactive Lesson Generator`;
+        return;
+      }
+
+      // API fetch failed – fall back to sessionStorage data if available
+      if (sessionCourse) {
+        setCourse(sessionCourse);
+        refreshProgress();
+        setLoading(false);
+        document.title = `${sessionCourse.title} | PDF to Interactive Lesson Generator`;
+        return;
+      }
+
+      setError(result.error);
+      setLoading(false);
     };
 
-    fetchCourseAndProgress();
+    loadCourse();
   }, [slug, refreshProgress]);
 
-  // Refresh progress when page becomes visible (user navigates back)
   useEffect(() => {
     const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
+      if (document.visibilityState === "visible") {
         refreshProgress();
       }
     };
@@ -78,12 +117,12 @@ export default function CoursePage() {
       refreshProgress();
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('focus', handleFocus);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("focus", handleFocus);
 
     return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('focus', handleFocus);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("focus", handleFocus);
     };
   }, [refreshProgress]);
 
@@ -92,8 +131,9 @@ export default function CoursePage() {
   };
 
   const handleJumpToLesson = (moduleIndex: number, lessonIndex: number) => {
-    // Jump directly to a specific lesson at the content step
-    router.push(`/course/${slug}/module/${moduleIndex}?step=content&lesson=${lessonIndex}`);
+    router.push(
+      `/course/${slug}/module/${moduleIndex}?step=content&lesson=${lessonIndex}`
+    );
   };
 
   if (loading) {
@@ -104,8 +144,12 @@ export default function CoursePage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-neutral-900 mb-4">Course not found</h1>
-          <p className="text-neutral-600 mb-6">{error || "The course you're looking for doesn't exist."}</p>
+          <h1 className="text-2xl font-bold text-neutral-900 mb-4">
+            {error?.includes("not found") ? "Course not found" : "Something went wrong"}
+          </h1>
+          <p className="text-neutral-600 mb-6">
+            {error || "The course you're looking for doesn't exist."}
+          </p>
           <button
             onClick={() => router.push("/courses")}
             className="px-6 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800"
@@ -128,4 +172,3 @@ export default function CoursePage() {
     />
   );
 }
-
