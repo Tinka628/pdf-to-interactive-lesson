@@ -1,7 +1,7 @@
 import { NextConfig } from "next";
 
 const nextConfig = {
-  serverExternalPackages: ["tesseract.js", "@napi-rs/canvas", "canvas"],
+  serverExternalPackages: ["tesseract.js", "@napi-rs/canvas", "canvas", "mupdf"],
   outputFileTracingIncludes: {
     "/api/**/*": ["./node_modules/**/*.wasm", "./node_modules/**/*.proto"],
   },
