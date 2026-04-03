@@ -16,6 +16,7 @@
  * Options:
  *   --model=<model>       Generation model (default: MiniMaxAI/MiniMax-M2.5)
  *   --judge=<model>       Judge model (default: anthropic/claude-sonnet-4-6)
+ *                         Prefix with anthropic/, openrouter/, or ollama/ to force provider
  *   --tag=<name>          Label for the output file (default: eval-all)
  *   --iterations=<n>      Number of iterations (default: 1)
  *   --batch=<n>           Run n iterations in parallel (default: 1 = sequential)
@@ -24,12 +25,10 @@
 
 import { createCourse } from "../lib/create-course";
 import { generateText } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
-import { createTogetherAI } from "@ai-sdk/togetherai";
-import { createAnthropic } from "@ai-sdk/anthropic";
 import { ocr } from "../lib/ocr";
 import { DEFAULT_MODEL } from "../lib/utils/together";
 import { parseJSON } from "../lib/utils/json";
+import { getJudgeModel } from "../lib/utils/judge-model";
 import { readdirSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, basename, extname, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -74,32 +73,44 @@ if (!apiKey) {
 
 const openrouterApiKey = process.env.OPENROUTER_API_KEY;
 const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
+const ollamaBaseUrl = process.env.OLLAMA_BASE_URL;
 
 // ── Judge setup ─────────────────────────────────────────
 
-function getJudgeModel() {
-  if (judgeModel.startsWith("anthropic/")) {
-    const modelId = judgeModel.replace("anthropic/", "");
-    if (anthropicApiKey) {
-      return createAnthropic({ apiKey: anthropicApiKey })(modelId);
-    }
-    if (openrouterApiKey) {
-      return createOpenAI({
-        apiKey: openrouterApiKey,
-        baseURL: "https://openrouter.ai/api/v1",
-        compatibility: "compatible",
-      })(judgeModel);
-    }
-    throw new Error(
-      "anthropic/ judge requires ANTHROPIC_API_KEY or OPENROUTER_API_KEY"
-    );
+async function judgeViaClaude(prompt: string): Promise<string> {
+  // Strip ANTHROPIC_API_KEY so claude CLI uses subscription auth
+  const env = { ...process.env };
+  delete env.ANTHROPIC_API_KEY;
+
+  const proc = Bun.spawn(
+    ["claude", "-p", prompt, "--model", "sonnet"],
+    { env, stdout: "pipe", stderr: "pipe" }
+  );
+
+  const [stdout, stderr, code] = await Promise.all([
+    new Response(proc.stdout).text(),
+    new Response(proc.stderr).text(),
+    proc.exited,
+  ]);
+
+  if (code !== 0) {
+    throw new Error(`claude CLI exited with code ${code}: ${stderr}`);
   }
-  return createTogetherAI({ apiKey: apiKey })(judgeModel);
+  return stdout.trim();
 }
 
 async function judge(prompt: string): Promise<string> {
+  if (judgeModel === "claude") {
+    return judgeViaClaude(prompt);
+  }
   const r = await generateText({
-    model: getJudgeModel(),
+    model: getJudgeModel({
+      judgeModel,
+      togetherApiKey: apiKey,
+      anthropicApiKey,
+      openrouterApiKey,
+      ollamaBaseUrl,
+    }),
     temperature: 0,
     maxOutputTokens: 1024,
     prompt,
@@ -112,6 +123,8 @@ async function judge(prompt: string): Promise<string> {
 interface SufficiencyVerdict {
   sufficient: boolean;
   explanation: string;
+  parseStatus?: "parsed" | "substring_recovered" | "parse_failed";
+  rawResponse?: string;
 }
 
 interface GroundingVerdict {
@@ -262,6 +275,7 @@ function runHeuristics(
 
   return flags;
 }
+
 
 // ── Correctness judge ───────────────────────────────────
 
@@ -544,6 +558,8 @@ or
     return {
       sufficient: !!parsed.sufficient,
       explanation: parsed.explanation ?? "No explanation",
+      parseStatus: "parsed",
+      rawResponse: resultText,
     };
   } catch {
     const lower = resultText.toLowerCase();
@@ -557,12 +573,19 @@ or
       return {
         sufficient: looksTrue && !looksFalse,
         explanation: resultText.substring(0, 300),
+        parseStatus: "substring_recovered",
+        rawResponse: resultText,
       };
     }
     console.warn(
       `  ⚠️  Sufficiency judge parse failed. Raw: ${resultText.substring(0, 200)}`
     );
-    return { sufficient: true, explanation: "Judge failed to parse response" };
+    return {
+      sufficient: false,
+      explanation: "Judge failed to parse response",
+      parseStatus: "parse_failed",
+      rawResponse: resultText,
+    };
   }
 }
 
@@ -763,12 +786,6 @@ async function processFile(filePath: string): Promise<FileEvalResult> {
       }
 
       [correctness, grounding, sufficiency] = await Promise.all(judges);
-    }
-
-    // Force selfContained false if heuristics flagged
-    if (heuristicFlags.length > 0 && grounding.selfContained) {
-      grounding.selfContained = false;
-      grounding.issues.push(...heuristicFlags);
     }
 
     return {
@@ -1206,15 +1223,20 @@ async function main() {
         lessonTitle: q.lessonTitle,
         lessonIndex: q.lessonIndex,
         questionType: q.questionType,
+        lessonContent: q.lessonContent,
         question: q.question,
         answer: q.answer,
         choices: q.choices,
+        slots: q.slots,
+        explanation: q.explanation,
         wasFixed: q.wasFixed,
         fixAttempts: q.fixAttempts,
         correctness: q.correctness,
         grounding: q.grounding,
         heuristicFlags: q.heuristicFlags,
         sufficiency: q.sufficiency,
+        rawSufficiencyResponse: q.sufficiency.rawResponse,
+        sufficiencyParseStatus: q.sufficiency.parseStatus,
       })),
     })),
   };
