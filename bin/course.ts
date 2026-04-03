@@ -4,8 +4,6 @@ import { readFile, writeFile, unlink, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import { join } from "path";
 import ora from "ora";
-import { ocr } from "../lib/ocr";
-import { createModules, createCourse } from "../lib/create-course";
 import { generateSlug } from "../lib/utils/slug";
 import { AVAILABLE_MODELS, DEFAULT_MODEL, getModelPricing } from "../lib/utils/together";
 
@@ -77,6 +75,7 @@ const bold = (s: string) => `\x1b[1m${s}\x1b[0m`;
 interface CliArgs {
   command: string;
   file?: string;
+  files?: string[];
   model: string;
   validateStructure: boolean;
   validateContent: boolean;
@@ -87,6 +86,7 @@ interface CliArgs {
   saveText?: string;
   saveTextAuto: boolean;
   verbose: boolean;
+  plotMetric: "overall" | "structural" | "correctness" | "grounding" | "sufficiency";
 }
 
 function printBanner() {
@@ -107,6 +107,7 @@ ${bold("COMMANDS")}
   ${yellow("generate")} ${dim("<file>")}     Generate a complete course from PDF/markdown
   ${yellow("modules")} ${dim("<file>")}      Generate only course structure (no lessons)
   ${yellow("benchmark")} ${dim("<file>")}    Compare all models on speed, accuracy, and cost
+  ${yellow("plot-benchmark")} ${dim("<json...>")} Plot saved eval benchmarks on speed vs quality
   ${yellow("help")}               Show this help message
   ${yellow("version")}            Show version number
 
@@ -129,6 +130,7 @@ ${bold("OPTIONS")}
   ${dim("--max-retries")} ${cyan("<n>")}     Max retry attempts ${dim("(default: 3)")}
   ${dim("--runs")} ${cyan("<n>")}            Run generation n times ${dim("(for testing)")}
   ${dim("--verbose")}              Show detailed validation errors
+  ${dim("--y")} ${cyan("<metric>")}          Plot metric: overall, structural, correctness, grounding, sufficiency
 
 ${bold("EXAMPLES")}
   ${dim("# Generate course from PDF")}
@@ -154,6 +156,9 @@ ${bold("EXAMPLES")}
 
   ${dim("# Benchmark all models (5 runs each)")}
   ${cyan("course benchmark")} data/document.md --runs 5
+
+  ${dim("# Plot saved eval benchmarks")}
+  ${cyan("course plot-benchmark")} data/benchmarks/run1.json data/benchmarks/run2.json
 
 ${bold("ENVIRONMENT")}
   ${cyan("TOGETHER_API_KEY")}  Required. Your Together AI API key.
@@ -212,7 +217,7 @@ function parseArgs(): CliArgs {
   }
 
   const command = args[0];
-  const validCommands = ["generate", "modules", "gen", "mod", "benchmark", "bench"];
+  const validCommands = ["generate", "modules", "gen", "mod", "benchmark", "bench", "plot-benchmark", "plotbench"];
 
   if (!validCommands.includes(command)) {
     console.error(`\n${red("✗")} Unknown command: ${command}\n`);
@@ -224,13 +229,33 @@ function parseArgs(): CliArgs {
   const normalizedCommand = command === "gen" ? "generate" 
     : command === "mod" ? "modules" 
     : command === "bench" ? "benchmark"
+    : command === "plotbench" ? "plot-benchmark"
     : command;
 
-  // File is required for generate/modules/benchmark
-  const file = args[1];
-  if (!file || file.startsWith("--")) {
+  const flagsWithValues = new Set(["-m", "--model", "--max-retries", "--runs", "--output", "--save-text", "--y"]);
+  const positionalArgs: string[] = [];
+  for (let i = 1; i < args.length; i++) {
+    const arg = args[i];
+    if (flagsWithValues.has(arg)) {
+      i++;
+      continue;
+    }
+    if (arg.startsWith("--")) {
+      continue;
+    }
+    positionalArgs.push(arg);
+  }
+  const file = positionalArgs[0];
+  const files = positionalArgs;
+
+  if (["generate", "modules", "benchmark"].includes(normalizedCommand) && (!file || file.startsWith("--"))) {
     console.error(`\n${red("✗")} Missing file argument\n`);
     console.log(`Usage: ${cyan(`course ${normalizedCommand}`)} ${yellow("<file>")} ${dim("[options]")}\n`);
+    process.exit(1);
+  }
+  if (normalizedCommand === "plot-benchmark" && files.length === 0) {
+    console.error(`\n${red("✗")} Missing benchmark JSON files\n`);
+    console.log(`Usage: ${cyan("course plot-benchmark")} ${yellow("<json...>")} ${dim("[options]")}\n`);
     process.exit(1);
   }
 
@@ -244,9 +269,10 @@ function parseArgs(): CliArgs {
   let saveText: string | undefined;
   let saveTextAuto = false;
   let verbose = false;
+  let plotMetric: CliArgs["plotMetric"] = "overall";
 
   // Parse flags
-  for (let i = 2; i < args.length; i++) {
+  for (let i = 1; i < args.length; i++) {
     const arg = args[i];
     if (arg === "-m" || arg === "--model") {
       const modelArg = args[++i];
@@ -281,12 +307,21 @@ function parseArgs(): CliArgs {
       saveTextAuto = true;
     } else if (arg === "--verbose") {
       verbose = true;
+    } else if (arg === "--y" && args[i + 1]) {
+      const metric = args[++i] as CliArgs["plotMetric"];
+      const validMetrics = ["overall", "structural", "correctness", "grounding", "sufficiency"];
+      if (!validMetrics.includes(metric)) {
+        console.error(`\n${red("✗")} Unknown plot metric: ${metric}\n`);
+        process.exit(1);
+      }
+      plotMetric = metric;
     }
   }
 
   return {
     command: normalizedCommand,
     file,
+    files,
     model,
     validateStructure,
     validateContent,
@@ -297,11 +332,159 @@ function parseArgs(): CliArgs {
     saveText,
     saveTextAuto,
     verbose,
+    plotMetric,
   };
+}
+
+interface EvalBenchmarkPlotPoint {
+  label: string;
+  model: string;
+  file: string;
+  generationTimeSec: number;
+  structural: number;
+  correctness: number;
+  grounding: number;
+  sufficiency: number;
+  uniqueness: number;
+  overall: number;
+}
+
+function parsePercent(input: string): number {
+  return Number(String(input).replace("%", ""));
+}
+
+function parseGroundingPercent(input: string): number {
+  const match = /\((\d+)%\)/.exec(String(input));
+  return match ? Number(match[1]) : 0;
+}
+
+function getModelLabel(model: string): string {
+  const knownLabels: Record<string, string> = {
+    "MiniMaxAI/MiniMax-M2.5": "MiniMax",
+    "zai-org/GLM-5": "GLM-5",
+    "moonshotai/Kimi-K2.5": "Kimi",
+    "Qwen/Qwen3.5-397B-A17B": "Qwen",
+  };
+  return knownLabels[model] || model.split("/").pop() || model;
+}
+
+function loadEvalBenchmarkPoint(file: string): EvalBenchmarkPlotPoint {
+  const raw = JSON.parse(require("fs").readFileSync(file, "utf-8"));
+  const structural = parsePercent(raw.aggregate.structural.successRate);
+  const correctness = parsePercent(raw.aggregate.correctness.accuracy);
+  const grounding = parseGroundingPercent(raw.aggregate.grounding.fullyGrounded);
+  const sufficiency = parsePercent(raw.aggregate.sufficiency.rate);
+  const uniqueness = 100 - parsePercent(raw.aggregate.duplicates.duplicationRate);
+  const overall = Number(((structural + correctness + grounding + sufficiency + uniqueness) / 5).toFixed(1));
+
+  return {
+    label: getModelLabel(raw.generationModel),
+    model: raw.generationModel,
+    file,
+    generationTimeSec: Number((raw.results[0].generationTimeMs / 1000).toFixed(1)),
+    structural,
+    correctness,
+    grounding,
+    sufficiency,
+    uniqueness,
+    overall,
+  };
+}
+
+function getMetricValue(point: EvalBenchmarkPlotPoint, metric: CliArgs["plotMetric"]): number {
+  return point[metric];
+}
+
+function getParetoFrontier(points: EvalBenchmarkPlotPoint[], metric: CliArgs["plotMetric"]): EvalBenchmarkPlotPoint[] {
+  return points.filter((point) => {
+    const score = getMetricValue(point, metric);
+    return !points.some((other) => {
+      if (other === point) return false;
+      const otherScore = getMetricValue(other, metric);
+      const noSlower = other.generationTimeSec <= point.generationTimeSec;
+      const noWorse = otherScore >= score;
+      const strictlyBetter = other.generationTimeSec < point.generationTimeSec || otherScore > score;
+      return noSlower && noWorse && strictlyBetter;
+    });
+  });
+}
+
+function renderScatterPlot(points: EvalBenchmarkPlotPoint[], metric: CliArgs["plotMetric"]) {
+  const width = 56;
+  const height = 14;
+  const leftPad = 6;
+  const grid = Array.from({ length: height }, () => Array.from({ length: width }, () => " "));
+  const minX = 0;
+  const maxX = Math.max(...points.map((p) => p.generationTimeSec)) * 1.05;
+  const minY = Math.max(0, Math.min(...points.map((p) => getMetricValue(p, metric))) - 2);
+  const maxY = 100;
+
+  for (let row = 0; row < height; row++) grid[row][0] = "│";
+  for (let col = 0; col < width; col++) grid[height - 1][col] = "─";
+  grid[height - 1][0] = "└";
+
+  points.forEach((point, index) => {
+    const xRatio = maxX === minX ? 0 : (point.generationTimeSec - minX) / (maxX - minX);
+    const yRatio = maxY === minY ? 0 : (getMetricValue(point, metric) - minY) / (maxY - minY);
+    const x = Math.min(width - 1, Math.max(1, Math.round(xRatio * (width - 2)) + 1));
+    const y = Math.min(height - 2, Math.max(0, height - 2 - Math.round(yRatio * (height - 2))));
+    grid[y][x] = String(index + 1);
+  });
+
+  console.log(`\n${bold("Speed vs Quality")} ${dim(`(${metric})`)}`);
+  for (let row = 0; row < height; row++) {
+    const yValue = row === height - 1
+      ? ""
+      : `${Math.round(maxY - ((maxY - minY) * row) / (height - 2))}`.padStart(3);
+    console.log(`${dim(yValue.padStart(leftPad - 1))} ${grid[row].join("")}`);
+  }
+
+  const minLabel = `${minX.toFixed(0)}s`;
+  const maxLabel = `${maxX.toFixed(0)}s`;
+  console.log(`${" ".repeat(leftPad + 1)}${minLabel}${" ".repeat(Math.max(1, width - minLabel.length - maxLabel.length))}${maxLabel}`);
+  console.log(`${" ".repeat(leftPad + 16)}${dim("Generation time (lower is better)")}`);
+}
+
+function displayEvalBenchmarkPlot(files: string[], metric: CliArgs["plotMetric"]) {
+  const points = files.map(loadEvalBenchmarkPoint).sort((a, b) => a.generationTimeSec - b.generationTimeSec);
+  const pareto = getParetoFrontier(points, metric);
+  const metricHeader = metric === "overall" ? "quality" : metric;
+
+  console.log(`\n${bold("📈 Eval Benchmark Plot")}`);
+  console.log(`${dim("Metric:")} ${metric}`);
+  console.log(`${dim("Files:")} ${points.length}`);
+
+  renderScatterPlot(points, metric);
+
+  console.log("\n" + "┌" + "─".repeat(14) + "┬" + "─".repeat(12) + "┬" + "─".repeat(10) + "┬" + "─".repeat(10) + "┐");
+  console.log("│ " + bold("Model".padEnd(12)) + " │ " + bold("Time".padEnd(10)) + " │ " + bold(metricHeader.padEnd(8)) + " │ " + bold("Overall".padEnd(8)) + " │");
+  console.log("├" + "─".repeat(14) + "┼" + "─".repeat(12) + "┼" + "─".repeat(10) + "┼" + "─".repeat(10) + "┤");
+  points.forEach((point) => {
+    const metricValue = `${getMetricValue(point, metric).toFixed(1)}`.padEnd(8);
+    const overallValue = `${point.overall.toFixed(1)}`.padEnd(8);
+    console.log(`│ ${point.label.padEnd(12)} │ ${`${point.generationTimeSec.toFixed(1)}s`.padEnd(10)} │ ${metricValue} │ ${overallValue} │`);
+  });
+  console.log("└" + "─".repeat(14) + "┴" + "─".repeat(12) + "┴" + "─".repeat(10) + "┴" + "─".repeat(10) + "┘");
+
+  console.log(`\n${bold("Legend")}`);
+  points.forEach((point, index) => {
+    console.log(`  ${index + 1}. ${point.label} ${dim(`(${point.model})`)}`);
+  });
+
+  console.log(`\n${bold("Pareto Frontier")} ${dim("(not dominated on speed + quality)")}`);
+  pareto.forEach((point) => {
+    console.log(`  ${green("•")} ${point.label}: ${point.generationTimeSec.toFixed(1)}s, ${metric} ${getMetricValue(point, metric).toFixed(1)}`);
+  });
+
+  const bestEfficiency = [...points]
+    .sort((a, b) => (getMetricValue(b, metric) / b.generationTimeSec) - (getMetricValue(a, metric) / a.generationTimeSec))[0];
+  console.log(`\n${bold("Best Speed × Quality")}`);
+  console.log(`  ${green("Winner:")} ${bestEfficiency.label} (${metric} ${getMetricValue(bestEfficiency, metric).toFixed(1)} at ${bestEfficiency.generationTimeSec.toFixed(1)}s)`);
 }
 
 async function extractContent(filePath: string, saveTextPath?: string): Promise<string> {
   if (filePath.endsWith(".pdf")) {
+    const { ocr } = await import("../lib/ocr");
     const spinner = ora("Running OCR on PDF").start();
     const startTime = Date.now();
 
@@ -336,6 +519,7 @@ async function extractContent(filePath: string, saveTextPath?: string): Promise<
 }
 
 async function runGenerateModules(content: string, args: CliArgs) {
+  const { createModules } = await import("../lib/create-course");
   const spinner = ora("Generating course modules").start();
   const startTime = Date.now();
 
@@ -363,6 +547,7 @@ async function runGenerateModules(content: string, args: CliArgs) {
 }
 
 async function runGenerateCourse(content: string, args: CliArgs) {
+  const { createCourse } = await import("../lib/create-course");
   const spinner = ora("Generating course structure").start();
   const startTime = Date.now();
 
@@ -503,6 +688,7 @@ interface BenchmarkResult {
 }
 
 async function runBenchmark(content: string, args: CliArgs) {
+  const { createCourse } = await import("../lib/create-course");
   const runs = args.runs || 5;
   const models = Object.entries(AVAILABLE_MODELS);
   
@@ -738,6 +924,12 @@ function displayCourse(course: { title: string; modules: any[] }) {
 
 async function main() {
   const args = parseArgs();
+
+  if (args.command === "plot-benchmark") {
+    displayEvalBenchmarkPlot(args.files || [], args.plotMetric);
+    console.log("");
+    return;
+  }
 
   // Enable verbose output if requested
   if (args.verbose) {

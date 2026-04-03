@@ -14,6 +14,8 @@ _course() {
     'mod:Generate only modules (alias)'
     'benchmark:Compare all models on speed, accuracy, and cost'
     'bench:Benchmark models (alias)'
+    'plot-benchmark:Plot saved eval benchmarks on speed vs quality'
+    'plotbench:Plot saved eval benchmarks (alias)'
     'help:Show help message'
     'version:Show version number'
   )
@@ -32,6 +34,9 @@ _course() {
         generate|gen|modules|mod|benchmark|bench)
           _files -g "*.{pdf,md,txt}"
           ;;
+        plot-benchmark|plotbench)
+          _files -g "*.json"
+          ;;
       esac
       ;;
     options)
@@ -45,6 +50,7 @@ _course() {
         '--no-retry[Disable auto-fix of failed lessons]'
         '--max-retries[Max retry attempts]:number:'
         '--runs[Run generation n times]:number:'
+        '--y[Plot metric]:metric:(overall structural correctness grounding sufficiency)'
       )
       _arguments $options
       ;;
@@ -52,4 +58,3 @@ _course() {
 }
 
 _course "$@"
-
