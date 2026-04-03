@@ -26,7 +26,6 @@ export function getJudgeModel({
       return createOpenAI({
         apiKey: openrouterApiKey,
         baseURL: "https://openrouter.ai/api/v1",
-        compatibility: "compatible",
       })(judgeModel);
     }
     throw new Error(
@@ -42,7 +41,6 @@ export function getJudgeModel({
     return createOpenAI({
       apiKey: openrouterApiKey,
       baseURL: "https://openrouter.ai/api/v1",
-      compatibility: "compatible",
     })(modelId);
   }
 
@@ -52,7 +50,6 @@ export function getJudgeModel({
     return createOpenAI({
       apiKey: "ollama",
       baseURL,
-      compatibility: "compatible",
     })(modelId);
   }
 
