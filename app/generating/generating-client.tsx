@@ -24,9 +24,8 @@ export function GeneratingPageContent() {
   const [lastUpload, setLastUpload] = useState<{ url: string; fileName: string } | null>(null);
   const [isApiKeyDialogOpen, setIsApiKeyDialogOpen] = useState(false);
   const hasStarted = useRef(false);
-  const logoFadeIn = useImageFadeIn("/logo.svg");
+  const logoFadeIn = useImageFadeIn("/logo.png");
   const creatingGuyFadeIn = useImageFadeIn("/creating-guy.svg");
-  const footerFadeIn = useImageFadeIn("/landing-footer-powered-by.svg");
 
   useEffect(() => {
     if (hasStarted.current) return;
@@ -274,11 +273,11 @@ export function GeneratingPageContent() {
             <Link href="/">
               <img
                 ref={logoFadeIn.imgRef}
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Logo"
                 onLoad={logoFadeIn.handleLoad}
                 onError={logoFadeIn.handleError}
-                className={`h-6 w-auto transition-opacity duration-700 ease-out ${logoFadeIn.isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`h-7 w-7 object-contain transition-opacity duration-700 ease-out ${logoFadeIn.isLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
             </Link>
           </div>
@@ -373,19 +372,18 @@ export function GeneratingPageContent() {
 
       {/* Footer */}
       <footer className="bg-white border-t-[0.5px] border-neutral-200 px-4 py-4 flex items-center justify-between relative z-10">
-        <a 
-          href="https://together.ai" 
-          target="_blank" 
+        <a
+          href="https://together.ai"
+          target="_blank"
           rel="noopener noreferrer"
-          className="inline-block"
+          aria-label="Powered by together.ai"
+          className="inline-flex items-center gap-1.5 px-3 h-6 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 transition-colors"
         >
-          <img 
-            ref={footerFadeIn.imgRef}
-            src="/landing-footer-powered-by.svg" 
-            alt="Powered by together.ai"
-            onLoad={footerFadeIn.handleLoad}
-            onError={footerFadeIn.handleError}
-            className={`h-auto transition-opacity duration-700 ease-out ${footerFadeIn.isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          <span className="text-xs font-medium text-white">Powered by</span>
+          <img
+            src="/together-ai-new-logo.png"
+            alt="Together AI"
+            className="h-3 w-auto object-contain"
           />
         </a>
         <div className="flex items-center gap-3">

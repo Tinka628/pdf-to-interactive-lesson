@@ -6,22 +6,22 @@
  * question/answer pair against the source content.
  *
  * Usage:
- *   TOGETHER_API_KEY=... OPENROUTER_API_KEY=... bun scripts/benchmark-answers.ts [--tag=<name>] [--model=<model>] [--judge=<model>] [file1 file2...]
+ *   TOGETHER_API_KEY=... OPENROUTER_API_KEY=... bun scripts/benchmark-answers.ts [--tag=<name>] [--model=<model>] [--judge=<model>] [--types=<types>] [file1 file2...]
  *
  * If no files given, runs all PDFs in data/pdfs/.
  * --model   sets the generation model (default: MiniMaxAI/MiniMax-M2.5)
- * --judge   sets the judge model (default: anthropic/claude-opus-4-6). Use --judge=claude to use Claude Code CLI.
+ * --judge   sets the judge model (default: anthropic/claude-opus-4-6).
+ *           Use anthropic/, openrouter/, or ollama/ prefixes to force a provider.
  * --tag     label for the output file (default: answers)
+ * --types   comma-separated question types to judge (e.g. flow-diagram,true-false). If omitted, all types are judged.
  */
 
 import { createCourse } from "../lib/create-course";
 import { generateText } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
-import { createTogetherAI } from "@ai-sdk/togetherai";
-import { createAnthropic } from "@ai-sdk/anthropic";
 import { ocr } from "../lib/ocr";
 import { DEFAULT_MODEL } from "../lib/utils/together";
 import { parseJSON } from "../lib/utils/json";
+import { getJudgeModel } from "../lib/utils/judge-model";
 import { readdirSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, basename, extname, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -40,6 +40,7 @@ const iterations = parseInt(
   args.find((a) => a.startsWith("--iterations="))?.split("=")[1] ?? "1",
   10
 );
+const typesFilter = args.find((a) => a.startsWith("--types="))?.split("=")[1]?.split(",") ?? [];
 const inputFiles = args.filter((a) => !a.startsWith("--")).map((f) => resolve(f));
 
 const apiKey = process.env.TOGETHER_API_KEY;
@@ -50,32 +51,17 @@ if (!apiKey) {
 
 const openrouterApiKey = process.env.OPENROUTER_API_KEY;
 const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
-
-// Judge provider selection:
-// 1. anthropic/ prefix + ANTHROPIC_API_KEY → use @ai-sdk/anthropic directly
-// 2. anthropic/ prefix + OPENROUTER_API_KEY → use OpenRouter
-// 3. other models → use Together AI
-function getJudgeModel() {
-  if (judgeModel.startsWith("anthropic/")) {
-    const modelId = judgeModel.replace("anthropic/", "");
-    if (anthropicApiKey) {
-      return createAnthropic({ apiKey: anthropicApiKey })(modelId);
-    }
-    if (openrouterApiKey) {
-      return createOpenAI({
-        apiKey: openrouterApiKey,
-        baseURL: "https://openrouter.ai/api/v1",
-        compatibility: "compatible",
-      })(judgeModel);
-    }
-    throw new Error("anthropic/ judge requires ANTHROPIC_API_KEY or OPENROUTER_API_KEY");
-  }
-  return createTogetherAI({ apiKey: apiKey })(judgeModel);
-}
+const ollamaBaseUrl = process.env.OLLAMA_BASE_URL;
 
 async function judge(prompt: string): Promise<string> {
   const r = await generateText({
-    model: getJudgeModel(),
+    model: getJudgeModel({
+      judgeModel,
+      togetherApiKey: apiKey,
+      anthropicApiKey,
+      openrouterApiKey,
+      ollamaBaseUrl,
+    }),
     temperature: 0,
     maxOutputTokens: 1024,
     prompt,
@@ -95,7 +81,9 @@ interface GradedQuestion {
   question: string;
   givenAnswer: any;
   choices?: any[];
+  slots?: string[];
   explanation?: string;
+  lessonContent?: string;
   // Judge verdict
   correct: boolean;
   judgeExplanation: string;
@@ -325,10 +313,15 @@ async function processFile(filePath: string): Promise<FileResult> {
     `  Generated: ${lessons.length}/${totalLessons} lessons (${(generationTimeMs / 1000).toFixed(1)}s)`
   );
 
+  // Filter to requested question types if --types is set
+  const lessonsToJudge = typesFilter.length > 0
+    ? lessons.filter((l) => typesFilter.includes(l.data.questionType))
+    : lessons;
+
   // Judge all answers in parallel
   const judgeStart = Date.now();
 
-  const gradePromises = lessons.map(async (lesson) => {
+  const gradePromises = lessonsToJudge.map(async (lesson) => {
     const verdict = await judgeQuestion(
       {
         question: lesson.data.question,
@@ -352,7 +345,9 @@ async function processFile(filePath: string): Promise<FileResult> {
       question: lesson.data.question,
       givenAnswer: lesson.data.answer,
       choices: lesson.data.choices,
+      slots: lesson.data.slots,
       explanation: lesson.data.explanation,
+      lessonContent: lesson.data.content,
       correct: verdict.correct,
       judgeExplanation: verdict.explanation,
       expectedAnswer: verdict.expectedAnswer,
@@ -418,6 +413,7 @@ async function main() {
   console.log(`   Judge model:      ${judgeModel}`);
   console.log(`   Files: ${files.length}`);
   console.log(`   Iterations: ${iterations}`);
+  if (typesFilter.length > 0) console.log(`   Types filter:     ${typesFilter.join(", ")}`);
   console.log("═".repeat(60));
 
   const allIterationResults: FileResult[][] = [];

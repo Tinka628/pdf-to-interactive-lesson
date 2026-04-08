@@ -18,7 +18,11 @@ import {
   flowQuestionSchema,
   validationResultSchema,
 } from "./schemas";
-import { createTogetherClient, DEFAULT_MODEL } from "./utils/together";
+import {
+  createTogetherClient,
+  DEFAULT_MODEL,
+  getTogetherProviderOptions,
+} from "./utils/together";
 import { parseJSON } from "./utils/json";
 
 export interface LessonProgressCallback {
@@ -92,6 +96,7 @@ export async function createLessons({
 }: CreateLessonsInput): Promise<ModuleWithLessons> {
   onProgress?.("lesson-start", `Generating lessons for "${module.title}"...`);
   const together = createTogetherClient(apiKey);
+  const providerOptions = getTogetherProviderOptions(model);
 
   // Build deduplication context for the prompt
   const moduleContext = allModuleTitles.length > 0
@@ -99,7 +104,7 @@ export async function createLessons({
     : "";
 
   const dedupContext = previousQuestions.length > 0
-    ? `\nIMPORTANT — AVOID DUPLICATE QUESTIONS: The following questions have already been used in other modules of this course. You MUST NOT ask the same or similar questions. Each question must test a DIFFERENT fact or concept.\nAlready used:\n${previousQuestions.map((q, i) => `${i + 1}. "${q}"`).join("\n")}\n`
+    ? `\nIMPORTANT — AVOID DUPLICATE QUESTIONS: The following questions have already been used in other modules of this course. You MUST NOT ask the same or similar questions. Each question must test a DIFFERENT fact or concept.\nThis means: do NOT ask about the same topic even with different wording. For example, if a previous question asks about "continued pretraining phases", do NOT ask another question about continued pretraining phases in different words.\nAlready used:\n${previousQuestions.map((q, i) => `${i + 1}. "${q}"`).join("\n")}\n`
     : "";
 
   const standardLessonPrompt = `Analyse the following content and create 3 lessons for the module "${module.title}".
@@ -107,17 +112,27 @@ Respond ONLY with a JSON object. No other text.
 
 CRITICAL: Every fact, claim, and detail in your lessons MUST come directly from the source content below. Do NOT infer, elaborate, or add information not explicitly stated in the source. Do NOT reference the source as "the article", "the passage", or "the brief" — write as if the lesson stands alone.
 ${moduleContext}${dedupContext}
+Each lesson must be SELF-SUFFICIENT: the "content" field must teach the specific facts needed to answer its own question. A student who only sees that lesson content should have enough information to answer correctly.
+
 You must create exactly ONE lesson for EACH question type:
-1. "short-answer" - answer is a text string. The answer must be a fact EXPLICITLY stated in the source content. Do NOT ask about exact URLs, code snippets, or strings that may have formatting issues. Do NOT embed unverified claims or translations in the question itself — only state facts from the source.
+1. "short-answer" - answer is a text string. The answer must be a fact EXPLICITLY stated in the source content. Do NOT ask about exact URLs, code snippets, or strings that may have formatting issues. Do NOT embed unverified claims or translations in the question itself — only state facts from the source. The lesson content must explicitly include the answer-bearing fact, not just surrounding context.
 2. "true-false" - answer is true or false (boolean). The statement MUST be clearly and unambiguously true or false based solely on the source content. Avoid nuanced, debatable, or misleading phrasing. Do NOT use double negatives. Do NOT paraphrase the source in a way that subtly changes meaning.
-3. "multiple-choice" - answer is ALWAYS 0. Put the CORRECT answer as the FIRST choice (index 0), then 3 wrong choices. The correct answer AND all distractor choices must be grounded in or directly related to the source content. Do NOT invent plausible-sounding facts for distractors.
+3. "multiple-choice" - answer is ALWAYS 0. Put the CORRECT answer as the FIRST choice (index 0), then 3 wrong choices. The correct answer AND all distractor choices must be grounded in or directly related to the source content. Do NOT invent plausible-sounding facts for distractors. The lesson content must include enough specific detail to distinguish the correct choice from the distractors. Do NOT write negation-based questions such as "Which is NOT...", "Which is NOT mentioned...", "All of the following EXCEPT...", or any question where the student must pick the absent option.
+
+Content-writing rules:
+- Write 4-6 sentences, not 2-3.
+- Include the exact names, numbers, categories, or sequence labels needed for the question when the question depends on them.
+- Avoid vague summaries. If a question asks "which", "what percentage", "what order", or "which technique", the content must explicitly mention the relevant compared items.
+- For multiple-choice, mention the distinguishing detail that makes the correct option correct.
+- For multiple-choice, ask for the supported/correct option, not the unsupported option.
+- Write the content first, then derive the question from that content.
 
 Return this exact JSON structure:
 {
   "lessons": [
     {
       "title": "Lesson Title",
-      "content": "Lesson content, about 3 sentences long.",
+      "content": "Lesson content, 4-6 sentences long and sufficient to answer the question.",
       "info": "A quick one sentence key fact",
       "question": "A question to test understanding",
       "questionType": "short-answer",
@@ -125,7 +140,7 @@ Return this exact JSON structure:
     },
     {
       "title": "Lesson Title",
-      "content": "Lesson content, about 3 sentences long.",
+      "content": "Lesson content, 4-6 sentences long and sufficient to answer the question.",
       "info": "A quick one sentence key fact",
       "question": "A true or false statement",
       "questionType": "true-false",
@@ -133,7 +148,7 @@ Return this exact JSON structure:
     },
     {
       "title": "Lesson Title",
-      "content": "Lesson content, about 3 sentences long.",
+      "content": "Lesson content, 4-6 sentences long and sufficient to answer the question.",
       "info": "A quick one sentence key fact",
       "question": "A multiple choice question",
       "questionType": "multiple-choice",
@@ -152,6 +167,7 @@ ${content}`;
   // Start both standard lesson generation and flow generation concurrently
   const standardLessonsPromise = generateText({
     model: together(model),
+    providerOptions,
     prompt: standardLessonPrompt,
   });
 
@@ -160,6 +176,7 @@ ${content}`;
     content,
     apiKey,
     model,
+    previousQuestions,
   });
 
   // Wait for both to complete
@@ -177,6 +194,7 @@ ${content}`;
           content,
           apiKey,
           model,
+          previousQuestions,
         })
       : Promise.resolve(null);
 
@@ -190,6 +208,7 @@ ${content}`;
 
     const retryResult = await generateText({
       model: together(model),
+      providerOptions,
       prompt: standardLessonPrompt,
     });
     validated = standardLessonsSchema.safeParse(parseJSON(retryResult.text));
@@ -209,6 +228,24 @@ ${content}`;
   for (const lesson of lessons) {
     if (lesson.questionType === "multiple-choice" && Array.isArray(lesson.choices) && lesson.choices.length === 4) {
       shuffleMultipleChoice(lesson);
+    }
+  }
+
+  // Reject true-false questions that are actually open-ended (asking "which", "what", etc.)
+  const openEndedPattern = /\b(which|what|who|where|when|how|why|name|list|describe|explain)\b.*\?$/i;
+  for (let i = 0; i < lessons.length; i++) {
+    const lesson = lessons[i];
+    if (lesson.questionType === "true-false" && openEndedPattern.test(lesson.question)) {
+      console.error(`  ❌ True-false question is open-ended, rejecting: "${lesson.question.substring(0, 80)}..."`);
+      failuresByIndex.set(i, {
+        success: false,
+        data: lesson,
+        error: {
+          validationType: "content",
+          reason: "True-false question must be a statement, not an open-ended question. Rewrite as a clear declarative statement that can be judged true or false.",
+          details: [`Question "${lesson.question}" contains interrogative wording incompatible with true-false format.`],
+        },
+      });
     }
   }
 
@@ -295,11 +332,13 @@ ${content}`;
         try {
           const fixResult = await generateText({
             model: together(model),
+            providerOptions,
             prompt: `Fix this lesson that failed validation. The problem was:
 ${failed.error.reason}
 ${failed.error.details?.join("\n") || ""}
 
 IMPORTANT: All facts must come ONLY from the source content. Do NOT infer or add information not in the source.
+The corrected lesson must be SELF-SUFFICIENT: its content must include the specific facts needed to answer its own question. If the question depends on names, numbers, categories, techniques, or an order of steps, explicitly include those in the content.
 
 Module: "${module.title}"
 Original lesson: ${JSON.stringify(failed.data, null, 2)}
@@ -348,6 +387,32 @@ ${failed.data.questionType === "multiple-choice" ? '{"title":"...","content":"..
   return moduleResult;
 }
 
+function topologicalSort(flowConfig: FlowConfig): string[] {
+  const { nodes, edges } = flowConfig;
+  const ids = nodes.map((n) => n.id);
+  const inDegree = new Map(ids.map((id) => [id, 0]));
+  const adj = new Map(ids.map((id) => [id, [] as string[]]));
+
+  for (const [from, to] of edges) {
+    adj.get(from)?.push(to);
+    inDegree.set(to, (inDegree.get(to) ?? 0) + 1);
+  }
+
+  const queue = ids.filter((id) => inDegree.get(id) === 0);
+  const order: string[] = [];
+
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+    order.push(current);
+    for (const next of adj.get(current) ?? []) {
+      inDegree.set(next, (inDegree.get(next) ?? 0) - 1);
+      if (inDegree.get(next) === 0) queue.push(next);
+    }
+  }
+
+  return order;
+}
+
 /**
  * Analyzes module content for flow/process diagrams.
  */
@@ -356,20 +421,30 @@ async function generateFlowDiagram({
   content,
   apiKey,
   model = DEFAULT_MODEL,
+  previousQuestions = [],
 }: {
   moduleTitle: string;
   content: string;
   apiKey: string;
   model?: string;
+  previousQuestions?: string[];
 }): Promise<{ hasFlow: boolean; flowConfig?: FlowConfig } | null> {
   const together = createTogetherClient(apiKey);
+  const providerOptions = getTogetherProviderOptions(model);
+
+  const flowDedupContext = previousQuestions.length > 0
+    ? `\nIMPORTANT: The following questions have already been used in earlier modules. You must find a DIFFERENT process or flow unique to this module's topic "${moduleTitle}". Do NOT model the same process already covered.\nAlready used questions:\n${previousQuestions.map((q, i) => `${i + 1}. "${q}"`).join("\n")}\n`
+    : "";
 
   try {
     const result = await generateText({
       model: together(model),
+      providerOptions,
       prompt: `Analyze the following content for the module "${moduleTitle}".
 Determine if this content describes a PROCESS, SYSTEM, or SEQUENTIAL FLOW suitable for a flow diagram.
 Only include processes and steps that are EXPLICITLY described in the source content. Do NOT invent or infer steps.
+The flow MUST be specific to the topic of this module ("${moduleTitle}") — not a general overview of the entire document.
+${flowDedupContext}
 
 Good candidates: step-by-step processes, system architectures, cause-and-effect chains, workflows, state transitions.
 
@@ -430,40 +505,46 @@ async function generateFlowQuestion({
   content,
   apiKey,
   model = DEFAULT_MODEL,
+  previousQuestions = [],
 }: {
   flowConfig: FlowConfig;
   moduleTitle: string;
   content: string;
   apiKey: string;
   model?: string;
+  previousQuestions?: string[];
 }): Promise<FlowDiagramLesson | null> {
   const together = createTogetherClient(apiKey);
+  const providerOptions = getTogetherProviderOptions(model);
   const nodeLabels = flowConfig.nodes.map((n) => n.label);
+
+  const flowQDedupContext = previousQuestions.length > 0
+    ? `\nIMPORTANT — AVOID DUPLICATE QUESTIONS: These questions already exist in other modules. Your question MUST ask about a DIFFERENT process or aspect. Do NOT rephrase an existing question.\nAlready used:\n${previousQuestions.map((q, i) => `${i + 1}. "${q}"`).join("\n")}\n`
+    : "";
 
   try {
     const result = await generateText({
       model: together(model),
+      providerOptions,
       prompt: `Given this flow diagram for the module "${moduleTitle}", create a drag-and-drop ordering question.
 
 Flow nodes: ${nodeLabels.map((l, i) => `${i + 1}. ${l}`).join(", ")}
+${flowQDedupContext}
 
 Respond ONLY with JSON:
 {
   "title": "Lesson Title",
-  "content": "Brief 2-3 sentence explanation of the process",
+  "content": "A 4-6 sentence explanation of the process that explicitly names the steps used in the ordering question",
   "info": "One key fact about this process",
   "question": "What is the correct order of steps in [specific process name]?",
-  "choices": ["Step A", "Step B", "Step C"],
-  "slots": ["First", "Second", "Third"],
-  "answer": [0, 2, 1]
+  "stepsInOrder": ["First step", "Second step", "Third step"]
 }
 
 Rules:
 - Select 3 important sequential nodes from the flow
-- Choices = actual node labels from the flow
-- Slots = "First", "Second", "Third"
-- Answer = array of 3 indices (0-2) mapping slot→choice. [0,2,1] means First→choice0, Second→choice2, Third→choice1
+- stepsInOrder = 3 node labels listed in their CORRECT chronological order (first step first, last step last)
 - The question MUST be specific to this process — mention the actual process or topic by name. Do NOT use generic phrasing like "Put the following steps in the correct order"
+- The content MUST explicitly mention all 3 selected step names and make their order clear enough that a student can solve the question from the content alone.
 - All content, info, and question text must come from the source content. Do NOT add facts not in the source.
 
 Source content:
@@ -479,10 +560,28 @@ ${content}`,
     }
 
     const q = validated.data;
-    if (new Set(q.answer).size !== 3) {
-      console.error(`  ❌ Invalid flow answer: not a permutation`);
-      return null;
+
+    // Re-sort stepsInOrder using the flow diagram's topological order as source of truth
+    // (the model sometimes returns steps in the wrong sequence)
+    const topoOrder = topologicalSort(flowConfig);
+    const labelToPosition = new Map<string, number>();
+    for (let i = 0; i < topoOrder.length; i++) {
+      const node = flowConfig.nodes.find((n) => n.id === topoOrder[i]);
+      if (node) labelToPosition.set(node.label, i);
     }
+    const sortedSteps = [...q.stepsInOrder].sort((a, b) => {
+      const posA = labelToPosition.get(a) ?? Infinity;
+      const posB = labelToPosition.get(b) ?? Infinity;
+      return posA - posB;
+    });
+    const correctOrder = sortedSteps;
+    const choices = [...correctOrder];
+    for (let i = choices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [choices[i], choices[j]] = [choices[j], choices[i]];
+    }
+    const slots = ["First", "Second", "Third"];
+    const answer = correctOrder.map((step) => choices.indexOf(step));
 
     return {
       title: q.title,
@@ -491,9 +590,9 @@ ${content}`,
       question: q.question,
       questionType: QuestionType.FlowDiagram,
       flowConfig,
-      choices: q.choices,
-      slots: q.slots,
-      answer: q.answer,
+      choices,
+      slots,
+      answer,
     };
   } catch (error) {
     console.error(`  ❌ Error generating flow question for "${moduleTitle}":`, error);
@@ -509,6 +608,7 @@ export async function validateLesson({
   model = DEFAULT_MODEL,
 }: ValidateLessonInput): Promise<ValidationResult> {
   const together = createTogetherClient(apiKey);
+  const providerOptions = getTogetherProviderOptions(model);
 
   const lessonData = {
     title: lesson.title,
@@ -530,6 +630,7 @@ export async function validateLesson({
 
   const result = await generateText({
     model: together(model),
+    providerOptions,
     prompt: `You are a lesson quality validator. Validate the following lesson against the source content.
 Respond ONLY with JSON. No other text.
 
@@ -545,9 +646,10 @@ Validation Criteria:
 1. CONTENT: Is the lesson content factually accurate based on the source?
 2. QUESTION: Is the question clear, relevant, and properly tests understanding?
 3. ANSWER: Is the answer correct based on the source content?
-4. CHOICES (if multiple-choice): Are all choices plausible? Is the correct answer index accurate?
+4. CHOICES (if multiple-choice): Are all choices plausible? Is the correct answer index accurate? Fail any multiple-choice question that uses negation or exclusion wording such as "NOT", "EXCEPT", "least likely", or asks the student to identify the absent option.
 5. INFO: Does the highlighted info fact come from the lesson content?
 6. GROUNDING: Are ALL facts and claims in the lesson content, answer, and choices EXPLICITLY stated in or directly supported by the source? Flag any claims that appear plausible but are NOT in the source (hallucination).
+7. SUFFICIENCY: Does the lesson content itself teach enough information for a student to answer the question correctly without seeing the source? Fail if the content is too generic, omits the key names/numbers/categories/steps needed for the question, or does not distinguish the correct answer from alternatives.
 
 Return:
 {"isValid": true, "explanation": "Brief assessment"}
