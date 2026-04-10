@@ -78,7 +78,13 @@ export async function generateCourseFromPdf(
   let isTemp = false;
 
   try {
-    const apiKey = options.apiKey || process.env.TOGETHER_API_KEY || "";
+    const userProvidedKey = options.apiKey || "";
+    const envKey = process.env.TOGETHER_API_KEY || "";
+    const apiKey = userProvidedKey || envKey;
+
+    const keySource = userProvidedKey ? "user-provided" : envKey ? "TOGETHER_API_KEY env var" : "none";
+    const keyPrefix = apiKey ? apiKey.slice(0, 8) + "..." : "(empty)";
+    console.log(`[generate-course] API key source: ${keySource}, prefix: ${keyPrefix}`);
 
     if (!apiKey) {
       throw new Error("Together AI API key is required. Please add your API key in the app settings.");

@@ -63,6 +63,7 @@ export async function POST(request: NextRequest) {
     try {
       // Get API key from headers (optional - user can provide their own for unlimited)
       const apiKey = request.headers.get("X-Together-API-Key");
+      console.log(`[generate-course] Request API key header present: ${!!apiKey}, will ${apiKey ? "use user key" : "fall back to env var"}`);
       
       // Check rate limit (bypassed if user has API key)
       const rateLimitCheck = await checkRateLimit(clientId, !!apiKey);
