@@ -1,0 +1,220 @@
+{
+  "tag": "minimax-m2.5",
+  "model": "MiniMaxAI/MiniMax-M2.5",
+  "timestamp": "2026-03-25T13:43:34.239Z",
+  "aggregate": {
+    "totalTimeMs": 41231,
+    "totalCourseTimeMs": 41231,
+    "totalLessons": 21,
+    "firstPassSuccess": 21,
+    "firstPassRate": 100,
+    "finalSuccess": 21,
+    "finalRate": 100,
+    "finalFailed": 0
+  },
+  "results": [
+    {
+      "file": "attention-excerpt",
+      "contentLength": 16198,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 24960,
+      "totalTimeMs": 24960,
+      "modules": [
+        {
+          "title": "Introduction to Sequence Transduction and Background",
+          "lessons": [
+            {
+              "title": "Understanding the Transformer Architecture",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Recurrence in the Transformer",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Model Parameters",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Initial Processing Steps",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Transformer Model Architecture: Encoder-Decoder Design",
+          "lessons": [
+            {
+              "title": "Encoder Output in Transformer",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Uses Recurrence",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Multi-Head Attention Configuration",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Model Architecture: Initial Encoding Steps",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Attention Mechanisms and Implementation Details",
+          "lessons": [
+            {
+              "title": "Understanding Scaled Dot-Product Attention",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Self-Attention vs. Recurrence",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Multi-Head Attention Configuration",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Architecture Flow: Encoder Component",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 12,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    },
+    {
+      "file": "together-embeddings-blog.ocr",
+      "contentLength": 11122,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 16271,
+      "totalTimeMs": 16271,
+      "modules": [
+        {
+          "title": "Introduction to Together Embeddings",
+          "lessons": [
+            {
+              "title": "Understanding Text Embeddings",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Together Embeddings Pricing",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Long Context Capabilities",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "API Integration and Implementation",
+          "lessons": [
+            {
+              "title": "Understanding Text Embeddings",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Context Length Capabilities",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Together Embeddings Pricing Advantage",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Building RAG Applications",
+          "lessons": [
+            {
+              "title": "Understanding Text Embeddings in RAG",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "RAG and Knowledge Limitations",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Together Embeddings Models and Context Length",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 9,
+      "firstPassSuccess": 9,
+      "finalSuccess": 9,
+      "finalFailed": 0
+    }
+  ]
+}

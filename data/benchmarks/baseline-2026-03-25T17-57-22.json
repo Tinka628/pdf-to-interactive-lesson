@@ -1,0 +1,705 @@
+{
+  "tag": "baseline",
+  "timestamp": "2026-03-25T17:57:22.134Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "deepseek-ai/DeepSeek-V3.1",
+  "totalTimeMs": 256358,
+  "aggregate": {
+    "totalGraded": 40,
+    "correct": 28,
+    "incorrect": 12,
+    "accuracy": "70%",
+    "byQuestionType": {
+      "short-answer": {
+        "correct": 9,
+        "total": 12,
+        "accuracy": "75%"
+      },
+      "true-false": {
+        "correct": 9,
+        "total": 12,
+        "accuracy": "75%"
+      },
+      "multiple-choice": {
+        "correct": 8,
+        "total": 12,
+        "accuracy": "67%"
+      },
+      "flow-diagram": {
+        "correct": 2,
+        "total": 4,
+        "accuracy": "50%"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 4,
+      "incorrect": 5,
+      "accuracy": "44%",
+      "generationTimeMs": 35724,
+      "judgingTimeMs": 47275,
+      "gradedQuestions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "Octavian Becomes Augustus",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What title did the Senate give to Octavian that means \"most high\"?",
+          "givenAnswer": "Augustus",
+          "correct": false,
+          "judgeExplanation": "Judge failed to parse response"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Pax Romana was a period of warfare and military expansion that lasted approximately 50 years.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that the Pax Romana was a period of 'almost no warfare' that 'lasted nearly 200 years', directly contradicting the statement's claim of 'a period of warfare and military expansion that lasted approximately 50 years'."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "The Early Emperors",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which Roman emperor was responsible for conquering southern Britain?",
+          "givenAnswer": 1,
+          "choices": [
+            "Caligula",
+            "Claudius",
+            "Nero",
+            "Tiberius"
+          ],
+          "explanation": "Claudius became emperor because he was the last adult male of his family. He brought southern Britannia under Roman control in 43 CE.",
+          "correct": false,
+          "judgeExplanation": "Judge failed to parse response"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Emperors and Imperial Expansion",
+          "moduleIndex": 1,
+          "lessonTitle": "Understanding Primus Inter Pares",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What does the Latin phrase \"primus inter pares\" mean in English?",
+          "givenAnswer": "First among equals",
+          "correct": false,
+          "judgeExplanation": "The Roman Empire did not fall in 476 CE; it was the Western Roman Empire that fell in 476 CE. The Eastern Roman Empire, also known as the Byzantine Empire, continued to exist until 1453 CE.",
+          "expectedAnswer": "The Roman Empire did not fall in 476 CE; the Western Roman Empire fell in 476 CE, while the Eastern Roman (Byzantine) Empire lasted until 1453 CE."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Emperors and Imperial Expansion",
+          "moduleIndex": 1,
+          "lessonTitle": "The Reign of Emperor Nero",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Nero was accused of setting the Great Fire of Rome in 64 CE and then blaming it on the Christians.",
+          "givenAnswer": true,
+          "correct": false,
+          "judgeExplanation": "Judge failed to parse response"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Emperors and Imperial Expansion",
+          "moduleIndex": 1,
+          "lessonTitle": "The Building of the Colosseum",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which Roman emperor was responsible for building the Colosseum in Rome?",
+          "givenAnswer": 0,
+          "choices": [
+            "Vespasian",
+            "Hadrian",
+            "Trajan",
+            "Augustus"
+          ],
+          "explanation": "Vespasian (69-79 CE) built the Colosseum, which was originally called the Flavian Amphitheater, as a gift to the Roman people. It was completed during his son Titus's reign.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states 'Vespasian (69-79 CE) Built the Colosseum in Rome'. The explanation provided also correctly notes it was completed during his son Titus's reign and was originally called the Flavian Amphitheater."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Western Roman Empire officially end?",
+          "givenAnswer": "476 CE",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states 'Roman Empire • 30 BCE-476 CE' and later confirms 'Western (Roman) Empire – Ended officially in 476 CE when the last emperor, Romulus Augustus, was deposed by a barbarian, Odoacer'."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Diocletian's Administrative Division",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Diocletian divided the empire into two administrative halves in 285 CE, creating the Eastern and Western Roman Empires.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Diocletian (284-305 CE)... Divided the empire into two administrative realms (east and west) in 285 CE.' This directly supports the statement and the given answer."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Causes of Rome's Fall",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT a reason cited for the fall of the Western Roman Empire?",
+          "givenAnswer": 3,
+          "choices": [
+            "Economic inequality and decline in trade",
+            "Military reliance on barbarian troops with divided loyalties",
+            "Complete abolition of the Roman Senate",
+            "Population decline due to plagues and war"
+          ],
+          "explanation": "While the Roman Senate's power was diminished over time, it was not abolished. The Senate continued to exist even as the Western Empire fell. The other options represent the main categories of reasons for Rome's fall: economic problems, military issues, and social factors including population decline.",
+          "correct": false,
+          "judgeExplanation": "The answer is factually incorrect according to the source. The source explicitly lists 'Population decline due to plagues and war' as a social reason for the fall of the Western Roman Empire.",
+          "expectedAnswer": "index 2 → 'Complete abolition of the Roman Senate'"
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 9,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 29562,
+      "judgingTimeMs": 1797,
+      "gradedQuestions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Together Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many embedding models are available in the Together Embeddings endpoint?",
+          "givenAnswer": "8",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states 'Together Embeddings endpoint is available today with 8 open source embeddings models'."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "OpenAI API Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint is fully OpenAI compatible, allowing easy migration from OpenAI-based applications.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'The Together Embeddings endpoint has full OpenAI compatibility so if you have already built your applications following the OpenAI API you can easily switch it out.'"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Pricing and Model Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to the release announcement, how much cheaper is Together Embeddings compared to other popular platforms?",
+          "givenAnswer": 1,
+          "choices": [
+            "2x cheaper",
+            "4x cheaper",
+            "5x cheaper",
+            "3x cheaper"
+          ],
+          "explanation": "The content explicitly states that Together Embeddings is 'up to 4x cheaper' than other popular platforms.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states 'Up to 4x cheaper than other popular platforms' in the highlights section and 'up to 4x cheaper' in the pricing graph description."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "API Endpoint Configuration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the base URL path for the Together Embeddings API?",
+          "givenAnswer": "/api/v1/embeddings",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states the base URL path in the code example: base_url='https://api.together.xyz/api/v1/embeddings'."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "API Authentication Requirements",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint requires an API key for authentication.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that an API key is required, as shown in the code snippet: `together.api_key = ` and `client = together.Together()` which implies the API key must be set for authentication."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Model Selection in API Requests",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which parameter is used to specify the embedding model in the Together API?",
+          "givenAnswer": 1,
+          "choices": [
+            "input parameter",
+            "model parameter",
+            "embedding_type parameter",
+            "dimension parameter"
+          ],
+          "explanation": "The 'model' parameter is used to specify which embedding model to use when making API calls to the Together Embeddings endpoint.",
+          "correct": true,
+          "judgeExplanation": "The source code example shows the 'model' parameter being used to specify the embedding model in the API call: `model=model_api_string`"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and RAG Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding Retrieval Augmented Generation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What does the acronym RAG stand for in the context of AI applications?",
+          "givenAnswer": "Retrieval Augmented Generation",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states 'retrieval augmented generation, or RAG' in the context of AI applications, which matches the given answer."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and RAG Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Vector Database Integration for RAG",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: You can build RAG using Together API with popular vector databases such as MongoDB, Pinecone, and Chroma.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'You can now build RAG using Together API and popular vector databases such as MongoDB, Pinecone, and Chroma'."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and RAG Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Long Context Retrieval Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the maximum context length available for the M2-BERT retrieval models offered by Together?",
+          "givenAnswer": 3,
+          "choices": [
+            "8,000 tokens",
+            "16,000 tokens",
+            "24,000 tokens",
+            "32,000 tokens"
+          ],
+          "explanation": "The M2-BERT retrieval models support context lengths of 2k, 8k, and 32k, with 32k being the maximum available option.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that the M2-BERT retrieval models support context lengths of 2k, 8k, and 32k, with 32k being the maximum available option."
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 8,
+      "incorrect": 4,
+      "accuracy": "67%",
+      "generationTimeMs": 46564,
+      "judgingTimeMs": 6077,
+      "gradedQuestions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose and Design of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "givenAnswer": "Agentic software engineering",
+          "correct": true,
+          "judgeExplanation": "The answer 'Agentic software engineering' directly matches the source content, which states 'Composer 2 is a specialized model designed for agentic software engineering.' This is the primary design purpose as explicitly stated in the introduction."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Software Engineering Agents Use Environment Context",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Software engineering agents require an environment consisting of a codebase and an isolated container for code execution to function.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Given an environment, i.e., a codebase and an isolated container for code execution, along with a prompt x giving the agent its task...', which directly supports the given statement."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Tools Available to Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT listed as a tool available to Composer 2?",
+          "givenAnswer": 3,
+          "choices": [
+            "Read and edit files",
+            "Run shell commands",
+            "Search the codebase using grep or semantic search",
+            "Compile and debug executables directly"
+          ],
+          "explanation": "The content explicitly mentions reading/editing files, running shell commands, and searching the codebase using grep or semantic search, but does not mention compiling and debugging executables directly as a tool capability.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly lists the tools available to Composer 2 as: 'read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web.' It does not mention 'compile and debug executables directly' as a tool capability. Therefore, the given answer correctly identifies index 3 as NOT being listed."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining pipeline?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Select Base Model",
+            "Continue Pretraining",
+            "SFT Phase"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'The model is trained in two phases: first, continued pretraining to improve the model’s knowledge and latent coding ability, followed by large-scale reinforcement learning...' Additionally, in Section 3 (Continued Pretraining), it mentions selecting a base model (Kimi K2.5) and then proceeding with continued pretraining. The SFT phase is mentioned as the final step in the continued pretraining stage: 'We divide this stage into three phases... followed by a shorter long-context extension phase... and finally a short SFT phase on targeted coding tasks.' Therefore, the correct order is: Select Base Model (0), Continue Pretraining (1), SFT Phase (2)."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Selection for Continued Pretraining",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the name of the base model selected for Composer 2 continued pretraining?",
+          "givenAnswer": "Kimi K2.5",
+          "correct": false,
+          "judgeExplanation": "The source content explicitly states that the base model selected for Composer 2 continued pretraining is 'Kimi K2.5 [67], a 1.04T parameter / 32B active parameter Mixture-of-Experts model'. The given answer 'Kimi K2.5' is correct, but it is missing the citation '[67]' which is part of the source's formal reference. However, since the question only asks for the 'name' and the citation is a reference marker rather than part of the name itself, the answer is factually correct. The instruction says 'Minor wording differences are OK if the meaning is correct', so omitting the citation is acceptable.",
+          "expectedAnswer": "Kimi K2.5"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Regularization Estimator Usage",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 uses the k1 estimator (-log r) for KL divergence regularization rather than the unbiased k3 estimator because k3 experiences variance blow-up when the policy distributions diverge significantly.",
+          "givenAnswer": true,
+          "correct": false,
+          "judgeExplanation": "The statement claims Composer 2 uses the k1 estimator (-log r) for KL divergence regularization rather than the unbiased k3 estimator because k3 experiences variance blow-up. However, the source content does not mention Composer 2 specifically using the k1 estimator over k3 for this reason. The section discussing KL divergence regularization (Section 4.1) is about general RL training methodologies and does not state that Composer 2 uses k1.",
+          "expectedAnswer": "The source does not specify which estimator Composer 2 uses for KL divergence regularization. It only discusses the properties of k1, k2, and k3 estimators in general terms within the context of RL training."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following represents the correct order of the three continued pretraining phases in Composer 2?",
+          "givenAnswer": 0,
+          "choices": [
+            "Bulk compute at 32k tokens → Long-context extension to 256k → Short SFT on coding tasks",
+            "Long-context extension to 256k → Bulk compute at 32k tokens → Short SFT on coding tasks",
+            "Short SFT on coding tasks → Bulk compute at 32k tokens → Long-context extension to 256k",
+            "Bulk compute at 32k tokens → Short SFT on coding tasks → Long-context extension to 256k"
+          ],
+          "explanation": "The continued pretraining divides into three phases: spending the bulk of compute at 32k token sequence length first, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states the order: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches exactly with choice 0: 'Bulk compute at 32k tokens → Long-context extension to 256k → Short SFT on coding tasks'."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the continued pretraining phase of Composer 2?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining 32k",
+            "Long-Context Extension",
+            "SFT Phase Coding"
+          ],
+          "correct": false,
+          "judgeExplanation": "The source content explicitly states the order of steps in the continued pretraining phase: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This indicates the order is: 1. Continued Pretraining 32k, 2. Long-Context Extension, 3. SFT Phase Coding. The given answer [0,1,2] matches this order exactly.",
+          "expectedAnswer": "The correct order is [0,1,2] as stated in the source: First → Continued Pretraining 32k, Second → Long-Context Extension, Third → SFT Phase Coding."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding CursorBench Evaluation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary reason Cursor introduced CursorBench as an alternative to public benchmarks?",
+          "givenAnswer": "Public benchmarks often correlate loosely with real-world utility due to domain mismatch, prompt over-specification, data contamination, and narrow evaluation scope",
+          "correct": true,
+          "judgeExplanation": "The answer correctly lists the four primary factors for the domain mismatch between public benchmarks and real-world utility as stated in the source: domain mismatch, prompt over-specification, data contamination, and narrow evaluation scope."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Limitations Analysis",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "CursorBench tasks require an order of magnitude more code changes compared to public benchmarks, and have less-specified task prompts.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content states: 'CursorBench tasks require an order of magnitude more code changes compared to public benchmarks, and have less-specified task prompts.' This directly matches the given statement."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Real-World Evaluation Metrics",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Based on the document, which benchmark did Composer 2 achieve the highest score?",
+          "givenAnswer": 2,
+          "choices": [
+            "CursorBench (61.3)",
+            "Terminal-Bench (61.7)",
+            "SWE-bench Multilingual (73.7)",
+            "SWE-bench Verified (73.3)"
+          ],
+          "explanation": "Composer 2 achieved 73.7 on SWE-bench Multilingual, which is the highest score among the benchmarks listed in the document.",
+          "correct": false,
+          "judgeExplanation": "The answer claims Composer 2 achieved 73.7 on SWE-bench Multilingual as the highest score, but the source clearly states that Composer 2 achieved 61.3 on CursorBench, 61.7 on Terminal-Bench, and 73.7 on SWE-bench Multilingual. The highest score among these is indeed 73.7, but the answer incorrectly attributes this to 'SWE-bench Multilingual' instead of 'SWE-bench Multilingual' as written in the source. The source uses 'SWE-bench Multilingual' consistently.",
+          "expectedAnswer": "index 2 → SWE-bench Multilingual (73.7)"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Module 7: Evaluation and Real-World Performance",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 training pipeline?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Select Base Model",
+            "Continued Pretraining",
+            "RL Training"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'The model is trained in two phases: first, continued pretraining ... followed by large-scale reinforcement learning.' It also details that the base model is selected prior to continued pretraining, as described in Section 3: 'We used internal evaluations ... to select a base model.' Therefore, the correct order is: Select Base Model (First), Continued Pretraining (Second), RL Training (Third)."
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "correct": 7,
+      "incorrect": 3,
+      "accuracy": "70%",
+      "generationTimeMs": 49761,
+      "judgingTimeMs": 3133,
+      "gradedQuestions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary purpose of a CLAUDE.md file in Claude Code?",
+          "givenAnswer": "To provide context and instructions that Claude automatically pulls into every conversation, including commands, code style guidelines, and project-specific conventions",
+          "correct": true,
+          "judgeExplanation": "The answer accurately summarizes the source content, which states that CLAUDE.md files are automatically pulled into context and should contain commands, code style guidelines, and project-specific conventions."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Format Requirements",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "CLAUDE.md files must follow a specific format to work correctly.",
+          "givenAnswer": false,
+          "correct": false,
+          "judgeExplanation": "The source content explicitly states that CLAUDE.md files do not have a required format and recommends keeping them concise and human-readable. The statement claims they 'must follow a specific format,' which directly contradicts the source.",
+          "expectedAnswer": "CLAUDE.md files do not have a required format and should be kept concise and human-readable."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Locations",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Where can CLAUDE.md files be placed for automatic context loading? Select all that apply.",
+          "givenAnswer": 1,
+          "choices": [
+            "Only in the repository root",
+            "In the repo root, parent directories, child directories, or home folder (~/.claude/)",
+            "Only in the home folder",
+            "Only in parent directories of where Claude runs"
+          ],
+          "explanation": "CLAUDE.md files are flexible and can be placed in the repository root, any parent directory of where you run Claude, any child directory, or your home folder (~/.claude/CLAUDE.md) to apply to all sessions.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that CLAUDE.md files can be placed in: 1) the repository root, 2) any parent directory of where you run Claude, 3) any child directory, and 4) the home folder (~/.claude/CLAUDE.md). This matches exactly with answer index 1."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Commands and Parameters",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What keyword is used in custom slash command files to pass parameters from the command invocation?",
+          "givenAnswer": "$ARGUMENTS",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude as MCP Server and Client",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code can function as both an MCP server and client. True or false?",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states 'Claude Code functions as both an MCP server and client' in section 2.b."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Managing Claude's Allowed Tools",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+          "givenAnswer": 2,
+          "choices": [
+            "Select 'Always allow' when prompted",
+            "Use the /permissions command",
+            "Restart Claude Code",
+            "Manually edit .claude/settings.json"
+          ],
+          "explanation": "The four ways to manage allowed tools are: selecting 'Always allow' when prompted, using the /permissions command, manually editing settings files, and using the --allowedTools CLI flag. Restarting Claude Code is not required to update tool permissions.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly lists four ways to manage allowed tools: 'Always allow' when prompted, using the /permissions command, manually editing settings files, and using the --allowedTools CLI flag. Restarting Claude Code is not mentioned as a required or recommended method for updating tool permissions."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude Code Workflow: Explore, Plan, Code, Commit",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow for Claude Code?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore Codebase",
+            "Create Plan",
+            "Implement Solution"
+          ],
+          "correct": false,
+          "judgeExplanation": "The source explicitly lists the 'Explore, plan, code, commit' workflow steps as: 1. Ask Claude to read relevant files (Explore), 2. Ask Claude to make a plan (Plan), 3. Ask Claude to implement its solution in code (Code), 4. Ask Claude to commit the result (Commit). The given answer incorrectly places 'Explore Codebase' as the first step when it should be second.",
+          "expectedAnswer": "First → 'Create Plan', Second → 'Explore Codebase', Third → 'Implement Solution'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Thinking Modes for Enhanced Problem Solving",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which phrase triggers the HIGHEST level of thinking budget in Claude Code?",
+          "givenAnswer": "ultrathink",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that the phrase 'ultrathink' triggers the highest level of thinking budget in Claude Code, with the hierarchy being 'think' < 'think hard' < 'think harder' < 'ultrathink'."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Safe YOLO Mode for Unsupervised Operations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The --dangerously-skip-permissions flag can be used safely on any computer without additional precautions.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that using --dangerously-skip-permissions flag is risky and recommends using it only in containers without internet access, confirming it cannot be used safely without additional precautions."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Effective Workflow Patterns for Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "In the test-driven development workflow for Claude Code, what should you explicitly tell Claude to avoid creating even for functionality that doesn't exist yet?",
+          "givenAnswer": 1,
+          "choices": [
+            "Skip writing implementation code",
+            "Create mock implementations",
+            "Write integration tests first",
+            "Commit code immediately"
+          ],
+          "explanation": "When doing test-driven development with Claude Code, you should explicitly tell it to avoid creating mock implementations, even for functionality that doesn't exist yet in the codebase.",
+          "correct": false,
+          "judgeExplanation": "The explanation contradicts the source content. The source explicitly says to tell Claude to avoid creating mock implementations during TDD, but the explanation says this is what you should tell it to avoid.",
+          "expectedAnswer": "index 1 → 'Create mock implementations' (with explanation: When doing test-driven development with Claude Code, you should explicitly tell it to avoid creating mock implementations, even for functionality that doesn't exist yet in the codebase.)"
+        }
+      ]
+    }
+  ]
+}

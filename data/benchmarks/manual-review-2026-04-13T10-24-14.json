@@ -1,0 +1,398 @@
+{
+  "tag": "manual-review",
+  "timestamp": "2026-04-13T10:24:14.115Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4-6",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural"
+  ],
+  "totalTimeMs": 376305,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "successRate": "91%",
+      "firstPassRate": "91%"
+    },
+    "correctness": {
+      "totalGraded": 10,
+      "correct": 10,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 10,
+      "fullyGrounded": "10/10 (100%)",
+      "selfContained": "10/10 (100%)",
+      "concrete": "10/10 (100%)",
+      "grounded": "10/10 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 10,
+      "sufficient": 10,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 1,
+        "correct": "1/1",
+        "fullyGrounded": "1/1",
+        "sufficient": "1/1"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "ocrTimeMs": 111,
+      "generationTimeMs": 376192,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Training Foundations and Methodology",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phases and Sequence Lengths",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2's continued pretraining stage is divided into three distinct phases to specialize the model on coding knowledge and capabilities. The bulk of compute is spent at a 32k token sequence length, which provides the foundation for coding ability. This is followed by a shorter long-context extension phase that extends the sequence length to 256k tokens, enabling the model to handle longer code files and documentation. Finally, a short supervised fine-tuning phase focuses on targeted coding tasks to refine domain-specific performance. The entire continued pretraining stage uses MXFP8 precision on NVIDIA B300s GPUs with the AdamW optimizer.",
+          "question": "What is the sequence length used during the bulk of continued pretraining compute in Composer 2?",
+          "answer": "32k token sequence length",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Training Foundations and Methodology",
+          "moduleIndex": 0,
+          "lessonTitle": "Policy Gradient Algorithm and Rollout Handling",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Composer 2 uses a policy gradient algorithm with multiple samples per prompt and a fixed group size for reinforcement learning training. The system operates in the single-epoch regime, meaning the same prompt is never trained on twice. A key aspect of the training approach is that the model does not mask rollouts that exceed the maximum sequence length, as the self-summary system limits their occurrence in practice. The training also employs KL divergence regularization using the standard estimator k1 = -log r, rather than the k3 estimator, to avoid variance blow-up when the policy and reference distributions diverge significantly.",
+          "question": "Composer 2 does not mask rollouts that exceed the maximum sequence length during RL training.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Training Foundations and Methodology",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Architecture and Selection",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "The base model selection for Composer 2 involved evaluating multiple open-source models using internal benchmarks measuring coding knowledge, state tracking, and codebase perplexity. Kimi K2.5 was selected as the base model due to its strong performance across these evaluations and additional infrastructure considerations. This model is a Mixture-of-Experts architecture with 1.04 trillion total parameters and 32 billion active parameters. The model's routing mechanism required special handling during RL training through router replay, where the inference engine returns selected expert indices for every token at every MoE layer, and the training forward pass overrides the router's expert assignment to match.",
+          "question": "Which base model did Composer 2 use for continued pretraining?",
+          "answer": 1,
+          "choices": [
+            "Qwen3-Coder-30B-A3B",
+            "Kimi K2.5",
+            "GLM-5",
+            "DeepSeek V3.2"
+          ],
+          "explanation": "The content explicitly states that evaluations led to the selection of Kimi K2.5 as the base model for Composer 2, citing its strong performance on coding knowledge, state tracking, and codebase perplexity benchmarks.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Training Foundations and Methodology",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Foundations and Methodology",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The continued pretraining stage is divided into three sequential phases. First, the bulk of compute is spent at 32k token sequence length to build foundational coding knowledge. Next, a shorter long-context extension phase expands the model's context window to 256k tokens. Finally, a brief supervised fine-tuning (SFT) phase applies targeted coding tasks to specialize the model before reinforcement learning begins.",
+          "question": "What is the correct order of phases in Composer 2's continued pretraining stage?",
+          "answer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "SFT on Coding Tasks",
+            "Continued Pretraining 32k",
+            "Long-Context Extension"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Tools Available to Composer 2 Agent",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web. Its prompt includes a system message, the tool call format specification, recent file information, past user messages, and the current task. The most common end result of this process is a set of changes to files in the codebase environment, although there are many other common use cases such as answering questions, writing plans, resolving version control issues, or monitoring long-running jobs.",
+          "question": "What tool does Composer 2 use to search the codebase using grep or semantic search?",
+          "answer": "grep or semantic search",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Single-Epoch Training Regime in Asynchronous RL",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Our reinforcement learning pipeline is built around learning from large-scale policy gradients while maintaining stability. We use a policy gradient algorithm with multiple samples per prompt and a fixed group size. We operate in the single-epoch regime, meaning the same prompt is never trained on twice. This is contrasted with approaches that might reuse prompts multiple times during training. The system maintains stability in a highly asynchronous regime with independent training and rollout generation workers.",
+          "question": "In Composer 2's asynchronous RL training, the same prompt is never trained on twice.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Task Distribution in RL Training",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 is trained by reinforcement learning on a large set of coding tasks. These tasks are run in environments that emulate real Cursor sessions. The problem distribution reflects the most common use cases in software engineering. Figure 3 shows the breakdown in terms of task category, capturing many aspects of software engineering that are absent from popular AI coding benchmarks. The training distribution includes categories such as iterating on features, debugging, adding new features, refactoring, understanding codebase, documentation, testing, code review, optimization, devops tasks, migration, and deletion.",
+          "question": "Which of the following is a task category included in Composer 2's RL training distribution?",
+          "answer": 0,
+          "choices": [
+            "Debugging",
+            "Image Classification",
+            "Weather Forecasting",
+            "Text Translation"
+          ],
+          "explanation": "The content explicitly lists 'Debugging' as one of the task categories in Figure 3 showing the RL training task breakdown. The other options (Weather Forecasting, Image Classification, Text Translation) are not software engineering tasks and are not mentioned in the source.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Structure and Design",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "CursorBench is an internal evaluation suite comprising tasks drawn from actual coding sessions of Cursor's engineering team. The benchmark is designed to avoid train-set contamination by using real agent sessions rather than curated public repositories. Compared to public benchmarks, CursorBench tasks require substantially more extensive code modifications, with a median of 181 lines changed compared to just 7-10 lines for SWE-bench Verified and Multilingual. Additionally, CursorBench prompts are more under-specified, featuring a median description length of only 390 characters versus 1,185-3,055 characters for public benchmarks.",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Performance Scores",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Table 1 in the report shows benchmark results across public and internal evaluation suites. On CursorBench-3, Composer 2 achieves 61.3%, representing a 37% relative improvement over Composer 1.5 (44.2%) and a 61% improvement over Composer 1 (38.0%). On SWE-bench Multilingual, Composer 2 scores 73.7%, while on Terminal-Bench it achieves 61.7%. Against its base model Kimi K2.5 (36.0% on CursorBench), Composer 2 demonstrates a substantial accuracy boost validating the effectiveness of the continued pretraining and reinforcement learning pipeline.",
+          "question": "On CursorBench-3, Composer 2's 61.3% represents a 37% improvement over Composer 1.5's 44.2%.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Additional Evaluation Types",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Beyond the primary CursorBench evaluation, the team complements their assessment with a suite of targeted evaluations covering other aspects of coding agent quality and behavior. These include an intent evaluation which assesses how the model handles ambiguous prompts, an instruction-following evaluation measuring how well the model follows system prompts, user prompts, rules, and skills, an eager editing evaluation testing how the model responds to questions where it should avoid editing code, a code quality evaluation judging the quality of both code and comments, and an interruption evaluation quantifying how well the model handles mid-rollout interruptions and user feedback.",
+          "question": "Which of the following is NOT one of Cursor's supplementary evaluations: intent evaluation, code syntax evaluation, interruption evaluation, or eager editing evaluation?",
+          "answer": 1,
+          "choices": [
+            "Eager editing evaluation",
+            "Intent evaluation",
+            "Interruption evaluation",
+            "Code syntax evaluation"
+          ],
+          "explanation": "The five supplementary evaluations are: intent evaluation, instruction-following evaluation, eager editing evaluation, code quality evaluation, and interruption evaluation. Code syntax evaluation is not mentioned among these five supplementary evaluations.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    }
+  ]
+}

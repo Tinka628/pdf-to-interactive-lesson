@@ -1,0 +1,2845 @@
+{
+  "tag": "composer2-dupes",
+  "timestamp": "2026-04-02T12:44:24.528Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4-6",
+  "iterations": 10,
+  "batchSize": 5,
+  "dimensions": [
+    "structural",
+    "duplicates"
+  ],
+  "totalTimeMs": 291484,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 103,
+      "successfulLessons": 100,
+      "firstPassSuccess": 100,
+      "successRate": "97%",
+      "firstPassRate": "97%"
+    },
+    "correctness": {
+      "totalGraded": 100,
+      "correct": 100,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 100,
+      "fullyGrounded": "100/100 (100%)",
+      "selfContained": "100/100 (100%)",
+      "concrete": "100/100 (100%)",
+      "grounded": "100/100 (100%)"
+    },
+    "duplicates": {
+      "duplicateGroups": 5,
+      "questionsInDupes": 11,
+      "duplicationRate": "11%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 27,
+        "correct": "27/27",
+        "fullyGrounded": "27/27"
+      },
+      "true-false": {
+        "total": 27,
+        "correct": "27/27",
+        "fullyGrounded": "27/27"
+      },
+      "multiple-choice": {
+        "total": 27,
+        "correct": "27/27",
+        "fullyGrounded": "27/27"
+      },
+      "flow-diagram": {
+        "total": 19,
+        "correct": "19/19",
+        "fullyGrounded": "19/19"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 297,
+      "generationTimeMs": 178220,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [
+        {
+          "question": "What is the correct order of phases in the Composer 2 continued pretraining stage?",
+          "indices": [
+            3,
+            10
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation - Model Overview and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Purpose",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is Composer 2 designed for?",
+          "answer": "Agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation - Model Overview and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Benchmark Performance Scores",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 achieves a CursorBench score of 61.3%",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation - Model Overview and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Tools Available to Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following tools is Composer 2 explicitly stated to have access to?",
+          "answer": 1,
+          "choices": [
+            "Access and modify database schemas",
+            "Search the codebase using grep or semantic search",
+            "Deploy applications to cloud infrastructure",
+            "Compile and execute binary files directly"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation - Model Overview and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Continued Pretraining Phases",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the Composer 2 continued pretraining stage?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining",
+            "Long-Context Extension",
+            "SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the sequence length used for the bulk of compute in Composer 2's continued pretraining stage?",
+          "answer": "32k tokens",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Overlong Rollout Masking in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 masks rollouts that exceed the maximum sequence length during RL training.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator Selection",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which KL divergence estimator does Composer 2 use for RL regularization?",
+          "answer": 0,
+          "choices": [
+            "k1 estimator",
+            "k2 estimator",
+            "k4 estimator",
+            "k3 estimator"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure - Benchmarks and System Architecture",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Benchmark Construction",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Where are CursorBench tasks derived from?",
+          "answer": "Real software engineering problems in large codebases, including Cursor's own codebase",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure - Benchmarks and System Architecture",
+          "moduleIndex": 2,
+          "lessonTitle": "Training Infrastructure Kernels",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 training uses in-house kernels written in CUDA, PTX, and ThunderKittens/ParallelKittens.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure - Benchmarks and System Architecture",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Performance Metrics",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What percentage does Composer 2 achieve on CursorBench?",
+          "answer": 3,
+          "choices": [
+            "73.7%",
+            "56.5%",
+            "44.2%",
+            "61.3%"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure - Benchmarks and System Architecture",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining Phase 1",
+            "Long-Context Extension",
+            "SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 183,
+      "generationTimeMs": 146448,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [
+        {
+          "question": "What is the correct order of phases in the Composer 2 continued pretraining pipeline?",
+          "indices": [
+            3,
+            7,
+            11
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Purpose and Design",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two training phases used for Composer 2?",
+          "answer": "Continued pretraining and large-scale reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Core Training Principle",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Composer training uses infrastructure that differs significantly from the deployed Cursor harness to minimize train-test mismatch.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Agent Tools and Capabilities",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the tools available to Composer 2 as described in the introduction?",
+          "answer": 3,
+          "choices": [
+            "Run shell commands",
+            "Read and edit files",
+            "Search the codebase using grep or semantic search",
+            "Video recording"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the Composer 2 continued pretraining pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining",
+            "Long-Context Extension",
+            "SFT Phase"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Selection for Continued Pretraining",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which specific internal evaluations were used to select the base model for Composer 2?",
+          "answer": "Internal codebase perplexity, coding knowledge, and state tracking",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Multi-Token Prediction Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: MTP layers for Composer 2 are initialized from existing weights of the main language model.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Sampling Strategy",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How does Composer 2's RL training handle prompts during training?",
+          "answer": 3,
+          "choices": [
+            "Prompts are reused multiple times for better learning",
+            "Prompts are trained until they achieve perfect accuracy",
+            "Prompts are randomly sampled without tracking repetition",
+            "Each prompt is trained on exactly once (single-epoch regime)"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the continued pretraining phase of Composer 2?",
+          "answer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "256k Context Extension",
+            "32k Token Training",
+            "SFT Phase"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "RL Infrastructure Services",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The RL infrastructure uses four decoupled services for training, environments, inference, and evaluations.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Benchmark Results",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following represents Composer 2's performance on Terminal-Bench?",
+          "answer": 1,
+          "choices": [
+            "61.3%",
+            "61.7%",
+            "73.7%",
+            "47.9%"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Continued Pretraining Phases",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in Composer 2's continued pretraining?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Training",
+            "256k Long-Context Extension",
+            "SFT Phase"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "ocrTimeMs": 135,
+      "generationTimeMs": 154409,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [
+        {
+          "question": "Composer 2 uses overlong masking to filter out rollouts that exceed the maximum sequence length during RL training.",
+          "indices": [
+            5,
+            8
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Software Engineering",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Tools and Capabilities",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What tools does Composer 2 have access to according to the technical report?",
+          "answer": "Read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Software Engineering",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Identity",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Based on the source content, which base model was selected for Composer 2 after internal evaluations?",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Software Engineering",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Phase Sequence",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the two training phases used for Composer 2, in the correct order?",
+          "answer": 1,
+          "choices": [
+            "Pre-training followed by instruction tuning",
+            "Continued pretraining followed by reinforcement learning",
+            "Supervised fine-tuning followed by continued pretraining",
+            "Reinforcement learning followed by continued pretraining"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Software Engineering",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Training",
+            "Extend to 256k Context",
+            "SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Sequence Lengths",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three phases of continued pretraining for Composer 2, in order?",
+          "answer": "32k token sequence length, followed by 256k long-context extension, then SFT phase on targeted coding tasks",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Regime Characteristics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 uses overlong masking to filter out rollouts that exceed the maximum sequence length during RL training.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator Selection",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which KL divergence estimator does Composer 2 use to avoid variance issues?",
+          "answer": 3,
+          "choices": [
+            "k2 estimator",
+            "No KL regularization",
+            "k3 estimator ((r-1) - log r)",
+            "k1 estimator (-log r)"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Benchmark Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Overlong Masking in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 uses overlong masking to filter out rollouts that exceed the maximum sequence length during RL training.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Performance on Public Benchmarks",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are Composer 2's scores on the following benchmarks?",
+          "answer": 3,
+          "choices": [
+            "65.9% on SWE-bench Multilingual and 47.9% on Terminal-Bench",
+            "56.9% on SWE-bench Multilingual and 40.0% on Terminal-Bench",
+            "76.8% on SWE-bench Multilingual and 66.5% on Terminal-Bench",
+            "73.7% on SWE-bench Multilingual and 61.7% on Terminal-Bench"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 88,
+      "generationTimeMs": 165165,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction, Background & Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Training Phases",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two training phases used to develop Composer 2?",
+          "answer": "Continued pretraining followed by large-scale reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction, Background & Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Kimi K2.5 was selected as the base model for Composer 2 because it measured highest on coding knowledge benchmarks.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction, Background & Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following sequence lengths is NOT used during Composer 2's continued pretraining phases?",
+          "answer": 1,
+          "choices": [
+            "64k token sequence length",
+            "32k token sequence length",
+            "SFT phase on targeted coding tasks",
+            "256k token sequence length"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction, Background & Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in Composer 2's continued pretraining phases?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Phase 1: 32k Sequence Training",
+            "Phase 2: Long-Context Extension",
+            "Phase 3: SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Training",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator in Composer 2 RL Training",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which KL divergence estimator does Composer 2 use for regularization in RL training?",
+          "answer": "k1 (or k1 = -log r)",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Training",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Epoch Regime",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 operates in the multi-epoch regime during RL training, allowing prompts to be trained on multiple times.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Training",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Task Categories",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is a task category included in Composer 2's RL training distribution according to Figure 3?",
+          "answer": 1,
+          "choices": [
+            "Security Auditing",
+            "Debugging",
+            "API Documentation",
+            "Database Design"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Training",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the reinforcement learning weight update process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Compute Rewards",
+            "Apply Policy Gradient",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks & Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Internal Evaluation Suite",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the name of Cursor's internal evaluation suite that uses tasks drawn from actual coding sessions?",
+          "answer": "CursorBench",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks & Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Code Modification Scope",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: CursorBench tasks require fewer lines of code changes on average compared to SWE-bench Verified.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks & Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "RL Infrastructure Service Architecture",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the four decoupled services in Composer 2's RL infrastructure architecture?",
+          "answer": 0,
+          "choices": [
+            "Training, Environments, Inference, and Evaluations",
+            "Preprocessing, Training, Environments, and Inference",
+            "Training, Environments, Validation, and Deployment",
+            "Training, Optimization, Storage, and Monitoring"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks & Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 training pipeline?",
+          "answer": [
+            2,
+            0,
+            1
+          ],
+          "choices": [
+            "SFT Phase",
+            "RL Training",
+            "Continued Pretraining"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "firstPassSuccess": 9,
+      "ocrTimeMs": 44,
+      "generationTimeMs": 136428,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Overview",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "answer": "Agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Software Engineering Agent Definition",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A software engineering agent produces rollouts consisting of a series of actions. Each action makes one or more tool calls and yields responses. (True/False)",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Phases",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the two training phases used for Composer 2?",
+          "answer": 3,
+          "choices": [
+            "Supervised learning followed by prompt engineering",
+            "Instruction tuning followed by RLHF",
+            "Pre-training followed by fine-tuning",
+            "Continued pretraining followed by reinforcement learning"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Sequence Lengths",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three phases of continued pretraining in Composer 2, in order?",
+          "answer": "32k token sequence length, then long-context extension to 256k sequence length, then short SFT phase on targeted coding tasks",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Single-Epoch Training Regime in RL",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "In the RL training of Composer 2, the same prompt is never trained on twice. (True/False)",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator for Regularization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which KL divergence estimator does Composer 2 use for RL regularization?",
+          "answer": 3,
+          "choices": [
+            "No KL divergence is used",
+            "k2 estimator",
+            "k3 = (r - 1) - log r (unbiased estimator)",
+            "k1 = -log r (the standard estimator)"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Complexity",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "Asynchronous RL Infrastructure Architecture",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2's RL infrastructure uses a decoupled architecture with separate services for training, environments, inference, and evaluations. (True/False)",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Performance Scores",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What score does Composer 2 achieve on CursorBench?",
+          "answer": 3,
+          "choices": [
+            "44.2%",
+            "38.0%",
+            "73.7%",
+            "61.3%"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 170,
+      "generationTimeMs": 94926,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [
+        {
+          "question": "What is the correct order of steps in the Composer 2 RL training process?",
+          "indices": [
+            3,
+            7
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction & Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Purpose",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of tasks is Composer 2 specifically designed for?",
+          "answer": "agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction & Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Agent Tool Capabilities",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 has the ability to search the web using web search tools.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction & Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Approach",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the two training phases used to develop Composer 2?",
+          "answer": 1,
+          "choices": [
+            "Pre-training and domain adaptation",
+            "Continued pretraining and large-scale reinforcement learning",
+            "Continuous training and evaluation",
+            "Supervised fine-tuning and instruction tuning"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction & Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 RL Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 RL training process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Simulate Rollouts",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodologies & Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many distinct phases make up Composer 2's continued pretraining stage?",
+          "answer": "Three phases",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodologies & Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Asynchronous RL Architecture",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Composer 2 uses synchronous training and rollout generation where workers wait for each other to complete before proceeding.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodologies & Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Training Infrastructure Parallelism Configuration",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What Expert Parallelism (EP) degree is used during the RL training phase?",
+          "answer": 3,
+          "choices": [
+            "EP=16",
+            "EP=4",
+            "EP=2",
+            "EP=8"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodologies & Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Reinforcement Learning Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "RL Sample Problem",
+            "Generate Rollouts",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Complexity Metrics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many median lines of code does a CursorBench task require to change, as stated in the evaluation section?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Performance Improvement Over Previous Versions",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Composer 2 achieves a 37% relative improvement over Composer 1.5 on CursorBench.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Performance Comparison",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is Composer 2's accuracy score on SWE-bench Multilingual in our harness?",
+          "answer": 3,
+          "choices": [
+            "56.9%",
+            "65.9%",
+            "61.7%",
+            "73.7%"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Evaluation Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the CursorBench evaluation process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Initialize Environment",
+            "Initialize Task Prompt",
+            "Run Agent"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 126,
+      "generationTimeMs": 110748,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction to Composer 2 and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "answer": "Agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Overview",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The three phases of continued pretraining are: (1) 32k token sequence length, (2) 256k sequence length extension, and (3) short SFT phase.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which base model was selected for Composer 2?",
+          "answer": 0,
+          "choices": [
+            "Kimi K2.5",
+            "GLM-5",
+            "Qwen3-Coder-30B-A3B",
+            "DeepSeek V3.2"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in Composer 2's training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Select Base Model",
+            "Continued Pretraining",
+            "RL Training"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Compute Distribution",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary computational focus during the first phase of continued pretraining?",
+          "answer": "32k token sequence length training",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Regularization Method",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The k3 estimator was chosen for KL divergence regularization because it reduces variance when policies are close.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Optimizer Selection for RL Training",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which optimizer is used for the reinforcement learning phase of Composer 2 training?",
+          "answer": 0,
+          "choices": [
+            "Adam",
+            "SGD",
+            "Stochastic Gradient Descent",
+            "AdamW"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage for Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Training",
+            "Long-Context Extension",
+            "SFT Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Performance Metrics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What accuracy score did Composer 2 achieve on the CursorBench evaluation?",
+          "answer": "61.3%",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Characteristics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: CursorBench tasks have more highly-specified problem descriptions than public benchmarks like SWE-bench.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Comparison",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which benchmark has the highest median number of lines changed per task?",
+          "answer": 2,
+          "choices": [
+            "Terminal-Bench with 20 lines changed",
+            "SWE-bench Verified with 10 lines changed",
+            "CursorBench with 181 lines changed",
+            "SWE-bench Multilingual with 7 lines changed"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 RL Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training loop?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Execute Rollouts",
+            "Compute Reward",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 85,
+      "generationTimeMs": 112728,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [
+        {
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "indices": [
+            3,
+            7
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Design Purpose",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "answer": "agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Performance Metrics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 achieves 61.3% on CursorBench, 73.7% on SWE-bench Multilingual, and 61.7% on Terminal-Bench.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Benchmark Performance Scores",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What score does Composer 2 achieve on SWE-bench Multilingual?",
+          "answer": 3,
+          "choices": [
+            "61.3",
+            "61.7",
+            "65.9",
+            "73.7"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining",
+            "Long-Context Extension",
+            "SFT Phase"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Configuration for Continued Pretraining",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the parameter configuration of the Kimi K2.5 base model used for Composer 2?",
+          "answer": "1.04T total parameters with 32B active parameters",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Overlong Masking in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 uses overlong masking to handle rollouts that exceed the maximum sequence length.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Task Categories",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the MOST common task category in Composer 2's RL training distribution?",
+          "answer": 0,
+          "choices": [
+            "Debugging",
+            "New Feature",
+            "Refactor",
+            "Documentation"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2 training?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Training",
+            "256k Long-Context",
+            "SFT Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Design and Purpose",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary reason CursorBench avoids train-set contamination?",
+          "answer": "Because tasks are drawn from actual coding sessions rather than curated public repositories",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Overlong Masking in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Based on the source content, did Composer 2 use overlong masking in their RL training?",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": 3,
+          "choices": [
+            "390 characters",
+            "7 lines",
+            "10 lines",
+            "181 lines"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 43,
+      "generationTimeMs": 110742,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction & Training Foundation",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Architecture and Training Phases",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two phases of Composer 2 training?",
+          "answer": "continued pretraining and reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction & Training Foundation",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Parameter Configuration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Kimi K2.5 has 1.04 trillion total parameters and 32 billion active parameters.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction & Training Foundation",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the sequence length used in the longest phase of continued pretraining?",
+          "answer": 2,
+          "choices": [
+            "32k tokens",
+            "128k tokens",
+            "256k tokens",
+            "512k tokens"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Continued Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Optimizer Used in Continued Pretraining",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What optimizer was used during the continued pretraining phase of Composer 2?",
+          "answer": "AdamW",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Continued Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Overlong Rollout Masking in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 uses overlong masking for rollouts that exceed the maximum sequence length during RL training.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Continued Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalty Hyperparameters",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which hyperparameters define the curvature of the nonlinear length penalty applied to rewards in RL training?",
+          "answer": 3,
+          "choices": [
+            "m and n",
+            "alpha and beta",
+            "temperature and top_p",
+            "k and q"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Continued Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Long-Context Extension",
+            "Continued Pretraining 32k",
+            "SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Complexity",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Asynchronous RL Training Infrastructure",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The RL infrastructure for Composer 2 uses four decoupled services: training, environments, inference, and evaluations.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Parallelism Configuration in Training",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What parallelism configuration does Composer 2 use during the RL phase?",
+          "answer": 0,
+          "choices": [
+            "EP=8, CP=8",
+            "EP=4, CP=4",
+            "EP=8, CP=2",
+            "EP=2, CP=8"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 RL Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 RL training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Generate Rollouts",
+            "Compute Rewards"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    }
+  ]
+}

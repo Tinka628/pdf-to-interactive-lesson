@@ -1,0 +1,105 @@
+{
+  "tag": "baseline",
+  "model": "openai/gpt-oss-120b",
+  "timestamp": "2026-03-25T13:05:31.806Z",
+  "aggregate": {
+    "totalTimeMs": 53663,
+    "totalLessons": 9,
+    "firstPassSuccess": 0,
+    "firstPassRate": 0,
+    "finalSuccess": 9,
+    "finalRate": 100,
+    "finalFailed": 0
+  },
+  "results": [
+    {
+      "file": "Claude Code Best Practices _ Anthropic",
+      "contentLength": 4745,
+      "timeMs": 53663,
+      "modules": [
+        {
+          "title": "Understanding Client Needs and Clarifying Requests",
+          "lessons": [
+            {
+              "title": "Understanding Client Needs and Clarifying Requests",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Providing Required Document Images for Conversion",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 2
+            },
+            {
+              "title": "Handling Missing Document Attachments",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            }
+          ]
+        },
+        {
+          "title": "Crafting Polite and Clear Follow-Up Messages",
+          "lessons": [
+            {
+              "title": "Handling Missing Document Requests",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Ensuring Document Attachments for Conversion Requests",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Absence of Follow‑Up Message Content",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            }
+          ]
+        },
+        {
+          "title": "Best Practices for Managing Document Submissions",
+          "lessons": [
+            {
+              "title": "Identifying Missing Document Input",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Importance of Providing Source Documents",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Ensuring Complete Document Submissions",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 3
+            }
+          ]
+        }
+      ],
+      "totalLessons": 9,
+      "firstPassSuccess": 0,
+      "finalSuccess": 9,
+      "finalFailed": 0
+    }
+  ]
+}

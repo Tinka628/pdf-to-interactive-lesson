@@ -1,0 +1,115 @@
+{
+  "tag": "minimax-m2.7-structure",
+  "model": "MiniMaxAI/MiniMax-M2.7",
+  "timestamp": "2026-04-15T11:25:47.481Z",
+  "aggregate": {
+    "totalTimeMs": 571727,
+    "totalCourseTimeMs": 571727,
+    "totalLessons": 10,
+    "firstPassSuccess": 8,
+    "firstPassRate": 80,
+    "finalSuccess": 8,
+    "finalRate": 80,
+    "finalFailed": 2
+  },
+  "results": [
+    {
+      "file": "1706.03762v7",
+      "contentLength": 3088,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 571727,
+      "totalTimeMs": 571727,
+      "modules": [
+        {
+          "title": "Document Assessment and Requirement Gathering",
+          "lessons": [
+            {
+              "title": "Document Submission Requirements",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Document Assessment Prerequisites",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Identifying Document Provision Status",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Content Processing and Analysis",
+          "lessons": [
+            {
+              "title": "Understanding Document Processing Requirements",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Document Attachment Necessity",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Processing System Responses",
+              "questionType": "multiple-choice",
+              "success": false,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Markdown Conversion and Formatting Best Practices",
+          "lessons": [
+            {
+              "title": "Document Attachment Requirement for Markdown Conversion",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Document Dependency Verification",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Document Input Terminology in Conversion Requests",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Markdown Conversion and Formatting Workflow",
+              "questionType": "flow-diagram",
+              "success": false,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 10,
+      "firstPassSuccess": 8,
+      "finalSuccess": 8,
+      "finalFailed": 2
+    }
+  ]
+}

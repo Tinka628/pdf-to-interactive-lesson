@@ -1,0 +1,482 @@
+{
+  "tag": "manual-review-v2",
+  "timestamp": "2026-04-13T10:29:41.600Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4-6",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural"
+  ],
+  "totalTimeMs": 229639,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 12,
+      "correct": 12,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 12,
+      "fullyGrounded": "12/12 (100%)",
+      "selfContained": "12/12 (100%)",
+      "concrete": "12/12 (100%)",
+      "grounded": "12/12 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 12,
+      "sufficient": 12,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 111,
+      "generationTimeMs": 229526,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose and Design of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2 is a specialized model designed for agentic software engineering, demonstrating strong long-term planning and coding intelligence while maintaining the ability to efficiently solve problems for interactive use. The model scores strongly on CursorBench, which is Cursor's benchmark of real-world software engineering, while also scoring at frontier levels on public software engineering benchmarks such as SWE-bench Multilingual and Terminal-Bench. A core tenet of Composer training is to emulate real-world user challenges as closely as possible to minimize train-test mismatch. The developers created infrastructure to support training in the same Cursor harness used by the deployed model, with equivalent tools and structure, using environments that match real problems closely. Composer 2 is trained in two distinct phases: first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance.",
+          "question": "What is the primary design purpose of Composer 2?",
+          "answer": "Agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Base Model",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "The continued pretraining stage aims to improve the language model's base knowledge, specifically in the domain of coding. Continued pretraining has long been demonstrated to drastically improve downstream performance, and recent models use a staged training approach, progressively filtering towards higher quality data. The Composer 2 team used internal evaluations and inference performance considerations to select a base model, measuring internal codebase perplexity, coding knowledge, and state tracking. These evaluations led them to select Kimi K2.5 as the base model for Composer 2, which is a 1.04T parameter / 32B active parameter Mixture-of-Experts model. The continued pretraining stage is divided into three phases: spending the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.",
+          "question": "Kimi K2.5 is a Mixture-of-Experts model with 1.04T total parameters and 32B active parameters.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Tools Available to Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web. Its prompt includes a system message, the tool call format specification, recent file information, past user messages, and the current task. The most common end result of this process is a set of changes to files in the codebase environment, although there are many other common use cases, such as answering questions, writing plans, resolving version control issues, or monitoring long-running jobs. In software engineering agent systems, given an environment (a codebase and an isolated container for code execution) along with a prompt giving the agent its task, the agent produces a rollout consisting of a series of actions, where each action makes one or more tool calls and yields responses.",
+          "question": "Composer 2 can access which of the following tools?",
+          "answer": 3,
+          "choices": [
+            "Only search the web for documentation",
+            "Only execute code and debug programs",
+            "Only read files and run shell commands",
+            "Read and edit files, run shell commands, and search codebases using grep or semantic search"
+          ],
+          "explanation": "The content explicitly states that Composer 2 has access to tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Foundation Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Process Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "Composer 2 is trained in two distinct phases. First, continued pretraining improves the language model's base knowledge, specifically in the domain of coding. This is followed by large-scale reinforcement learning to improve end-to-end coding performance through stronger reasoning, accurate multi-step execution, and coherence on long-horizon realistic coding problems. The result is a frontier-level coding model that demonstrates strong long-term planning and coding intelligence.",
+          "question": "What is the correct order of steps in the Composer 2 training pipeline?",
+          "answer": [
+            2,
+            1,
+            0
+          ],
+          "choices": [
+            "Frontier-Level Coding Model",
+            "RL for Coding Performance",
+            "Continued Pretraining"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2's continued pretraining stage is divided into three distinct phases. The bulk of compute is spent at a 32k token sequence length, which establishes the foundational coding knowledge. This is followed by a shorter long-context extension phase that extends the sequence length to 256k tokens. Finally, a short supervised fine-tuning phase focuses on targeted coding tasks to prepare the model for subsequent reinforcement learning. Training was performed using MXFP8 precision on NVIDIA B300s GPUs with the AdamW optimizer.",
+          "question": "How many phases divide the continued pretraining stage in Composer 2?",
+          "answer": "Three phases",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Asynchronous RL Training Uses Standard KL Estimator",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "The Composer 2 reinforcement learning pipeline uses Kullback-Leibler divergence for regularization. While many open-source implementations use the k3 estimator for KL, which is unbiased but suffers from drastically increased variance when the policies diverge, Composer 2 opts to use the standard k1 estimator instead. This choice is made because for large KL values, the variance of the k3 estimate becomes extremely large, making it unreliable for training stability.",
+          "question": "True or False: Composer 2 uses the k3 estimator for Kullback-Leibler divergence regularization in RL training.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Self-Summarization in Composer 2 RL",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 uses self-summarization to enable the model to work across long horizons. With this technique, each training rollout can involve multiple generations chained together by summaries rather than a single prompt-response pair. The final reward is applied to all tokens produced by the model in the chain, upweighting both agent responses in good trajectories and the self-summarizations that made them work. Poor summaries that lose critical information are downweighted. The model learns to use self-summaries to process more information even with a limited context window.",
+          "question": "In Composer 2's self-summarization technique for RL, how is the reward applied to chained generations?",
+          "answer": 3,
+          "choices": [
+            "Each generation receives its own independent reward",
+            "Rewards are discounted based on chain position",
+            "Only the final generation receives the reward",
+            "The final reward is applied to all tokens produced in the chain"
+          ],
+          "explanation": "The content explicitly states: 'We use the final reward for all tokens produced by the model in the chain.' This means every token across all generations receives the same final reward, which upweights both good trajectories and the self-summarizations that made them successful.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Module 2: Training Methodology - Continued Pretraining and RL",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The RL training pipeline in Composer 2 operates by first sampling a problem, then simulating a group of rollouts from the agent with different solutions. Once rollouts are generated, the system calculates rewards based on solution quality, computes advantages to estimate the value of each action, and updates the policy weights using GRPO. This process repeats until convergence. The key sequential steps in this reward computation and policy improvement cycle involve calculating rewards for each rollout, computing advantages based on those rewards to determine the relative value of different actions, and then using those advantages to update the policy via GRPO.",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training cycle?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Calculate Rewards",
+            "Compute Advantages",
+            "Update Policy (GRPO)"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation Benchmarks and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Complexity",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "CursorBench is an internal evaluation suite comprising tasks drawn from actual coding sessions of Cursor's engineering team. Unlike public benchmarks constructed from historical open-source repository scrapes, CursorBench tasks originate from real agent sessions, completely avoiding train-set contamination. The tasks necessitate substantially more extensive code modifications, with a median of 181 lines changed compared to just 7-10 lines for SWE-bench Verified and Multilingual. Additionally, CursorBench prompts are more under-specified, featuring a median description length of only 390 characters versus 1,185-3,055 characters for public benchmarks. This combination of broad execution scope and high intent ambiguity reflects the intrinsic difficulty of real-world software engineering.",
+          "question": "What is the median number of lines changed required by CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation Benchmarks and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Contamination Risks",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "The CursorBench evaluation addresses significant limitations found in public software engineering benchmarks. Public benchmarks face data contamination risks because they are constructed from historical scrapes of open-source repositories, meaning they are frequently leaked into model training mixtures, artificially inflating scores. Additionally, public benchmarks often have overly specified prompts that assume a narrow set of correct solutions, whereas real developer requests are often under-specified and admit multiple valid architectural approaches. The document specifically mentions that OpenAI suspended reporting SWE-bench Verified results after finding evidence that frontier models could generate gold patches from memory.",
+          "question": "True or False: CursorBench completely avoids train-set contamination because its tasks originate from real agent sessions rather than curated public repositories.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation Benchmarks and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Performance on Public Benchmarks",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 was evaluated on two public benchmarks: SWE-bench Multilingual and Terminal-Bench. On SWE-bench Multilingual, Composer 2 scores 73.7%, representing a 7.8% improvement over Composer 1.5 and 16.8% improvement over Composer 1. On Terminal-Bench, Composer 2 achieves 61.7%, improving upon Composer 1.5 by 13.8% and Composer 1 by 21.7%. Compared to its base model Kimi K2.5, Composer 2 achieves similar performance on SWE-bench Multilingual and considerably improved performance on Terminal-Bench. These results demonstrate that Composer 2's performance on public benchmarks remains highly competitive with other state-of-the-art models.",
+          "question": "Which of the following is the correct accuracy score for Composer 2 on each benchmark?",
+          "answer": 3,
+          "choices": [
+            "SWE-bench Multilingual: 65.9%, Terminal-Bench: 47.9%",
+            "SWE-bench Multilingual: 61.3%, Terminal-Bench: 73.7%",
+            "SWE-bench Multilingual: 76.8%, Terminal-Bench: 66.5%",
+            "SWE-bench Multilingual: 73.7%, Terminal-Bench: 61.7%"
+          ],
+          "explanation": "The source explicitly states: \"On SWE-bench Multilingual, Composer 2 scores 73.7%... On Terminal-Bench, Composer 2 achieves 61.7%...\"",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation Benchmarks and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Evaluation Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The evaluation process for Composer 2 begins by setting a task prompt that defines the coding problem to be solved. The agent is then executed within the production harness, which replicates the exact environment used by the deployed model. Finally, accuracy metrics are computed to measure how correctly the agent solved each task.",
+          "question": "What is the correct order of steps in the Composer 2 evaluation pipeline?",
+          "answer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Compute Accuracy Metrics",
+            "Set Task Prompt",
+            "Run Agent in Production Harness"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    }
+  ]
+}

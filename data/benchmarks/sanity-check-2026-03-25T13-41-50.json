@@ -1,0 +1,129 @@
+{
+  "tag": "sanity-check",
+  "model": "openai/gpt-oss-120b",
+  "timestamp": "2026-03-25T13:41:50.403Z",
+  "aggregate": {
+    "totalTimeMs": 27003,
+    "totalCourseTimeMs": 27003,
+    "totalLessons": 12,
+    "firstPassSuccess": 11,
+    "firstPassRate": 92,
+    "finalSuccess": 11,
+    "finalRate": 92,
+    "finalFailed": 1
+  },
+  "results": [
+    {
+      "file": "attention-excerpt",
+      "contentLength": 16198,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 27003,
+      "totalTimeMs": 27003,
+      "modules": [
+        {
+          "title": "Foundations of Sequence Modeling and Attention Mechanisms",
+          "lessons": [
+            {
+              "title": "Scaled Dot-Product Attention",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Recurrence in the Transformer",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Multi‑Head Attention Configuration",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Foundations of Sequence Modeling and Attention Mechanisms",
+              "questionType": "flow-diagram",
+              "success": false,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Transformer Architecture: Encoder, Decoder, and Multi‑Head Attention",
+          "lessons": [
+            {
+              "title": "Encoder Stack Overview",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Decoder Masking Mechanism",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Multi‑Head Attention Configuration",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Architecture: Encoder, Decoder, and Multi‑Head Attention",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Training, Optimization, and Real‑World Applications of Transformers",
+          "lessons": [
+            {
+              "title": "Training Efficiency of Transformers",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Optimization with Residual Connections and Layer Normalization",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Real‑World Applications of the Original Transformer",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Training, Optimization, and Real‑World Applications of Transformers",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 11,
+      "finalSuccess": 11,
+      "finalFailed": 1
+    }
+  ]
+}

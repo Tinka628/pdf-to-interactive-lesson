@@ -1,0 +1,453 @@
+{
+  "tag": "claude-file",
+  "timestamp": "2026-04-02T15:33:32.849Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "claude",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural",
+    "duplicates"
+  ],
+  "totalTimeMs": 132288,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 12,
+      "correct": 12,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 12,
+      "fullyGrounded": "12/12 (100%)",
+      "selfContained": "12/12 (100%)",
+      "concrete": "12/12 (100%)",
+      "grounded": "12/12 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 12,
+      "sufficient": 12,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 145,
+      "generationTimeMs": 132141,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Foundations and Training Approach",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the name of the base model selected for Composer 2?",
+          "answer": "Kimi K2.5",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Foundations and Training Approach",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Phases in Continued Pretraining",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "In the continued pretraining stage, the final phase extends sequence length to 256k tokens. True or false?",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Foundations and Training Approach",
+          "moduleIndex": 0,
+          "lessonTitle": "Parameters of the Base Model",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the total parameter count of the Kimi K2.5 base model used for Composer 2?",
+          "answer": 1,
+          "choices": [
+            "1.5T parameters",
+            "1.04T parameters",
+            "720B parameters",
+            "560B parameters"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Foundations and Training Approach",
+          "moduleIndex": 0,
+          "lessonTitle": "Foundations and Training Approach: RL Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Problem Sampling",
+            "Rollout Generation",
+            "Policy Weight Update"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Task Distribution",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two most common RL training task categories used in Composer 2 based on Figure 3?",
+          "answer": "Iterate On Feature and Debugging",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Gradient Optimization in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The model does not normalize group advantages by their standard deviation because it results in degenerate cases where small behavioral differences get massively upweighted. True or false?",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Length Penalty for Adaptive Thinking Time",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What does the nonlinear length penalty formula in Composer 2 help the model learn?",
+          "answer": 2,
+          "choices": [
+            "To avoid using the terminal tool entirely",
+            "To create and then leave to-do list items unfinished",
+            "Efficient behaviors like making multiple tool calls in parallel",
+            "How to write longer chains-of-thought in comments"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning and Agent Behavior",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the self-summarization process for multi-turn agent rollouts?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Generate Rollouts",
+            "Chain with Summaries"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure, Results and Future Directions",
+          "moduleIndex": 2,
+          "lessonTitle": "RL Infrastructure Architecture",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many regions did the Composer 2 production training job span for GPU compute and CPU compute respectively?",
+          "answer": "3 regions for GPU compute and 4 regions for CPU compute",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure, Results and Future Directions",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Performance Metrics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 achieves 61.3% on CursorBench, which represents a 37% relative improvement over Composer 1.5. True or false?",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure, Results and Future Directions",
+          "moduleIndex": 2,
+          "lessonTitle": "Anyrun Scheduling Capabilities",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the correct scheduling throughput capability of the Anyrun platform used in Composer 2's infrastructure?",
+          "answer": 1,
+          "choices": [
+            "Approximately 300 pods per second",
+            "More than 500 pods per second",
+            "Exactly 500 pods per second",
+            "Fewer than 400 pods per second"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure, Results and Future Directions",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Weight Synchronization Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 weight synchronization pipeline?",
+          "answer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "Compute Weight Delta",
+            "Reconstruct Weights",
+            "Inference Downloads Delta"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    }
+  ]
+}

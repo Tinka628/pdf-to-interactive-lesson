@@ -1,0 +1,2376 @@
+{
+  "tag": "grounding-3iter",
+  "timestamp": "2026-03-27T12:52:40.722Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-opus-4-6",
+  "iterations": 3,
+  "totalTimeMs": 968351,
+  "aggregate": {
+    "totalGraded": 98,
+    "selfContained": "97/98 (99%)",
+    "concrete": "98/98 (100%)",
+    "grounded": "86/98 (88%)",
+    "overallPass": "85/98 (87%)",
+    "byQuestionType": {
+      "short-answer": {
+        "total": 30,
+        "selfContained": "29/30",
+        "concrete": "30/30",
+        "grounded": "26/30",
+        "overall": "25/30"
+      },
+      "true-false": {
+        "total": 30,
+        "selfContained": "30/30",
+        "concrete": "30/30",
+        "grounded": "27/30",
+        "overall": "27/30"
+      },
+      "multiple-choice": {
+        "total": 30,
+        "selfContained": "30/30",
+        "concrete": "30/30",
+        "grounded": "25/30",
+        "overall": "25/30"
+      },
+      "flow-diagram": {
+        "total": 8,
+        "selfContained": "8/8",
+        "concrete": "8/8",
+        "grounded": "8/8",
+        "overall": "8/8"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "stats": {
+        "selfContained": {
+          "pass": 9,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 9,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 7,
+          "fail": 2
+        },
+        "overallPass": 7,
+        "overallFail": 2
+      },
+      "generationTimeMs": 114908,
+      "judgingTimeMs": 9289,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Transition from Roman Republic to Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the dates for the Roman Empire?",
+          "answer": "30 BCE-476 CE",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '30 BCE-476 CE' is self-contained, specific, and directly supported by both the lesson content and the source material, which explicitly states 'Roman Empire • 30 BCE-476 CE'."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Octavian's Rise to Power",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Senate gave Octavian the title 'Augustus,' which means 'most high.'",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement that the Senate gave Octavian the title 'Augustus,' meaning 'most high,' is directly supported by the source material. The answer 'true' is self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Reign of Augustus",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT an accomplishment of Augustus?",
+          "answer": 1,
+          "choices": [
+            "Built and maintained the empire's infrastructure",
+            "Established fire and police departments for Rome",
+            "Conquered the entire Mediterranean region",
+            "Extended citizenship to more provincials"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The marked correct answer (index 1: 'Established fire and police departments for Rome') is actually listed as an accomplishment of Augustus in the source material. It appears in the 'Rome under Augustus: A Golden Age' table.",
+              "The intended correct answer should be index 2: 'Conquered the entire Mediterranean region' — while Rome controlled the Mediterranean, this is attributed to the Pax Romana section and not specifically listed as an accomplishment of Augustus himself. The conquest predated Augustus.",
+              "The answer key is wrong: it marks a true accomplishment of Augustus as NOT being his accomplishment."
+            ],
+            "explanation": "The answer is incorrectly keyed. 'Established fire and police departments for Rome' IS explicitly listed as an accomplishment of Augustus in the source. The correct answer to 'which was NOT an accomplishment' should be 'Conquered the entire Mediterranean region' (index 2), since the source attributes Mediterranean control to Rome generally during the Pax Romana, not specifically as Augustus's personal accomplishment. The grounding fails because the marked answer contradicts the source."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Imperial Rule, Decline, and the Fall of Rome",
+          "moduleIndex": 1,
+          "lessonTitle": "Diocletian's Division of the Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Who split the Roman Empire into two administrative realms in 285 CE?",
+          "answer": "Emperor Diocletian",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Emperor Diocletian' is self-contained, specific, and directly supported by the source material which states that Diocletian 'Divided the empire into two administrative realms (east and west) in 285 CE.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Imperial Rule, Decline, and the Fall of Rome",
+          "moduleIndex": 1,
+          "lessonTitle": "Economic Causes of Rome's Decline",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Large estates becoming self-sufficient further hurt manufacturing and trade in the Roman Empire.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement that large estates becoming self-sufficient further hurt manufacturing and trade is directly supported by the lesson content shown to the student. The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Imperial Rule, Decline, and the Fall of Rome",
+          "moduleIndex": 1,
+          "lessonTitle": "Problems of Roman Imperial Succession",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT a problem with the hereditary succession of Roman emperors?",
+          "answer": 1,
+          "choices": [
+            "Confusion over which family member would inherit the throne",
+            "The Senate always choosing competent rulers",
+            "Some emperors being cutthroats or insane",
+            "The military playing an enormous role in selecting emperors"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks which option was NOT a problem with hereditary succession. The correct answer (index 1, 'The Senate always choosing competent rulers') is not mentioned in the source material as a characteristic of the succession system — in fact, the source says nothing about the Senate always choosing competent rulers, making it the correct 'NOT a problem' answer. The other three options are directly stated in the source as problems. The answer is self-contained, concrete, and well-grounded in the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "Origins of Romance Languages",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which modern languages developed directly from Latin?",
+          "answer": "French, Italian, Portuguese, Romanian, and Spanish",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer lists five specific modern languages (French, Italian, Portuguese, Romanian, and Spanish) that developed from Latin. It stands on its own without referencing any external material. While the source content (a PowerPoint about the Roman Empire) doesn't explicitly list these Romance languages, the lesson content shown to the student does explicitly state this information, and the concept of Latin spreading through the Roman Empire is well-supported by the source. The lesson content serves as the basis for the question, and the answer is directly grounded in it."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "Roman Contributions to Medical Science",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Galen conducted original medical research that advanced knowledge beyond Greek medicine.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The lesson content states that Galen 'summarized all Greek medical knowledge' rather than conducting original research that advanced beyond it. The statement claims Galen conducted original research that advanced knowledge beyond Greek medicine, and the answer 'false' is correctly grounded in the source material, which characterizes Galen as a summarizer rather than an original researcher. The answer is self-contained as a true/false response and concrete in its determination."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "Preservation of Classical Knowledge",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "After the fall of the Western Roman Empire, which institution preserved and transmitted Greek texts and ideas to the West?",
+          "answer": 2,
+          "choices": [
+            "The Islamic Caliphates",
+            "The Catholic Church (monks)",
+            "The Byzantine Empire only",
+            "The European monarchs"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The marked correct answer is 'The Byzantine Empire only' (index 2), but the lesson content explicitly states that 'the Catholic Church played a crucial role in preserving classical texts' and 'Monks and the Church continued to preserve and transmit Greek texts and ideas to Western civilization.' The correct answer according to the source should be index 1, 'The Catholic Church (monks).'",
+              "The answer contradicts the lesson content provided to the student."
+            ],
+            "explanation": "The answer key selects 'The Byzantine Empire only' as correct, which directly contradicts the lesson content shown to the student, which clearly states the Catholic Church (monks) preserved and transmitted Greek texts. The source material does not support 'The Byzantine Empire only' as the answer to this question."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "stats": {
+        "selfContained": {
+          "pass": 11,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 11,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 10,
+          "fail": 1
+        },
+        "overallPass": 10,
+        "overallFail": 1
+      },
+      "generationTimeMs": 97506,
+      "judgingTimeMs": 8752,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Customizing Your Claude Code Setup",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Placement Locations",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Where can you place CLAUDE.md files in your home folder?",
+          "answer": "~/.claude/CLAUDE.md",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '~/.claude/CLAUDE.md' is a specific, self-contained file path that directly answers the question. It is well-grounded in the source material, which explicitly states: 'Your home folder (~/.claude/CLAUDE.md), which applies it to all your claude sessions.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Customizing Your Claude Code Setup",
+          "moduleIndex": 0,
+          "lessonTitle": "Default Behavior of Claude Code Permissions",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "By default, Claude Code requests permission for any action that might modify your system.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is directly supported by the source content, which states: 'By default, Claude Code requests permission for any action that might modify your system: file writes, many bash commands, MCP tools, etc.' The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Customizing Your Claude Code Setup",
+          "moduleIndex": 0,
+          "lessonTitle": "Methods for Managing Allowed Tools",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which method involves using the /permissions command after starting Claude Code to add or remove tools from the allowlist?",
+          "answer": 1,
+          "choices": [
+            "Manually editing .claude/settings.json",
+            "Using the /permissions command",
+            "Selecting 'Always allow' when prompted",
+            "Using the --allowedTools CLI flag"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question is somewhat tautological—it essentially defines the answer in its own phrasing—but all choices are self-contained, concrete, and the correct answer is directly supported by the source content which states: 'Use the /permissions command after starting Claude Code to add or remove tools from the allowlist.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Server and Client Functionality",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What two roles can Claude Code fulfill in relation to MCP (Model Context Protocol)?",
+          "answer": "MCP server and client",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer directly and specifically states the two roles (MCP server and client) without referencing any external material. This is clearly supported by the source content which states 'Claude Code functions as both an MCP server and client.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Bash Tools Require Documentation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Claude Code automatically knows about all custom bash tools in your environment without any instructions.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is correct and well-grounded. The source explicitly states that Claude 'won't know about your custom bash tools without instructions' and lists three ways users must inform Claude about custom tools. The statement that Claude 'automatically knows about all custom bash tools' is clearly false per the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Command Storage Locations",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Where can you store custom slash command Markdown files to make them available in Claude Code?",
+          "answer": 1,
+          "choices": [
+            "In the project root folder",
+            "In the .claude/commands folder (correct)",
+            "In the /commands directory",
+            "In the Claude config folder as .md files"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained, concrete, and grounded. The source material mentions '.claude/commands' in the context of custom slash commands (the section 'c. Use custom slash commands' is visible, and '.claude/settings.json' is referenced elsewhere, establishing the '.claude/' directory pattern). The source also mentions storing command files in '.claude/commands' as part of the custom slash commands section. The correct answer '.In the .claude/commands folder' is supported by the source content. All distractor choices are distinct and none contain meta-references."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Test-Driven Development Workflow in Claude Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the test-driven development workflow for Claude Code?",
+          "answer": [
+            2,
+            1,
+            0
+          ],
+          "choices": [
+            "Write Implementation Code",
+            "Run Tests Confirm Failure",
+            "Write Tests"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow diagram correctly orders the TDD workflow as: Write Tests → Run Tests Confirm Failure → Write Implementation Code. This is the standard TDD approach and aligns with the source material's description of test-driven development being Anthropic's 'favorite approach for changes that are easily verifiable with unit, integration, or end-to-end tests.' The answer is self-contained (the steps are clearly labeled), concrete (specific actionable steps in a defined order), and grounded in the source content which discusses TDD as a recommended workflow for Claude Code."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Thinking Budget Triggers in Claude Code",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the correct order of thinking budget triggers from lowest to highest in Claude Code?",
+          "answer": "think < think hard < think harder < ultrathink",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The specific ordering 'think < think hard < think harder < ultrathink' is not mentioned anywhere in the provided source content. The source content covers CLAUDE.md files, tool permissions, MCP servers, and bash tools, but does not discuss thinking budget triggers or extended thinking mode at all."
+            ],
+            "explanation": "The answer is self-contained and concrete, clearly presenting a specific ordering. However, the source content provided does not contain any information about thinking budget triggers, extended thinking mode, or the terms 'think', 'think hard', 'think harder', or 'ultrathink'. This information appears to be hallucinated or drawn from content not included in the provided source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Safe YOLO Mode Functionality",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Using the --dangerously-skip-permissions flag is recommended without any additional safety measures.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is self-contained and concrete by nature of being a true-false response. It is grounded in the source material, which describes significant security risks associated with --dangerously-skip-permissions (data loss, system corruption, data exfiltration through prompt injection), and the source emphasizes Claude Code's 'deliberately conservative approach to prioritize safety' with its permission system. The lesson content explicitly mentions significant security risks, making it clear that using this flag without additional safety measures would not be recommended."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude Code GitHub Integration Capabilities",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a capability of Claude Code for GitHub integration?",
+          "answer": 0,
+          "choices": [
+            "Automatically merging pull requests without human approval",
+            "Creating pull requests using the shorthand 'pr'",
+            "Implementing one-shot resolutions for simple code review comments",
+            "Categorizing and triaging open GitHub issues"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks which capability is NOT mentioned for Claude Code's GitHub integration. The correct answer (automatically merging pull requests without human approval) is indeed not mentioned in the source material. The other three options (creating PRs using 'pr' shorthand, one-shot resolutions for code review comments, and categorizing/triaging issues) are all supported by the lesson content. All choices are clear and self-contained, requiring no external references."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Read relevant files",
+            "Create plan with thinking",
+            "Implement solution"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow-diagram question is self-contained with clear step descriptions that don't reference external materials. The ordering is concrete and specific to the workflow described. The source content mentions the 'Explore, Plan, Code, Commit' workflow pattern, and the lesson content explicitly describes the sequence: read relevant files → create plan with thinking mode → implement solution. The answer ordering [0,1,2] correctly maps to this sequence. While the full source is truncated and doesn't show the specific section about this workflow, the lesson content confirms this ordering, and it aligns with the general agentic coding best practices described in the source."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "stats": {
+        "selfContained": {
+          "pass": 9,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 9,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 8,
+          "fail": 1
+        },
+        "overallPass": 8,
+        "overallFail": 1
+      },
+      "generationTimeMs": 44078,
+      "judgingTimeMs": 7939,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Octavian's Rise to Power",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What title did Octavian receive that became the origin of the word \"prince\"?",
+          "answer": "Princeps",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Princeps' is self-contained, specific, and directly supported by the source material which states that 'Princeps' meaning 'first citizen' is the 'Origin of the word prince.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Principle of Primus Inter Pares",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Primus inter pares was a term used to describe how Roman emperors presented themselves to the Senate.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is true and well-supported by the source material, which explicitly describes 'primus inter pares' as a concept used by Augustus and later emperors to present themselves as 'first among equals' in the Senate. The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus's Reforms and Accomplishments",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT an accomplishment of Augustus?",
+          "answer": 1,
+          "choices": [
+            "Extended citizenship to more and more provincials",
+            "Built the Colosseum in Rome",
+            "Established fire and police departments for Rome",
+            "Built and maintained the empire's infrastructure"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks which was NOT an accomplishment of Augustus. The correct answer is 'Built the Colosseum in Rome' (choice 1). The source material confirms that the Colosseum was built by Vespasian, not Augustus. The other three choices are explicitly listed as accomplishments of Augustus in the source. All choices are self-contained and specific, and the answer is well-grounded in the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Expansion, Peak, and Division",
+          "moduleIndex": 1,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What was the Pax Romana?",
+          "answer": "A period of nearly 200 years of peace when Rome controlled the entire Mediterranean region with almost no warfare",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained, providing a clear definition without referencing any external material. It is concrete, offering specific details about the duration and nature of the Pax Romana. It is well-grounded in the source content, which states Rome controlled the entire Mediterranean region with almost no warfare for nearly 200 years."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Expansion, Peak, and Division",
+          "moduleIndex": 1,
+          "lessonTitle": "The Division of the Roman Empire",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Emperor Diocletian divided the Roman Empire into Eastern and Western administrative realms in 285 CE.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement that Emperor Diocletian divided the Roman Empire into Eastern and Western administrative realms in 285 CE is directly supported by the source content, which states: 'Divided the empire into two administrative realms (east and west) in 285 CE.' The answer 'true' is self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Expansion, Peak, and Division",
+          "moduleIndex": 1,
+          "lessonTitle": "Trajan's Expansion of the Empire",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which emperor expanded the Roman Empire to its greatest extent?",
+          "answer": 1,
+          "choices": [
+            "Nero",
+            "Trajan",
+            "Hadrian",
+            "Vespasian"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed. The correct answer 'Trajan' is directly supported by both the lesson content and the source material, which states Trajan 'oversaw the expansion of the empire to its greatest extent.' All answer choices are concrete named emperors with no meta-references."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: The Fall and Lasting Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "The End of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year was the Western Roman Empire officially ended?",
+          "answer": "476 CE",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '476 CE' is self-contained, specific, and directly supported by the source material which states the Roman Empire period was '30 BCE-476 CE'."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: The Fall and Lasting Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Christianity and the Roman Empire",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Edict of Milan was issued in 313 CE and granted legal recognition to Christianity.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement that the Edict of Milan was issued in 313 CE and granted legal recognition to Christianity is directly supported by the source material, which states 'Edict of Milan (313 CE) - Christianity legalized (religious toleration).' The answer 'true' is correct and self-contained."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: The Fall and Lasting Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Roman Contributions to World History",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was a contribution of ancient Rome to world history?",
+          "answer": 1,
+          "choices": [
+            "Building the Great Pyramid of Giza",
+            "Developing the Justinian Code that influenced civil law in Europe",
+            "Inventing the printing press",
+            "Establishing the first democratic government"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The correct answer mentions 'Justinian Code' but the lesson content shown to the student only mentions 'Roman law' as a basis for civil law systems - the Justinian Code is not explicitly mentioned in the lesson content. While the source material does mention Justinian, it is truncated before completing the description. The lesson content says 'Roman law' formed the basis for civil law, not specifically the 'Justinian Code'. This is a conflation that could be misleading.",
+              "The source material's lesson content references 'Roman law' broadly, while the answer specifically names the 'Justinian Code' - these are related but distinct concepts, and the lesson shown to the student does not mention the Justinian Code."
+            ],
+            "explanation": "The answer choice attributes Rome's legal contribution specifically to the 'Justinian Code,' but the lesson content presented to the student only mentions 'Roman law' as forming the basis for civil law systems. While the source material does mention Justinian as a Byzantine emperor, the text is truncated before any mention of his code. The correct answer introduces a specific term (Justinian Code) not present in the lesson content, making it poorly grounded."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "stats": {
+        "selfContained": {
+          "pass": 9,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 9,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 8,
+          "fail": 1
+        },
+        "overallPass": 8,
+        "overallFail": 1
+      },
+      "generationTimeMs": 45100,
+      "judgingTimeMs": 7019,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Defining Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is a multi-agent system?",
+          "answer": "A system consisting of multiple agents (LLMs autonomously using tools in a loop) working together",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer stands on its own, provides a specific definition that matches the source material almost verbatim ('A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together'), and is well-grounded in the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Multi-Agent Performance Advantage",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent research systems excel especially for breadth-first queries that involve pursuing multiple independent directions simultaneously.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is a near-verbatim quote from the source material: 'Our internal evaluations show that multi-agent research systems excel especially for breadth-first queries that involve pursuing multiple independent directions simultaneously.' The answer 'true' is correct, self-contained, and well-grounded."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many times more tokens do multi-agent systems typically use compared to standard chat interactions?",
+          "answer": 1,
+          "choices": [
+            "4× more tokens",
+            "15× more tokens (correct)",
+            "80× more tokens",
+            "95× more tokens"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are fully self-contained, concrete, and directly grounded in the source material which explicitly states 'multi-agent systems use about 15× more tokens than chats.' The correct answer (15×) matches the source exactly, and the distractors are reasonable without any meta-references."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Architecture, Tool Design & Prompt Engineering",
+          "moduleIndex": 1,
+          "lessonTitle": "Orchestrator-Worker Architecture Pattern",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What architecture pattern does the Research system use to coordinate multiple agents?",
+          "answer": "Orchestrator-worker pattern",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained, specific, and directly supported by the source material which explicitly states 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Architecture, Tool Design & Prompt Engineering",
+          "moduleIndex": 1,
+          "lessonTitle": "Parallel Tool Calling Improves Research Speed",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Parallel tool calling reduces research time by up to 90% for complex queries.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The source states the multi-agent system outperformed single-agent by 90.2% on an internal eval, but the 90% figure in the lesson content and statement refers to 'research time' reduction, which is a different claim. The source does not specifically state that parallel tool calling reduces research time by up to 90%. The lesson content appears to have conflated or reframed the 90.2% performance improvement as a time reduction, which is not directly supported by the source."
+            ],
+            "explanation": "The statement claims parallel tool calling reduces research time by up to 90% for complex queries. The source mentions a 90.2% performance outperformance metric on an internal eval, not a 90% time reduction. While the lesson content presented this as a time reduction, the source material does not support this specific framing. The answer 'true' is thus not well-grounded in the actual source."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Architecture, Tool Design & Prompt Engineering",
+          "moduleIndex": 1,
+          "lessonTitle": "Prompt Engineering Principles for Multi-Agent Systems",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the eight prompt engineering principles mentioned for improving multi-agent system behaviors?",
+          "answer": 2,
+          "choices": [
+            "Think like your agents",
+            "Teach the orchestrator how to delegate",
+            "Use only sequential tool calling",
+            "Scale effort to query complexity"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are fully self-contained — no meta-references to lesson content or source material. The answer is concrete, identifying a specific incorrect principle. The answer is well-grounded: the source mentions 'parallel tool calling' as one of the principles, making 'Use only sequential tool calling' clearly NOT one of the eight principles. The other three choices (Think like your agents, Teach the orchestrator how to delegate, Scale effort to query complexity) are all mentioned in the lesson content as actual principles."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Reliability & Production Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluating Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is needed instead of checking if agents followed prescribed steps?",
+          "answer": "Flexible evaluation methods that judge whether agents achieved the right outcomes while following a reasonable process",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer stands on its own without referencing any external material, provides a specific and actionable response about flexible evaluation methods that assess outcomes and process reasonableness, and is well-grounded in the source material which discusses the challenges of evaluating multi-agent systems where agents take different valid paths to reach their goals."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Reliability & Production Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "Starting Agent Evaluation Early",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Starting with small-scale testing using just a few examples is less effective than waiting to build more thorough evaluations.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The true/false answer is self-contained and concrete by nature. The source material discusses starting with a small set of about 20 queries to clearly see the impact of changes, and the lesson content explicitly states this approach was effective. The statement claims small-scale testing is 'less effective than waiting to build more thorough evaluations,' and the answer 'false' correctly reflects the source's endorsement of starting with small-scale testing. This is well-grounded in the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Reliability & Production Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "LLM-as-Judge Evaluation Criteria",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the criteria used by Anthropic's LLM judge for evaluating research outputs?",
+          "answer": 3,
+          "choices": [
+            "Factual accuracy",
+            "Citation accuracy",
+            "Completeness",
+            "Grammar and spelling quality"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained — all choices are clear and understandable without external references. The answer is concrete as it identifies a specific incorrect criterion. The answer is grounded: the source explicitly lists 'factual accuracy, citation accuracy, completeness, source quality, and tool efficiency' as the criteria used by the LLM judge, and 'Grammar and spelling quality' is not among them. The correct answer (index 3) is properly supported by the source material."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "stats": {
+        "selfContained": {
+          "pass": 10,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 10,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 10,
+          "fail": 0
+        },
+        "overallPass": 10,
+        "overallFail": 0
+      },
+      "generationTimeMs": 42820,
+      "judgingTimeMs": 9717,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "What are Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide as a measure of?",
+          "answer": "The similarity or relatedness of given text queries",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer directly and specifically answers the question without referencing any external material. It is concrete, providing a clear and specific response. It is grounded in both the lesson content and the source material, which explicitly states: 'Text embeddings provide a measure of the similarity or relatedness of given text queries.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Together Embeddings Pricing Advantage",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Together Embeddings are up to 4x cheaper than other popular platforms.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement 'Together Embeddings are up to 4x cheaper than other popular platforms' is directly supported by the source content, which states 'Up to 4x cheaper than other popular platforms' as a highlight. The answer 'true' is correct and self-contained."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Long Context Capabilities of M2-BERT Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the maximum context length offered by M2-Retrieval models in Together Embeddings?",
+          "answer": 2,
+          "choices": [
+            "8,000 tokens",
+            "16,000 tokens",
+            "32,000 tokens",
+            "64,000 tokens"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '32,000 tokens' is self-contained, concrete, and well-grounded. The source explicitly states 'State-of-the-art long context M2-Retrieval models up to 32k context length' and lists variants as '2k, 8k, 32k'. The answer of 32,000 tokens correctly corresponds to the 32k maximum. All choices are clear and self-contained."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Together Embeddings - Ordering Question",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps when visualizing data with the Together Embeddings endpoint?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Generate Embeddings API",
+            "Transform t-SNE",
+            "Visualize Plot"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow diagram correctly captures the three-step process described in the source material's Data Visualization Example section: (1) Generate embeddings using the Together API (generate_embeddings function), (2) Transform using t-SNE (transform_tSNE function), and (3) Visualize/Plot the results (plot function). The steps are self-contained, concrete, and directly grounded in the code workflow shown in the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "API Integration and Setup",
+          "moduleIndex": 1,
+          "lessonTitle": "Together Embeddings API Base URL",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the base URL for the Together Embeddings endpoint?",
+          "answer": "https://api.together.xyz/api/v1/embeddings",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [
+              "Judge parse failure — defaulting to pass"
+            ],
+            "explanation": "Judge failed to parse response"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "API Integration and Setup",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint has full OpenAI API compatibility, allowing for easy migration from OpenAI-based applications.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is directly supported by the source content, which explicitly states 'The Together Embeddings endpoint has full OpenAI compatibility so if you have already built your applications following the OpenAI API you can easily switch it out' and lists 'A fully OpenAI compatible API to make migrating easy' as a highlight. The true/false answer of 'true' is correct and self-contained."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "API Integration and Setup",
+          "moduleIndex": 1,
+          "lessonTitle": "M2-BERT-Retrieval Model Identification",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the correct API string for the M2-BERT-Retrieval-8K model?",
+          "answer": 0,
+          "choices": [
+            "togethercomputer/m2-bert-80M-8k-retrieval",
+            "togethercomputer/m2-bert-80M-32k-retrieval",
+            "togethercomputer/m2-bert-80M-2k-retrieval",
+            "togetherai/m2-bert-8k-retrieval"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained as all choices are specific API strings that can be evaluated independently. The answer is concrete, providing a specific API string. The answer is grounded in the source, which explicitly states 'M2-BERT-Retrieval-8K (API string: togethercomputer/m2-bert-80M-8k-retrieval)' in the Data Visualization Example section."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Practical Applications and RAG Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Popular Use Case for Embedding Models",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is one of the most popular use cases for embedding models mentioned in the content?",
+          "answer": "Retrieval Augmented Generation (RAG)",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained, specific, and directly supported by both the lesson content and the source material, which explicitly states that building a RAG system is one of the most popular use cases of embedding models."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Practical Applications and RAG Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Vector Databases for RAG Implementation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Pinecone can be used as a vector database when building RAG with the Together API.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is true, and this is directly supported by the source content which states: 'You can now build RAG using Together API and popular vector databases such as MongoDB, Pinecone, and Chroma.' The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Practical Applications and RAG Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Embedding Dimension of M2-BERT-Retrieval-8K",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model used in the data visualization example?",
+          "answer": 1,
+          "choices": [
+            256,
+            768,
+            1024,
+            2048
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are self-contained, concrete, and grounded. The source explicitly states 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.' The answer '768' directly matches this. All choices are specific numerical values with no meta-references."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "stats": {
+        "selfContained": {
+          "pass": 10,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 10,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 7,
+          "fail": 3
+        },
+        "overallPass": 7,
+        "overallFail": 3
+      },
+      "generationTimeMs": 45151,
+      "judgingTimeMs": 9635,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "The Rise and Golden Age of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Transformation from Republic to Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What title did the Senate give to Octavian that became the origin of the word emperor?",
+          "answer": "Imperator",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Imperator' is self-contained, specific, and directly supported by the source material, which states that Octavian was made 'Imperator,' meaning 'successful general,' and that this is the 'Origin of the word emperor.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Rise and Golden Age of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Pax Romana lasted for approximately 500 years.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement says the Pax Romana lasted approximately 500 years. The source clearly states it lasted nearly 200 years (27 BCE-180 CE). The answer 'false' is correct and well-grounded in the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Rise and Golden Age of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Emperors After Augustus",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What was Caligula's birth name?",
+          "answer": 1,
+          "choices": [
+            "Gaius Julius Caesar Germanicus",
+            "Germanicus",
+            "Tiberius",
+            "Augustus"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The source does not state Caligula's birth name. It says Caligula was the 'Son of famed military leader Germanicus' and that he 'Earned his name \"Caligula,\" meaning \"little boots\"' as a nickname. 'Germanicus' is identified as his father's name, not Caligula's birth name.",
+              "The correct answer 'Germanicus' is the name of Caligula's father, not Caligula's birth name. Caligula's actual birth name (Gaius Julius Caesar Germanicus, choice 0) is not stated in the source material either, making the question itself unsupported by the source.",
+              "The marked correct answer is factually wrong — Caligula's birth name was Gaius Julius Caesar Germanicus (choice 0), not Germanicus (choice 1, which is his father's name)."
+            ],
+            "explanation": "The answer is not grounded in the source material. The source never mentions Caligula's birth name. 'Germanicus' is explicitly identified as Caligula's father in the source. The question asks something not covered by the source, and the marked answer incorrectly identifies the father's name as Caligula's birth name."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Decline, Division, and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Division of the Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did Diocletian divide the Roman Empire into Eastern and Western administrative realms?",
+          "answer": "285 CE",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '285 CE' is self-contained, specific, and directly supported by the source material which states Diocletian 'Divided the empire into two administrative realms (east and west) in 285 CE.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Decline, Division, and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The End of the Western Roman Empire",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Western Roman Empire ended in 476 CE when the last emperor was overthrown by a barbarian leader.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement that the Western Roman Empire ended in 476 CE when the last emperor was overthrown by a barbarian leader is directly supported by the source material, which states the Roman Empire period was 30 BCE-476 CE. The lesson content explicitly mentions Romulus Augustus being deposed by Odoacer. The answer 'true' is self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Decline, Division, and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Jewish Revolts Against Rome",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Who led the Second Jewish Revolt (Bar Kokhba Revolt) against Roman rule?",
+          "answer": 1,
+          "choices": [
+            "Titus",
+            "Simon Bar Kokhba",
+            "Herod the Great",
+            "King Solomon"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed. The correct answer 'Simon Bar Kokhba' is directly supported by the source material, which states the Second Jewish Revolt was 'Led by Simon Bar Kokhba.' All answer choices are concrete named individuals, and there are no meta-references or vague statements."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Decline, Division, and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Decline, Division, and Transformation of the Empire",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the division of the Roman Empire?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Diocletian divides empire",
+            "Constantine moves capital",
+            "East-West split deepens"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow diagram correctly orders the steps: (1) Diocletian divides the empire into east and west administrative sections, (2) Constantine moves the capital to Constantinople, (3) the East-West split deepens. All three steps are clearly supported by the source material, which describes Diocletian dividing the empire in 285 CE and Constantine moving the capital to Constantinople. The deepening of the divide is a reasonable inference from these actions as described in the source. The choices and answer are self-contained with no meta-references."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Fall of Rome and Its Enduring Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year was the Eastern (Byzantine) Empire conquered by the Ottoman Turks?",
+          "answer": "1453 CE",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The question asks about Ottoman Turks conquering the Byzantine Empire, but the source material never mentions the Ottoman Turks. The lesson content mentions 1453 as when the Eastern Empire ended, but does not attribute it to the Ottoman Turks. The answer '1453 CE' is grounded for the fall of the Byzantine Empire, but the question's framing ('conquered by the Ottoman Turks') introduces information not present in the source."
+            ],
+            "explanation": "The answer '1453 CE' is self-contained and concrete. However, the question introduces 'Ottoman Turks' which is not mentioned anywhere in the source material. The source only states the Eastern Empire 'continued to exist for nearly another thousand years until 1453' without specifying who conquered it. The answer itself (1453 CE) is supported by the source, but the question's premise includes a hallucinated detail. Since we're evaluating whether the answer is grounded, and the answer '1453 CE' does match the source's claim about when the Byzantine Empire ended, this is borderline. But the question-answer pair together implies the Ottoman Turks conquered it in 1453, which is not stated in the source."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Fall of Rome and Its Enduring Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Christianity's Transformation Under Constantine",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Constantine converted to Christianity before the Edict of Milan was issued.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is correct and grounded. The source states Constantine issued the Edict of Milan in 313 CE and converted to Christianity on his deathbed, meaning he converted after the Edict, not before. The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "The Fall of Rome and Its Enduring Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Roman Contributions to World Civilization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT a contribution of the Roman Empire to world history?",
+          "answer": 0,
+          "choices": [
+            "Establishing the first democracy",
+            "Developing Roman law that influenced European legal systems",
+            "Creating Romance languages from Latin",
+            "Preserving and transmitting Greek culture to the West"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "Choice 3 ('Preserving and transmitting Greek culture to the West') is not discussed in the source material, making it appear as a valid Roman contribution without grounding.",
+              "The lesson content mentions 'Preserving and transmitting Greek culture to the West' is implicitly treated as a correct Roman contribution, but the source material does not explicitly discuss this.",
+              "The correct answer ('Establishing the first democracy') is reasonable since democracy is associated with Greece, not Rome, and the source does not attribute democracy to Rome. However, the source also doesn't explicitly discuss what Rome did NOT do, so the framing relies on external knowledge.",
+              "Choice 3 is not grounded in the source material - the source mentions Roman architectural innovations were 'adapted from Greek and Etruscan designs' but does not discuss preserving and transmitting Greek culture to the West as a Roman contribution."
+            ],
+            "explanation": "The correct answer (Establishing the first democracy) is reasonable since the source never attributes democracy to Rome. However, choice 3 ('Preserving and transmitting Greek culture to the West') is presented as a valid Roman contribution but is not supported by the source material. The lesson content snippet mentions adapting Greek designs but not 'preserving and transmitting Greek culture.' This is a hallucinated distractor that happens to be treated as correct/true without source grounding."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "stats": {
+        "selfContained": {
+          "pass": 9,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 9,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 7,
+          "fail": 2
+        },
+        "overallPass": 7,
+        "overallFail": 2
+      },
+      "generationTimeMs": 37444,
+      "judgingTimeMs": 6154,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Definition of Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three new challenges that multi-agent systems introduce compared to single-agent systems?",
+          "answer": "agent coordination, evaluation, and reliability",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer directly lists the three challenges (agent coordination, evaluation, and reliability) without referencing any external material. These are specific terms drawn directly from the source text, which states 'Systems with multiple agents introduce new challenges in agent coordination, evaluation, and reliability.' The answer is self-contained, concrete, and well-grounded."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Multi-Agent Systems Require High-Value Tasks",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent systems are economically viable for all types of tasks because the performance gains always justify the token costs.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is correct and well-grounded. The source explicitly states that multi-agent systems 'require tasks where the value of the task is high enough to pay for the increased performance' and that 'some domains...are not a good fit for multi-agent systems today.' This directly contradicts the statement's claim that they are 'economically viable for all types of tasks.' True/false answers are self-contained and concrete by nature."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Primary Performance Driver in Multi-Agent Research",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to Anthropic's analysis, which factor explains the LARGEST portion of performance variance in multi-agent research systems?",
+          "answer": 0,
+          "choices": [
+            "Token usage (80%)",
+            "Number of tool calls",
+            "Model choice",
+            "Context window size"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are fully self-contained, with the correct answer explicitly stating 'Token usage (80%)' without referencing any external material. The answer is concrete and specific. It is well-grounded in the source, which states: 'We found that token usage by itself explains 80% of the variance, with the number of tool calls and the model choice as the two other explanatory factors.' All four choices are grounded—three correspond to the actual factors mentioned, and the fourth (Context window size) is a plausible distractor. The question accurately describes the BrowseComp evaluation context."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Architecture and Implementation Patterns",
+          "moduleIndex": 1,
+          "lessonTitle": "Orchestrator-Worker Architecture Pattern",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What architecture pattern does Anthropic's Research system use for coordinating multiple agents?",
+          "answer": "orchestrator-worker pattern",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'orchestrator-worker pattern' is self-contained, specific, and directly supported by the source material which explicitly states 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Architecture and Implementation Patterns",
+          "moduleIndex": 1,
+          "lessonTitle": "Parallel Tool Calling Performance Impact",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Parallel tool calling reduces research time by up to 90% for complex queries.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The source states the multi-agent system outperformed single-agent by 90.2% on an internal eval, but does not specifically claim that parallel tool calling reduces research *time* by up to 90%. The lesson content conflates performance improvement with time reduction, but the source material discusses performance variance and token usage, not a 90% reduction in research time specifically attributed to parallel tool calling."
+            ],
+            "explanation": "The statement 'Parallel tool calling reduces research time by up to 90% for complex queries' is not well-grounded in the source. The source mentions a 90.2% outperformance on an internal research eval (a quality/accuracy metric), not a 90% reduction in research time. The lesson content appears to have reinterpreted this metric as a time reduction, which is a different claim. The answer 'true' endorses a claim not supported by the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Architecture and Implementation Patterns",
+          "moduleIndex": 1,
+          "lessonTitle": "Token Usage Comparison in Multi-Agent Systems",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many times more tokens do multi-agent systems use compared to standard chat interactions?",
+          "answer": 1,
+          "choices": [
+            "4 times more tokens",
+            "15 times more tokens (correct)",
+            "10 times more tokens",
+            "25 times more tokens"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are fully self-contained, concrete, and grounded. The source explicitly states 'multi-agent systems use about 15× more tokens than chats,' which directly supports the correct answer. The choice text '15 times more tokens' is clear and specific. Note: the '(correct)' label in the choice text is a minor formatting issue but does not affect self-containedness since it's just indicating the answer key."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Prompt Engineering, Evaluation & Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Starting Agent Evaluation with Small Samples",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "According to the content, what is the recommended approach to starting agent evaluation?",
+          "answer": "Start evaluating immediately with small samples of about 20 queries representing real usage patterns",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The answer mentions 'small samples of about 20 queries representing real usage patterns' which is not found in the source content. The source content discusses multi-agent research systems but does not mention a recommended approach of starting with 20 queries or specific sample sizes for evaluation. The lesson content snippet mentions early evaluation with small test cases but doesn't specify '20 queries' or 'real usage patterns'."
+            ],
+            "explanation": "The answer is self-contained and concrete, providing a specific actionable recommendation. However, the specific claim about '20 queries representing real usage patterns' is not supported by the source material provided. The lesson content mentions that 'teams can spot changes with just a few test cases' but never specifies 20 queries or mentions 'real usage patterns' as a recommended starting approach. This appears to be hallucinated content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Prompt Engineering, Evaluation & Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Tool Description Quality Impact",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "If a tool has a vague description, agents will automatically avoid using it incorrectly.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The true/false answer is self-contained and concrete by nature. The source material discusses tool design, noting that bad tool descriptions can lead agents down wrong paths. The statement claims agents will 'automatically avoid using it incorrectly' with vague descriptions, which contradicts the source's emphasis that poor tool descriptions cause problems. The answer 'false' is well-grounded in the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Prompt Engineering, Evaluation & Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Agentic System Reliability Challenges",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What makes writing code for complex agents particularly challenging compared to traditional software?",
+          "answer": 1,
+          "choices": [
+            "Agents are stateless and require constant memory refreshes",
+            "Agents are stateful and errors compound in long-running processes",
+            "Agents run for short periods and cannot maintain context",
+            "Agents are impervious to minor changes due to their design"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained — all choices are understandable without referencing external material. The answer is concrete, providing a specific claim about statefulness and error compounding. The answer is grounded in the source material: the lesson text explicitly states that 'minor changes cascade into large behavioral changes, making it remarkably difficult to write code for complex agents that must maintain state in long-running processes.' The correct answer ('Agents are stateful and errors compound in long-running processes') is a reasonable paraphrase of this. The distractors are clearly contradicted by the source content (e.g., agents are not stateless, not short-running, not impervious to minor changes)."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "stats": {
+        "selfContained": {
+          "pass": 9,
+          "fail": 1
+        },
+        "concrete": {
+          "pass": 10,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 10,
+          "fail": 0
+        },
+        "overallPass": 9,
+        "overallFail": 1
+      },
+      "generationTimeMs": 39241,
+      "judgingTimeMs": 12149,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Available Embedding Models",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many leading embedding models are available in the Together Embeddings endpoint?",
+          "answer": "8",
+          "verdict": {
+            "selfContained": false,
+            "concrete": true,
+            "grounded": true,
+            "issues": [
+              "vague-answer: answer is only 1 chars"
+            ],
+            "explanation": "The answer '8' is self-contained, concrete, and directly supported by the source content which states '8 leading embedding models' multiple times."
+          },
+          "heuristicFlags": [
+            "vague-answer: answer is only 1 chars"
+          ]
+        },
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Long Document Embedding Capability",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The M2-BERT retrieval models allow users to generate embeddings for long documents without having to split them into many short chunks.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is directly supported by the source content, which states: 'This means you can now generate embeddings for long documents without splitting them into many short chunks while containing more meaningful contexts in the embeddings.' The true/false answer of 'true' is correct and self-contained."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Embedding Dimensions",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+          "answer": 1,
+          "choices": [
+            "512",
+            "768 (correct)",
+            "1024",
+            "2048"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks a straightforward factual question with a specific numeric answer. The correct answer (768) is explicitly stated in the source content: 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.' All choices are self-contained numeric values with no meta-references. The answer is concrete and well-grounded in the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Together Embeddings API Endpoint Configuration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the base URL for the Together Embeddings API endpoint?",
+          "answer": "https://api.together.xyz/api/v1/embeddings",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [
+              "Judge parse failure — defaulting to pass"
+            ],
+            "explanation": "Judge failed to parse response"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint has full OpenAI API compatibility.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is directly supported by the source content, which explicitly states 'The Together Embeddings endpoint has full OpenAI compatibility' and lists 'A fully OpenAI compatible API to make migrating easy' as a highlight. The true/false answer of 'true' is correct and self-contained."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Model Selection via API String",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the correct API string for the 8k context M2-BERT retrieval model?",
+          "answer": 1,
+          "choices": [
+            "togethercomputer/m2-bert-80M-32k-retrieval",
+            "togethercomputer/m2-bert-80M-8k-retrieval",
+            "togethercomputer/m2-bert-8k-retrieval-80M",
+            "togethercomputer/m2-bert-retrieval-8k-80M"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained — it provides the specific API string without referencing external materials. It is concrete, giving an exact model identifier. It is grounded in the source, which explicitly states 'M2-BERT-Retrieval-8K (API string: togethercomputer/m2-bert-80M-8k-retrieval)' in the Data Visualization Example section."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Building RAG Applications and Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Purpose of Retrieval Augmented Generation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What limitation of generative AI models does Retrieval Augmented Generation (RAG) aim to overcome?",
+          "answer": "lack of knowledge from unseen data",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained, directly answering the question without referencing any external material. It is concrete and specific, naming the exact limitation ('lack of knowledge from unseen data'). It is fully grounded in the source content, which states RAG 'aims to overcome limitations of generative AI models, such as a lack of knowledge from unseen data.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Building RAG Applications and Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Vector Databases for RAG",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "MongoDB, Pinecone, and Chroma are mentioned as options for building RAG systems with Together API.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is directly supported by the source content, which explicitly states: 'You can now build RAG using Together API and popular vector databases such as MongoDB, Pinecone, and Chroma.' The true/false answer of 'true' is correct, self-contained, and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Building RAG Applications and Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Visualizing Embeddings with t-SNE",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which technique is used to transform embedding vectors into 2D for visualization?",
+          "answer": 1,
+          "choices": [
+            "PCA (Principal Component Analysis)",
+            "tSNE (t-Distributed Stochastic Neighbor Embedding)",
+            "UMAP (Uniform Manifold Approximation and Projection)",
+            "LLE (Locally Linear Embedding)"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed and self-contained. The correct answer (tSNE) is explicitly stated in both the lesson content and the source material. All choices are specific, named techniques, and the answer does not reference any external materials or meta-structures."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Building RAG Applications and Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Building RAG Applications and Visualization",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the embedding visualization process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Generate Embeddings",
+            "Transform with tSNE",
+            "Plot Embeddings"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow-diagram question and answer are self-contained — the choices ('Generate Embeddings', 'Transform with tSNE', 'Plot Embeddings') are clear without needing external references. The ordering [0,1,2] is concrete and directly corresponds to the process described in the source material: first generating embeddings via the Together API, then applying tSNE to transform them to 2D, and finally plotting the results. This sequence is well-grounded in the source content, which explicitly describes these steps in this order in the 'Data Visualization Example' section."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "stats": {
+        "selfContained": {
+          "pass": 11,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 11,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 11,
+          "fail": 0
+        },
+        "overallPass": 11,
+        "overallFail": 0
+      },
+      "generationTimeMs": 68767,
+      "judgingTimeMs": 5756,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "answer": "Agentic software engineering",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Agentic software engineering' is self-contained, specific, and directly supported by the source material which states 'Composer 2 is a specialized model designed for agentic software engineering.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Tools Available to Composer 2",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 has access to tools for reading and editing files, running shell commands, searching codebases using grep or semantic search, and searching the web.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is a near-verbatim match of the source content, which explicitly states: 'Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web.' The answer 'true' is correct and well-grounded. As a true-false question, it is self-contained and concrete by nature."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Phases for Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the two distinct training phases used to improve real-world coding performance in Composer 2?",
+          "answer": 1,
+          "choices": [
+            "Supervised fine-tuning and instruction tuning",
+            "Continued pretraining and reinforcement learning",
+            "Pre-training and supervised learning",
+            "Agentic training and policy optimization"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Continued pretraining and reinforcement learning' is directly supported by the source material, which states: 'We target this through two distinct training phases: continued pretraining (Section 3), and asynchronous reinforcement learning (Section 4).' The answer is self-contained, concrete, and well-grounded. The slight simplification of 'asynchronous reinforcement learning' to 'reinforcement learning' in the answer choice is a reasonable simplification and does not constitute a factual error. All distractor choices are clearly distinct from the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Selection for Continued Pretraining",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the name and architecture of the base model used for Composer 2's continued pretraining?",
+          "answer": "Kimi K2.5, a 1.04T parameter / 32B active parameter Mixture-of-Experts model",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is fully self-contained, providing the model name (Kimi K2.5), its parameter counts (1.04T total, 32B active), and its architecture type (Mixture-of-Experts) without referencing any external material. It is concrete and specific. It is directly grounded in the source text, which states: 'These evaluations led us to select Kimi K2.5 [67], a 1.04T parameter / 32B active parameter Mixture-of-Experts model as our base model for Composer 2.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The continued pretraining stage includes a long-context extension phase that extends sequence length to 256k tokens.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement is directly supported by the source material, which states: 'We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length.' The answer 'true' is correct and well-grounded. True/false answers are self-contained and concrete by nature."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalty in Reinforcement Learning",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the purpose of the nonlinear length penalty used in Composer 2's reinforcement learning training?",
+          "answer": 1,
+          "choices": [
+            "To increase the model's output verbosity regardless of task difficulty",
+            "To incentivize the model to produce solutions quickly on easy requests while allowing longer thinking on hard requests",
+            "To penalize all rollouts that exceed a maximum sequence length",
+            "To standardize the length of responses across all coding tasks"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained — all choices are understandable without external references. The answer is concrete, providing a specific explanation of the penalty's purpose. The answer is grounded in the source: the lesson content states the penalty is 'concave down and increasing' and that 'additional effort on easy tasks (requiring few tool calls) is felt more acutely than in long-horizon tasks involving hundreds of tool calls,' which directly supports the correct answer that the penalty incentivizes quick solutions on easy requests while allowing longer thinking on hard requests."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Reinforcement Learning training pipeline for Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Generate Rollouts",
+            "Update Model Weights"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow-diagram question asks about the RL training pipeline for Composer 2. The source describes the RL process involving sampling problems, generating rollouts (actions and tool calls), and updating model weights through reinforcement learning. The ordering of Sample Problem → Generate Rollouts → Update Model Weights is a reasonable inference from the source material's description of the RL training process. The choices are clear and self-contained, requiring no external references."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Purpose and Structure of CursorBench",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary source of tasks in CursorBench?",
+          "answer": "Tasks are drawn from actual coding sessions of Cursor's engineering team",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained, providing a clear and specific statement without referencing any external material. It is concrete, identifying the specific source (actual coding sessions of Cursor's engineering team). It is well-grounded in the source content, which states CursorBench is 'a benchmark derived from real software engineering problems in large codebases including our own' and the lesson content explicitly states tasks are 'drawn from actual coding sessions of Cursor's engineering team.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluation Metrics on CursorBench",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 achieves a score of 61.3 on CursorBench.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The statement that Composer 2 achieves a score of 61.3 on CursorBench is directly supported by the source content, which states 'the model achieves a major improvement in accuracy compared to previous Composer models (61.3).' The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Limitations Identified",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT identified as a factor causing misalignment between public benchmarks and real-world utility?",
+          "answer": 1,
+          "choices": [
+            "Domain Mismatch",
+            "Prompt Under-specification",
+            "Data Contamination and Overfitting",
+            "Narrow Evaluation Scope"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks which factor is NOT identified as causing misalignment. The correct answer is 'Prompt Under-specification' (index 1), which is indeed not mentioned in the lesson content. The lesson content mentions 'Prompt Over-specification' as one of the four factors. The answer is self-contained (no meta-references), concrete (specific choice), and grounded (the source/lesson content discusses 'Prompt Over-specification,' not 'Prompt Under-specification'). The distractor is well-crafted by subtly changing 'Over-specification' to 'Under-specification.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining process for Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining 32k",
+            "Long-Context Extension",
+            "SFT on Coding Tasks"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow-diagram question asks for the order of the three phases in continued pretraining. The choices are clearly labeled and self-contained. The correct ordering [0,1,2] maps to: First → Continued Pretraining 32k, Second → Long-Context Extension, Third → SFT on Coding Tasks. This directly matches the source: 'We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' The answer is grounded, concrete, and self-contained."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "stats": {
+        "selfContained": {
+          "pass": 10,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 10,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 8,
+          "fail": 2
+        },
+        "overallPass": 8,
+        "overallFail": 2
+      },
+      "generationTimeMs": 53742,
+      "judgingTimeMs": 7787,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Setting Up and Customizing Your Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Generation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What command automatically generates a CLAUDE.md file?",
+          "answer": "/init",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '/init' is self-contained, specific, and directly supported by the source material which states 'When you run the /init command, Claude will automatically generate a CLAUDE.md for you.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Setting Up and Customizing Your Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md Home Folder Scope",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "If you place a CLAUDE.md file in your home folder (~/.claude/CLAUDE.md), it will only apply to that specific directory.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is correct and well-grounded. The source clearly states that ~/.claude/CLAUDE.md 'applies it to all your claude sessions,' not just to that specific directory. The true/false format is inherently self-contained and concrete."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Setting Up and Customizing Your Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "Tool Permission Management",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Where is the recommended location to store CLAUDE.md for team collaboration?",
+          "answer": 0,
+          "choices": [
+            "The root of your repo, checked into git (recommended)",
+            "Any parent of the directory where you run claude",
+            "Any child of the directory where you run claude",
+            "Your home folder (~/.claude/)"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is self-contained — each choice is clearly stated without meta-references. The correct answer ('The root of your repo, checked into git (recommended)') is directly supported by the source content, which states: 'The root of your repo, or wherever you run claude from (the most common usage). Name it CLAUDE.md and check it into git so that you can share it across sessions and with your team (recommended).' All other choices also correspond to real locations mentioned in the source (parent directory, child directory, home folder), making them plausible distractors. The question is concrete and well-grounded."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Understanding MCP Server Configuration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In which configuration file can you check in MCP servers so that anyone working on your codebase can use them out of the box?",
+          "answer": ".mcp.json",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '.mcp.json' is self-contained, specific, and directly supported by the source content, which explicitly states that a checked-in .mcp.json file is 'available to anyone working in your codebase' and that engineers can 'use these out of the box.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Commands Parameters",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The source content (which is truncated) does not mention the $ARGUMENTS keyword for custom slash commands. The lesson content shown to the student also does not mention $ARGUMENTS. This appears to be a hallucinated detail that may or may not be true in reality, but is not supported by the provided source material."
+            ],
+            "explanation": "While the answer format is self-contained and concrete (true/false), the claim about $ARGUMENTS is not grounded in the source content provided. The source discusses custom slash commands stored in .claude/commands as Markdown files but the truncated content does not mention $ARGUMENTS functionality."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude Code Tool Permission Methods",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a method mentioned for managing Claude Code's allowed tools?",
+          "answer": 0,
+          "choices": [
+            "Using the /config command to edit tool permissions",
+            "Selecting \"Always allow\" when prompted during a session",
+            "Using the /permissions command after starting Claude Code",
+            "Manually editing your .claude/settings.json file"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks which method is NOT mentioned for managing allowed tools. The source lists four methods: (1) 'Always allow' when prompted, (2) /permissions command, (3) manually editing .claude/settings.json or ~/.claude.json, and (4) --allowedTools CLI flag. The correct answer is '/config command to edit tool permissions,' which is indeed not mentioned in the source. The three incorrect choices (options 1, 2, 3) correspond to actual methods from the source. All choices are self-contained, concrete, and grounded."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In the 'Explore, plan, code, commit' workflow, what word should you use to trigger extended thinking mode?",
+          "answer": "think",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The source content does not explicitly state that the word 'think' triggers extended thinking mode. The lesson content mentions 'extended thinking mode' but the specific trigger word 'think' is not found in the provided source material. The source content appears to be truncated before reaching the section about the 'Explore, plan, code, commit' workflow."
+            ],
+            "explanation": "The answer 'think' is self-contained and concrete, but its grounding in the source material cannot be verified. The provided source content is truncated and does not contain information about the 'Explore, plan, code, commit' workflow or the specific word used to trigger extended thinking mode. While the lesson content mentions extended thinking mode, the claim that 'think' is the trigger word appears to be an inference or addition not directly supported by the visible source text."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Test-Driven Development with Claude",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: In the test-driven development workflow with Claude, you should ask Claude to write implementation code at the same time as writing the tests.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is correct and well-grounded. The lesson content explicitly states that you 'first ask Claude to write tests based on expected input/output pairs and explicitly tell it not to write any implementation code at this stage,' which directly supports that implementation code should NOT be written at the same time as tests. True/false answers are self-contained and concrete by nature."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Safe YOLO Mode for Claude",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which flag is used to bypass all permission checks in Claude Code?",
+          "answer": 1,
+          "choices": [
+            "--skip-permissions",
+            "--dangerously-skip-permissions",
+            "--allow-all",
+            "--yolo-mode"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are fully self-contained, concrete, and grounded. The correct answer '--dangerously-skip-permissions' is explicitly mentioned in both the lesson content and the source material. All answer choices are specific and don't reference external materials."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Workflow Patterns and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the \"Explore, plan, code, commit\" workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore files",
+            "Plan solution",
+            "Implement code"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow-diagram question presents a clear, self-contained ordering of steps (Explore files → Plan solution → Implement code). The choices are specific and understandable without external references. The ordering is grounded in the source material, which describes the 'Explore, plan, code, commit' workflow designed to prevent jumping straight to coding without proper research and planning. While the source doesn't spell out these exact three steps in a numbered list in the visible portion, the lesson content explicitly states this workflow and the source material's overall guidance supports this ordering."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    }
+  ]
+}

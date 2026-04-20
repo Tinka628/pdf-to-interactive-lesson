@@ -1,0 +1,416 @@
+{
+  "tag": "heuristic-sufficiency-composer2-smoke",
+  "timestamp": "2026-04-02T16:54:14.239Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "ollama/qwen3.5:9b",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "sufficiency"
+  ],
+  "totalTimeMs": 87945,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 11,
+      "correct": 11,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 11,
+      "fullyGrounded": "11/11 (100%)",
+      "selfContained": "11/11 (100%)",
+      "concrete": "11/11 (100%)",
+      "grounded": "11/11 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 11,
+      "sufficient": 7,
+      "rate": "64%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "2/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "2/3"
+      },
+      "flow-diagram": {
+        "total": 2,
+        "correct": "2/2",
+        "fullyGrounded": "2/2",
+        "sufficient": "0/2"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 108,
+      "generationTimeMs": 87831,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction to Composer 2",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Phases",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two training phases used to develop Composer 2?",
+          "answer": "continued pretraining and large-scale reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic uncertain pass: lesson content covers most answer-bearing keywords [answer_keywords_present]"
+          }
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 CursorBench Performance",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 achieves 61.3% on CursorBench.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "Heuristic uncertain fail: lesson content may not contain enough detail to evaluate the statement [statement_support_unclear]"
+          }
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Evaluation Benchmarks",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which benchmark does Composer 2 score 61.3% on?",
+          "answer": 0,
+          "choices": [
+            "CursorBench",
+            "SWE-bench Multilingual",
+            "Terminal-Bench",
+            "CursorBench-3"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic uncertain pass: content mentions the correct choice but distinguishing detail is weak [correct_choice_present]"
+          }
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Composer 2",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Generate Rollouts",
+            "Evaluate Solutions",
+            "Compute Rewards"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "Heuristic fail: lesson content is missing step labels: Generate Rollouts, Evaluate Solutions [missing_step_labels]"
+          }
+        },
+        {
+          "moduleTitle": "Training Methodology and Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Base Model Architecture",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the total parameter count of the Kimi K2.5 base model used for Composer 2?",
+          "answer": "1.04 trillion parameters",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic uncertain pass: lesson content covers most answer-bearing keywords [answer_keywords_present]"
+          }
+        },
+        {
+          "moduleTitle": "Training Methodology and Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Infrastructure Services",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2's RL infrastructure consists of four decoupled services: training, environments, inference, and evaluations.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic uncertain pass: lesson content overlaps heavily with the true-false statement [statement_keywords_present]"
+          }
+        },
+        {
+          "moduleTitle": "Training Methodology and Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Parallelism Configuration During Training",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the Context Parallelism (CP) configuration used during the continued pretraining phase?",
+          "answer": 1,
+          "choices": [
+            "CP=16",
+            "CP=2",
+            "CP=8",
+            "CP=4"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic pass: content mentions the correct choice and enough distinguishing detail [correct_choice_present, distinguishing_detail_present]"
+          }
+        },
+        {
+          "moduleTitle": "Training Methodology and Infrastructure",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 RL Evaluation and Weight Update Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 RL evaluation and weight update process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Rollouts",
+            "Evaluation Service",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "Heuristic fail: lesson content is missing step labels: Evaluation Service, Update Model Weights [missing_step_labels]"
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Complexity and Structure",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks compared to SWE-bench Verified and Multilingual?",
+          "answer": "181 lines versus 7-10 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic uncertain pass: lesson content covers most answer-bearing keywords [answer_keywords_present]"
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Public Benchmark Performance",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 scores 73.7% on SWE-bench Multilingual and 61.7% on Terminal-Bench.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Heuristic uncertain pass: lesson content overlaps heavily with the true-false statement [statement_keywords_present]"
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Evaluation Methodology",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How does Cursor ensure evaluation fidelity matches production deployment?",
+          "answer": 0,
+          "choices": [
+            "By running a pinned version of the production backend and Cursor client for each evaluation job",
+            "By using synthetic benchmark data that mimics production scenarios",
+            "By running evaluations on a separate internal testing framework",
+            "By randomly sampling evaluation tasks from public repositories"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "Heuristic fail: lesson content does not mention the correct choice text [correct_choice_missing]"
+          }
+        }
+      ]
+    }
+  ]
+}

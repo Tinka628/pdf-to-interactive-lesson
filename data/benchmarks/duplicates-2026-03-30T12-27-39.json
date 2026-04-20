@@ -1,0 +1,3389 @@
+{
+  "timestamp": "2026-03-30T12:27:39.811Z",
+  "iterations": 5,
+  "totalTimeMs": 601390,
+  "summary": {
+    "totalPdfs": 5,
+    "totalLessons": 226,
+    "totalSuccessful": 219,
+    "totalQuestions": 219,
+    "uniqueQuestions": 192,
+    "duplicateGroups": 18,
+    "questionsInDuplicateGroups": 45,
+    "duplicationRate": "20.5%",
+    "withinCourseDupeGroups": 8,
+    "crossCourseDupeGroups": 0
+  },
+  "perCourse": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Octavian's Rise to Power",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What title given to Octavian by the Senate is the origin of the word \"prince\"?",
+          "answer": "Princeps"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus's Religious Authority",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The title Pontifex Maximus, which Augustus held, is still used today to describe the leader of the Catholic Church.",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What was the Pax Romana?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Emperors and Decline",
+          "moduleIndex": 1,
+          "lessonTitle": "The End of the Pax Romana",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What event marked the end of the Pax Romana?",
+          "answer": "The end of the reign of Marcus Aurelius"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Emperors and Decline",
+          "moduleIndex": 1,
+          "lessonTitle": "Diocletian's Administrative Division",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Diocletian divided the Roman Empire into Eastern and Western administrative realms in 285 CE.",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Emperors and Decline",
+          "moduleIndex": 1,
+          "lessonTitle": "Evaluating Roman Emperors",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following emperors was known for building the Colosseum in Rome?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Roman Legacy and Contributions",
+          "moduleIndex": 2,
+          "lessonTitle": "Justinian's Law Code",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What did Emperor Justinian compile that still influences legal systems today?",
+          "answer": "Corpus Juris Civilis (or Justinian Code)"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Roman Legacy and Contributions",
+          "moduleIndex": 2,
+          "lessonTitle": "Roman Scientific Achievement",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Romans were great scientists like the Greeks had been.",
+          "answer": false
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Roman Legacy and Contributions",
+          "moduleIndex": 2,
+          "lessonTitle": "Languages Derived from Latin",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a Romance language derived from Latin?",
+          "answer": 3
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "questions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Defining Multi-Agent Research Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is a multi-agent system composed of according to the source content?",
+          "answer": "Multiple agents (LLMs autonomously using tools in a loop) working together"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Gains from Multi-Agent Architecture",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed a single-agent Claude Opus 4 by 90.2% on internal research evaluations.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Architecture Patterns for Research Systems",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which architectural pattern does the Research system use?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "The LeadResearcher Agent",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the name of the lead agent created when a user submits a query in the Research system?",
+          "answer": "LeadResearcher"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "In the Research system, multi-agent systems use about 15× more tokens than chats.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Scaling Effort Based on Query Complexity",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many subagents does the system recommend using for complex research tasks?",
+          "answer": 2
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation, and Production",
+          "moduleIndex": 2,
+          "lessonTitle": "Prompt Engineering Strategy: Heuristics Over Rules",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "According to the source content, what does the prompting strategy focus on instilling in agents rather than rigid rules?",
+          "answer": "Good heuristics"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation, and Production",
+          "moduleIndex": 2,
+          "lessonTitle": "Parallel Tool Calling Performance Impact",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Parallel tool calling cut research time by up to 90% for complex queries, allowing Research to do more work in minutes instead of hours.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation, and Production",
+          "moduleIndex": 2,
+          "lessonTitle": "LLM Judge Evaluation Criteria",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a criterion used in the LLM-as-judge evaluation rubric described in the source content?",
+          "answer": 3
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation, and Production",
+          "moduleIndex": 2,
+          "lessonTitle": "Multi-Agent Research System Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent research workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Together Embeddings Platform",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many leading embedding models does the Together Embeddings platform currently offer?",
+          "answer": "8 leading embedding models"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Long Context Capabilities of M2-BERT Models",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The M2-BERT retrieval models available on Together can handle documents with up to 32k context length.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Applications of Text Embeddings",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an application of text embeddings in the source content?",
+          "answer": 3
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatibility",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What base URL is used when configuring the OpenAI client to work with the Together Embeddings endpoint?",
+          "answer": "https://api.together.xyz/api/v1/embeddings"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Cost Advantage of Together Embeddings",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The Together Embeddings endpoint offers pricing that is up to 4x cheaper than other popular embedding platforms.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Model Configuration for API Requests",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the correct API string format for the M2-BERT retrieval model with 8k context length on the Together platform?",
+          "answer": 1
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Vector Databases for RAG Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which specific vector database is mentioned as being among the integrations available with the Together API for building RAG systems?",
+          "answer": "MongoDB"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Visualization with Embeddings",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The M2-BERT-Retrieval-8K model produces embedding vectors with a dimension of 768.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Frameworks for Building RAG",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following frameworks can be used to build RAG with Together Embeddings?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "questions": [],
+      "duplicates": []
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 10,
+      "questions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the special filename that Claude automatically pulls into context when starting a conversation?",
+          "answer": "CLAUDE.md"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Locations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "You can place a CLAUDE.md file in your home folder ( ~/.claude/CLAUDE.md ) to apply it to all your Claude sessions.",
+          "answer": true
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+          "answer": 3
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Commands in Claude Code",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What folder must you create to store custom slash command templates in Claude Code?",
+          "answer": ".claude/commands"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Servers Provide Additional Tools to Claude",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code functions solely as an MCP client and cannot function as an MCP server.",
+          "answer": false
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Server Configuration Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to configure MCP servers in Claude Code?",
+          "answer": 3
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Best Practices",
+          "moduleIndex": 2,
+          "lessonTitle": "The Explore-Plan-Code-Commit Workflow",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In the explore-plan-code-commit workflow, what should you explicitly tell Claude to do in step 1 before asking it to write any code?",
+          "answer": "Read relevant files, images, or URLs without writing any code just yet"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Best Practices",
+          "moduleIndex": 2,
+          "lessonTitle": "Test-Driven Development with Claude",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "In the test-driven development workflow, after writing tests and confirming they fail, you should ask Claude to commit the tests before implementing the solution.",
+          "answer": true
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Best Practices",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude's Thinking Modes",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following trigger phrases activates the HIGHEST level of extended thinking budget in Claude Code?",
+          "answer": 3
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Best Practices",
+          "moduleIndex": 2,
+          "lessonTitle": "Effective Coding Workflow with Claude Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "questions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Roman Republic and Empire Timeline",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the dates for the Roman Republic and the Roman Empire?",
+          "answer": "Roman Republic: 509 BCE-30 BCE; Roman Empire: 30 BCE-476 CE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Achieved Multiple Titles",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Octavian was given the title Pontifex Maximus by the Senate, which is the origin of the word used today to describe the pope.",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana Period",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following best describes the Pax Romana?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Rise of the Roman Empire",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the early Roman Empire's establishment?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height and Division of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Battle of Actium and Octavian's Rise",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Who did Octavian defeat at the Battle of Actium to become sole ruler of Rome?",
+          "answer": "Antony and Cleopatra"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height and Division of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Pax Romana's Duration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Pax Romana lasted for approximately 500 years.",
+          "answer": false
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height and Division of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Roman Emperors and Imperial Expansion",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which emperor oversaw the expansion of the empire to its greatest extent?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Economic Causes of Rome's Fall",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What happened to impoverished workers in the later Roman Empire that tied them to the land?",
+          "answer": "They became coloni who were sold along with the land"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Rome's Endured Influence",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Catholic Church preserved Greek culture after Rome fell.",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Roman Law's Global Impact",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which emperor created the Corpus Juris Civilis, which still serves as the basis for civil law in many European countries?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Multi-Agent Research Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two key components of the multi-agent architecture used in Anthropic's Research system?",
+          "answer": "An orchestrator-worker pattern with a lead agent and specialized subagents"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Advantages of Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed a single-agent Claude Opus 4 system by 90.2% on internal research evaluations.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Subagent Functionality and Design",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Effective Subagent Delegation Requirements",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+          "answer": "An objective, an output format, guidance on the tools and sources to use, and clear task boundaries"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Parallel Tool Calling Performance Impact",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system that spins up subagents sequentially (one after another) and has subagents make tool calls sequentially (one after another) would likely achieve similar speed gains as a system with parallel subagent creation and parallel tool calling.",
+          "answer": false
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Scaling Research Effort to Query Complexity",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to the scaling rules for effort allocation, how many subagents and tool calls should be allocated for a direct comparison task (e.g., comparing two companies)?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation, Production Reliability and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluating Multi-Agent Research Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two components that an LLM judge evaluates in research outputs according to the content?",
+          "answer": "factual accuracy and citation accuracy"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation, Production Reliability and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system that uses parallel subagent creation and parallel tool calling would likely achieve similar speed gains as a system with sequential subagent creation and sequential tool calling.",
+          "answer": false
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation, Production Reliability and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Parallelization Performance Gains",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to the content, what percentage reduction in research time was achieved through parallelization for complex queries?",
+          "answer": 2
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+          "occurrences": [
+            {
+              "file": "How we built our multi-agent research system _ Anthropic.pdf",
+              "moduleTitle": "Foundations of Multi-Agent Research Systems",
+              "moduleIndex": 0,
+              "lessonTitle": "Subagent Functionality and Design",
+              "lessonIndex": 2,
+              "questionType": "multiple-choice",
+              "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+              "answer": 1
+            },
+            {
+              "file": "How we built our multi-agent research system _ Anthropic.pdf",
+              "moduleTitle": "Prompt Engineering and System Design",
+              "moduleIndex": 1,
+              "lessonTitle": "Effective Subagent Delegation Requirements",
+              "lessonIndex": 0,
+              "questionType": "short-answer",
+              "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+              "answer": "An objective, an output format, guidance on the tools and sources to use, and clear task boundaries"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Together Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many leading embedding models are available in the Together Embeddings endpoint?",
+          "answer": "8 leading embedding models"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Claims About Embedding Models",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "M2-BERT retrieval models significantly outperform other closed models in long context retrieval tasks.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Together Embeddings",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Usage",
+          "moduleIndex": 1,
+          "lessonTitle": "Together Embeddings API Base URL",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the base URL for the Together Embeddings API endpoint?",
+          "answer": "https://api.together.xyz/api/v1/embeddings"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Usage",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint has full OpenAI API compatibility, allowing easy migration from OpenAI-based applications.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Usage",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Integration Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an integration option for building RAG with Together Embeddings?",
+          "answer": 1
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG and Visualization Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Vector Databases for RAG Implementation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Name one of the vector databases mentioned as an option for building RAG with Together Embeddings.",
+          "answer": "Pinecone"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG and Visualization Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Visualization Capability Verification",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The data visualization example in the content uses embeddings from RedPajama-v1 Sample to plot texts from different domains in a 2D space.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG and Visualization Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Framework Options for RAG Development",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which framework is mentioned as an integration option for building RAG with Together Embeddings?",
+          "answer": 1
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "Which of the following is NOT mentioned as an integration option for building RAG with Together Embeddings?",
+          "occurrences": [
+            {
+              "file": "together-embeddings-blog.pdf",
+              "moduleTitle": "API Integration and Model Usage",
+              "moduleIndex": 1,
+              "lessonTitle": "RAG Integration Options",
+              "lessonIndex": 2,
+              "questionType": "multiple-choice",
+              "question": "Which of the following is NOT mentioned as an integration option for building RAG with Together Embeddings?",
+              "answer": 1
+            },
+            {
+              "file": "together-embeddings-blog.pdf",
+              "moduleTitle": "Building RAG and Visualization Applications",
+              "moduleIndex": 2,
+              "lessonTitle": "Framework Options for RAG Development",
+              "lessonIndex": 2,
+              "questionType": "multiple-choice",
+              "question": "Which framework is mentioned as an integration option for building RAG with Together Embeddings?",
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "questions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Purpose and Design",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is Composer 2 designed for?",
+          "answer": "agentic software engineering"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Software Engineering Agent Capabilities",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Software engineering agents can only modify files in a codebase environment and cannot answer questions or write plans.",
+          "answer": false
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Model Training Foundation",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What base model was selected for Composer 2 continued pretraining?",
+          "answer": 1
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Architecture",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Sequence Lengths",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the longest sequence length used during Composer 2 continued pretraining?",
+          "answer": "256k tokens"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Architecture",
+          "moduleIndex": 1,
+          "lessonTitle": "Asynchronous RL Architecture",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "In Composer 2's asynchronous RL training, inference workers can update weights mid-rollout, making later tokens less off-policy.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Architecture",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Regularization Estimator",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which KL divergence estimator does Composer 2 use to avoid variance blow-up when p and q diverge?",
+          "answer": 0
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Architecture",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Training Architecture Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in Composer 2's continued pretraining process?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation & Real-World Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the source of tasks in CursorBench?",
+          "answer": "Actual coding sessions of Cursor's engineering team"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation & Real-World Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluation Scope Limitations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Existing coding evaluations predominantly measure functional correctness, ignoring other developer priorities like code quality, readability, and interaction quality.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation & Real-World Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT identified as one of the four primary factors causing misalignment between public benchmarks and real-world utility?",
+          "answer": 2
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "questions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Locations",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Where is the recommended location to place CLAUDE.md if you want to share it across sessions and with your team?",
+          "answer": "The root of your repo (checked into git)"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md Generation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "When you run the /init command, Claude will automatically generate a CLAUDE.md for you.",
+          "answer": true
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+          "answer": 2
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Claude Code Agentic Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow for Claude Code?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Server Configuration Options",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three ways Claude Code can connect to MCP servers to access their tools?",
+          "answer": "In project config, in global config, or in a checked-in .mcp.json file"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Commands Storage",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Custom slash commands are stored in the .claude/commands folder and become available through the slash commands menu.",
+          "answer": true
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Teaching Claude Custom Bash Tools",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How does Claude learn about custom bash tools that are not common utilities?",
+          "answer": 1
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Test-Driven Development Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the test-driven development workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude Code GitHub Integration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What CLI tool does Claude Code use to interact with GitHub for creating issues, opening pull requests, and reading comments?",
+          "answer": "gh CLI"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "YOLO Mode Safety",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The --dangerously-skip-permissions flag is safe to use without any additional precautions in production environments.",
+          "answer": false
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Instruction Specificity Impact",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the BEST way to instruct Claude Code when adding a new calendar widget?",
+          "answer": 1
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow for Claude Code?",
+          "occurrences": [
+            {
+              "file": "Claude Code Best Practices _ Anthropic.pdf",
+              "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+              "moduleIndex": 0,
+              "lessonTitle": "Claude Code Agentic Workflow",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow for Claude Code?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "Claude Code Best Practices _ Anthropic.pdf",
+              "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+              "moduleIndex": 2,
+              "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Roman Empire Timeline",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Roman Empire begin according to the source?",
+          "answer": "30 BCE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus's Titles and Powers",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Senate gave Octavian the title 'Pontifex Maximus' (chief religious leader).",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What was the Pax Romana?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height of the Empire and Its Decline",
+          "moduleIndex": 1,
+          "lessonTitle": "Augustus Achieves Supreme Power",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year was Octavian (later Augustus) made consul for life by the Senate?",
+          "answer": "23 BCE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height of the Empire and Its Decline",
+          "moduleIndex": 1,
+          "lessonTitle": "The Colosseum Construction",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Vespasian built the Colosseum in Rome during his reign from 69-79 CE.",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height of the Empire and Its Decline",
+          "moduleIndex": 1,
+          "lessonTitle": "Division of the Roman Empire",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Who divided the Roman Empire into two administrative realms (east and west), and in what year?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall of Rome and Its Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Western Roman Empire officially end according to the source?",
+          "answer": "476 CE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall of Rome and Its Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Constantine and Christianity",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Edict of Milan (313 CE) made Christianity the official religion of the Roman Empire.",
+          "answer": false
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall of Rome and Its Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "The Legacy of Roman Law",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which emperor rewrote Roman law in the 6th century CE, creating a code that still forms the basis for civil law in several countries?",
+          "answer": 1
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "In what year did the Roman Empire begin according to the source?",
+          "occurrences": [
+            {
+              "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+              "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+              "moduleIndex": 0,
+              "lessonTitle": "The Roman Empire Timeline",
+              "lessonIndex": 0,
+              "questionType": "short-answer",
+              "question": "In what year did the Roman Empire begin according to the source?",
+              "answer": "30 BCE"
+            },
+            {
+              "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+              "moduleTitle": "Module 3: The Fall of Rome and Its Legacy",
+              "moduleIndex": 2,
+              "lessonTitle": "The Fall of the Western Roman Empire",
+              "lessonIndex": 0,
+              "questionType": "short-answer",
+              "question": "In what year did the Western Roman Empire officially end according to the source?",
+              "answer": "476 CE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Defining Multi-Agent Research Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of architecture does Anthropic's Research system use to coordinate multiple agents?",
+          "answer": "Orchestrator-worker pattern"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Token Usage and Performance Correlation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Token usage by itself explains 80% of the performance variance in the BrowseComp evaluation.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Gains from Multi-Agent Architecture",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to internal evaluations, by what percentage did a multi-agent system with Claude Opus 4 as lead agent outperform single-agent Claude Opus 4?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and Agent Coordination",
+          "moduleIndex": 1,
+          "lessonTitle": "Building Simulations for Prompt Iteration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What tool did Anthropic build to help iterate on prompts and understand their effects?",
+          "answer": "Simulations using their Console with the exact prompts and tools from their system"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and Agent Coordination",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude Models as Prompt Engineers",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude 4 models are capable of diagnosing why an agent is failing and suggesting prompt improvements.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and Agent Coordination",
+          "moduleIndex": 1,
+          "lessonTitle": "Scaling Agent Effort to Query Complexity",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to the embedded scaling rules, how many subagents with how many tool calls might be needed for direct comparisons?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Limitations of Traditional Evaluations for Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Why can't traditional evaluations that check for specific steps be applied to multi-agent systems?",
+          "answer": "Because agents can take completely different valid paths to reach the same goal, even with identical starting points"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "LLM-as-Judge Evaluation Method",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "LLM-as-judge evaluation for research agents uses criteria including factual accuracy, citation accuracy, completeness, source quality, and tool efficiency.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Identifying Evaluation Gaps Through Human Testing",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What did human testers discover that automated evaluations missed in the early agent testing?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "answer": "similarity or relatedness of given text queries"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "API Compatibility Feature",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint has full OpenAI API compatibility, making it easy to switch from OpenAI-based applications.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Available Embedding Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many leading embedding models are available in the Together Embeddings endpoint?",
+          "answer": 2
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Together Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "Vector Databases for RAG with Together API",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which three vector databases can be used with Together API to build RAG applications?",
+          "answer": "MongoDB, Pinecone, and Chroma"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Together Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "Frameworks for Building RAG",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "You can build RAG applications using Together API with frameworks such as LangChain and LlamaIndex.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Together Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Purpose in AI Applications",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What specific limitation of generative AI does RAG aim to overcome?",
+          "answer": 0
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding Embedding Vector Dimensions",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+          "answer": "768"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Visualization Technique for Embeddings",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The code uses tSNE to transform embedding vectors into 2D for visualization.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Source Relationships in Embedding Visualization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Based on the visualization results described in the content, which pair of data sources showed the highest similarity?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "questions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2: Purpose and Design",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2 according to the technical report?",
+          "answer": "agentic software engineering"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Configuration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Kimi K2.5 is a 1.04T parameter Mixture-of-Experts model with 32B active parameters used as the base for Composer 2.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Approach and Methodology",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a component of Composer 2's training approach?",
+          "answer": 2
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Async RL Infrastructure Workers",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two types of workers used in Composer 2's asynchronous RL training pipeline?",
+          "answer": "training workers and rollout generation workers"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "MTP Layer Initialization",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "MTP layers in Composer 2 are initialized from pretrained weights rather than trained from scratch.",
+          "answer": false
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalty Formula",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a component of the input x used in Composer 2's nonlinear length penalty formula?",
+          "answer": 1
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation: CursorBench and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What two characteristics of CursorBench tasks distinguish them from public benchmarks according to the technical report?",
+          "answer": "Less-specified task prompts and requiring an order of magnitude more code changes"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation: CursorBench and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Validation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "CursorBench tasks are derived from actual coding sessions of the Cursor engineering team, making the benchmark more representative of real-world software engineering than public benchmarks.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation: CursorBench and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Misalignment Factors",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT listed as one of the four primary factors contributing to the misalignment between public benchmark performance and real-world utility?",
+          "answer": 3
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation: CursorBench and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "occurrences": [
+            {
+              "file": "Composer2.pdf",
+              "moduleTitle": "Introduction & Foundations",
+              "moduleIndex": 0,
+              "lessonTitle": "Continued Pretraining Pipeline",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "Composer2.pdf",
+              "moduleTitle": "Evaluation: CursorBench and Real-World Performance",
+              "moduleIndex": 2,
+              "lessonTitle": "Composer 2 Training Pipeline Ordering",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "questions": [],
+      "duplicates": []
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Transition from Roman Republic to Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the dates for the Roman Republic and the Roman Empire?",
+          "answer": "Roman Republic: 509 BCE-30 BCE; Roman Empire: 30 BCE-476 CE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Claims Power",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Senate gave Octavian the name \"Augustus,\" meaning \"most high.\"",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Reforms Rome",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT an accomplishment of Augustus?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Pax Romana Period",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How long did the Pax Romana last?",
+          "answer": "Nearly 200 years"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Augustus's Titles",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The title 'Imperator' meant 'first citizen.'",
+          "answer": false
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: The Height and Transformation of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Hadrian's Defensive Construction",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following best describes Hadrian's Wall?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Decline and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Western Roman Empire officially end?",
+          "answer": "476 CE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Decline and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "The Byzantine Empire's Longevity",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Eastern (Byzantine) Roman Empire ended in 1453 when conquered by the Ottoman Turks.",
+          "answer": true
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Decline and Legacy of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Reasons for Rome's Decline",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT a reason for the fall of the Western Roman Empire according to the source?",
+          "answer": 0
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "questions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "What is a Multi-Agent Research System",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two key requirements for tasks where multi-agent systems are not a good fit?",
+          "answer": "Tasks that require all agents to share the same context or involve many dependencies between agents"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent systems use less token budget than single-agent systems because they distribute work across agents.",
+          "answer": false
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Evaluating Multi-Agent System Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which evaluation criterion checks if the cited sources actually match the claims made in the research output?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Multi-Agent Research Systems",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent parallel research workflow?",
+          "answer": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and Implementation Patterns",
+          "moduleIndex": 1,
+          "lessonTitle": "Orchestrator-Worker Pattern in Multi-Agent Research",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What pattern does the Research system use for its multi-agent architecture?",
+          "answer": "orchestrator-worker pattern"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and Implementation Patterns",
+          "moduleIndex": 1,
+          "lessonTitle": "Dynamic Search Differs from Static RAG",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Research system uses static retrieval like traditional RAG approaches. true or false",
+          "answer": false
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and Implementation Patterns",
+          "moduleIndex": 1,
+          "lessonTitle": "Tool Selection Heuristics for Agents",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to the tool design principles, which of the following is NOT listed as an explicit heuristic for agent tool selection?",
+          "answer": 2
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Scaling Research Effort by Query Complexity",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "For a query asking to compare the revenue of three tech companies, how many subagents and tool calls would the scaling guidelines recommend?",
+          "answer": "2-4 subagents with 10-15 calls each"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Extended Thinking Improves Agent Performance",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Extended thinking mode in the Research system improves instruction-following, reasoning, and efficiency.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "LLM-as-Judge Evaluation Criteria",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a criterion used in the LLM-as-judge evaluation rubric for the Research system?",
+          "answer": 3
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "questions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "What Are Text Embeddings?",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "answer": "Similarity or relatedness of text queries"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Availability of Long Context Models",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Together Embeddings offers M2-Retrieval models with context lengths up to 32k.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Embedding Model Integration Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT listed as an integration for Together Embeddings?",
+          "answer": 3
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Together Embeddings",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Configuring OpenAI-Compatible API for Together Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What base URL must be specified when configuring the OpenAI client to work with Together Embeddings?",
+          "answer": "https://api.together.xyz/api/v1/embeddings"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Model Configuration and Pricing",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Together Embeddings is offered at prices up to 4 times cheaper than other popular embedding platforms.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Selecting API Model Strings",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the correct API string model identifier for the M2-BERT 8K retrieval model?",
+          "answer": 1
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Together Embeddings Data Visualization Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the embeddings data visualization workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Purpose of RAG Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What does RAG aim to overcome in generative AI models?",
+          "answer": "a lack of knowledge from unseen data"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Embedding Dimension for Visualization",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The embedding dimension for M2-BERT-Retrieval-8K is 1024.",
+          "answer": false
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Source Relationships in Visualization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Based on the t-SNE visualization of RedPajama-v1 sample data, which pair of data sources shows the least similarity?",
+          "answer": 0
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Building RAG Applications and Data Visualization",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in visualizing embeddings with tSNE?",
+          "answer": [
+            0,
+            2,
+            1
+          ]
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+          "occurrences": [
+            {
+              "file": "together-embeddings-blog.pdf",
+              "moduleTitle": "Introduction to Together Embeddings",
+              "moduleIndex": 0,
+              "lessonTitle": "Introduction to Together Embeddings",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "together-embeddings-blog.pdf",
+              "moduleTitle": "API Integration and Model Configuration",
+              "moduleIndex": 1,
+              "lessonTitle": "Together Embeddings Data Visualization Process",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the embeddings data visualization workflow?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "questions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two phases used to train Composer 2?",
+          "answer": "Continued pretraining followed by reinforcement learning"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Code Generation Evolution",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Software engineering agents must perform non-trivial exploration, write their own tests, and construct minimal changes necessary to solve the task prompt.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Agent Tools and Environment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a tool available to Composer 2?",
+          "answer": 3
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction and Background: RL Training Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training process?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What specific Mixture-of-Experts model was selected as the base model for Composer 2?",
+          "answer": "Kimi K2.5"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Length Penalty Design in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The nonlinear length penalty in Composer 2's RL training is designed to encourage the model to produce quick solutions on easy tasks while allowing longer thinking on hard tasks.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining and RL",
+          "moduleIndex": 1,
+          "lessonTitle": "Relationship Between Pretraining and RL Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following best describes the relationship between continued pretraining and reinforcement learning performance based on the study on Qwen3-Coder-30B-A3B?",
+          "answer": 1
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How do CursorBench tasks compare to public benchmarks in terms of task prompt specification and code changes required?",
+          "answer": "CursorBench tasks have less-specified task prompts and require an order of magnitude more code changes compared to public benchmarks."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Public Benchmark Performance Comparison",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "According to the content, Haiku 4.5 achieves 73.3% on SWE-bench Verified while GPT-5 achieves 74.9%. This demonstrates that public benchmarks can compress performance differences between models.",
+          "answer": true
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a factor causing misalignment between public benchmark performance and real-world utility?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the recommended naming convention for a CLAUDE.md file that you want to keep private and not share with your team?",
+          "answer": "CLAUDE.local.md"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Locations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "If you run Claude from a subdirectory like root/foo/ and you have CLAUDE.md files in both root/ and root/foo/, will both files be pulled into context?",
+          "answer": true
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Customizing Claude's Allowed Tools",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which method for managing allowed tools involves using the --allowedTools CLI flag?",
+          "answer": 3
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Configuration File for Team Collaboration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the filename for the MCP configuration file that can be checked into git to share server configurations with your team?",
+          "answer": ".mcp.json"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Command Parameters",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation.",
+          "answer": true
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Safe YOLO Mode Flag Usage",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which CLI flag is used to bypass all permission checks and let Claude work uninterrupted until completion?",
+          "answer": 1
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "The Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In the explore, plan, code, commit workflow, which specific word should you use to trigger extended thinking mode?",
+          "answer": "think"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Test-Driven Development Workflow",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "When using the test-driven development workflow, should you tell Claude to write implementation code when initially writing and running the tests?",
+          "answer": false
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Modes for Specific Instructions",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a method mentioned for giving Claude images?",
+          "answer": 2
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "questions": [],
+      "duplicates": []
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations: Multi-Agent Architecture and Benefits",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the definition of a multi-agent system as stated in the content?",
+          "answer": "A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations: Multi-Agent Architecture and Benefits",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Advantages of Multi-Agent Research Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed single-agent Claude Opus 4 by 90.2% on internal research evaluations.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations: Multi-Agent Architecture and Benefits",
+          "moduleIndex": 0,
+          "lessonTitle": "Orchestrator-Worker Architecture Pattern",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the name of the architecture pattern used in the Research system?",
+          "answer": 0
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation: Prompt Engineering and Tool Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Tool Description Optimization",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What percentage decrease in task completion time resulted from the improved tool descriptions?",
+          "answer": "40%"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation: Prompt Engineering and Tool Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Parallel Tool Calling Impact",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Parallel tool calling can cut research time by up to 90% for complex queries.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation: Prompt Engineering and Tool Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Prompt Engineering Principles",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT listed as one of the prompt engineering principles in the content?",
+          "answer": 2
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation: Testing Methods and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Initial Test Set Size for Agent Evaluation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many queries representing real usage patterns did the team start with for early agent evaluation?",
+          "answer": "about 20 queries"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation: Testing Methods and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluation Flexibility in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent systems can take completely different valid paths to reach the same goal, even with identical starting points.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation: Testing Methods and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Human Evaluation's Unique Role",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "In early testing, what issue did human testers identify that automated evaluations missed?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "questions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide for given text queries?",
+          "answer": "a measure of the similarity or relatedness"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Long Context Capabilities",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The M2-BERT retrieval models in the Together Embeddings endpoint have context lengths of 2k, 8k, and 32k.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Available Embedding Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many open source embedding models are available in the Together Embeddings endpoint?",
+          "answer": 1
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatible Base URL",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the base URL for the Together Embeddings API when using OpenAI compatibility?",
+          "answer": "https://api.together.xyz/api/v1/embeddings"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatibility Verification",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint has full OpenAI compatibility so developers can easily switch from OpenAI's API.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI Compatibility Migration Benefit",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the primary benefit of the Together Embeddings endpoint having OpenAI API compatibility?",
+          "answer": 1
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Practical Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Vector Databases for RAG Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which of the following is a vector database mentioned for building RAG systems with Together API?",
+          "answer": "MongoDB"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Practical Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "RAG Framework Integration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "LangChain and LlamaIndex are mentioned as frameworks for building RAG systems with Together API.",
+          "answer": true
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Practical Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Embedding Model Visualization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+          "answer": 1
+        }
+      ],
+      "duplicates": []
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "questions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "answer": "Agentic software engineering"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Components",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 can only read files and cannot edit them.",
+          "answer": false
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training and Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a benchmark score mentioned for Composer 2?",
+          "answer": 3
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Base Model Selection",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of model is Kimi K2.5 used as the base model for Composer 2?",
+          "answer": "Mixture-of-Experts model"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Reward Structure",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Composer 2 uses a linear length penalty to incentivize quick solutions on easy tasks.",
+          "answer": false
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following correctly orders the three phases of Composer 2's continued pretraining stage?",
+          "answer": 1
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the continued pretraining phase of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Overview",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the source of tasks in CursorBench?",
+          "answer": "Tasks are drawn from actual coding sessions of the Cursor engineering team"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Limitations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: SWE-bench and its variants cover the full spectrum of software engineering tasks including debugging, refactoring, and feature development.",
+          "answer": false
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT identified as a factor causing misalignment between public benchmarks and real-world utility?",
+          "answer": 1
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining phase?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "occurrences": [
+            {
+              "file": "Composer2.pdf",
+              "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+              "moduleIndex": 0,
+              "lessonTitle": "Introduction to Composer 2 and Software Engineering Agents",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "Composer2.pdf",
+              "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+              "moduleIndex": 1,
+              "lessonTitle": "Continued Pretraining Phase Ordering",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the continued pretraining phase of Composer 2?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "Composer2.pdf",
+              "moduleTitle": "Evaluation and Real-World Performance",
+              "moduleIndex": 2,
+              "lessonTitle": "Composer 2 Training Pipeline Ordering",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the Composer 2 continued pretraining phase?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "questions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the purpose of a CLAUDE.md file in Claude Code?",
+          "answer": "It is a special file that Claude automatically pulls into context when starting a conversation, used for documenting commands, code style guidelines, and project-specific information"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Tool Permission Management",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code allows all tools to run without permission by default.",
+          "answer": false
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Placement Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Where can CLAUDE.md files be placed for Claude Code to recognize them?",
+          "answer": 1
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Setting Up and Customizing Claude Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Understanding MCP Servers",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What does MCP stand for in the context of extending Claude Code?",
+          "answer": "Model Context Protocol"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Configuration File Location",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code will only use MCP servers configured in the project config file, not in a checked-in .mcp.json file.",
+          "answer": false
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Server Configuration Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Where can MCP servers be configured for Claude Code to access their tools?",
+          "answer": 1
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude Code Git Interaction Capabilities",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What percentage of git interactions do many Anthropic engineers use Claude Code for?",
+          "answer": "90%+"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "YOLO Mode Safety Precaution",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Using --dangerously-skip-permissions in YOLO mode is completely safe when used with an internet-connected environment.",
+          "answer": false
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Optimizing Instructions for Better Results",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the recommended approach to get better results from Claude Code on the first attempt?",
+          "answer": 1
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude Code Best Practices: Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "answer": [
+            2,
+            0,
+            1
+          ]
+        }
+      ],
+      "duplicates": [
+        {
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "occurrences": [
+            {
+              "file": "Claude Code Best Practices _ Anthropic.pdf",
+              "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+              "moduleIndex": 0,
+              "lessonTitle": "Setting Up and Customizing Claude Code",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "Claude Code Best Practices _ Anthropic.pdf",
+              "moduleTitle": "Module 2: Extending Claude's Capabilities",
+              "moduleIndex": 1,
+              "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+              "answer": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "file": "Claude Code Best Practices _ Anthropic.pdf",
+              "moduleTitle": "Module 3: Effective Workflows and Optimization",
+              "moduleIndex": 2,
+              "lessonTitle": "Claude Code Best Practices: Explore, Plan, Code, Commit Workflow",
+              "lessonIndex": 3,
+              "questionType": "flow-diagram",
+              "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+              "answer": [
+                2,
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "allDuplicates": [
+    {
+      "question": "What was the Pax Romana?",
+      "occurrences": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: From Republic to Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What was the Pax Romana?",
+          "answer": 1
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What was the Pax Romana?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed a single-agent Claude Opus 4 by 90.2% on internal research evaluations.",
+      "occurrences": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Gains from Multi-Agent Architecture",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed a single-agent Claude Opus 4 by 90.2% on internal research evaluations.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Advantages of Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed a single-agent Claude Opus 4 system by 90.2% on internal research evaluations.",
+          "answer": true
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations: Multi-Agent Architecture and Benefits",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Advantages of Multi-Agent Research Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed single-agent Claude Opus 4 by 90.2% on internal research evaluations.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "question": "What is the correct order of steps in the multi-agent research workflow?",
+      "occurrences": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering, Evaluation, and Production",
+          "moduleIndex": 2,
+          "lessonTitle": "Multi-Agent Research System Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent research workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Multi-Agent Research Systems",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent parallel research workflow?",
+          "answer": [
+            0,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+      "occurrences": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+          "answer": 3
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+      "occurrences": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Best Practices",
+          "moduleIndex": 2,
+          "lessonTitle": "Effective Coding Workflow with Claude Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Claude Code Agentic Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow for Claude Code?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Setting Up and Customizing Claude Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude Code Best Practices: Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, plan, code, commit workflow?",
+          "answer": [
+            2,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "question": "What are the dates for the Roman Republic and the Roman Empire?",
+      "occurrences": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Roman Republic and Empire Timeline",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the dates for the Roman Republic and the Roman Empire?",
+          "answer": "Roman Republic: 509 BCE-30 BCE; Roman Empire: 30 BCE-476 CE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Transition from Roman Republic to Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the dates for the Roman Republic and the Roman Empire?",
+          "answer": "Roman Republic: 509 BCE-30 BCE; Roman Empire: 30 BCE-476 CE"
+        }
+      ]
+    },
+    {
+      "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+      "occurrences": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Subagent Functionality and Design",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+          "answer": 1
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Effective Subagent Delegation Requirements",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What four elements must the lead agent provide to each subagent for effective task delegation?",
+          "answer": "An objective, an output format, guidance on the tools and sources to use, and clear task boundaries"
+        }
+      ]
+    },
+    {
+      "question": "How many leading embedding models are available in the Together Embeddings endpoint?",
+      "occurrences": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Together Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many leading embedding models are available in the Together Embeddings endpoint?",
+          "answer": "8 leading embedding models"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Available Embedding Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many leading embedding models are available in the Together Embeddings endpoint?",
+          "answer": 2
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Platform",
+          "moduleIndex": 0,
+          "lessonTitle": "Available Embedding Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many open source embedding models are available in the Together Embeddings endpoint?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+      "occurrences": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Together Embeddings",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Together Embeddings",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the data visualization workflow using Together Embeddings?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Configuration",
+          "moduleIndex": 1,
+          "lessonTitle": "Together Embeddings Data Visualization Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the embeddings data visualization workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "question": "Which of the following is NOT mentioned as an integration option for building RAG with Together Embeddings?",
+      "occurrences": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Model Usage",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Integration Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an integration option for building RAG with Together Embeddings?",
+          "answer": 1
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG and Visualization Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Framework Options for RAG Development",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which framework is mentioned as an integration option for building RAG with Together Embeddings?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "question": "What is the correct order of steps in Composer 2's continued pretraining process?",
+      "occurrences": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Architecture",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Training Architecture Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in Composer 2's continued pretraining process?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the continued pretraining phase of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining phase?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "question": "What is the source of tasks in CursorBench?",
+      "occurrences": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation & Real-World Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the source of tasks in CursorBench?",
+          "answer": "Actual coding sessions of Cursor's engineering team"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Overview",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the source of tasks in CursorBench?",
+          "answer": "Tasks are drawn from actual coding sessions of the Cursor engineering team"
+        }
+      ]
+    },
+    {
+      "question": "Which of the following is NOT identified as one of the four primary factors causing misalignment between public benchmarks and real-world utility?",
+      "occurrences": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation & Real-World Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT identified as one of the four primary factors causing misalignment between public benchmarks and real-world utility?",
+          "answer": 2
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT identified as a factor causing misalignment between public benchmarks and real-world utility?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "question": "In what year did the Roman Empire begin according to the source?",
+      "occurrences": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: The Rise and Establishment of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Roman Empire Timeline",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Roman Empire begin according to the source?",
+          "answer": "30 BCE"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: The Fall of Rome and Its Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Western Roman Empire officially end according to the source?",
+          "answer": "476 CE"
+        }
+      ]
+    },
+    {
+      "question": "What do text embeddings provide a measure of?",
+      "occurrences": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "answer": "similarity or relatedness of given text queries"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "What Are Text Embeddings?",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "answer": "Similarity or relatedness of text queries"
+        }
+      ]
+    },
+    {
+      "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+      "occurrences": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding Embedding Vector Dimensions",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+          "answer": "768"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Systems and Practical Applications",
+          "moduleIndex": 2,
+          "lessonTitle": "Embedding Model Visualization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+      "occurrences": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction & Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Evaluation: CursorBench and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+      "occurrences": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Training Methodology: Pretraining & Reinforcement Learning",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction and Background: RL Training Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training process?",
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "crossCourseDuplicates": []
+}

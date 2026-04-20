@@ -1,0 +1,484 @@
+{
+  "tag": "openrouter-gemini31-flash-lite-sufficiency-composer2",
+  "timestamp": "2026-04-03T12:13:53.132Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "openrouter/google/gemini-3.1-flash-lite-preview",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "sufficiency"
+  ],
+  "totalTimeMs": 101440,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "successRate": "92%",
+      "firstPassRate": "92%"
+    },
+    "correctness": {
+      "totalGraded": 11,
+      "correct": 11,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 11,
+      "fullyGrounded": "11/11 (100%)",
+      "selfContained": "11/11 (100%)",
+      "concrete": "11/11 (100%)",
+      "grounded": "11/11 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 11,
+      "sufficient": 11,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 2,
+        "correct": "2/2",
+        "fullyGrounded": "2/2",
+        "sufficient": "2/2"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 109,
+      "generationTimeMs": 99429,
+      "judgingTimeMs": 1896,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction to Composer 2 and Core Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2 is a specialized model designed for agentic software engineering. The model demonstrates strong long-term planning and coding intelligence while maintaining the ability to efficiently solve problems for interactive use. It scores strongly on CursorBench, which is a benchmark of real-world software engineering, while also scoring at frontier levels on public software engineering benchmarks such as SWE-bench Multilingual and Terminal-Bench. Composer 2 is a frontier-level coding model that demonstrates a process for training strong domain-specialized models. On CursorBench evaluations, the model achieves 61.3%, representing a major improvement in accuracy compared to previous Composer models.",
+          "question": "What is Composer 2 and what benchmark score does it achieve on CursorBench?",
+          "answer": "Composer 2 is a specialized model for agentic software engineering that achieves 61.3% on CursorBench.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly defines Composer 2 as a specialized model for agentic software engineering and states that it achieves 61.3% on CursorBench, providing all the information required to answer the question.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly defines Composer 2 as a specialized model for agentic software engineering and states that it achieves 61.3% on CursorBench, providing all the information required to answer the question.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly defines Composer 2 as a specialized model for agentic software engineering and states that it achieves 61.3% on CursorBench, providing all the information required to answer the question.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Core Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Phases of Composer 2",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Composer 2 is trained in two distinct phases: first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance through stronger reasoning, accurate multi-step execution, and coherence on long-horizon realistic coding problems. The continued pretraining stage aims to improve the language model's base knowledge specifically in the domain of coding and is divided into three phases: bulk compute at 32k token sequence length, followed by a longer-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks. These phases collectively provide a base model for the subsequent agentic RL training by specializing the model on coding knowledge and capabilities.",
+          "question": "Composer 2 is trained using exactly two phases: continued pretraining followed by large-scale reinforcement learning.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that Composer 2 is trained in 'two distinct phases: first, continued pretraining... followed by large-scale reinforcement learning,' which provides the necessary information to evaluate the truthfulness of the statement.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that Composer 2 is trained in 'two distinct phases: first, continued pretraining... followed by large-scale reinforcement learning,' which provides the necessary information to evaluate the truthfulness of the statement.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that Composer 2 is trained in 'two distinct phases: first, continued pretraining... followed by large-scale reinforcement learning,' which provides the necessary information to evaluate the truthfulness of the statement.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Core Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Tools Available to Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web. These tools form the foundation of the model's ability to interact with software engineering environments. Its prompt includes a system message, the tool call format specification, recent file information, past user messages, and the current task. The most common end result of this process is a set of changes to files in the codebase environment, although there are many other common use cases such as answering questions, writing plans, resolving version control issues, or monitoring long-running jobs.",
+          "question": "Which of the following tools does Composer 2 have access to?",
+          "answer": 3,
+          "choices": [
+            "Read files, compile code, run tests, and commit changes",
+            "Edit files, run git commands, deploy applications, and manage databases",
+            "Only read files and execute code",
+            "Read and edit files, run shell commands, grep/semantic search, and web search"
+          ],
+          "explanation": "The content explicitly states that Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly lists the tools available to Composer 2: reading and editing files, running shell commands, searching the codebase (grep/semantic search), and searching the web. This directly maps to the correct choice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists the tools available to Composer 2: reading and editing files, running shell commands, searching the codebase (grep/semantic search), and searching the web. This directly maps to the correct choice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists the tools available to Composer 2: reading and editing files, running shell commands, searching the codebase (grep/semantic search), and searching the web. This directly maps to the correct choice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Introduction to Composer 2 and Core Concepts",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "Composer 2 is trained through a sequential process starting with selecting a base model, followed by continued pretraining to specialize the model on coding knowledge, and finally applying reinforcement learning to improve end-to-end coding performance through stronger reasoning and accurate multi-step execution.",
+          "question": "What is the correct order of steps in the Composer 2 training pipeline?",
+          "answer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining",
+            "Select Base Model",
+            "Reinforcement Learning"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly describes the sequential process of training Composer 2, listing the steps in the order: selecting a base model, continued pretraining, and reinforcement learning, which directly maps to the required answer ordering.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly describes the sequential process of training Composer 2, listing the steps in the order: selecting a base model, continued pretraining, and reinforcement learning, which directly maps to the required answer ordering.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly describes the sequential process of training Composer 2, listing the steps in the order: selecting a base model, continued pretraining, and reinforcement learning, which directly maps to the required answer ordering.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2 extends the Kimi K2.5 base model through a continued pretraining stage divided into three distinct phases. The first and most computationally intensive phase uses a 32k token sequence length on a code-dominated data mix. The second phase is a shorter long-context extension that extends the sequence length to 256k tokens. The third and final phase is a brief supervised fine-tuning phase focused on targeted coding tasks. Training was performed using MXFP8 precision on NVIDIA B300s GPUs with the AdamW optimizer.",
+          "question": "How many phases make up the continued pretraining stage in Composer 2?",
+          "answer": "Three phases",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that the continued pretraining stage is 'divided into three distinct phases'.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the continued pretraining stage is 'divided into three distinct phases'.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the continued pretraining stage is 'divided into three distinct phases'.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator Selection",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "The Composer 2 training uses Kullback-Leibler divergence for regularization, calculated as KL(q||p) = Ex~q[-log r(x)] where r(x) = p(x)/q(x). While many open-source implementations use the k3 estimator defined as (r - 1) - log r, which is unbiased and reduces variance when p and q are close, the research found that variance increases drastically as p and q diverge. For large KL values, the k3 estimator variance becomes extremely large. Therefore, Composer 2 uses the standard k1 estimator instead, which is simply -log r.",
+          "question": "Which KL divergence estimator does Composer 2 use: k1 or k3?",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that Composer 2 uses the k1 estimator instead of the k3 estimator, providing the necessary information to evaluate the statement.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that Composer 2 uses the k1 estimator instead of the k3 estimator, providing the necessary information to evaluate the statement.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that Composer 2 uses the k1 estimator instead of the k3 estimator, providing the necessary information to evaluate the statement.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Task Distribution",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 is trained by reinforcement learning on a large set of coding tasks that reflect the most common use cases. The training task distribution captures many aspects of software engineering that are absent from popular AI coding benchmarks. According to the training data breakdown, one major category is 'Debugging', which involves identifying and fixing bugs in existing code. Another significant category is 'New Feature', which focuses on implementing additional functionality. A third category is 'Refactor', which deals with restructuring existing code without changing its external behavior.",
+          "question": "Among the following, which three categories are part of the RL training task distribution for Composer 2?",
+          "answer": 0,
+          "choices": [
+            "Debugging, New Feature, Refactor",
+            "Database Design, Cloud Deployment, User Authentication",
+            "API Documentation, Unit Generation, Error Handling",
+            "Automated Testing, Security Audit, Performance Profiling"
+          ],
+          "explanation": "The content explicitly lists Debugging, New Feature, and Refactor as the main RL training task categories, as shown in the task distribution figure.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly lists 'Debugging', 'New Feature', and 'Refactor' as the three major categories in the training task distribution, which directly corresponds to the correct choice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists 'Debugging', 'New Feature', and 'Refactor' as the three major categories in the training task distribution, which directly corresponds to the correct choice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists 'Debugging', 'New Feature', and 'Refactor' as the three major categories in the training task distribution, which directly corresponds to the correct choice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Iteration Cycle",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "During the reinforcement learning phase of Composer 2 training, the model undergoes repeated training iterations. Each iteration begins by Sample Problem from the training distribution, then the model Generate Rollouts by acting in the environment to propose solutions. These solutions are assessed through Evaluate Solution Quality using reward signals, and finally the model Update Model Weights based on the computed advantages. This cycle repeats for each problem in the distribution.",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training iteration?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Generate Rollouts",
+            "Evaluate Solution Quality"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly lists the sequence of the reinforcement learning phase: 'Each iteration begins by Sample Problem..., then the model Generate Rollouts..., these solutions are assessed through Evaluate Solution Quality...'. This provides the exact order required to answer the question.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly lists the sequence of the reinforcement learning phase: 'Each iteration begins by Sample Problem..., then the model Generate Rollouts..., these solutions are assessed through Evaluate Solution Quality...'. This provides the exact order required to answer the question.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly lists the sequence of the reinforcement learning phase: 'Each iteration begins by Sample Problem..., then the model Generate Rollouts..., these solutions are assessed through Evaluate Solution Quality...'. This provides the exact order required to answer the question.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Performance Metrics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2 achieves a score of 61.3% on CursorBench, representing a 37% relative improvement over Composer 1.5 (which scored 44.2%) and a 61% improvement over Composer 1 (which scored 38.0%). These improvements were measured by running Cursor agents directly within Anyrun, the same infrastructure that supports the reinforcement learning pipeline. The model demonstrates substantial accuracy gains compared to its base model Kimi K2.5, which only achieved 36.0% on CursorBench. The evaluation computes accuracy aggregated over all tasks across multiple passes to reduce variance.",
+          "question": "What accuracy score does Composer 2 achieve on CursorBench?",
+          "answer": "61.3%",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that Composer 2 achieves a score of 61.3% on CursorBench.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that Composer 2 achieves a score of 61.3% on CursorBench.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that Composer 2 achieves a score of 61.3% on CursorBench.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "KL Divergence Estimator Choice",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Composer 2 uses the k1 estimator for Kullback-Leibler divergence regularization in reinforcement learning, calculated as k1 = -log r where r(x) = p(x)/q(x). While the k3 estimator (defined as (r - 1) - log r) is an unbiased estimator that reduces variance when p and q are close, research shows its variance increases drastically as p and q diverge. For large KL values, the variance of the k3 estimate becomes extremely large, which can destabilize training. The k2 estimator does not suffer from variance blow-up but is biased. Composer 2 chooses k1 over k3 to avoid this variance issue during training.",
+          "question": "True or False: Composer 2 uses the k3 KL divergence estimator.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that 'Composer 2 uses the k1 estimator' and explains why it chooses k1 over k3, providing sufficient information to determine that the statement 'Composer 2 uses the k3 KL divergence estimator' is false.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that 'Composer 2 uses the k1 estimator' and explains why it chooses k1 over k3, providing sufficient information to determine that the statement 'Composer 2 uses the k3 KL divergence estimator' is false.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that 'Composer 2 uses the k1 estimator' and explains why it chooses k1 over k3, providing sufficient information to determine that the statement 'Composer 2 uses the k3 KL divergence estimator' is false.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Training Infrastructure Parallelism Method",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 uses Context Parallelism (CP) as the primary long-context scaling axis for training, requiring less communication than Tensor Parallelism and improving compute efficiency by preserving full hidden dimensions. The implementation includes several key techniques: computing local KV latent vectors then all-gathering across CP ranks before computing KV projections to minimize communication overhead. To address load imbalance during causal attention where later tokens must attend to more tokens, Composer 2 splits the sequence into 2 × CP chunks, with the i-th rank processing chunks i and 2 × CP − 1 − i, resulting in roughly equal work during causal attention. The context parallelism dimension is folded into the FSDP dimension to reduce per-GPU parameter and state memory usage.",
+          "question": "What parallelism method does Composer 2 use as the primary long-context scaling axis?",
+          "answer": 1,
+          "choices": [
+            "Tensor Parallelism (TP)",
+            "Context Parallelism (CP)",
+            "Expert Parallelism (EP)",
+            "Fully Sharded Data Parallelism (FSDP)"
+          ],
+          "explanation": "Composer 2 specifically uses Context Parallelism (CP) as the primary long-context scaling axis because it requires less communication than Tensor Parallelism and improves compute efficiency by preserving full hidden dimensions in various projections.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that 'Composer 2 uses Context Parallelism (CP) as the primary long-context scaling axis for training', which directly provides the information needed to answer the question.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that 'Composer 2 uses Context Parallelism (CP) as the primary long-context scaling axis for training', which directly provides the information needed to answer the question.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that 'Composer 2 uses Context Parallelism (CP) as the primary long-context scaling axis for training', which directly provides the information needed to answer the question.\"}",
+          "sufficiencyParseStatus": "parsed"
+        }
+      ]
+    }
+  ]
+}

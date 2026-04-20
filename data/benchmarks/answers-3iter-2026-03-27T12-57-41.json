@@ -1,0 +1,2359 @@
+{
+  "tag": "answers-3iter",
+  "timestamp": "2026-03-27T12:57:41.062Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-opus-4-6",
+  "iterations": 3,
+  "totalTimeMs": 1267795,
+  "aggregate": {
+    "totalGraded": 142,
+    "correct": 134,
+    "incorrect": 8,
+    "accuracy": "94%",
+    "byQuestionType": {
+      "short-answer": {
+        "correct": 42,
+        "total": 42,
+        "accuracy": "100%"
+      },
+      "true-false": {
+        "correct": 42,
+        "total": 42,
+        "accuracy": "100%"
+      },
+      "multiple-choice": {
+        "correct": 36,
+        "total": 42,
+        "accuracy": "86%"
+      },
+      "flow-diagram": {
+        "correct": 14,
+        "total": 16,
+        "accuracy": "88%"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "correct": 10,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 168372,
+      "judgingTimeMs": 13964,
+      "gradedQuestions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Rise and Structure of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Roman Republic and Empire Dates",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the dates for the Roman Republic and the Roman Empire?",
+          "givenAnswer": "Roman Republic: 509 BCE-30 BCE; Roman Empire: 30 BCE-476 CE",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: Roman Republic: 509 BCE-30 BCE, and Roman Empire: 30 BCE-476 CE. The given answer matches these dates exactly."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Rise and Structure of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Titles",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The title 'Pontifex Maximus' given to Augustus means 'chief religious leader.'",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content states that Augustus was made 'Pontifex Maximus,' or 'chief religious leader.' The statement accurately reflects this meaning."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Rise and Structure of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Reforms and Achievements",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT an accomplishment of Augustus?",
+          "givenAnswer": 2,
+          "choices": [
+            "Building and maintaining infrastructure",
+            "Establishing fire and police departments",
+            "Conquering the entire Mediterranean region",
+            "Extending citizenship to more provincials"
+          ],
+          "explanation": "Conquering the entire Mediterranean region describes the Pax Romana, which was the period of peace Rome controlled after Augustus. The other three options were directly accomplished by Augustus.",
+          "correct": true,
+          "judgeExplanation": "The source content lists Augustus's accomplishments as: building and maintaining infrastructure, establishing fire and police departments, extending citizenship to more provincials, among others. 'Conquering the entire Mediterranean region' is not listed as an accomplishment of Augustus — rather, Rome's control of the entire Mediterranean region is described under 'Pax Romana,' which was the period of peace, not a specific accomplishment attributed to Augustus personally. Therefore, choice 2 is correctly identified as NOT an accomplishment of Augustus."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Rise and Structure of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Module 1: Rise and Structure of the Roman Empire",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in Octavian becoming Augustus?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Octavian Defeats Antony",
+            "Senate Grants Augustus Title",
+            "Augustus Made Consul"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source content under 'Octavian Becomes Augustus' lists the events in this order: (1) Octavian's forces defeated Antony and Cleopatra at the Battle of Actium, (2) The Senate gave him the name 'Augustus', (3) 23 BCE – he was made consul for life. The given answer [0,1,2] maps to First → 'Octavian Defeats Antony', Second → 'Senate Grants Augustus Title', Third → 'Augustus Made Consul', which matches the source order."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Imperial Rome and its Challenges",
+          "moduleIndex": 1,
+          "lessonTitle": "Understanding the Pax Romana",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What was the Pax Romana?",
+          "givenAnswer": "A period of nearly 200 years of peace when Rome controlled the entire Mediterranean region with minimal warfare",
+          "correct": true,
+          "judgeExplanation": "The source content states that during the Pax Romana, 'Rome controlled the entire Mediterranean region and beyond,' that 'Complete control = almost no warfare,' and that 'This peace lasted nearly 200 years.' The given answer accurately captures these key points, describing it as 'A period of nearly 200 years of peace when Rome controlled the entire Mediterranean region with minimal warfare.' The only minor difference is that the source says 'and beyond' regarding territory, but the core meaning is correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Imperial Rome and its Challenges",
+          "moduleIndex": 1,
+          "lessonTitle": "Imperial Succession Problems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Emperors were chosen by hereditary succession only, with no military involvement.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement claims emperors were chosen by hereditary succession only, with no military involvement. According to the source, 'The office of emperor was initially designed to be hereditary' BUT 'The military came to play an enormous role in selecting who would become emperor.' The statement is false because the military did play a significant role, and the answer 'false' is correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Imperial Rome and its Challenges",
+          "moduleIndex": 1,
+          "lessonTitle": "Roman Leadership Titles",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which title given to Augustus means \"first citizen\"?",
+          "givenAnswer": 0,
+          "choices": [
+            "Princeps",
+            "Imperator",
+            "Pontifex Maximus",
+            "Augustus"
+          ],
+          "explanation": "The title \"Princeps\" means \"first citizen\" and is the origin of the word \"prince.\" Imperator means \"successful general\" (origin of \"emperor\"), Pontifex Maximus means \"chief religious leader,\" and Augustus means \"most high.\"",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that Augustus was made 'Princeps,' meaning 'first citizen,' and notes it is the origin of the word 'prince.' This matches the given answer of index 0 (Princeps)."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Legacy and Fall of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Western Roman Empire officially end?",
+          "givenAnswer": "476 CE",
+          "correct": true,
+          "judgeExplanation": "The source content states that the Western (Roman) Empire 'Ended officially in 476 CE when the last emperor, Romulus Augustus, was deposed by a barbarian, Odoacer.' The given answer of 476 CE matches this."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Legacy and Fall of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Division of the Roman Empire",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Diocletian divided the Roman Empire into two administrative realms in 285 CE to strengthen the empire.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The statement says Diocletian divided the empire 'to strengthen the empire,' which describes his intention/purpose. The source confirms both the date (285 CE) and the purpose: 'Emperor Diocletian had believed that dividing the empire for administrative purposes would strengthen the empire.' The statement is about what Diocletian did and why he did it, not about whether it ultimately succeeded. The fact that the source says 'He was wrong' about the outcome doesn't change the truth of the statement about his intention. The judge appears to have conflated Diocletian's purpose with the outcome, but the statement only claims the purpose, which is accurately stated."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Legacy and Fall of Rome",
+          "moduleIndex": 2,
+          "lessonTitle": "Christianity and the Roman Empire",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "When was Christianity officially legalized in the Roman Empire?",
+          "givenAnswer": 1,
+          "choices": [
+            "64 CE during Nero's reign",
+            "313 CE with the Edict of Milan",
+            "476 CE when the Western Empire fell",
+            "537 CE during Justinian's reign"
+          ],
+          "explanation": "The Edict of Milan in 313 CE, issued by Constantine and Licinius, established religious toleration and legalized Christianity throughout the Roman Empire.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states under Constantine (312-337 CE): 'Edict of Milan (313 CE) - Christianity legalized (religious toleration)'. The given answer of index 1 ('313 CE with the Edict of Milan') matches this perfectly."
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 7,
+      "incorrect": 2,
+      "accuracy": "78%",
+      "generationTimeMs": 127096,
+      "judgingTimeMs": 10163,
+      "gradedQuestions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Defining Multi-Agent Research Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is a multi-agent system?",
+          "givenAnswer": "A system consisting of multiple LLM agents that autonomously use tools in a loop while working together",
+          "correct": true,
+          "judgeExplanation": "The source states: 'A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together.' The given answer captures this definition accurately: 'A system consisting of multiple LLM agents that autonomously use tools in a loop while working together.'"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent systems use approximately the same amount of tokens as single-agent chat interactions.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source states that 'agents typically use about 4× more tokens than chat interactions, and multi-agent systems use about 15× more tokens than chats.' This clearly shows multi-agent systems use significantly more tokens (about 15×) than single-agent chat interactions, not approximately the same amount. The statement is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Advantages of Multi-Agent Research",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an advantage of multi-agent research systems?",
+          "givenAnswer": 2,
+          "choices": [
+            "Parallel exploration of multiple research directions",
+            "Reduced token consumption compared to single agents",
+            "Handling information that exceeds single context windows",
+            "Coordinating work across specialized subagents"
+          ],
+          "explanation": "The source explicitly states that multi-agent systems use about 15× more tokens than chats, not reduced token consumption. The other options are mentioned as advantages in the content.",
+          "correct": false,
+          "judgeExplanation": "The judge's reasoning is correct. The source explicitly mentions 'information that exceeds single context windows' as an advantage of multi-agent systems. Meanwhile, 'Reduced token consumption compared to single agents' is NOT mentioned as an advantage — in fact, the source states the opposite: multi-agent systems use about 15× more tokens than chats. Therefore, the correct answer to 'which is NOT mentioned as an advantage' is index 1 (Reduced token consumption), not index 2 (Handling information that exceeds single context windows). The given answer of index 2 is genuinely incorrect."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and Prompt Engineering",
+          "moduleIndex": 1,
+          "lessonTitle": "Multi-Agent Architecture Patterns",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What architectural pattern does the Research system use to coordinate multiple agents?",
+          "givenAnswer": "orchestrator-worker pattern",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern, where a lead agent coordinates the process while delegating to specialized subagents that operate in parallel.'"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and Prompt Engineering",
+          "moduleIndex": 1,
+          "lessonTitle": "Prompt Engineering Guidelines",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "According to the prompt engineering guidelines, complex research tasks should use more than 10 subagents with clearly divided responsibilities.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content states under point 3 ('Scale effort to query complexity'): 'complex research might use more than 10 subagents with clearly divided responsibilities.' This matches the statement exactly."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and Prompt Engineering",
+          "moduleIndex": 1,
+          "lessonTitle": "Tool Selection Strategies for Agents",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an explicit heuristic for tool selection in the article?",
+          "givenAnswer": 3,
+          "choices": [
+            "Examine all available tools first",
+            "Match tool usage to user intent",
+            "Prefer generic tools over specialized ones",
+            "Search the web for broad external exploration"
+          ],
+          "explanation": "The article explicitly states the heuristics include examining all available tools first, matching tool usage to user intent, searching the web for broad external exploration, and preferring specialized tools over generic ones. The statement that agents should 'prefer generic tools over specialized ones' is the opposite of what the article recommends.",
+          "correct": false,
+          "judgeExplanation": "The given answer selected choice 3 ('Search the web for broad external exploration'), which IS explicitly mentioned in the article as one of the heuristics. The correct answer should be choice 2 ('Prefer generic tools over specialized ones'), because the article actually says 'prefer specialized tools over generic ones' — the opposite. Choice 2 is the one NOT mentioned (and is in fact contradicted). The judge's verdict of INCORRECT is right."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluating Multi-Agent Systems Differently",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of evaluation approach do multi-agent systems require instead of checking if agents followed prescribed steps?",
+          "givenAnswer": "Flexible evaluation methods that judge whether agents achieved the right outcomes while following a reasonable process",
+          "correct": true,
+          "judgeExplanation": "The source states: 'we usually can't just check if agents followed the \"correct\" steps we prescribed in advance. Instead, we need flexible evaluation methods that judge whether agents achieved the right outcomes while also following a reasonable process.' The given answer accurately captures this meaning."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Impact of Small Changes in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent systems exhibit predictable behavior when the lead agent is modified, making it easy to anticipate how subagents will respond.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states that 'small changes to the lead agent can unpredictably change how subagents behave' and that 'multi-agent systems have emergent behaviors, which arise without specific programming.' This directly contradicts the statement's claim that behavior is predictable and easy to anticipate, making the statement false. The given answer of 'false' is correct."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "LLM-as-Judge Evaluation Criteria",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a criterion used in the LLM-as-judge evaluation rubric?",
+          "givenAnswer": 3,
+          "choices": [
+            "Factual accuracy (do claims match sources?)",
+            "Citation accuracy (do the cited sources match the claims?)",
+            "Completeness (are all requested aspects covered?)",
+            " Grammatical correctness (is the output free of spelling errors?)"
+          ],
+          "explanation": "The source explicitly mentions factual accuracy, citation accuracy, completeness, source quality, and tool efficiency as the five evaluation criteria. Grammatical correctness is not listed as a criterion in the evaluation rubric.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly lists five criteria in the LLM-as-judge evaluation rubric: factual accuracy, citation accuracy, completeness, source quality, and tool efficiency. Grammatical correctness is not mentioned anywhere as a criterion. The given answer correctly identifies choice 3 (Grammatical correctness) as the one NOT mentioned."
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "correct": 11,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 95350,
+      "judgingTimeMs": 5388,
+      "gradedQuestions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "givenAnswer": "The similarity or relatedness of given text queries",
+          "correct": true,
+          "judgeExplanation": "The source states: 'Text embeddings provide a measure of the similarity or relatedness of given text queries.' The given answer matches this exactly."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Model Performance and Context Length",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The M2-BERT retrieval models support context lengths of 2k, 8k, and 32k tokens.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'the newly released M2-BERT retrieval models for long context (2k, 8k, 32k).' This confirms that the M2-BERT retrieval models support context lengths of 2k, 8k, and 32k tokens."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Together Embeddings Pricing and Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is a key feature of the Together Embeddings endpoint?",
+          "givenAnswer": 1,
+          "choices": [
+            "Integration with only Pinecone for vector storage",
+            "Up to 4x cheaper than other popular platforms",
+            "Limited to only 3 embedding models",
+            "Incompatible with OpenAI API"
+          ],
+          "explanation": "The content explicitly states that Together Embeddings is up to 4x cheaper than other popular platforms, making it the correct answer.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly lists 'Up to 4x cheaper than other popular platforms' as one of the highlights of the Together Embeddings endpoint. The other options are incorrect: it integrates with MongoDB, LangChain, and LlamaIndex (not only Pinecone); it offers 8 embedding models (not 3); and it has full OpenAI API compatibility (not incompatible)."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Embedding Data Visualization Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in visualizing embeddings with tSNE?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Generate Embeddings",
+            "Transform with tSNE",
+            "Plot Embeddings"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source content describes the data visualization example in three clear steps: (1) Generate embeddings using the Together API (via `generate_embeddings` and `sample_and_extract_embeddings` functions), (2) Transform with tSNE (via `transform_tSNE` function to reduce dimensionality), and (3) Plot the embeddings (via `plot_embeddings` function). The given answer ordering of [0,1,2] correctly maps First→Generate Embeddings, Second→Transform with tSNE, Third→Plot Embeddings."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "Understanding Retrieval Augmented Generation (RAG)",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What limitation of generative AI models does RAG aim to overcome?",
+          "givenAnswer": "a lack of knowledge from unseen data",
+          "correct": true,
+          "judgeExplanation": "The source states that RAG 'aims to overcome limitations of generative AI models, such as a lack of knowledge from unseen data.' The given answer matches this."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Framework Integration Options",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "You can build RAG using LangChain and LlamaIndex frameworks with Together API.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states 'Integrations with MongoDB, LangChain, and LlamaIndex for RAG' and further elaborates 'You can now build RAG using Together API and popular vector databases such as MongoDB, Pinecone, and Chroma or by leveraging frameworks such as LangChain and LlamaIndex.'"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "Vector Databases for RAG with Together",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is a vector database that can be used to build RAG with Together Embeddings?",
+          "givenAnswer": 2,
+          "choices": [
+            "LangChain",
+            "LlamaIndex",
+            "MongoDB",
+            "OpenAI API"
+          ],
+          "explanation": "MongoDB is explicitly mentioned as a vector database integration for building RAG with Together Embeddings. LangChain and LlamaIndex are frameworks, not vector databases.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly mentions MongoDB as a vector database for building RAG with Together Embeddings: 'You can now build RAG using Together API and popular vector databases such as MongoDB, Pinecone, and Chroma or by leveraging frameworks such as LangChain and LlamaIndex.' Among the choices, MongoDB is the only vector database listed; LangChain and LlamaIndex are frameworks, and OpenAI API is an API platform."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding Embedding Dimensions for Visualization",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model?",
+          "givenAnswer": "768",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.'"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Source Clustering in Embedding Visualization",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: When visualizing embeddings from different data sources using tSNE, texts from each data source are located far apart from each other.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source states 'texts from each data source are somewhat closely located,' meaning texts from the same data source cluster together, not far apart. The statement claims they are 'located far apart from each other,' which contradicts the source. Therefore, the statement is False, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Visualizing Data Source Relationships",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following data source pairs were identified as having similarities in the visualization example?",
+          "givenAnswer": 0,
+          "choices": [
+            "github and stackexchange",
+            "arxiv and book",
+            "c4 and github",
+            "book and arxiv"
+          ],
+          "explanation": "The content states that similarities were observed between github and stackexchange, and between book and c4, while github and book were identified as less related.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'We can also see the similarities between github and stackexchange, and between book and c4, while github and book are less related.' The answer correctly identifies 'github and stackexchange' as one of the pairs with similarities."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Advanced Use Cases and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Visualization with Embeddings and tSNE",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the embeddings data visualization workflow?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Generate Embeddings",
+            "Transform with tSNE",
+            "Plot Embeddings"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source content describes the workflow as: (1) Generate embeddings using the Together API, (2) Transform using tSNE to reduce dimensionality for visualization, (3) Plot the embeddings. This matches the given answer order of Generate Embeddings → Transform with tSNE → Plot Embeddings."
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 11,
+      "incorrect": 1,
+      "accuracy": "92%",
+      "generationTimeMs": 92152,
+      "judgingTimeMs": 13921,
+      "gradedQuestions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three benchmarks mentioned that Composer 2 scores on?",
+          "givenAnswer": "CursorBench, Terminal-Bench, and SWE-bench Multilingual",
+          "correct": true,
+          "judgeExplanation": "The source states that Composer 2 'scores strongly on CursorBench' and 'also scoring at frontier levels on public software engineering benchmarks such as SWE-bench Multilingual and Terminal-Bench.' These are the three benchmarks mentioned."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Software Engineering Agent Definition",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Software engineering agents only need to execute code provided by users without any exploration or independent problem-solving.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement claims that software engineering agents 'only need to execute code provided by users without any exploration or independent problem-solving.' This is false according to the source, which explicitly states: 'a strong software engineering agent must perform non-trivial exploration, write its own tests, and construct the minimal changes necessary to solve the task prompt.' The given answer of 'false' correctly identifies the statement as incorrect."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Tools and Capabilities",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a tool capability of Composer 2?",
+          "givenAnswer": 2,
+          "choices": [
+            "Read and edit files",
+            "Run shell commands",
+            "Compile and debug executables",
+            "Search the codebase using grep or semantic search"
+          ],
+          "explanation": "The content explicitly states that Composer 2 tools include reading and editing files, running shell commands, searching the codebase using grep or semantic search, and searching the web. Compilation and debugging of executables is not listed as a capability.",
+          "correct": true,
+          "judgeExplanation": "The source content states that Composer 2 has access to tools that allow it to 'read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web.' 'Compile and debug executables' is not mentioned as a tool capability, making index 2 the correct answer."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 1: Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Module 1: Introduction to Composer 2 and Software Engineering Agents",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining",
+            "Long-Context Extension",
+            "SFT Phase"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source states: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the given order: First → Continued Pretraining (bulk compute at 32k), Second → Long-Context Extension (256k), Third → SFT Phase."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of model architecture does Kimi K2.5 use?",
+          "givenAnswer": "Mixture-of-Experts",
+          "correct": true,
+          "judgeExplanation": "The source content states that Kimi K2.5 is 'a 1.04T parameter / 32B active parameter Mixture-of-Experts model,' confirming that it uses a Mixture-of-Experts architecture."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Task Distribution",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The RL training distribution for Composer 2 captures many aspects of software engineering absent from popular AI coding benchmarks.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states in Section 4: 'Notably, our training distribution captures many aspects of software engineering absent from popular AI coding benchmarks.' This directly supports the statement being true."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimation in RL Training",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which KL divergence estimator does Composer 2 use to avoid variance blow-up when distributions diverge?",
+          "givenAnswer": 1,
+          "choices": [
+            "k3 estimator",
+            "k1 estimator (correct)",
+            "k2 estimator",
+            "k4 estimator"
+          ],
+          "explanation": "The k1 estimator (-log r) is used instead of k3 because k3's variance increases drastically as p and q diverge, which is problematic for large KL values.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Therefore, we use the standard estimator k1 = −log r instead.' This is in the context of explaining that the k3 estimator's variance increases drastically as p and q diverge, which is problematic for large KL values. The given answer of 'k1 estimator' is correct."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 RL Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+          "givenAnswer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "RL Problem Sampling",
+            "Simulate Agent Rollouts",
+            "Update Model Weights"
+          ],
+          "correct": false,
+          "judgeExplanation": "The given answer maps First → RL Problem Sampling (0), Second → Update Model Weights (2), Third → Simulate Agent Rollouts (1). According to Section 4 of the source, the correct order is: 'sampling a problem, simulating a group of rollouts from the agent with different solutions, and then updating the model weights based on solution quality.' So the correct mapping should be First → 0, Second → 1, Third → 2, i.e., [0,1,2]. The given answer [0,2,1] reverses the last two steps, making it genuinely incorrect."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 3: Real-World Evaluation and Agent Behavior",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Evaluation Methodology",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the source of tasks in CursorBench?",
+          "givenAnswer": "Tasks are drawn from actual coding sessions of Cursor's engineering team",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states in Section 5: 'we introduce CursorBench, an internal evaluation suite comprising tasks drawn from actual coding sessions of our engineering team.' The given answer accurately captures this."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 3: Real-World Evaluation and Agent Behavior",
+          "moduleIndex": 2,
+          "lessonTitle": "Agent Length Penalty Function",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The nonlinear length penalty encourages the model to take equal time on all tasks regardless of difficulty.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement is false. According to the source, the nonlinear length penalty does the opposite: it incentivizes the model to produce solutions quickly on easy requests while allowing it to think longer on hard requests. The penalty reflects that 'on easy tasks, achievable with only a few tool calls, every additional bit of effort is felt more acutely than in long-horizon tasks.' So it does NOT encourage equal time on all tasks regardless of difficulty. The given answer of 'false' is correct."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 3: Real-World Evaluation and Agent Behavior",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a factor causing misalignment between public benchmarks and real-world utility?",
+          "givenAnswer": 1,
+          "choices": [
+            "Domain Mismatch",
+            "Model Size Limitations",
+            "Prompt Over-specification",
+            "Data Contamination and Overfitting"
+          ],
+          "explanation": "The four primary factors causing misalignment are Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope. Model Size Limitations is not mentioned as a factor in the source content.",
+          "correct": true,
+          "judgeExplanation": "The source content lists four factors causing misalignment: Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope. 'Model Size Limitations' is not among them, making index 1 the correct answer."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Module 3: Real-World Evaluation and Agent Behavior",
+          "moduleIndex": 2,
+          "lessonTitle": "Module 3: Real-World Evaluation and Agent Behavior",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining stage?",
+          "givenAnswer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "32k Token Pretraining",
+            "SFT on Coding Tasks",
+            "Extend to 256k Context"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source states: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the given answer: First → 32k Token Pretraining, Second → Extend to 256k Context, Third → SFT on Coding Tasks."
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 10,
+      "incorrect": 2,
+      "accuracy": "83%",
+      "generationTimeMs": 50512,
+      "judgingTimeMs": 16623,
+      "gradedQuestions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up Your Claude Code Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the special filename that Claude automatically pulls into context when starting a conversation?",
+          "givenAnswer": "CLAUDE.md",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'CLAUDE.md is a special file that Claude automatically pulls into context when starting a conversation.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up Your Claude Code Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Placement Options",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "CLAUDE.md files can only be placed in the root directory of a repository.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source content clearly states that CLAUDE.md files can be placed in multiple locations: the root of the repo, any parent directory, any child directory, and the home folder (~/.claude/CLAUDE.md). Therefore, the statement that they can 'only be placed in the root directory' is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up Your Claude Code Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a method for managing allowed tools in Claude Code?",
+          "givenAnswer": 3,
+          "choices": [
+            "Selecting \"Always allow\" when prompted",
+            "Using the /permissions command",
+            "Manually editing .claude/settings.json",
+            "Using the --dangerously-skip-permissions flag"
+          ],
+          "explanation": "--dangerously-skip-permissions bypasses all permission checks, not managing allowed tools. The other three are actual methods for managing the allowlist.",
+          "correct": true,
+          "judgeExplanation": "The given answer (index 3, '--dangerously-skip-permissions flag') is correct. The source content lists four methods for managing allowed tools: (1) Select 'Always allow' when prompted, (2) Use the /permissions command, (3) Manually edit .claude/settings.json or ~/.claude.json, (4) Use the --allowedTools CLI flag. The --dangerously-skip-permissions flag is NOT one of these four methods - it bypasses all permission checks entirely rather than managing allowed tools. The judge's own reasoning actually confirms this by listing the four actual methods, none of which is --dangerously-skip-permissions. The judge contradicted itself by providing reasoning that supports the answer being correct while marking it as incorrect."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up Your Claude Code Environment",
+          "moduleIndex": 0,
+          "lessonTitle": "Setting Up Your Claude Code Environment",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Claude Code explore, plan, code, commit workflow?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Read relevant files",
+            "Create implementation plan",
+            "Implement solution"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the 'Explore, plan, code, commit' workflow as: 1. Ask Claude to read relevant files (explore), 2. Ask Claude to make a plan, 3. Ask Claude to implement its solution in code, 4. Ask Claude to commit. The given answer maps First→'Read relevant files', Second→'Create implementation plan', Third→'Implement solution', which matches the correct order from the source (steps 1-3, with commit being step 4 but not included in the choices)."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Extending Claude with Custom Bash Tools",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three steps to make custom bash tools available to Claude Code?",
+          "givenAnswer": "Tell Claude the tool name with usage examples, tell Claude to run --help to see tool documentation, and document frequently used tools in CLAUDE.md",
+          "correct": true,
+          "judgeExplanation": "The source content lists exactly these three steps under section 2a 'Use Claude with bash tools': '1. Tell Claude the tool name with usage examples, 2. Tell Claude to run --help to see tool documentation, 3. Document frequently used tools in CLAUDE.md'. The given answer matches all three steps."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Server Configuration Options",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code functions as both an MCP server and client. As a client, it can connect to MCP servers through project config, global config, or a checked-in .mcp.json file.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source confirms that Claude Code functions as both an MCP server and client. As a client, it can connect to MCP servers in three ways: project config, global config, or a checked-in .mcp.json file."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Command Implementation",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is true about custom slash commands in Claude Code?",
+          "givenAnswer": 2,
+          "choices": [
+            "They must be placed in the home folder to be available globally",
+            "They can include $ARGUMENTS to pass parameters from command invocation",
+            "They automatically become available without being placed in the correct folder",
+            "They cannot be shared with team members through git"
+          ],
+          "explanation": "Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation, allowing dynamic input like /project:fix-github-issue 1234.",
+          "correct": false,
+          "judgeExplanation": "The given answer (index 2: 'They automatically become available without being placed in the correct folder') is genuinely incorrect. The source explicitly states that custom slash commands must be placed in the `.claude/commands` folder to become available. The correct answer is index 1: 'They can include $ARGUMENTS to pass parameters from command invocation,' which is directly supported by the source text. The judge's verdict of INCORRECT is right — the selected answer index (2) does not match the correct answer (1), even though the explanation text describes the correct concept."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore and Read Files",
+            "Create Plan",
+            "Implement Solution"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source content describes the 'Explore, plan, code, commit' workflow with these steps in order: 1) Ask Claude to read relevant files (Explore and Read Files), 2) Ask Claude to make a plan (Create Plan), 3) Ask Claude to implement its solution in code (Implement Solution). The given answer correctly maps First → Explore and Read Files, Second → Create Plan, Third → Implement Solution."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Test-Driven Development Workflow",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In the 'write tests, commit; code, iterate, commit' workflow, what should you explicitly tell Claude to avoid when writing initial tests?",
+          "givenAnswer": "creating mock implementations",
+          "correct": true,
+          "judgeExplanation": "The source states: 'Be explicit about the fact that you're doing test-driven development so that it avoids creating mock implementations, even for functionality that doesn't exist yet in the codebase.' This matches the given answer that you should tell Claude to avoid creating mock implementations."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Image Input Methods",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Claude Code can accept images only by providing file paths, not by pasting screenshots or drag-and-drop.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement claims Claude Code can accept images ONLY by providing file paths. According to the source, Claude Code supports multiple methods: pasting screenshots, drag-and-drop images, and providing file paths. Therefore the statement is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Safe YOLO Mode Safety",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the recommended safety practice when using the --dangerously-skip-permissions flag?",
+          "givenAnswer": 2,
+          "choices": [
+            "Run it on your main development machine",
+            "Use it in a container without internet access",
+            "Skip any verification steps",
+            "Execute it while connected to the internet"
+          ],
+          "explanation": "The content explicitly recommends using --dangerously-skip-permissions in a container without internet access to minimize risks of data loss, system corruption, or data exfiltration.",
+          "correct": false,
+          "judgeExplanation": "The given answer (index 2: 'Skip any verification steps') is incorrect. The source content explicitly states: 'To minimize these risks, use --dangerously-skip-permissions in a container without internet access.' The correct answer is index 1: 'Use it in a container without internet access.' The judge's verdict is correct."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Explore, Plan, Code, Commit Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow for Claude Code?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore files",
+            "Create plan",
+            "Implement code"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the 'Explore, plan, code, commit' workflow with steps: 1) Ask Claude to read relevant files (Explore), 2) Ask Claude to make a plan, 3) Ask Claude to implement its solution in code. The given answer of First → Explore files, Second → Create plan, Third → Implement code matches this sequence exactly."
+        }
+      ]
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 9,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 44870,
+      "judgingTimeMs": 10277,
+      "gradedQuestions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Foundations of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Transition from Republic to Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What year did the Roman Republic end and the Roman Empire begin?",
+          "givenAnswer": "30 BCE",
+          "correct": true,
+          "judgeExplanation": "The source content states that the Roman Republic lasted from 509 BCE-30 BCE and the Roman Empire lasted from 30 BCE-476 CE. Therefore, 30 BCE is the year the Roman Republic ended and the Roman Empire began."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Foundations of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus and the Founding of the Empire",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Augustus received the title \"Imperator\" from the Senate.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source clearly states that Augustus was 'Also made \"Imperator,\" meaning \"successful general\"' as part of a list of titles given by the Senate. The judge's own reasoning acknowledges this, stating 'the source does confirm this' and 'So the answer \"true\" is correct.' The judge contradicted itself by marking the answer INCORRECT despite reasoning that it was correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Foundations of the Roman Empire",
+          "moduleIndex": 0,
+          "lessonTitle": "The Pax Romana Period",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What was the Pax Romana?",
+          "givenAnswer": 1,
+          "choices": [
+            "A period of constant warfare in Rome",
+            "A nearly 200-year period of peace and stability in the Roman Empire",
+            "The name of Augustus's religious reforms",
+            "The Roman Senate's governing body"
+          ],
+          "explanation": "The Pax Romana, meaning \"Roman Peace,\" was a period of almost 200 years where Rome controlled the Mediterranean region with minimal warfare, allowing for stability and growth.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states under 'Pax Romana – Roman Peace' that 'This peace lasted nearly 200 years' and describes Rome's complete control of the Mediterranean region with almost no warfare. The given answer correctly identifies the Pax Romana as 'A nearly 200-year period of peace and stability in the Roman Empire.'"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Roman Emperors and the Decline of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Constantine and the New Capital",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What city did Emperor Constantine move the Roman capital to?",
+          "givenAnswer": "Byzantium (later renamed Constantinople, now Istanbul)",
+          "correct": true,
+          "judgeExplanation": "The source content states under Constantine (312-337 CE): 'Moved the capital from Rome to Byzantium - Renamed the city Constantinople - Today the city is Istanbul (in modern Turkey)'. The given answer 'Byzantium (later renamed Constantinople, now Istanbul)' accurately captures this information."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Roman Emperors and the Decline of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Assassination of Caligula",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Caligula was assassinated by the Praetorian Guard in 41 CE.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content confirms under the Caligula section: 'Assassinated in 41 CE by members of the Praetorian Guard.' This matches the statement exactly."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Roman Emperors and the Decline of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Division of the Roman Empire",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Who divided the Roman Empire into Eastern and Western administrative realms, and in what year?",
+          "givenAnswer": 1,
+          "choices": [
+            "Constantine in 312 CE",
+            "Diocletian in 285 CE",
+            "Vespasian in 79 CE",
+            "Marcus Aurelius in 180 CE"
+          ],
+          "explanation": "Diocletian divided the empire into two administrative realms in 285 CE to improve administration, believing it would strengthen the empire.",
+          "correct": true,
+          "judgeExplanation": "The source content clearly states under the Diocletian slide: 'Divided the empire into two administrative realms (east and west) in 285 CE.' This matches the given answer of Diocletian in 285 CE (index 1)."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Roman Contributions to World History",
+          "moduleIndex": 2,
+          "lessonTitle": "Romance Languages Derived from Latin",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Name one Romance language that developed from Latin.",
+          "givenAnswer": "French",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly lists French as one of the Romance languages that developed from Latin, along with Italian, Portuguese, Romanian, and Spanish."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Roman Contributions to World History",
+          "moduleIndex": 2,
+          "lessonTitle": "The Justinian Code's Historical Foundation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The Justinian Code was based on more than 1000 years of Roman law development.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source states that Roman law 'Developed over a thousand years' and that the Justinian Code 'Encapsulated the previous 1000+ years of Roman law.' Since Roman law started with the Twelve Tables (450 BCE) and the Justinian Code was compiled in the 6th century CE, this represents more than 1000 years of development. The statement is true."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Roman Contributions to World History",
+          "moduleIndex": 2,
+          "lessonTitle": "Roman Contributions to World History",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was a major Roman contribution to world history?",
+          "givenAnswer": 3,
+          "choices": [
+            "Administration of a vast empire",
+            "Christianity",
+            "Architecture and engineering",
+            "All of the above"
+          ],
+          "explanation": "All three options listed (administration of a vast empire, Christianity, and architecture and engineering) are explicitly listed in the source as major Roman contributions to world history. The source states Rome is important to world history for 'Administration of a vast empire,' 'Christianity,' 'Architecture,' 'Engineering,' and many other contributions.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly lists 'Administration of a vast empire,' 'Christianity,' 'Architecture,' and 'Engineering' as major Roman contributions to world history. All three options in the question are covered by the source, making 'All of the above' the correct answer."
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "correct": 9,
+      "incorrect": 1,
+      "accuracy": "90%",
+      "generationTimeMs": 37791,
+      "judgingTimeMs": 9972,
+      "gradedQuestions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Defining Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary architectural pattern used in Anthropic's Research system?",
+          "givenAnswer": "orchestrator-worker pattern",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern, where a lead agent coordinates the process while delegating to specialized subagents that operate in parallel.' The given answer of 'orchestrator-worker pattern' matches this."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Performance Scaling in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "A multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed a single-agent Claude Opus 4 system by 90.2% on the internal research eval.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source states: 'We found that a multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed single-agent Claude Opus 4 by 90.2% on our internal research eval.' This matches the statement exactly."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Introduction to Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Token Usage and Economic Considerations",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "In the BrowseComp evaluation, what percentage of performance variance was explained by token usage alone?",
+          "givenAnswer": 0,
+          "choices": [
+            "80%",
+            "65%",
+            "95%",
+            "50%"
+          ],
+          "explanation": "The source explicitly states that token usage by itself explains 80% of the variance in the BrowseComp evaluation, with the number of tool calls and model choice as the two other explanatory factors.",
+          "correct": true,
+          "judgeExplanation": "The source states: 'We found that token usage by itself explains 80% of the variance' in the BrowseComp evaluation. The given answer of 80% (index 0) is correct."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Orchestrator-Worker Pattern Architecture",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What architectural pattern does Anthropic's Research system use?",
+          "givenAnswer": "Orchestrator-worker pattern",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern, where a lead agent coordinates the process while delegating to specialized subagents that operate in parallel.' The given answer of 'Orchestrator-worker pattern' matches this."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Dynamic Search vs Static Retrieval",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: The Research system uses multi-step dynamic search rather than static retrieval.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Traditional approaches using Retrieval Augmented Generation (RAG) use static retrieval... In contrast, our architecture uses a multi-step search that dynamically finds relevant information, adapts to new findings, and analyzes results to formulate high-quality answers.' This confirms the statement is true."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Architecture and System Design",
+          "moduleIndex": 1,
+          "lessonTitle": "Memory Management for Context Truncation",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the context window threshold at which research plans risk being truncated?",
+          "givenAnswer": 1,
+          "choices": [
+            "100,000 tokens",
+            "200,000 tokens",
+            "150,000 tokens",
+            "250,000 tokens"
+          ],
+          "explanation": "The source content explicitly states that if the context window exceeds 200,000 tokens it will be truncated, making it important to retain the plan in Memory.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states in the process diagram description: 'if the context window exceeds 200,000 tokens it will be truncated and it is important to retain the plan.' This matches the given answer of 200,000 tokens (index 1)."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation, Evaluation, and Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "How many times more tokens do multi-agent systems use compared to standard chat interactions?",
+          "givenAnswer": "15 times more tokens",
+          "correct": true,
+          "judgeExplanation": "The source states: 'multi-agent systems use about 15× more tokens than chats.' The given answer of '15 times more tokens' matches this exactly."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation, Evaluation, and Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Economic Viability of Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Multi-agent systems require tasks where the value is high enough to pay for the increased performance.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source states: 'For economic viability, multi-agent systems require tasks where the value of the task is high enough to pay for the increased performance.' This directly supports the statement being true."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation, Evaluation, and Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluation Methods for Multi-Agent Research Systems",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a criterion in Anthropic's LLM-as-judge evaluation rubric?",
+          "givenAnswer": 3,
+          "choices": [
+            "Factual accuracy",
+            "Citation accuracy",
+            "Response verbosity",
+            "Source quality"
+          ],
+          "explanation": "The LLM-as-judge rubric evaluates factual accuracy, citation accuracy, completeness, source quality, and tool efficiency. Response verbosity is not listed as a criterion.",
+          "correct": false,
+          "judgeExplanation": "The answer is genuinely incorrect. The source explicitly lists the LLM-as-judge rubric criteria as: factual accuracy, citation accuracy, completeness, source quality, and tool efficiency. 'Response verbosity' (choice index 2) is NOT mentioned in this list, making it the correct answer to 'which is NOT mentioned as a criterion.' The given answer of 'Source quality' (index 3) is wrong because source quality IS explicitly listed as one of the criteria. The judge's verdict of INCORRECT is correct."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Implementation, Evaluation, and Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Multi-Agent Research System Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the initial multi-agent research workflow?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "User Submits Query",
+            "LeadResearcher Analyzes",
+            "Save Plan to Memory"
+          ],
+          "correct": true,
+          "judgeExplanation": "According to the source content's process diagram description: 'When a user submits a query, the system creates a LeadResearcher agent that enters an iterative research process. The LeadResearcher begins by thinking through the approach and saving its plan to Memory to persist the context.' This confirms the order: (1) User Submits Query, (2) LeadResearcher Analyzes, (3) Save Plan to Memory."
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 9,
+      "correct": 9,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 51280,
+      "judgingTimeMs": 12616,
+      "gradedQuestions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Endpoint",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "givenAnswer": "similarity or relatedness of given text queries",
+          "correct": true,
+          "judgeExplanation": "The source states: 'Text embeddings provide a measure of the similarity or relatedness of given text queries.' The given answer matches this exactly."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Endpoint",
+          "moduleIndex": 0,
+          "lessonTitle": "Together Embeddings Model Availability",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint offers 8 leading embedding models.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states '8 leading embedding models' as one of the highlights of the Together Embeddings endpoint release."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings Endpoint",
+          "moduleIndex": 0,
+          "lessonTitle": "M2-BERT Retrieval Model Capabilities",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the available context length options for M2-BERT retrieval models?",
+          "givenAnswer": 1,
+          "choices": [
+            "16k and 64k",
+            "2k, 8k, and 32k",
+            "4k, 16k, and 64k",
+            "1k, 4k, and 16k"
+          ],
+          "explanation": "The source explicitly states that M2-BERT retrieval models are available for long context with context lengths of 2k, 8k, and 32k.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'the newly released M2-BERT retrieval models for long context (2k, 8k, 32k)'. The given answer of '2k, 8k, and 32k' (index 1) matches this exactly."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Together Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Purpose in Generative AI",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What limitation of generative AI models does RAG specifically aim to overcome?",
+          "givenAnswer": "lack of knowledge from unseen data",
+          "correct": true,
+          "judgeExplanation": "The source states that RAG 'aims to overcome limitations of generative AI models, such as a lack of knowledge from unseen data.' The given answer 'lack of knowledge from unseen data' matches this directly."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Together Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Integration Tools Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "RAG applications can be built using Together Embeddings with only vector databases and not orchestration frameworks.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement claims RAG applications can be built using Together Embeddings with 'only vector databases and not orchestration frameworks.' The source content clearly states: 'You can now build RAG using Together API and popular vector databases such as MongoDB, Pinecone, and Chroma or by leveraging frameworks such as LangChain and LlamaIndex.' This shows that both vector databases AND orchestration frameworks can be used, not only vector databases. Therefore the statement is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Building RAG Applications with Together Embeddings",
+          "moduleIndex": 1,
+          "lessonTitle": "Data Visualization with Embeddings",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the embedding dimension produced by the M2-BERT-Retrieval-8K model?",
+          "givenAnswer": 1,
+          "choices": [
+            "512",
+            "768 (correct)",
+            "1024",
+            "1536"
+          ],
+          "explanation": "The M2-BERT-Retrieval-8K model produces embedding vectors with a dimension of 768, as explicitly stated in the source content.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.' The given answer of 768 (index 1) is correct."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Implementation and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding t-SNE Visualization for Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the embedding dimension produced by the M2-BERT-Retrieval-8K model?",
+          "givenAnswer": "768",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.'"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Implementation and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Source Relationship Visualization",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "According to the visualization example, texts from github show similarity to book, while github and c4 are less related.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The given answer of 'false' is correct. The statement claims github shows similarity to book and that github and c4 are less related. According to the source, the actual relationships are: github is similar to stackexchange, book is similar to c4, and github and book are less related. The statement gets the relationships wrong. The judge's reasoning correctly identifies this but then marks the answer 'false' as INCORRECT, which is a contradiction. The answer 'false' correctly rejects the inaccurate statement."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Implementation and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Visualization Components and Parameters",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "In the data visualization example, which color is NOT used in the colormap for plotting embeddings?",
+          "givenAnswer": 2,
+          "choices": [
+            "Red",
+            "Blue",
+            "Yellow",
+            "Purple"
+          ],
+          "explanation": "The colors list used in the code is [\"red\", \"blue\", \"green\", \"orange\", \"purple\"]. Yellow is not among the colors used for the colormap.",
+          "correct": true,
+          "judgeExplanation": "The source code shows `colors = [\"red\", \"blue\", \"green\", \"orange\", \"purple\"]`. Yellow is not among these colors, making it the correct answer for which color is NOT used."
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 12,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 53691,
+      "judgingTimeMs": 11108,
+      "gradedQuestions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose and Design of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary design purpose of Composer 2?",
+          "givenAnswer": "Agentic software engineering",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states in the introduction: 'Composer 2 is a specialized model designed for agentic software engineering.' The given answer 'Agentic software engineering' correctly captures this primary design purpose."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Phases of Composer 2",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Composer 2 is trained using only reinforcement learning without any continued pretraining phase.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source clearly states that Composer 2 is trained in two phases: 'first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning.' Therefore, the statement that it uses 'only reinforcement learning without any continued pretraining phase' is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Evaluation Benchmarks for Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the three benchmarks used to evaluate Composer 2?",
+          "givenAnswer": 1,
+          "choices": [
+            "CursorBench, HumanEval, MBPP",
+            "CursorBench, Terminal-Bench, SWE-bench Multilingual",
+            "SWE-bench, CursorBench, APPS",
+            "Terminal-Bench, Codex, SWE-bench"
+          ],
+          "explanation": "The source explicitly states that Composer 2 is evaluated on CursorBench (achieving 61.3), Terminal-Bench (achieving 61.7), and SWE-bench Multilingual (achieving 73.7 in their harness).",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that Composer 2 is evaluated on CursorBench (achieving 61.3), Terminal-Bench (achieving 61.7), and SWE-bench Multilingual (achieving 73.7). This matches choice index 1."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction and Background",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the software engineering agent rollout process?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Receive Prompt",
+            "Sample Action from Policy",
+            "Execute Tool Calls"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the software engineering agent rollout process as: given a prompt x (Receive Prompt), an agent produces actions by sampling from a language model policy πθ (Sample Action from Policy), each of which makes one or more tool calls and yields responses (Execute Tool Calls). The order [0,1,2] correctly reflects this sequence: First → Receive Prompt, Second → Sample Action from Policy, Third → Execute Tool Calls."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Architecture of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the parameter configuration of the Kimi K2.5 base model used for Composer 2?",
+          "givenAnswer": "1.04T total parameters with 32B active parameters (Mixture-of-Experts model)",
+          "correct": true,
+          "judgeExplanation": "The source states: 'These evaluations led us to select Kimi K2.5 [67], a 1.04T parameter / 32B active parameter Mixture-of-Experts model as our base model for Composer 2.' The given answer of '1.04T total parameters with 32B active parameters (Mixture-of-Experts model)' matches this exactly."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimation in RL Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The Composer 2 team uses the k3 estimator (r-1) - log r for KL divergence regularization.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Therefore, we use the standard estimator k1 = −log r instead.' The team specifically chose NOT to use the k3 estimator, noting its variance issues. They acknowledged that 'Many open-source implementations of RL estimate KL with the estimator k3 = (r−1) − log r' but explicitly chose k1 instead. So the statement that the team 'uses' k3 is false, making the answer 'false' correct."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Phases of Continued Pretraining",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following represents the correct sequence of phases in Composer 2's continued pretraining?",
+          "givenAnswer": 1,
+          "choices": [
+            "Bulk compute at 256k, then long-context extension to 32k, then SFT",
+            "Bulk compute at 32k, then long-context extension to 256k, then SFT",
+            "Bulk compute at 32k, then SFT, then long-context extension to 256k",
+            "Single phase at 32k token sequence length only"
+          ],
+          "explanation": "The correct sequence is: 1) bulk of compute at 32k token sequence length, 2) shorter long-context extension phase to 256k sequence length, and 3) short SFT phase on targeted coding tasks.",
+          "correct": true,
+          "judgeExplanation": "The source content states: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the given answer of index 1: 'Bulk compute at 32k, then long-context extension to 256k, then SFT.'"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the continued pretraining phase of Composer 2?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continued Pretraining 32k",
+            "Long-Context Extension",
+            "SFT on Coding Tasks"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source states in Section 3.1: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the given order: First → Continued Pretraining 32k, Second → Long-Context Extension, Third → SFT on Coding Tasks."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Purpose and Design",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary source of tasks in CursorBench?",
+          "givenAnswer": "actual coding sessions of the engineering team",
+          "correct": true,
+          "judgeExplanation": "The source content states in Section 5: 'we introduce CursorBench, an internal evaluation suite comprising tasks drawn from actual coding sessions of our engineering team.' The given answer 'actual coding sessions of the engineering team' matches this."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Score Achievements",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Composer 2 achieves a higher score on SWE-bench Multilingual (73.7) than on Terminal-Bench (61.7).",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source states: 'On public benchmarks the model scores 61.7 on Terminal-Bench and 73.7 on SWE-bench Multilingual in our harness.' Since 73.7 (SWE-bench Multilingual) > 61.7 (Terminal-Bench), the statement is true."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT listed as a factor causing misalignment between public benchmarks and real-world utility?",
+          "givenAnswer": 3,
+          "choices": [
+            "Domain Mismatch",
+            "Prompt Over-specification",
+            "Data Contamination",
+            "Model Parameter Size"
+          ],
+          "explanation": "The four factors explicitly stated are: Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope. Model Parameter Size is not mentioned as a factor.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly lists four factors causing misalignment: Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope. 'Model Parameter Size' is not among them, making index 3 the correct answer."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining phase?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Select Base Model",
+            "Continued Pretraining 32k",
+            "Long-Context Extension"
+          ],
+          "correct": true,
+          "judgeExplanation": "According to Section 3.1 of the source: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' The question asks about three steps: Select Base Model, Continued Pretraining 32k, and Long-Context Extension. The source confirms that the base model is selected first (Section 3 describes selecting Kimi K2.5), then continued pretraining at 32k, then long-context extension. The given order [0,1,2] = Select Base Model → Continued Pretraining 32k → Long-Context Extension matches this sequence."
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 8,
+      "incorrect": 1,
+      "accuracy": "89%",
+      "generationTimeMs": 38823,
+      "judgingTimeMs": 12900,
+      "gradedQuestions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the purpose of a CLAUDE.md file?",
+          "givenAnswer": "To provide documentation that Claude automatically pulls into context when starting a conversation",
+          "correct": true,
+          "judgeExplanation": "The given answer correctly states that CLAUDE.md provides documentation that Claude automatically pulls into context when starting a conversation, which aligns directly with the source: 'CLAUDE.md is a special file that Claude automatically pulls into context when starting a conversation.' The judge acknowledges this ('The answer captures the automatically pulls into context aspect') but marks it incorrect for being 'too vague.' However, the answer is not wrong—it accurately describes the core purpose. Being less detailed than the source doesn't make an answer incorrect. The judge essentially contradicts itself by acknowledging the answer captures the key aspect while marking it as incorrect."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Placement",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "You can place a CLAUDE.md file in your home folder ( ~/.claude/CLAUDE.md ) to apply it to all your Claude sessions.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Your home folder (~/.claude/CLAUDE.md), which applies it to all your claude sessions' as one of the locations where you can place CLAUDE.md files."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Allowed Tools Management in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a way to manage allowed tools in Claude Code?",
+          "givenAnswer": 2,
+          "choices": [
+            "Use the /permissions command after starting Claude Code",
+            "Manually edit your .claude/settings.json file",
+            "Use the /config command to set tool permissions",
+            "Use the --allowedTools CLI flag for session-specific permissions"
+          ],
+          "explanation": "The four ways to manage allowed tools are: selecting 'Always allow' when prompted, using the /permissions command, manually editing settings files, and using the --allowedTools CLI flag. There is no /config command mentioned.",
+          "correct": true,
+          "judgeExplanation": "The source lists exactly four ways to manage allowed tools: (1) Select 'Always allow' when prompted, (2) Use the /permissions command, (3) Manually edit .claude/settings.json or ~/.claude.json, and (4) Use the --allowedTools CLI flag. There is no mention of a /config command. Choice index 2 ('Use the /config command to set tool permissions') is indeed NOT one of the ways listed, making it the correct answer."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools",
+          "moduleIndex": 1,
+          "lessonTitle": "Using Bash Tools with Claude",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What three methods does the documentation recommend for teaching Claude about custom bash tools?",
+          "givenAnswer": "Tell Claude the tool name with usage examples, tell Claude to run --help to see tool documentation, and document frequently used tools in CLAUDE.md",
+          "correct": true,
+          "judgeExplanation": "The source content lists exactly these three methods under section 2a 'Use Claude with bash tools': (1) Tell Claude the tool name with usage examples, (2) Tell Claude to run --help to see tool documentation, and (3) Document frequently used tools in CLAUDE.md."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude as an MCP Server and Client",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code can connect to MCP servers as a client but cannot function as an MCP server itself.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Claude Code functions as both an MCP server and client.' Therefore, the statement that Claude Code 'cannot function as an MCP server itself' is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Claude's Capabilities with Tools",
+          "moduleIndex": 1,
+          "lessonTitle": "Configuring MCP Servers",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Where can MCP servers be configured to make their tools available to Claude Code?",
+          "givenAnswer": 1,
+          "choices": [
+            "Only in project config files",
+            "In project config, global config, or a checked-in .mcp.json file",
+            "Only in the user's home folder",
+            "Only in a .mcp.json file checked into git"
+          ],
+          "explanation": "The content states that Claude Code can connect to MCP servers 'in project config (available when running Claude Code in that directory), in global config (available in all projects), or in a checked-in .mcp.json file (available to anyone working in your codebase).'",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that Claude Code can connect to MCP servers 'In project config (available when running Claude Code in that directory)', 'In global config (available in all projects)', and 'In a checked-in .mcp.json file (available to anyone working in your codebase)'. This matches choice 1 exactly."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Custom Slash Command Parameters",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What special keyword can be included in a custom slash command to pass parameters from command invocation?",
+          "givenAnswer": "$ARGUMENTS",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "YOLO Mode Safety Flag",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The --dangerously-skip-permissions flag allows Claude Code to bypass all permission checks and work uninterrupted until completion.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content confirms this under 'Safe YOLO mode': 'you can use claude --dangerously-skip-permissions to bypass all permission checks and let Claude work uninterrupted until completion.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Thinking Budget Keywords",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following represents the CORRECT order of increasing thinking budget from lowest to highest?",
+          "givenAnswer": 2,
+          "choices": [
+            "think harder, think hard, think, ultrathink",
+            "think, think hard, think harder, ultrathink",
+            "think, ultrathink, think hard, think harder",
+            "ultrathink, think harder, think hard, think"
+          ],
+          "explanation": "The correct order from lowest to highest thinking budget is: 'think' < 'think hard' < 'think harder' < 'ultrathink'. Each level allocates progressively more thinking budget for Claude to use.",
+          "correct": false,
+          "judgeExplanation": "The given answer (index 2: 'think, ultrathink, think hard, think harder') is genuinely incorrect. The source clearly states the order from lowest to highest thinking budget is: 'think' < 'think hard' < 'think harder' < 'ultrathink'. The correct answer is index 1 ('think, think hard, think harder, ultrathink'). The judge's verdict of INCORRECT is right."
+        }
+      ]
+    },
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 9,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 55790,
+      "judgingTimeMs": 10246,
+      "gradedQuestions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Establishment and Early Emperors",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Consul for Life",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year was Octavian (Augustus) made consul for life by the Senate?",
+          "givenAnswer": "23 BCE",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: '23 BCE – Octavian, now referred to as Augustus, was made consul for life by the Senate.' The given answer of 23 BCE matches this exactly."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Establishment and Early Emperors",
+          "moduleIndex": 0,
+          "lessonTitle": "The Title Imperator",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Augustus was given the title \"Imperator\" by the Senate.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source clearly states that Augustus was 'Also made \"Imperator,\" meaning \"successful general\"' in the context of titles given by the Senate in 23 BCE. The judge's own reasoning acknowledges this but still marked it incorrect, contradicting itself. The given answer of 'true' is correct based on the source material."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 1: Establishment and Early Emperors",
+          "moduleIndex": 0,
+          "lessonTitle": "Augustus Step-succeeded by Tiberius",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which emperor succeeded Augustus and was his stepson?",
+          "givenAnswer": 3,
+          "choices": [
+            "Caligula",
+            "Nero",
+            "Claudius",
+            "Tiberius"
+          ],
+          "explanation": "Tiberius was Augustus's stepson and succeeded him as emperor in 14 CE. Caligula was the son of Germanicus (nephew of Tiberius), Nero came to power after Claudius, and Claudius became emperor after Caligula was assassinated.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states under the 'Tiberius (14-37 CE)' section that he was the 'Stepson of Augustus,' confirming that Tiberius (index 3) is the correct answer."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Expansion, Crisis, and Transformation",
+          "moduleIndex": 1,
+          "lessonTitle": "The Pax Romana",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What was the Pax Romana?",
+          "givenAnswer": "A period of nearly 200 years of peace in which Rome controlled the entire Mediterranean region with almost no warfare",
+          "correct": true,
+          "judgeExplanation": "The given answer says Rome controlled 'the entire Mediterranean region' which is partially correct, but omits the source's phrase 'and beyond.' More importantly, the answer does not mention the key point from the source that 'more and more provincials were granted official Roman citizenship,' which is part of the description. However, the core factual claims are mostly supported. The main issue is minor. Actually, re-reading the source: 'Rome controlled the entire Mediterranean region and beyond — Complete control = almost no warfare. This peace lasted nearly 200 years. More and more provincials were granted official Roman citizenship.' The given answer captures the essential elements: ~200 years of peace, control of the Mediterranean, almost no warfare. The omission of 'and beyond' and the citizenship detail are minor. The answer is substantially correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Expansion, Crisis, and Transformation",
+          "moduleIndex": 1,
+          "lessonTitle": "Nero and the Great Fire",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Nero blamed Christians for the fire in Rome in 64 CE.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content confirms that after the fire in Rome in 64 CE, 'Nero blamed the fire on the new religious group known as \"Christians\".' The statement is true."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 2: Expansion, Crisis, and Transformation",
+          "moduleIndex": 1,
+          "lessonTitle": "The Capital Move",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which Roman emperor moved the capital from Rome to Byzantium (renamed Constantinople)?",
+          "givenAnswer": 0,
+          "choices": [
+            "Constantine",
+            "Diocletian",
+            "Vespasian",
+            "Trajan"
+          ],
+          "explanation": "Constantine moved the capital from Rome to Byzantium, renaming it Constantinople (modern Istanbul). Diocletian had divided the empire administratively, but Constantine established the eastern capital.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states under the Constantine (312-337 CE) section: 'Moved the capital from Rome to Byzantium' and 'Renamed the city Constantinople.' The given answer of Constantine (index 0) is correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Decline and Lasting Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "In what year did the Western Roman Empire officially end?",
+          "givenAnswer": "476 CE",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states that the Western (Roman) Empire 'Ended officially in 476 CE when the last emperor, Romulus Augustus, was deposed by a barbarian, Odoacer.' The given answer of 476 CE matches this."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Decline and Lasting Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Justinian's Legal Legacy",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: The Justinian Code is still used as the basis for civil law in several countries.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states about the Justinian Code: 'Still the basis for civil law in several countries' (under the Justinian section) and 'Still used as the basis of civil law in many parts of Europe' (under the Roman Law section)."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "Module 3: Decline and Lasting Legacy",
+          "moduleIndex": 2,
+          "lessonTitle": "Causes of Rome's Decline",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following was NOT cited as a reason for the fall of the Western Roman Empire in the source material?",
+          "givenAnswer": 2,
+          "choices": [
+            "Economic decline due to loss of purchasing power",
+            "Military reliance on barbarian troops with divided loyalty",
+            "Expansion of the empire to its greatest extent",
+            "Political instability and lack of orderly succession"
+          ],
+          "explanation": "The source explicitly states that the empire expanded to its greatest extent under Trajan (a Module 2 topic), which was not cited as a reason for Rome's fall. The other options are all listed as economic, military, and political reasons for decline.",
+          "correct": true,
+          "judgeExplanation": "The source material lists economic reasons (including loss of purchasing power), military reasons (including reliance on barbarian troops with divided loyalty), and political reasons (including no orderly succession) as causes for Rome's fall. The expansion of the empire to its greatest extent under Trajan is mentioned as an accomplishment, not as a reason for Rome's fall. Therefore, choice 2 is correctly identified as NOT being cited as a reason for the fall."
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "correct": 9,
+      "incorrect": 1,
+      "accuracy": "90%",
+      "generationTimeMs": 99944,
+      "judgingTimeMs": 11528,
+      "gradedQuestions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "What Are Text Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What do text embeddings provide a measure of?",
+          "givenAnswer": "similarity or relatedness of text queries",
+          "correct": true,
+          "judgeExplanation": "The source states: 'Text embeddings provide a measure of the similarity or relatedness of given text queries.' The given answer matches this."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Context Length of M2-BERT Models",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The M2-BERT retrieval models offered by Together support a maximum context length of 32k tokens.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content states 'State-of-the-art long context M2-Retrieval models up to 32k context length' and mentions 'M2-BERT retrieval models for long context (2k, 8k, 32k).' This confirms that the maximum context length supported is 32k tokens."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings",
+          "moduleIndex": 0,
+          "lessonTitle": "Available Embedding Models",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How many leading embedding models are available through the Together Embeddings endpoint?",
+          "givenAnswer": 0,
+          "choices": [
+            "8 leading embedding models",
+            "12 leading embedding models",
+            "5 leading embedding models",
+            "10 leading embedding models"
+          ],
+          "explanation": "The Together Embeddings endpoint was released with 8 leading embedding models, including top models from the MTEB leaderboard such as UAE-Large-v1 and BGE models.",
+          "correct": true,
+          "judgeExplanation": "The source content clearly states '8 leading embedding models' as one of the highlights of the Together Embeddings endpoint release. This matches the given answer of index 0 ('8 leading embedding models')."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Implementation",
+          "moduleIndex": 1,
+          "lessonTitle": "Together Embeddings API Configuration",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the embedding dimension for the M2-BERT-Retrieval-8K model?",
+          "givenAnswer": "768",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.'"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Implementation",
+          "moduleIndex": 1,
+          "lessonTitle": "OpenAI API Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint has full OpenAI compatibility, enabling easy migration from other platforms.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'The Together Embeddings endpoint has full OpenAI compatibility so if you have already built your applications following the OpenAI API you can easily switch it out.' The statement also mentions 'A fully OpenAI compatible API to make migrating easy' as a highlight. While the statement says 'enabling easy migration from other platforms' rather than specifically OpenAI, this is a reasonable interpretation and the core claim about full OpenAI compatibility is correct."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and Implementation",
+          "moduleIndex": 1,
+          "lessonTitle": "RAG Integration Options",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following are mentioned as integration options for building RAG with Together Embeddings?",
+          "givenAnswer": 1,
+          "choices": [
+            "Only Pinecone",
+            "MongoDB, LangChain, and LlamaIndex",
+            "Only Chroma",
+            "Elasticsearch and PostgreSQL"
+          ],
+          "explanation": "The source explicitly mentions integrations with MongoDB, LangChain, and LlamaIndex for building RAG systems, along with Pinecone and Chroma vector databases.",
+          "correct": true,
+          "judgeExplanation": "The source content lists 'Integrations with MongoDB, LangChain, and LlamaIndex for RAG' as one of the highlights. While the RAG section also mentions Pinecone and Chroma as vector databases, the multiple-choice option 1 ('MongoDB, LangChain, and LlamaIndex') is the most accurate match among the given choices, as it correctly identifies three of the explicitly mentioned integration options. The other choices are incomplete or incorrect."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and Use Cases",
+          "moduleIndex": 2,
+          "lessonTitle": "Semantic Search with Embeddings",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which of the following is mentioned as an application of text embeddings?",
+          "givenAnswer": "semantic search",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'embeddings are used for various applications including clustering, semantic search, and classification.' Semantic search is directly mentioned as an application of text embeddings."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and Use Cases",
+          "moduleIndex": 2,
+          "lessonTitle": "RAG System Capabilities",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "RAG systems can help generative AI models overcome a lack of knowledge from unseen data by finding relevant information through embeddings.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source states: 'retrieval augmented generation, or RAG, which aims to overcome limitations of generative AI models, such as a lack of knowledge from unseen data, by finding relevant information from a given knowledge base through embeddings and providing the information to a generative model.' This directly supports the statement."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and Use Cases",
+          "moduleIndex": 2,
+          "lessonTitle": "Integration Options for Building RAG",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an integration option for building RAG with Together Embeddings?",
+          "givenAnswer": 3,
+          "choices": [
+            "MongoDB",
+            "LangChain",
+            "Pinecone",
+            "PostgreSQL"
+          ],
+          "explanation": "The content mentions MongoDB, LangChain, LlamaIndex, Pinecone, and Chroma as integration options. PostgreSQL is not listed in the source material.",
+          "correct": true,
+          "judgeExplanation": "The judge contradicted itself. The judge's own explanation confirms that PostgreSQL is NOT mentioned in the source content as an integration option for building RAG with Together Embeddings. The 'Building RAG with Together Embeddings' section lists MongoDB, Pinecone, Chroma, LangChain, and LlamaIndex. Since the question asks which is NOT mentioned, and PostgreSQL is indeed not mentioned, the answer of PostgreSQL (index 3) is correct. The judge's reasoning supports the answer being correct but the verdict was marked INCORRECT."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications and Use Cases",
+          "moduleIndex": 2,
+          "lessonTitle": "Embedding Visualization Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the embedding visualization process using tSNE?",
+          "givenAnswer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "Generate Embeddings",
+            "Transform with tSNE",
+            "Plot Embeddings"
+          ],
+          "correct": false,
+          "judgeExplanation": "The given answer maps First → Generate Embeddings, Second → Plot Embeddings, Third → Transform with tSNE. The source content clearly shows the correct order is: (1) Generate Embeddings, (2) Transform with tSNE, (3) Plot Embeddings. The code demonstrates that embeddings are first generated, then transformed using tSNE to reduce dimensionality, and finally plotted. The judge's verdict of INCORRECT is right."
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 9,
+      "successfulLessons": 9,
+      "correct": 9,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 104845,
+      "judgingTimeMs": 5482,
+      "gradedQuestions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2: An Agentic Software Engineering Model",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of tasks is Composer 2 specifically designed for?",
+          "givenAnswer": "agentic software engineering",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states in the introduction: 'Composer 2 is a specialized model designed for agentic software engineering.' The given answer 'agentic software engineering' matches this exactly."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Software Engineering Agent Capabilities",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 has access to tools that allow it to read and edit files, run shell commands, and search the codebase.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web.' The statement in the question is a subset of these capabilities and is therefore true."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Introduction to Composer 2 and Software Engineering Agents",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Benchmark Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What score did Composer 2 achieve on CursorBench?",
+          "givenAnswer": 2,
+          "choices": [
+            "55.2",
+            "58.5",
+            "61.3",
+            "64.8"
+          ],
+          "explanation": "The source explicitly states that on CursorBench evaluations, Composer 2 achieves a major improvement in accuracy compared to previous Composer models at 61.3.",
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'On our CursorBench evaluations the model achieves a major improvement in accuracy compared to previous Composer models (61.3).' The given answer of 61.3 (index 2) matches this value."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining: Base Model Selection",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three phases of continued pretraining in Composer 2?",
+          "givenAnswer": "Bulk compute at 32k token sequence length, long-context extension to 256k sequence length, and a short SFT phase on targeted coding tasks",
+          "correct": true,
+          "judgeExplanation": "The source states: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' The given answer accurately captures all three phases."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Asynchronous RL Training Pipeline",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: In Composer 2's RL training, inference workers can update weights mid-rollout.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states: 'Inference workers are capable of updating weights mid-rollout, which means later tokens in a rollout are likely less off-policy.' This confirms the statement is true."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Training Methodology: Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Problem Distribution",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a task category used in Composer 2's RL training distribution?",
+          "givenAnswer": 0,
+          "choices": [
+            "Data ingestion",
+            "Debugging",
+            "Refactoring",
+            "Testing"
+          ],
+          "explanation": "The training task categories shown in Figure 3 include debugging, new feature, refactor, understanding codebase, documentation, testing, code review, optimize, devops, migration, deletion, and other. Data ingestion is not listed as a training task category.",
+          "correct": true,
+          "judgeExplanation": "Figure 3 in the source lists the RL training task categories as: Iterate On Feature, Debugging, New Feature, Refactor, Understanding Codebase, Documentation, Testing, Code Review, Optimize, Devops, Migration, Deletion, and Other. 'Data ingestion' is not among these categories, making index 0 the correct answer."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance Benchmarks",
+          "moduleIndex": 2,
+          "lessonTitle": "Purpose and Design of CursorBench",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary source of tasks used in CursorBench?",
+          "givenAnswer": "Actual coding sessions from Cursor's engineering team",
+          "correct": true,
+          "judgeExplanation": "The source states that CursorBench comprises 'tasks drawn from actual coding sessions of our engineering team.' The given answer 'Actual coding sessions from Cursor's engineering team' accurately captures this."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance Benchmarks",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Compared to public benchmarks, CursorBench tasks require an order of magnitude more code changes.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source content explicitly states in the caption of Figure 7: 'Compared to public benchmarks, CursorBench tasks have less-specified task prompts, and require an order of magnitude more code changes.' This directly supports the statement being True."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Evaluation and Performance Benchmarks",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT identified as a factor causing misalignment between public benchmarks and real-world utility?",
+          "givenAnswer": 1,
+          "choices": [
+            "Domain Mismatch",
+            "Prompt Under-specification",
+            "Data Contamination and Overfitting",
+            "Narrow Evaluation Scope"
+          ],
+          "explanation": "Prompt Over-specification (not under-specification) is the factor identified - public benchmarks are highly specified while real developer requests are often underspecified.",
+          "correct": true,
+          "judgeExplanation": "The source content lists four factors causing misalignment: (1) Domain Mismatch, (2) Prompt Over-specification, (3) Data Contamination and Overfitting, and (4) Narrow Evaluation Scope. The question asks which is NOT identified as a factor. 'Prompt Under-specification' (choice 1) is NOT one of the factors — the actual factor is 'Prompt Over-specification.' Therefore, 'Prompt Under-specification' is the correct answer to the question asking which is NOT a factor."
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "correct": 11,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 39017,
+      "judgingTimeMs": 20285,
+      "gradedQuestions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary purpose of a CLAUDE.md file in Claude Code?",
+          "givenAnswer": "To document project-specific information like bash commands, code style guidelines, and testing instructions that Claude automatically pulls into context when starting a conversation",
+          "correct": true,
+          "judgeExplanation": "The source confirms that CLAUDE.md is a special file automatically pulled into context when starting a conversation, and lists its ideal uses as documenting common bash commands, core files and utility functions, code style guidelines, testing instructions, repository etiquette, developer environment setup, and other project-specific information. The given answer accurately captures this purpose."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Claude Code Safety Design",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code is designed with a deliberately conservative approach to prioritize safety, requiring permission by default for actions that might modify your system.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'By default, Claude Code requests permission for any action that might modify your system: file writes, many bash commands, MCP tools, etc. We designed Claude Code with this deliberately conservative approach to prioritize safety.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 1: Setting Up Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT a method for managing allowed tools in Claude Code?",
+          "givenAnswer": 3,
+          "choices": [
+            "Select 'Always allow' when prompted during a session",
+            "Use the /permissions command to add or remove tools",
+            "Manually edit your .claude/settings.json or ~/.claude.json",
+            "Use the --verbose flag for session-specific permissions"
+          ],
+          "explanation": "The --verbose flag is not a method for managing allowed tools. The four valid methods are: selecting 'Always allow' when prompted, using the /permissions command, manually editing settings files, and using the --allowedTools CLI flag.",
+          "correct": true,
+          "judgeExplanation": "The source lists four methods for managing allowed tools: (1) Select 'Always allow' when prompted, (2) Use the /permissions command, (3) Manually edit .claude/settings.json or ~/.claude.json, and (4) Use the --allowedTools CLI flag. The --verbose flag is not mentioned as a method for managing tools, making index 3 ('Use the --verbose flag for session-specific permissions') the correct answer to the 'NOT a method' question."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Server Configuration in Claude Code",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What three locations can MCP server configurations be added to in Claude Code?",
+          "givenAnswer": "project config, global config, and .mcp.json file",
+          "correct": true,
+          "judgeExplanation": "The source states that MCP server configurations can be added 'In project config (available when running Claude Code in that directory)', 'In global config (available in all projects)', and 'In a checked-in .mcp.json file (available to anyone working in your codebase)'. The given answer of 'project config, global config, and .mcp.json file' matches these three locations."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Slash Command Parameter Passing",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Custom slash commands can accept parameters through a special keyword called $ARGUMENTS.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude Code MCP Functionality",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following describes Claude Code's role with MCP (Model Context Protocol)?",
+          "givenAnswer": 1,
+          "choices": [
+            "Claude Code only functions as an MCP server",
+            "Claude Code functions as both an MCP server and client",
+            "Claude Code only functions as an MCP client and cannot host servers",
+            "Claude Code does not support MCP integration"
+          ],
+          "explanation": "The source explicitly states 'Claude Code functions as both an MCP server and client,' allowing it to both provide tools to other applications and connect to external MCP servers to access their tools.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Claude Code functions as both an MCP server and client.' This matches the given answer at index 1."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 2: Extending Claude's Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Claude Code Workflow: Explore, Plan, Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Explore, Plan, Code, Commit workflow?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore Codebase",
+            "Create Plan",
+            "Implement Code"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the 'Explore, plan, code, commit' workflow with these steps: 1) Ask Claude to read relevant files (Explore Codebase), 2) Ask Claude to make a plan (Create Plan), 3) Ask Claude to implement its solution in code (Implement Code), followed by committing. The given ordering of First → Explore Codebase, Second → Create Plan, Third → Implement Code matches this sequence."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Test-Driven Development Workflow",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of development workflow does the 'Write tests, commit; code, iterate, commit' pattern represent?",
+          "givenAnswer": "Test-driven development (TDD)",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states under section 'b. Write tests, commit; code, iterate, commit': 'This is an Anthropic-favorite workflow for changes that are easily verifiable with unit, integration, or end-to-end tests. Test-driven development (TDD) becomes even more powerful with agentic coding.' This confirms the pattern represents Test-driven development (TDD)."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Extended Thinking Mode Triggers",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Using the word 'think' in your instructions triggers extended thinking mode in Claude Code.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'We recommend using the word \"think\" to trigger extended thinking mode, which gives Claude additional computation time to evaluate alternatives more thoroughly. These specific phrases are mapped directly to increasing levels of thinking budget in the system: \"think\" < \"think hard\" < \"think harder\" < \"ultrathink.\"' This confirms that using the word 'think' triggers extended thinking mode."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Thinking Budget Hierarchy",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following represents the correct ascending order of thinking budget levels in Claude Code?",
+          "givenAnswer": 0,
+          "choices": [
+            "think < think hard < think harder < ultrathink",
+            "think harder < think hard < think < ultrathink",
+            "ultrathink < think harder < think hard < think",
+            "think < ultrathink < think hard < think harder"
+          ],
+          "explanation": "The correct hierarchy progresses from 'think' to 'think hard' to 'think harder' to 'ultrathink', with each level allocating progressively more thinking budget for Claude to use.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'These specific phrases are mapped directly to increasing levels of thinking budget in the system: \"think\" < \"think hard\" < \"think harder\" < \"ultrathink.\" Each level allocates progressively more thinking budget for Claude to use.' This matches the given answer exactly."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Module 3: Workflows and Optimization",
+          "moduleIndex": 2,
+          "lessonTitle": "Claude Code Workflow Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore files",
+            "Make plan",
+            "Implement code"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the 'Explore, plan, code, commit' workflow as: 1. Ask Claude to read relevant files (Explore files), 2. Ask Claude to make a plan (Make plan), 3. Ask Claude to implement its solution in code (Implement code). The given ordering of First → Explore files, Second → Make plan, Third → Implement code matches this sequence exactly."
+        }
+      ]
+    }
+  ]
+}

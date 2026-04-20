@@ -1,0 +1,328 @@
+{
+  "tag": "eval-all",
+  "timestamp": "2026-04-02T12:30:52.340Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4-6",
+  "totalTimeMs": 168596,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "successRate": "91%",
+      "firstPassRate": "91%"
+    },
+    "correctness": {
+      "totalGraded": 10,
+      "correct": 10,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 10,
+      "fullyGrounded": "9/10 (90%)",
+      "selfContained": "10/10 (100%)",
+      "concrete": "9/10 (90%)",
+      "grounded": "10/10 (100%)"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "2/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3"
+      },
+      "flow-diagram": {
+        "total": 1,
+        "correct": "1/1",
+        "fullyGrounded": "1/1"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "ocrTimeMs": 110,
+      "generationTimeMs": 159208,
+      "judgingTimeMs": 9275,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction, Background, and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Phases and Architecture",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the primary sequence length used during the bulk of continued pretraining compute?",
+          "answer": "32k token sequence length",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length.' The given answer of '32k token sequence length' directly matches this."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '32k token sequence length' is self-contained, specific, and directly supported by the source text which states 'We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction, Background, and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Impact of Continued Pretraining on RL Performance",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Continued pretraining has been shown to improve downstream RL performance through a predictive relationship between final loss and RL reward.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 3 that continued pretraining translates to downstream RL performance, and Figure 2 demonstrates 'that cross-entropy loss is indeed predictive of downstream RL performance.' This confirms the statement that continued pretraining improves downstream RL performance through a predictive relationship between final loss and RL reward."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The true/false answer is self-contained and concrete by nature. The statement is well-grounded in the source, which explicitly states that the relationship between final loss after SFT and RL reward after a fixed number of steps demonstrates that 'cross-entropy loss is indeed predictive of downstream RL performance.' The statement accurately captures this finding from the Composer 2 technical report."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Introduction, Background, and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which base model was selected for Composer 2 due to its general strong performance and infrastructure efficiency?",
+          "answer": 0,
+          "choices": [
+            "Kimi K2.5",
+            "DeepSeek V3.2",
+            "Qwen3-Coder-30B-A3B",
+            "GLM-5"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content in Appendix B explicitly states: 'We selected Kimi K2.5 [67] due to its general strong performance as well as further additional considerations such as its efficiency in our infrastructure.' This directly matches the given answer of Kimi K2.5 (index 0)."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed. The correct answer 'Kimi K2.5' is directly supported by the source material, which explicitly states it was selected 'due to its general strong performance as well as further additional considerations such as its efficiency in our infrastructure.' The lesson content accurately summarizes this. All answer choices are specific model names that are self-contained and do not reference meta-structures. The question is concrete and the answer is unambiguous."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Policy Gradient Sampling in RL Training",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What type of algorithm does Composer 2 use for reinforcement learning, and how many samples are taken per prompt?",
+          "answer": "policy gradient algorithm with multiple samples per prompt",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source states: 'We use a policy gradient algorithm with multiple samples per prompt [53, 2] and a fixed group size.' The given answer correctly identifies both the policy gradient algorithm type and the multiple samples per prompt characteristic."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": false,
+            "grounded": true,
+            "issues": [
+              "The answer does not specify how many samples are taken per prompt — it only says 'multiple samples,' which is vague and essentially restates the question without providing a concrete number or more specific detail."
+            ],
+            "explanation": "The answer correctly identifies the algorithm type (policy gradient) and is grounded in the source material. However, the question asks 'how many samples are taken per prompt,' and the answer only says 'multiple samples per prompt,' which is a circular restatement of the question rather than a concrete answer. The source itself only states 'multiple samples per prompt' without giving a specific number, so the answer is grounded but fails the concreteness criterion because it doesn't add any actionable specificity beyond what the question already implies."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Length Standardization in GRPO",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 removes the length standardization term from GRPO because it introduces a length bias.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'Following this work, we remove the length standardization term from GRPO as it introduces a length bias.' This directly confirms the statement is true."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'true' is fully supported by the source material, which explicitly states: 'we remove the length standardization term from GRPO as it introduces a length bias.' The statement in the question accurately reflects this claim. True/false answers are self-contained and concrete by nature."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Auxiliary Rewards for Agent Behavior",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as an auxiliary reward category in Composer 2's reinforcement learning training?",
+          "answer": 0,
+          "choices": [
+            "Rewards for code execution speed",
+            "Product-specific penalties for poor tool calls",
+            "Rewards for coding style",
+            "Rewards for communication"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly mentions three auxiliary reward categories: rewards for coding style, rewards for communication, and product-specific penalties for poor tool calls (such as creating to-do list items and leaving them unfinished). Code execution speed is never mentioned as an auxiliary reward category, making 'Rewards for code execution speed' the correct answer for what is NOT mentioned."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question asks which category is NOT mentioned as an auxiliary reward in Composer 2's RL training. The source explicitly mentions rewards for coding style, communication quality, and product-specific penalties for poor tool calls — but never mentions rewards for code execution speed. The correct answer (index 0) is well-supported by the absence of that category in the source. All answer choices are self-contained and concrete, and the correct answer does not hallucinate or contradict the source."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Evaluation Metrics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks?",
+          "answer": "181 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'CursorBench tasks necessitate substantially more extensive code modifications, with a median of 181 lines changed compared to just 7–10 lines for SWE-bench Verified and Multilingual.' The given answer of 181 lines matches this exactly."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '181 lines' is self-contained, specific, and directly supported by the source material, which states 'CursorBench tasks necessitate substantially more extensive code modifications, with a median of 181 lines changed compared to just 7–10 lines for SWE-bench Verified and Multilingual.' The answer stands alone without referencing any external material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Pareto-Optimal Inference Efficiency",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 achieves a Pareto-optimal trade-off between inference cost and accuracy, being similarly priced to smaller model variants while matching the accuracy of much larger frontier models.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 7.1: 'Composer 2 achieves a Pareto-optimal trade-off: its inference cost is similar to smaller or low-effort variants of models, while its accuracy remains competitive with much larger frontier models.' This directly supports the statement that Composer 2 achieves a Pareto-optimal trade-off between inference cost and accuracy, being similarly priced to smaller model variants while matching the accuracy of much larger frontier models."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'true' is well-supported by the source material. The technical report explicitly states that 'Composer 2 achieves a Pareto-optimal trade-off: its inference cost is similar to smaller or low-effort variants of models, while its accuracy remains competitive with much larger frontier models.' The statement in the question accurately paraphrases this claim, and the answer 'true' is correctly grounded in the source content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Public Benchmark Performance Comparison",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How does Composer 2's performance on Terminal-Bench compare to its base model Kimi K2.5?",
+          "answer": 1,
+          "choices": [
+            "Composer 2 achieves 61.7% compared to Kimi K2.5's 36.0% (25.7% improvement)",
+            "Composer 2 achieves 61.7% compared to Kimi K2.5's 47.3% (14.4% improvement)",
+            "Composer 2 achieves 61.7% compared to Kimi K2.5's 73.7% (12.0% decrease)",
+            "Composer 2 achieves 61.7% compared to Kimi K2.5's 65.1% (slight decrease)"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source Table 1 confirms Composer 2 scores 61.7% on Terminal-Bench while Kimi K2.5 scores 47.3% (in the same harness), representing a 14.4% improvement. The given answer correctly identifies these figures."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The correct answer (index 1) accurately states that Composer 2 achieves 61.7% on Terminal-Bench compared to Kimi K2.5's 47.3%, which is directly supported by the source material (Table 1). The 14.4% improvement calculation (61.7 - 47.3 = 14.4) is arithmetically correct. The answer is self-contained with specific numbers, and all distractor choices are also self-contained (though incorrect). No meta-references or hallucinations are present."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Reinforcement Learning Training",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training loop?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Simulate Rollouts",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'RL training consists of sampling a problem, simulating a group of rollouts from the agent with different solutions, and then updating the model weights based on solution quality.' This matches the given answer order: First → Sample Problem, Second → Simulate Rollouts, Third → Update Model Weights."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow-diagram question asks about the correct order of steps in the Composer 2 RL training loop. The answer ordering [0,1,2] corresponds to: Sample Problem → Simulate Rollouts → Update Model Weights. This is directly supported by the source text: 'RL training consists of sampling a problem, simulating a group of rollouts from the agent with different solutions, and then updating the model weights based on solution quality.' The answer is self-contained (no meta-references), concrete (specific ordered steps), and grounded in the source material."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    }
+  ]
+}

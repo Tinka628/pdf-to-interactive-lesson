@@ -1,0 +1,381 @@
+{
+  "tag": "claude-env",
+  "timestamp": "2026-04-02T15:31:10.884Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "claude",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural",
+    "duplicates"
+  ],
+  "totalTimeMs": 66325,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 10,
+      "correct": 10,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 10,
+      "fullyGrounded": "10/10 (100%)",
+      "selfContained": "10/10 (100%)",
+      "concrete": "10/10 (100%)",
+      "grounded": "10/10 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 10,
+      "sufficient": 10,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 1,
+        "correct": "1/1",
+        "fullyGrounded": "1/1",
+        "sufficient": "1/1"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "ocrTimeMs": 118,
+      "generationTimeMs": 66202,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Purpose and Training Approach",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two phases of Composer 2 training?",
+          "answer": "Continued pretraining and large-scale reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Configuration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Kimi K2.5 has 32B active parameters out of 1.04T total parameters.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following represents the three phases of Composer 2 continued pretraining in correct order?",
+          "answer": 0,
+          "choices": [
+            "32k token sequence length, then 256k long-context extension, then SFT phase",
+            "32k, SFT, then 256k extension",
+            "SFT phase, then 256k extension, then 32k tokens",
+            "256k tokens first, followed by 32k, then SFT"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phase Order",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Phase",
+            "256k Long Context",
+            "Targeted Coding SFT"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Training Regime",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the key characteristic of the single-epoch regime in Composer 2 RL training?",
+          "answer": "The same prompt is never trained on twice",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "Self-Summarization Effectiveness",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Self-summarization consistently reduces error compared to using separate prompt-based compaction.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "CursorBench Evaluation Characteristics",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Compared to public benchmarks like SWE-bench Verified and Multilingual, how does CursorBench compare in the median number of lines changed?",
+          "answer": 1,
+          "choices": [
+            "CursorBench requires a median of 7-10 lines changed compared to 181 lines in public benchmarks",
+            "CursorBench requires a median of 181 lines changed compared to 7-10 lines in public benchmarks",
+            "CursorBench requires the same median lines changed as SWE-bench Verified",
+            "CursorBench requires a median of 390 lines changed compared to 1,185-3,055 characters in public benchmarks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Infrastructure and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Performance on CursorBench",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the accuracy of Composer 2 on CursorBench?",
+          "answer": "61.3%",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Infrastructure and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Asynchronous RL Infrastructure Design",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2's RL infrastructure consists of four decoupled services: training, environments, inference, and evaluations.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Infrastructure and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Training Parallelism Configuration",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which parallelism configuration is used during the continued pretraining phase of Composer 2?",
+          "answer": 0,
+          "choices": [
+            "EP=8, CP=2",
+            "EP=4, CP=8",
+            "EP=8, CP=8",
+            "EP=4, CP=2"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    }
+  ]
+}

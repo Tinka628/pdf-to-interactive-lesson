@@ -1,0 +1,128 @@
+{
+  "tag": "ocr-compare",
+  "timestamp": "2026-03-18T14:37:21.603Z",
+  "results": [
+    {
+      "method": "vision-model",
+      "pdf": "together-embeddings-blog",
+      "pages": 8,
+      "timeMs": 14527,
+      "totalChars": 1649,
+      "avgCharsPerPage": 206,
+      "emptyPages": 0,
+      "failedPages": 8,
+      "sampleText": "I don't see any document page attached to your message. Please provide the document page you'd like me to convert to markdown, and I'll be happy to help with the conversion following all the specified rules.\n\nI don't see a document image or content attached to your message. Please provide the document page you'd like me to convert to markdown, and I'll process it according to the rules you've specified.\n\nI don't see any document image or content attached to your request. Please provide the docum"
+    },
+    {
+      "method": "pymupdf-direct",
+      "pdf": "together-embeddings-blog",
+      "pages": 8,
+      "timeMs": 316,
+      "totalChars": 11130,
+      "avgCharsPerPage": 1391,
+      "emptyPages": 0,
+      "failedPages": 0,
+      "sampleText": "1/11/24, 1:58 PM\nIntroducing the Together Embeddings endpoint — Higher accuracy, longer context, and lower cost\nhttps://www.together.ai/blog/embeddings-endpoint-release\n1/8\nCOMPANY\nIntroducing the Together\nEmbeddings endpoint — Higher\naccuracy, longer context, and lower\ncost\nJANUARY 11, 2024・BY TOGETHER AI\nToday, we are excited to release the Together Embeddings endpoint! Some of the highlights are:\n8 leading embedding models – including models that outperform OpenAI’s ada-002 and\nCohere’s Embed"
+    },
+    {
+      "method": "pymupdf-markdown",
+      "pdf": "together-embeddings-blog",
+      "pages": 8,
+      "timeMs": 1390,
+      "totalChars": 12776,
+      "avgCharsPerPage": 1597,
+      "emptyPages": 0,
+      "failedPages": 0,
+      "sampleText": "1/11/24, 1:58 PM Introducing the Together Embeddings endpoint — Higher accuracy, longer context, and lower cost\n\n\ni\n\n\n\ni\n\n\n\ni\n\n\n\ni\n\n\n\nCOMPANY\n\n# Introducing the Together Embeddings endpoint — Higher accuracy, longer context, and lower cost\n\n\nJANUARY 11, 2024 ・ BY TOGETHER AI\n\n\nToday, we are excited to release the Together Embeddings endpoint! Some of the highlights are:\n\n\n8 leading embedding models – including models that outperform OpenAI’s ada-002 and\n\nCohere’s Embed-v3 in MTEB and LoCo Benchm"
+    },
+    {
+      "method": "vision-model",
+      "pdf": "attention-is-all-you-need",
+      "pages": 15,
+      "timeMs": 34193,
+      "totalChars": 2981,
+      "avgCharsPerPage": 199,
+      "emptyPages": 0,
+      "failedPages": 15,
+      "sampleText": "I don't see a document image attached to your message. Please provide the document page you'd like me to convert to markdown, and I'll process it according to the specified rules.\n\nI don't see a document image or content attached to your message. Please provide the document page you'd like me to convert to markdown, and I'll process it according to the rules you've specified.\n\nI don't see any document image or content attached to your message. Please provide the document page you'd like me to co"
+    },
+    {
+      "method": "pymupdf-direct",
+      "pdf": "attention-is-all-you-need",
+      "pages": 15,
+      "timeMs": 334,
+      "totalChars": 39526,
+      "avgCharsPerPage": 2635,
+      "emptyPages": 0,
+      "failedPages": 0,
+      "sampleText": "Provided proper attribution is provided, Google hereby grants permission to\nreproduce the tables and figures in this paper solely for use in journalistic or\nscholarly works.\nAttention Is All You Need\nAshish Vaswani∗\nGoogle Brain\navaswani@google.com\nNoam Shazeer∗\nGoogle Brain\nnoam@google.com\nNiki Parmar∗\nGoogle Research\nnikip@google.com\nJakob Uszkoreit∗\nGoogle Research\nusz@google.com\nLlion Jones∗\nGoogle Research\nllion@google.com\nAidan N. Gomez∗†\nUniversity of Toronto\naidan@cs.toronto.edu\nŁukasz K"
+    },
+    {
+      "method": "pymupdf-markdown",
+      "pdf": "attention-is-all-you-need",
+      "pages": 15,
+      "timeMs": 2732,
+      "totalChars": 40900,
+      "avgCharsPerPage": 2727,
+      "emptyPages": 0,
+      "failedPages": 0,
+      "sampleText": "Provided proper attribution is provided, Google hereby grants permission to\nreproduce the tables and figures in this paper solely for use in journalistic or\nscholarly works.\n\n## **Attention Is All You Need**\n\n\n\n**Niki Parmar** _[∗]_\nGoogle Research\n```\nnikip@google.com\n\n```\n\n\n**Ashish Vaswani** _[∗]_\nGoogle Brain\n```\navaswani@google.com\n\n```\n\n**Llion Jones** _[∗]_\nGoogle Research\n```\n llion@google.com\n\n```\n\n\n**Noam Shazeer** _[∗]_\nGoogle Brain\n```\nnoam@google.com\n\n```\n\n\n**Jakob Uszkoreit** _[∗]_"
+    },
+    {
+      "method": "vision-model",
+      "pdf": "claude-code-best-practices",
+      "pages": 24,
+      "timeMs": 45498,
+      "totalChars": 4960,
+      "avgCharsPerPage": 207,
+      "emptyPages": 0,
+      "failedPages": 24,
+      "sampleText": "I don't see a document image or content attached to your message. Please provide the document page you'd like me to convert to markdown, and I'll process it according to the rules specified.\n\nI don't see any document image or content attached to your message. Please provide the document page you'd like me to convert to markdown, and I'll be happy to help with the conversion following all the specified rules.\n\nI don't see a document page attached to your message. Please share the document image o"
+    },
+    {
+      "method": "pymupdf-direct",
+      "pdf": "claude-code-best-practices",
+      "pages": 24,
+      "timeMs": 340,
+      "totalChars": 31278,
+      "avgCharsPerPage": 1303,
+      "emptyPages": 0,
+      "failedPages": 0,
+      "sampleText": "Engineering at Anthropic\nClaude Code: Best\npractices for agentic\ncoding\nClaude Code is a command line tool for agentic coding. This post covers\ntips and tricks that have proven effective for using Claude Code across\n27/10/2025, 20:31\nClaude Code Best Practices \\ Anthropic\nhttps://www.anthropic.com/engineering/claude-code-best-practices\n1/24\n\n\nvarious codebases, languages, and environments.\nPublished Apr 18, 2025\nWe recently released Claude Code, a command line tool for agentic coding.\nDeveloped "
+    },
+    {
+      "method": "pymupdf-markdown",
+      "pdf": "claude-code-best-practices",
+      "pages": 24,
+      "timeMs": 5197,
+      "totalChars": 35394,
+      "avgCharsPerPage": 1475,
+      "emptyPages": 0,
+      "failedPages": 0,
+      "sampleText": "27/10/2025, 20:31 Claude Code Best Practices \\ Anthropic\n\n\nEngineering at Anthropic\n\n# Claude Code: Best\n# practices for agentic coding\n\n\nClaude Code is a command line tool for agentic coding. This post covers\ntips and tricks that have proven effective for using Claude Code across\n\n\nhttps://www.anthropic.com/engineering/claude-code-best-practices 1/24\n\n\n27/10/2025, 20:31 Claude Code Best Practices \\ Anthropic\n\n\nvarious codebases, languages, and environments.\n\n\nPublished Apr 18, 2025\n\n\n[We recent"
+    }
+  ],
+  "comparison": [
+    {
+      "method": "vision-model",
+      "avgTimeMs": 31406,
+      "avgCharsPerPage": 204,
+      "totalFailedPages": 47,
+      "quality": "degraded"
+    },
+    {
+      "method": "pymupdf-direct",
+      "avgTimeMs": 330,
+      "avgCharsPerPage": 1776.3333333333333,
+      "totalFailedPages": 0,
+      "quality": "good"
+    },
+    {
+      "method": "pymupdf-markdown",
+      "avgTimeMs": 3106.3333333333335,
+      "avgCharsPerPage": 1933,
+      "totalFailedPages": 0,
+      "quality": "good"
+    }
+  ]
+}

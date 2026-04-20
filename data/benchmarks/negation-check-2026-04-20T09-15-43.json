@@ -1,0 +1,2042 @@
+{
+  "tag": "negation-check",
+  "timestamp": "2026-04-20T09:15:43.474Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4-6",
+  "iterations": 5,
+  "batchSize": 5,
+  "dimensions": [
+    "structural"
+  ],
+  "totalTimeMs": 383347,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 60,
+      "successfulLessons": 58,
+      "firstPassSuccess": 58,
+      "successRate": "97%",
+      "firstPassRate": "97%"
+    },
+    "correctness": {
+      "totalGraded": 58,
+      "correct": 58,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 58,
+      "fullyGrounded": "58/58 (100%)",
+      "selfContained": "58/58 (100%)",
+      "concrete": "58/58 (100%)",
+      "grounded": "58/58 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 58,
+      "sufficient": 58,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 15,
+        "correct": "15/15",
+        "fullyGrounded": "15/15",
+        "sufficient": "15/15"
+      },
+      "true-false": {
+        "total": 15,
+        "correct": "15/15",
+        "fullyGrounded": "15/15",
+        "sufficient": "15/15"
+      },
+      "multiple-choice": {
+        "total": 15,
+        "correct": "15/15",
+        "fullyGrounded": "15/15",
+        "sufficient": "15/15"
+      },
+      "flow-diagram": {
+        "total": 13,
+        "correct": "13/13",
+        "fullyGrounded": "13/13",
+        "sufficient": "13/13"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "How does image compression work_ _ Lee Robinson.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 826,
+      "generationTimeMs": 373781,
+      "judgingTimeMs": 1,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction to Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Two Approaches to Image Compression",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Image compression uses two fundamental approaches to reduce file sizes. The first approach involves throwing away parts of the data that humans won't notice, which is called lossy compression. This method is used by JPEG and allows for 10-20x smaller files with minimal visible difference. The second approach involves being clever about how you store every pixel, ensuring no data is lost. This is called lossless compression and is used by PNG. These two ideas power JPEG, PNG, ZIP files, web traffic, and most of the internet.",
+          "question": "What are the two main approaches to image compression?",
+          "answer": "lossy compression and lossless compression",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction to Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Digital Images",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Images may look smooth and continuous, but when you zoom in far enough, you can see they are made of tiny colored squares called pixels. Each pixel contains three numbers representing how much red, green, and blue to mix together to create that pixel's color. Each color value ranges from 0, representing no color, to 255, representing maximum color intensity. For example, a pixel with red 255, green 147, and blue 41 would appear as orange. If you have an HD screenshot with dimensions 1920 × 1080 pixels, it contains over 2 million pixels, and since each pixel needs 3 bytes, the uncompressed file size is approximately 6.2 megabytes.",
+          "question": "In a digital image, each pixel is represented by three numbers that range from 0 to 255, corresponding to red, green, and blue color intensities.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction to Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "The Role of Human Vision in Compression",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Lossy compression techniques like JPEG take advantage of how human vision works to reduce file sizes. Human eyes resolve brightness in fine detail but tend to blur color together. This means we notice blurry edges but we don't notice if colors are slightly off. JPEG exploits this by first converting pixels from RGB to a different format that separates brightness from color, then reducing color resolution since our eyes won't notice the difference. It also divides the image into 8×8 pixel blocks and transforms each block into frequency components, where low frequencies represent smooth gradients and high frequencies represent fine details like sharp edges. Since photographs are mostly smooth gradients, most of the information ends up in just a few low-frequency components, allowing JPEG to throw away high-frequency details without noticeable quality loss.",
+          "question": "Which aspect of human vision does lossy compression like JPEG primarily exploit?",
+          "answer": 0,
+          "choices": [
+            "Human eyes resolve brightness in fine detail but blur color together",
+            "Human eyes cannot detect any compression artifacts",
+            "Human eyes can see all colors with equal precision",
+            "Human eyes are equally sensitive to all frequencies"
+          ],
+          "explanation": "JPEG exploits the fact that human eyes resolve brightness in fine detail but blur color together, allowing color resolution to be reduced without noticeable quality loss.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Introduction to Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Module 1: Introduction to Image Compression",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "In lossless PNG compression, the image data goes through three main compression stages in sequence. First, Filtering predicts each pixel based on its neighbors to store differences rather than absolute values. Second, LZ77 Pattern Finding scans the filtered data for repeated patterns and replaces them with back-references. Third, Huffman Coding assigns shorter binary codes to more frequently occurring values. This three-step pipeline is what enables PNG to achieve 3x-50x compression without losing any pixel data.",
+          "question": "What is the correct order of steps in the PNG lossless compression pipeline?",
+          "answer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "Filtering",
+            "Huffman Coding",
+            "LZ77 Pattern Finding"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG Block Transformation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "JPEG compression divides the image into small pixel blocks before processing. Specifically, JPEG takes each 8×8 pixel block and transforms it into what are called frequency components. These frequency components represent different aspects of the visual information: low frequencies capture smooth gradients and gradual color changes, while high frequencies represent fine details like sharp edges and texture. Since photographic images are mostly composed of smooth gradients rather than sharp details, most of the visual information ends up concentrated in just a few low-frequency components. This transformation into frequency space is what allows JPEG to identify and discard details that are less visually important.",
+          "question": "What is the size of the pixel blocks that JPEG uses when processing an image?",
+          "answer": "8×8 pixels",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "Reversibility of Lossy Compression",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "JPEG is a lossy compression technique, meaning it deliberately discards data during the compression process. The compression algorithm exploits properties of human vision to remove details that are less noticeable to the human eye. By discarding high-frequency details representing fine textures and sharp edges, JPEG can achieve significant file size reductions while maintaining acceptable visual quality. However, once this data is discarded, it is mathematically impossible to reconstruct the exact original pixels from the compressed file. The compressed image contains approximations of the original, not the original data itself.",
+          "question": "JPEG compression is a reversible process that can restore the original pixel values exactly.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "Frequency Components in JPEG",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "When JPEG processes each 8×8 block, it converts the pixel data into frequency components through a mathematical transformation. Low frequencies in the frequency domain represent smooth, gradual changes in color and brightness across the block—essentially the broad, flat areas of an image. High frequencies represent abrupt changes, sharp edges, fine textures, and detailed patterns. Photographs typically contain mostly smooth gradient areas with relatively few sharp transitions, which means most of the visual information is concentrated in the low-frequency components. JPEG exploits this characteristic by retaining the low-frequency data while aggressively quantizing or discarding the high-frequency data.",
+          "question": "In JPEG compression, which type of frequency components does the algorithm primarily keep to maintain image quality?",
+          "answer": 1,
+          "choices": [
+            "Mid-frequency components only",
+            "Low-frequency components representing smooth gradients",
+            "All frequency components equally",
+            "High-frequency components representing sharp edges"
+          ],
+          "explanation": "JPEG keeps low-frequency components because photographs contain mostly smooth gradients where most visual information resides. High-frequency details representing sharp edges and fine textures are discarded since the human eye is less sensitive to their loss.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "Lossy Compression Techniques",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The JPEG lossy compression process transforms images by first converting pixels from RGB to a format that separates brightness from color. Since human vision is more sensitive to brightness than color, the image then reduces color resolution to discard imperceptible details. Next, the image is divided into small 8x8 pixel blocks, and each block undergoes a mathematical transformation to frequency components.",
+          "question": "What is the correct order of steps in the JPEG lossy compression pipeline?",
+          "answer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "Convert RGB to YCbCr",
+            "Divide into 8x8 Blocks",
+            "Reduce Color Resolution"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "PNG Prediction Methods",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "PNG uses four prediction methods to reduce file size by storing differences between adjacent pixels instead of absolute values. The Sub method predicts each pixel will be the same as its left neighbor, which works best for horizontal gradients. The Up method predicts from the pixel directly above, optimal for vertical gradients. The Average method uses the mean of the left and above pixels for prediction. The Paeth method intelligently chooses between left, above, or diagonal pixels based on which is closest in value. PNG encoders test each method for every row and select the one that achieves the best compression.",
+          "question": "Which PNG prediction method works best for horizontal gradients?",
+          "answer": "Sub (predict from the left neighbor)",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "LZ77 Sliding Window Size",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "After the filtering step, PNG uses the LZ77 algorithm to find and replace repeated patterns with back-references. LZ77 maintains a sliding window of the last 32 KB of data scanned so far. When the algorithm encounters a sequence of values that matches something previously seen within this 32 KB window, instead of storing the values again, it writes a reference indicating how far back to look and how many values to copy. This significantly reduces file size for images with large solid color regions or repeating patterns because repeated sequences require far less space than storing identical data twice.",
+          "question": "The LZ77 algorithm used in PNG compression maintains a sliding window of 32 KB to find repeated patterns.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "PNG Chunk Types",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "PNG files organize compressed data into structured chunks, each serving a specific purpose in the file format. The IHDR chunk contains the image header with metadata like width, height, bit depth, and color type. The IDAT chunk holds the actual compressed image data. The IEND chunk marks the end of the PNG file. For data integrity, each chunk includes a CRC-32 checksum, which is a mathematical fingerprint of the chunk's data. When you open a PNG file, the computer recalculates this fingerprint and compares it to the stored value; if they don't match, the file is detected as corrupted or damaged. The three standard required chunks in any PNG file are IHDR, IDAT, and IEND.",
+          "question": "Which of the following IS a standard PNG chunk type found in every valid PNG file?",
+          "answer": 3,
+          "choices": [
+            "IHDR (Image Header chunk)",
+            "ICHK (Image Check chunk)",
+            "IEND (Image End chunk)",
+            "IDAT (Image Data chunk)"
+          ],
+          "explanation": "The three standard required PNG chunks are IHDR, IDAT, and IEND. Every valid PNG file must have these three chunks in this order: IHDR first (containing image metadata), IDAT next (containing the compressed image data), and IEND last (marking the file end). There is no 'ICHK' chunk in the PNG format; data integrity is handled through CRC-32 checksums included within each chunk itself, not through a separate chunk type.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Lossless Compression Techniques",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "In lossless compression like PNG, after filtering and pattern-finding, some values appear more often than others. The compression algorithm first analyzes pixel value frequencies across the data to understand which values occur most commonly. Then it assigns short codes to common values like 0 which might appear 60% of the time. Finally, it assigns longer codes to rare values that appear less frequently. This approach ensures the most common data takes the least space while preserving all original information exactly.",
+          "question": "What is the correct order of steps in the Huffman coding process?",
+          "answer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Assign short codes to common values",
+            "Analyze pixel value frequencies",
+            "Assign longer codes to rare values"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    },
+    {
+      "file": "How does image compression work_ _ Lee Robinson.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 598,
+      "generationTimeMs": 348425,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Foundations of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Pixel Color Values",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Images are composed of tiny colored squares called pixels. Each pixel contains three numbers representing how much red, green, and blue to mix together to create its color. Each of these color channel values can range from 0, meaning none of that color, to 255, meaning the maximum intensity of that color. This RGB system (red, green, blue) is the foundation for how digital images represent color. For example, the orange color rgb(255, 147, 41) has maximum red (255), medium green (147), and low blue (41).",
+          "question": "What is the range of possible values for each color channel (red, green, or blue) in a pixel?",
+          "answer": "0 to 255",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Foundations of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Image File Size Fundamentals",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "An HD screenshot with dimensions of 1920 × 1080 pixels contains over 2 million pixels, specifically 2,073,600 pixels. Each pixel requires 3 bytes of storage—one byte for red, one for green, and one for blue. Multiplying these together (2,073,600 × 3 bytes) equals 6,220,800 bytes, which is approximately 6.2 megabytes for a single uncompressed image. This file size is too large for efficient storage and transmission, making compression necessary.",
+          "question": "A single HD screenshot (1920 × 1080 pixels) requires approximately 6.2 megabytes of storage.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Foundations of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "The Two Fundamental Approaches to Compression",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "There are two fundamental approaches to shrinking image file sizes. The first approach is to throw away parts of the data that humans won't notice, which is called lossy compression. The second approach is to be clever about how you store every pixel while preserving all original data, which is called lossless compression. These two ideas form the foundation of how image compression works and power formats like JPEG, PNG, ZIP files, web traffic, and most of the internet. Lossy compression achieves much smaller file sizes while lossless compression preserves exact pixel values.",
+          "question": "What are the two fundamental approaches to image compression?",
+          "answer": 0,
+          "choices": [
+            "Throwing away data (lossy) or being clever about storing every pixel (lossless)",
+            "Converting RGB to CMYK or converting CMYK to RGB",
+            "Increasing brightness or decreasing contrast",
+            "Encrypting the file or decrypting the file"
+          ],
+          "explanation": "The content explicitly states there are two approaches: throwing away data (lossy) or being clever about storing every pixel (lossless).",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Foundations of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Foundations of Image Compression",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "In lossless PNG compression, the process works in a specific sequence. First, filtering predicts each pixel from its neighbors and stores the differences rather than the actual values. Second, LZ77 pattern finding scans through these differences to identify repeated sequences and replaces them with compact back-references. Third, Huffman coding assigns shorter binary codes to the most frequently occurring values. This three-step pipeline transforms raw image data into a compressed format while preserving every pixel perfectly.",
+          "question": "What is the correct order of steps in the PNG lossless compression pipeline?",
+          "answer": [
+            2,
+            1,
+            0
+          ],
+          "choices": [
+            "Huffman Coding",
+            "LZ77 Pattern Finding",
+            "Filtering"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "Understanding Lossy Compression",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Lossy compression is an approach to image compression that involves deliberately discarding some data from the original file. The key insight behind lossy compression is that human vision has limitations that can be exploited: our eyes resolve brightness in fine detail but blur color together. We notice blurry edges, but we won't notice if colors are slightly off. This means certain visual information is less important to preserve than others. JPEG is the most common lossy compression format and can achieve 10-20x smaller files with minimal visible difference compared to the original.",
+          "question": "What aspect of human vision does lossy compression exploit?",
+          "answer": "Human eyes resolve brightness in fine detail but blur color together",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "Pixel Preservation in Compression",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "When discussing compression methods, it's important to understand the fundamental difference between approaches. Lossless compression preserves every single pixel perfectly, which is essential for images with text or sharp edges. Lossy compression, on the other hand, cannot recover the original pixels once the data has been discarded. This is an unavoidable trade-off: the smaller file size comes at the cost of permanently losing some original image information.",
+          "question": "JPEG is a lossy compression format that preserves every single pixel of the original image.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG Block Processing",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "JPEG compression uses a specific technique to process image data efficiently. The algorithm divides the image into small square blocks of 8×8 pixels before processing. Each block is then transformed into frequency components, where low frequencies represent smooth gradients in the image and high frequencies represent fine details like sharp edges. Since photographs are mostly smooth gradients, most of the visual information ends up in just a few low-frequency components. This allows JPEG to discard high-frequency details that won't be missed while keeping the smooth parts intact.",
+          "question": "What block size does JPEG use when processing images?",
+          "answer": 3,
+          "choices": [
+            "32×32 pixels",
+            "4×4 pixels",
+            "16×16 pixels",
+            "8×8 pixels"
+          ],
+          "explanation": "JPEG divides the image into 8×8 pixel blocks and transforms each block into frequency components for compression.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG Lossy Compression Steps",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "JPEG lossy compression works by first dividing the image into 8×8 pixel blocks, then transforming each block into frequency components using a mathematical transform, and finally keeping only the low-frequency components which represent smooth gradients while discarding high-frequency details that the human eye won't notice.",
+          "question": "What is the correct order of steps in the JPEG lossy compression pipeline?",
+          "answer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Keep low-frequency components",
+            "Divide image into 8×8 pixel blocks",
+            "Transform blocks to frequency components"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "The Purpose of Lossless Compression",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Lossless compression is used by the PNG format and preserves every single pixel while still shrinking the file size. This is essential for images where exact pixel reproduction is critical, such as screenshots with text or graphics with sharp edges. Unlike lossy compression which throws away data humans won't notice, lossless compression uses clever algorithms to keep all original data intact. The trade-off is that lossless files are typically larger than lossy files, but you can always decompress them back to the exact original pixels.",
+          "question": "What type of images is lossless compression particularly essential for?",
+          "answer": "Screenshots with text or graphics with sharp edges",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "LZ77 Sliding Window Size",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "After the filtering step, lossless compression uses an algorithm called LZ77 to find repeated patterns in the data. LZ77 scans through the image data looking for sequences that have appeared before. When it finds a repeated pattern, instead of storing the same sequence twice, it replaces the second occurrence with a back-reference that says 'go back X values and copy Y values'. LZ77 maintains a sliding window of the last 32 KB of data it has processed, and any pattern within that window can be referenced instead of repeated.",
+          "question": "LZ77 maintains a sliding window of the last 32 KB of data when finding repeated patterns.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "The Three Tricks of Lossless Compression",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Lossless compression uses three main techniques to shrink file size while preserving all pixel data. The first technique is filtering or prediction, where instead of storing actual pixel values, the algorithm stores how much each pixel differs from its neighbors since adjacent pixels are usually similar. The second technique is LZ77, which finds repeated patterns and replaces them with compact back-references. The third technique is Huffman coding, which assigns shorter binary codes to values that appear more frequently.",
+          "question": "What are the three tricks (techniques) that lossless compression uses to shrink file size?",
+          "answer": 3,
+          "choices": [
+            "Delta encoding, dictionary compression, and run-length encoding",
+            "DCT, quantization, and entropy encoding",
+            "Color separation, block transformation, and quantization",
+            "Filtering (prediction), LZ77 (pattern finding), and Huffman coding"
+          ],
+          "explanation": "The three core techniques in lossless compression are: 1) Filtering/prediction to store differences between pixels, 2) LZ77 to find and reference repeated patterns, and 3) Huffman coding to assign shorter codes to common values.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "Lossless Compression: DEFLATE Algorithm Steps",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The DEFLATE algorithm combines three key techniques to compress filtered image data. First, Filtering (or prediction) stores differences between adjacent pixels rather than absolute values, reducing the data's variance. Then, LZ77 Pattern Finding scans for repeated sequences in the sliding window and replaces them with compact back-references, eliminating redundancy. Finally, Huffman Encoding assigns shorter binary codes to frequently occurring values and longer codes to rare ones, optimizing the bit representation. These three steps work together within the DEFLATE format to achieve efficient lossless compression.",
+          "question": "What is the correct order of steps in the DEFLATE compression algorithm used by PNG?",
+          "answer": [
+            0,
+            2,
+            1
+          ],
+          "choices": [
+            "Filtering Prediction",
+            "Huffman Encoding",
+            "LZ77 Pattern Finding"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    },
+    {
+      "file": "How does image compression work_ _ Lee Robinson.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 428,
+      "generationTimeMs": 327498,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Fundamentals of Images and Compression Basics",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Pixels and Color Values",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Images are made of tiny colored squares called pixels. Each pixel contains three numbers representing how much red, green, and blue to mix together. Each of these three color values ranges from 0, meaning none of that color, to 255, meaning maximum intensity of that color. For example, the orange color rgb(255, 147, 41) has maximum red (255), medium green (147), and low blue (41). This RGB (Red, Green, Blue) system is how computers represent and store color information in image files.",
+          "question": "What range of values (from minimum to maximum) can each of the red, green, and blue color channels have?",
+          "answer": "0 to 255",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Fundamentals of Images and Compression Basics",
+          "moduleIndex": 0,
+          "lessonTitle": "Reversibility of Lossy Compression",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "There are two main approaches to compression: lossy and lossless. Lossy compression, used by JPEG, works by throwing away data that humans won't notice. It exploits how human vision works—your eyes resolve brightness in fine detail but blur color together. The trade-off is that with lossy compression, you cannot recover the original pixel data once it has been discarded. The content explicitly states: \"With lossy compression, you can't get the original pixels back.\" This is the fundamental characteristic that distinguishes lossy from lossless compression.",
+          "question": "Lossy compression allows you to recover the exact original pixels after compression.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Fundamentals of Images and Compression Basics",
+          "moduleIndex": 0,
+          "lessonTitle": "The Three Tricks of Lossless Compression",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Lossless compression, used by PNG, preserves every single pixel while still shrinking the file size using three specific techniques. The first trick is filtering or prediction: instead of storing each pixel's actual value, the algorithm stores how much each pixel differs from its neighbor since adjacent pixels are usually similar. The second trick is pattern-finding using LZ77, which replaces repeated patterns with back-references to avoid storing identical sequences twice. The third trick is Huffman coding, which assigns shorter binary codes to values that appear more frequently and longer codes to rarer values. PNG combines all three tricks in sequence to achieve 3x to 50x compression without any quality loss.",
+          "question": "What are the three tricks that lossless compression (used by PNG) uses to shrink file size?",
+          "answer": 2,
+          "choices": [
+            "Run-length encoding, LZW, and arithmetic coding",
+            "DCT transformation, quantization, and entropy encoding",
+            "Filtering/prediction, LZ77 pattern-finding, and Huffman coding",
+            "Block averaging, color reduction, and delta encoding"
+          ],
+          "explanation": "The source explicitly states that PNG uses three tricks: filtering/prediction (storing differences from neighbors), LZ77 (finding repeated patterns and replacing them with references), and Huffman coding (giving common values shorter binary codes).",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 1: Fundamentals of Images and Compression Basics",
+          "moduleIndex": 0,
+          "lessonTitle": "Module 1: Fundamentals of Images and Compression Basics",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "PNG combines three key compression techniques in sequence to shrink files without losing any pixel data. First, filtering predicts each pixel based on its neighbors and stores only the differences, which are typically small numbers that compress well. After filtering, LZ77 scans for repeated patterns and replaces them with compact back-references instead of repeating the values. Finally, Huffman encoding assigns shorter binary codes to the most frequently occurring values, similar to how Morse code uses short signals for common letters. This specific sequence—filtering first, then pattern finding, then encoding—is what enables PNG to achieve 3x to 50x compression while preserving every pixel perfectly.",
+          "question": "What is the correct order of steps in PNG lossless compression?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Apply Filtering",
+            "LZ77 Pattern Finding",
+            "Huffman Encoding"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression: Making Files Smaller",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG Color and Brightness Separation",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "JPEG compression uses a clever technique to reduce file size. It converts pixels from RGB format to a different format that separates brightness from color. This separation is important because human eyes resolve brightness in fine detail but blur color together. Since your eyes won't notice small changes in color, JPEG can reduce color resolution without you perceiving a significant difference in image quality.",
+          "question": "What does JPEG convert pixels from to separate brightness from color?",
+          "answer": "RGB to a different format that separates brightness from color",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression: Making Files Smaller",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG Frequency Components and Details",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "JPEG compression transforms image data into frequency components after dividing the image into 8×8 pixel blocks. Low frequencies represent smooth gradients in an image, while high frequencies represent fine details like sharp edges. Since photographs contain mostly smooth gradients, most information ends up in just a few low-frequency components. JPEG throws away these high-frequency details that humans typically won't miss, keeping the smooth parts intact.",
+          "question": "In JPEG compression, low frequencies represent smooth gradients and high frequencies represent fine details like sharp edges.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression: Making Files Smaller",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG Compression Trade-offs",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Lossy compression provides dramatic file size reductions. With JPEG, you can achieve 10 to 20 times smaller files with minimal visible difference compared to the original. The compression slider allows you to control this trade-off: at high quality settings, differences are barely noticeable. However, at lower quality settings, you will see blocking artifacts where fine details get lost. Unlike lossless formats, you cannot recover the exact original pixels after lossy compression.",
+          "question": "Which file size reduction range does the content explicitly state is achievable with lossy compression while maintaining minimal visible difference?",
+          "answer": 0,
+          "choices": [
+            "10-20 times smaller",
+            "20-30 times smaller",
+            "2-5 times smaller",
+            "5-10 times smaller"
+          ],
+          "explanation": "The content explicitly states that lossy compression can achieve '10-20x smaller files with minimal visible difference.'",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 2: Lossy Compression: Making Files Smaller",
+          "moduleIndex": 1,
+          "lessonTitle": "Module 2: Lossy Compression: Making Files Smaller",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "In JPEG lossy compression, the image goes through several key transformations. First, the image is divided into 8x8 pixel blocks. Then, each block undergoes a mathematical transformation that converts spatial data into frequency components, where low frequencies represent smooth gradients and high frequencies represent fine details like sharp edges. Finally, the high-frequency components, which human eyes are less sensitive to, are removed while keeping the smooth parts intact.",
+          "question": "What is the correct order of steps in JPEG lossy compression?",
+          "answer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Remove High Frequencies",
+            "Divide into 8x8 Blocks",
+            "Transform to Frequencies"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression: Keeping Every Pixel",
+          "moduleIndex": 2,
+          "lessonTitle": "The Sliding Window in LZ77 Pattern Finding",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "LZ77 is a compression algorithm that finds repeated patterns in data. It maintains a sliding window of the last 32 KB of data that it has already processed. When LZ77 encounters a sequence of bytes that has already appeared within this 32 KB window, instead of storing the repeated sequence again, it creates a back-reference that says \"go back X values and copy Y values.\" This reference is much smaller than repeating the actual values. For images with large solid color regions or smooth gradients, this technique significantly reduces file size because the algorithm can reference previously seen patterns rather than storing them repeatedly.",
+          "question": "What is the size of the sliding window that LZ77 maintains to find repeated patterns?",
+          "answer": "32 KB",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression: Keeping Every Pixel",
+          "moduleIndex": 2,
+          "lessonTitle": "PNG Preserves All Original Pixels",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Lossless compression is used when you need every pixel to be perfect, such as screenshots with text or graphics with sharp edges. Unlike lossy compression which throws away data that humans won't notice, lossless compression preserves every single pixel exactly as it appeared in the original image. When you open a losslessly compressed image, you get bit-for-bit identical results to the original. This is essential for documents, screenshots, and any image where artifacts would be unacceptable.",
+          "question": "Lossless compression sacrifices some image quality to achieve smaller file sizes.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression: Keeping Every Pixel",
+          "moduleIndex": 2,
+          "lessonTitle": "Comparing Lossless and Lossy Compression Ratios",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Both lossy and lossless compression can achieve significant file size reductions, but the amounts differ substantially. Lossy compression (used by JPEG) can achieve 10-20x smaller files with minimal visible difference, making it excellent for photographs where some quality loss is acceptable. Lossless compression (used by PNG) typically achieves more modest reductions of about 3x for photographs (like a 6.2 MB image becoming 2.1 MB), but preserves perfect quality. However, for screenshots with large solid color regions, lossless compression can achieve 10-50x compression ratios, far exceeding what lossy compression typically achieves for such content.",
+          "question": "Which compression approach typically achieves smaller file sizes for photographs: lossy or lossless?",
+          "answer": 1,
+          "choices": [
+            "Neither significantly reduces file size",
+            "Lossy compression (JPEG)",
+            "Lossless compression (PNG)",
+            "They achieve the same file sizes"
+          ],
+          "explanation": "The content states lossy compression can achieve 10-20x smaller files while lossless compression (for photographs) achieves about 3x smaller files (6.2 MB to 2.1 MB). For photographs specifically, lossy achieves greater reduction.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Module 3: Lossless Compression: Keeping Every Pixel",
+          "moduleIndex": 2,
+          "lessonTitle": "Lossless Compression: Keeping Every Pixel",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "PNG lossless compression uses three sequential techniques to shrink file size while preserving every pixel. First, filtering predicts each pixel's value based on its neighbors and stores only the differences, which are small numbers easier to compress. Second, LZ77 pattern finding detects repeated sequences in the filtered data and replaces them with compact back-references, avoiding duplicate storage. Third, Huffman encoding assigns shorter binary codes to frequently occurring values like 0 and longer codes to rare values like 127. These three tricks work together to achieve significant compression without any data loss.",
+          "question": "What is the correct order of the three core compression techniques used in PNG lossless compression?",
+          "answer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Huffman Encoding",
+            "Filtering Prediction",
+            "LZ77 Pattern Finding"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    },
+    {
+      "file": "How does image compression work_ _ Lee Robinson.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 286,
+      "generationTimeMs": 382513,
+      "judgingTimeMs": 0,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Fundamentals of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Pixel Composition",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Images are composed of tiny colored squares called pixels. Each pixel contains three numbers representing how much red, green, and blue to mix together, with each value ranging from 0 (none) to 255 (maximum). For example, the RGB value rgb(255, 147, 41) produces an orange color. An HD screenshot with 1920 × 1080 pixels contains over 2 million pixels (2,073,600 pixels exactly). Since each pixel needs 3 bytes (one for red, one for green, one for blue), that totals approximately 6.2 megabytes for a single uncompressed image.",
+          "question": "How many numbers does each pixel contain, and what do they represent?",
+          "answer": "Three numbers representing red, green, and blue values",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Fundamentals of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Lossy vs Lossless Compression Approaches",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "There are two fundamental approaches to image compression. Lossy compression (used by JPEG) throws away parts of the image that humans won't notice, trading some quality for significantly smaller file sizes. This approach exploits how human vision works: we resolve brightness in fine detail but blur color together. Lossless compression (used by PNG) preserves every single pixel while still shrinking the file by being clever about how data is stored. Lossy compression cannot recover the original pixels, while lossless compression can reconstruct the exact original image.",
+          "question": "Lossy compression can recover the original pixels after compression.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Fundamentals of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "The PNG Lossless Compression Pipeline",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "PNG uses three main tricks to achieve lossless compression. First, filtering predicts each pixel from its neighbors and stores only the differences rather than absolute values. Second, LZ77 algorithm finds repeated patterns in the data and replaces them with small back-references to earlier positions. Third, Huffman coding assigns shorter binary codes to values that appear more frequently. For example, a value appearing 60% of the time might get just 1 bit, while rare values get 3 bits. The complete PNG pipeline is: Filtering → LZ77 → Huffman → PNG format wrapper.",
+          "question": "What is the correct sequence of the three main tricks used in PNG lossless compression?",
+          "answer": 1,
+          "choices": [
+            "LZ77, filtering, and Huffman coding",
+            "Filtering, LZ77 pattern-finding, and Huffman coding",
+            "Prediction, Huffman coding, and LZ77",
+            "Huffman coding, LZ77, and filtering"
+          ],
+          "explanation": "PNG applies filtering first to predict pixels from neighbors, then uses LZ77 to find repeated patterns, and finally applies Huffman coding to assign shorter codes to common values.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Fundamentals of Image Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Fundamentals of Image Compression: PNG Encoding Steps",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "To create a PNG file, the encoder first applies a filter that predicts each pixel based on its neighbors, storing the differences rather than the raw values. After filtering, the LZ77 algorithm scans the data for repeated patterns and replaces them with back‑references, reducing redundancy. The resulting stream is then Huffman encoded, assigning shorter binary codes to more frequent values. Finally, the Huffman data is wrapped in the PNG format, adding headers and checksums to produce the final compressed file.",
+          "question": "What is the correct order of steps in the PNG lossless compression pipeline?",
+          "answer": [
+            2,
+            0,
+            1
+          ],
+          "choices": [
+            "Apply LZ77 Pattern Finding",
+            "Huffman Encode",
+            "Filter/Predict Pixels"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "LZ77 Sliding Window Size",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "LZ77 is a pattern-finding algorithm used in lossless compression. It maintains a sliding window of the last 32 KB of data as it scans through the file. When the algorithm finds a repeated pattern within this window, it replaces the repeated sequence with a back-reference pointing to the earlier occurrence. This back-reference tells the decoder to go back a certain number of values and copy a certain number of values. For images with large solid color regions or repeated gradients, this technique significantly reduces file size because repeating patterns can be referenced rather than stored repeatedly.",
+          "question": "What is the size of the sliding window that LZ77 maintains when finding repeated patterns?",
+          "answer": "32 KB",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "PNG File Corruption Detection",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "PNG files include checksums to detect data corruption that could occur during file transfer or storage. Each chunk in a PNG file contains a mathematical fingerprint of its data, known as a CRC-32 checksum. When you open a PNG file, your computer recalculates this fingerprint and compares it to the stored value. If the checksums don't match, the file is considered damaged and won't be displayed. This protection is important because issues like bad network connections or buggy programs can corrupt files.",
+          "question": "PNG files include checksums that allow your computer to detect if a file is damaged.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression Techniques",
+          "moduleIndex": 1,
+          "lessonTitle": "Huffman Coding Frequency Distribution",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Huffman coding assigns shorter binary codes to values that appear more frequently in the compressed data. In the example from the content, after filtering and pattern-finding, the value 0 (representing no difference) appears most frequently at 60% of the time, so it receives just 1 bit (0). The value 2 appears 25% of the time and gets 2 bits (10). Values 255 and 127 appear less frequently at 10% and 5% respectively, so they receive longer 3-bit codes (110 and 111). This selective encoding achieves much smaller file sizes compared to using fixed 8-bit codes for every value.",
+          "question": "According to the example in the content, what percentage of the time does the value 0 appear in the filtered data used for Huffman coding?",
+          "answer": 0,
+          "choices": [
+            "60%",
+            "10%",
+            "25%",
+            "5%"
+          ],
+          "explanation": "The content explicitly states 'The value 0 (no difference) might appear 60% of the time' in the context of Huffman coding in lossless compression.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Practical Applications and File Formats",
+          "moduleIndex": 2,
+          "lessonTitle": "PNG File Format Chunk Structure",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "A PNG file is organized into chunks, each with a specific purpose. The raw bytes show the signature (89 50 4E 47 0D 0A 1A 0A) followed by various chunks. The Image Header chunk (IHDR) is required first and contains image metadata including width, height, bit depth, and color type. The IDAT chunk holds the compressed image data, and the IEND chunk marks the end of the file. Each chunk includes a CRC-32 checksum at the end that serves as a mathematical fingerprint of its data.",
+          "question": "What are the three main chunks that a PNG file contains?",
+          "answer": "IHDR, IDAT, and IEND",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Practical Applications and File Formats",
+          "moduleIndex": 2,
+          "lessonTitle": "Alpha Channel Support in Image Formats",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Images can have a fourth channel called alpha, which controls transparency. When an image includes alpha, it uses 4 bytes per pixel instead of the standard 3 bytes for RGB. The PNG format supports alpha channels, allowing for partial transparency in images. However, the JPEG format does not support alpha channels, which is one reason PNG is preferred for graphics that require transparency.",
+          "question": "PNG supports alpha (transparency) while JPEG does not.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Practical Applications and File Formats",
+          "moduleIndex": 2,
+          "lessonTitle": "Modern Applications of Compression Algorithms",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "The compression algorithms developed in the 1940s-1970s continue to power modern computing applications. ZIP files use LZ77 combined with Huffman coding, which is the same approach used in PNG. Web traffic relies on gzip and Brotli, which employ identical algorithms. Video compression using H.264 uses block transforms and prediction similar to JPEG but applied across time. Audio formats like MP3 and AAC use transform coding and quantization, following the same fundamental idea as JPEG image compression.",
+          "question": "Which modern application uses LZ77 combined with Huffman coding (the same as PNG)?",
+          "answer": 0,
+          "choices": [
+            "ZIP files",
+            "Web traffic with gzip",
+            "MP3 audio",
+            "H.264 video"
+          ],
+          "explanation": "ZIP files use LZ77 combined with Huffman coding, which is identical to the compression approach used in PNG format.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Practical Applications and File Formats",
+          "moduleIndex": 2,
+          "lessonTitle": "PNG File Structure",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "When creating a PNG file, the data is organized into chunks in a specific sequence. First comes the PNG Signature (89 50 4E 47 0D 0A 1A 0A), which identifies the file as a PNG. Then the IHDR Chunk must come next as it contains required image metadata like width, height, bit depth, and color type. After IHDR comes the IDAT Chunk, which stores the actual compressed image data. Finally, the IEND Chunk marks the end of the PNG file.",
+          "question": "What is the correct order of steps in the PNG file chunk structure?",
+          "answer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "IHDR Chunk",
+            "PNG Signature",
+            "IDAT Chunk"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    },
+    {
+      "file": "How does image compression work_ _ Lee Robinson.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 142,
+      "generationTimeMs": 379999,
+      "judgingTimeMs": 1,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Fundamentals of Images and Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding Pixel Color Values",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Images are made of tiny colored squares called pixels. Each pixel contains three numbers representing how much red, green, and blue to mix together to create that pixel's color. These color values range from 0, meaning none of that color, to 255, meaning the maximum amount of that color. For example, the color rgb(255, 147, 41) represents maximum red, medium green, and low blue. This RGB system is the foundation for how digital images represent color on screens.",
+          "question": "What is the range of possible values for each red, green, or blue color channel in a pixel?",
+          "answer": "0 to 255",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Fundamentals of Images and Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Image Structure Fundamentals",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Images appear smooth and continuous to the naked eye, creating the illusion of photorealistic photographs and smooth gradients. However, when you zoom in far enough, you discover that images are actually composed of discrete tiny colored squares called pixels. This fundamental understanding of images as pixel arrays is essential for understanding how compression works. The pixel-based structure is what allows computers to process and compress image data.",
+          "question": "Images are made of tiny colored squares called pixels.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Fundamentals of Images and Compression",
+          "moduleIndex": 0,
+          "lessonTitle": "Image Data Size and the Need for Compression",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "An HD screenshot with dimensions of 1920 × 1080 pixels contains over 2 million individual pixels. Specifically, 1920 multiplied by 1080 equals 2,073,600 pixels. Since each pixel needs 3 bytes to store its color information (one byte each for red, green, and blue), the raw file size reaches approximately 6.2 megabytes for a single uncompressed image. This large file size demonstrates why compression is necessary to make images more manageable for storage and transmission.",
+          "question": "How many pixels does a standard HD screenshot (1920 × 1080) contain?",
+          "answer": 2,
+          "choices": [
+            "1080 pixels",
+            "1,920 pixels",
+            "2,073,600 pixels",
+            "2 million bytes"
+          ],
+          "explanation": "1920 × 1080 = 2,073,600 pixels, which at 3 bytes per pixel equals approximately 6.2 MB uncompressed.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG's Block-Based Compression Technique",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "JPEG takes a clever approach to lossy compression by dividing the image into 8×8 pixel blocks and transforming each block into frequency components. Low frequencies represent smooth gradients in the image, while high frequencies represent fine details like sharp edges. Since photographs are mostly smooth gradients, most of the information ends up in just a few low-frequency components. JPEG throws away the high-frequency details that human eyes won't miss, keeping the smooth parts intact.",
+          "question": "What is the size of the pixel blocks that JPEG divides an image into for compression?",
+          "answer": "8×8 pixel blocks",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "Lossy Compression Trade-offs",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Lossy compression achieves dramatic file size reductions by discarding data that humans won't notice. With lossy compression, you cannot get the original pixels back once they're thrown away. The trade-off is often worth it though, as JPEG can achieve 10-20x smaller files with minimal visible difference. However, if you crank up the compression, you'll see blocking artifacts where fine details get lost. For images where every pixel must be perfect, such as screenshots with text or graphics with sharp edges, lossless compression would be more appropriate.",
+          "question": "With lossy compression, it is possible to recover the original pixel data after compression.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "JPEG's Color Processing Advantage",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "JPEG exploits a key特性 of human vision: our eyes resolve brightness in fine detail but blur color together. This allows JPEG to reduce color resolution without us noticing. JPEG converts pixels from RGB to a different format that separates brightness from color, then reduces color resolution. It keeps brightness information intact while compressing color data. Additionally, JPEG doesn't support alpha transparency, which is why PNG is preferred for graphics requiring transparency.",
+          "question": "Which color format does JPEG use that separates brightness from color?",
+          "answer": 1,
+          "choices": [
+            "RGB (red-green-blue format)",
+            "YCbCr (luminance-chrominance format)",
+            "HSV (hue-saturation-value format)",
+            "CMYK (cyan-magenta-yellow-black format)"
+          ],
+          "explanation": "JPEG converts pixels from RGB to YCbCr, which separates brightness (luminance) from color (chrominance) information. This allows JPEG to reduce color resolution while preserving brightness detail, exploiting how human vision works.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossy Compression: Throwing Away Data",
+          "moduleIndex": 1,
+          "lessonTitle": "Lossy Compression: JPEG Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "In lossy JPEG compression, the image undergoes several key transformations. First, the image is divided into small 8x8 pixel blocks. Each block then gets transformed into frequency components that represent different levels of detail. The compression algorithm keeps the important low-frequency data that represents smooth gradients while deliberately discarding high-frequency details that human eyes cannot easily perceive. This selective retention and discarding is what allows JPEG to achieve dramatic file size reductions with minimal visible quality loss.",
+          "question": "What is the correct order of steps in JPEG lossy compression?",
+          "answer": [
+            2,
+            0,
+            1
+          ],
+          "choices": [
+            "Transform to frequency components",
+            "Discard high-frequency details",
+            "Divide into 8x8 blocks"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "The Three Tricks of Lossless Compression",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Lossless compression (used by PNG) preserves every single pixel while still shrinking the file size. It uses three main tricks to achieve this. First, prediction stores differences between adjacent pixels rather than actual values, since neighboring pixels are usually similar. Second, LZ77 finds repeated patterns in the data and replaces them with compact back-references pointing to earlier occurrences. Third, Huffman coding assigns shorter binary codes to more frequently occurring values, similar to how Morse code uses short codes for common letters like 'E'. These three techniques work together in sequence to significantly reduce file size without losing any pixel data.",
+          "question": "What are the three tricks that lossless compression uses to shrink file size?",
+          "answer": "Prediction (or filtering), LZ77 (pattern-finding), and Huffman coding (shorter codes for common values)",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "Lossless Compression Preserves All Original Pixels",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "When you need every pixel to be perfect, such as screenshots with text or graphics with sharp edges, lossless compression is essential. Unlike lossy compression which throws away data humans won't notice, lossless compression keeps everything. For a photograph, a 6.2 MB image becomes around 2.1 MB using lossless compression—3x smaller with zero quality loss. Screenshots with large solid color regions can achieve 10-50x compression because they have many repeated patterns. The trade-off is that lossless compression preserves all original pixel data but typically achieves less compression than lossy compression, which can achieve 10-20x smaller files while losing some data that humans won't notice.",
+          "question": "Lossless compression allows you to recover the exact original pixel data after compression.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "PNG Prediction Methods",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "The first step in PNG compression is filtering, which predicts each pixel's value based on its neighbors and stores only the difference. PNG supports four prediction methods that try different approaches. Sub predicts from the left neighbor and works best for horizontal gradients. Up predicts from the pixel above and works best for vertical gradients. Average predicts from the average of the left and above pixels. Paeth intelligently chooses between left, above, or the diagonal pixel based on which is closest. PNG encoders try each method for every row and select the one that produces the smallest output for compression.",
+          "question": "Which PNG prediction method works best for horizontal gradients?",
+          "answer": 1,
+          "choices": [
+            "Average (predict from average of left and above)",
+            "Sub (predict from left neighbor)",
+            "Up (predict from pixel above)",
+            "Paeth (smartly pick between left, above, or diagonal)"
+          ],
+          "explanation": "Sub predicts each pixel based on its left neighbor, making it optimal for horizontal gradients where adjacent pixels in the same row are most similar.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        },
+        {
+          "moduleTitle": "Lossless Compression: Keeping Everything",
+          "moduleIndex": 2,
+          "lessonTitle": "Lossless Compression: Keeping Everything",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "PNG lossless compression preserves every single pixel while shrinking the file. It uses three sequential tricks to accomplish this. First, filtering or prediction stores differences between neighboring pixels instead of absolute values, since adjacent pixels are usually similar. Second, LZ77 pattern finding replaces repeated sequences with compact back-references, noticing patterns like 0, 2, 0, 0, 0, 2 and referencing them instead of repeating values. Third, Huffman coding assigns shorter binary codes to commonly occurring values like 0 (which might appear 60% of the time) while giving rare values longer codes.",
+          "question": "What is the correct order of steps in PNG lossless compression?",
+          "answer": [
+            2,
+            1,
+            0
+          ],
+          "choices": [
+            "Huffman Coding",
+            "LZ77 Pattern Finding",
+            "Filtering/Prediction"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "skipped"
+          }
+        }
+      ]
+    }
+  ]
+}

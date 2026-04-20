@@ -1,0 +1,390 @@
+{
+  "tag": "model-compare-qwen-composer2",
+  "timestamp": "2026-04-03T12:54:05.635Z",
+  "generationModel": "Qwen/Qwen3.5-397B-A17B",
+  "judgeModel": "openrouter/google/gemini-3.1-flash-lite-preview",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural",
+    "correctness",
+    "grounding",
+    "duplicates",
+    "sufficiency"
+  ],
+  "totalTimeMs": 152988,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 9,
+      "firstPassSuccess": 9,
+      "successRate": "75%",
+      "firstPassRate": "75%"
+    },
+    "correctness": {
+      "totalGraded": 9,
+      "correct": 9,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 9,
+      "fullyGrounded": "9/9 (100%)",
+      "selfContained": "9/9 (100%)",
+      "concrete": "9/9 (100%)",
+      "grounded": "9/9 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 9,
+      "sufficient": 9,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 9,
+      "firstPassSuccess": 9,
+      "ocrTimeMs": 108,
+      "generationTimeMs": 148324,
+      "judgingTimeMs": 4548,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Coding and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "The Composer 2 model training process begins with the selection of a suitable base model to serve as the foundation for continued pretraining. The research team evaluated several open-source candidates, including GLM-5, Kimi K2.5, and DeepSeek V3.2, using three specific internal benchmarks described in Appendix B. These evaluations measured factual knowledge via FreshBench (an adversarial question-answer benchmark), state tracking capabilities through a custom benchmark similar to LoCoDiff but built from the team's private monorepo (reporting average character-level distance), and codebase perplexity (negative log-likelihood) on the same private monorepo. While Kimi K2.5 achieved the highest score on FreshBench (83.2%) but performed worse than DeepSeek V3.2 on state tracking and perplexity metrics, the team selected Kimi K2.5 as the base model. This decision was driven by its general strong performance across the evaluations combined with additional considerations regarding its efficiency within their specific infrastructure. Kimi K2.5 is a 1.04T parameter Mixture-of-Experts model with 32B active parameters.",
+          "question": "Which specific model was selected as the base for Composer 2 after internal evaluations?",
+          "answer": "Kimi K2.5",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 3 (Continued Pretraining) that 'These evaluations led us to select Kimi K2.5 [67]... as our base model for Composer 2.'"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is accurate, directly addresses the question, and is fully supported by the provided source material (specifically Section 3 and Appendix B)."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that the research team selected Kimi K2.5 as the base model for Composer 2 after evaluating several candidates.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the research team selected Kimi K2.5 as the base model for Composer 2 after evaluating several candidates.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the research team selected Kimi K2.5 as the base model for Composer 2 after evaluating several candidates.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Coding and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Phases of Continued Pretraining",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "The continued pretraining stage for Composer 2 is designed to specialize the base model on coding knowledge and capabilities before reinforcement learning. This stage is explicitly divided into three distinct phases. First, the training spends the bulk of its compute at a 32k token sequence length. Second, it undergoes a shorter long-context extension phase that increases the sequence length to 256k. Finally, the stage concludes with a short Supervised Fine-Tuning (SFT) phase focused on targeted coding tasks. During the final two phases (the long-context extension and the SFT phase), Multi-Token Prediction (MTP) layers are included and trained jointly with the rest of the model.",
+          "question": "Is it true that the continued pretraining stage for Composer 2 includes a phase extending the sequence length to 256k tokens?",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "Section 3.1 of the technical report explicitly states: 'We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length'."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed, self-contained, and directly supported by the provided lesson content, which explicitly states that the continued pretraining stage includes a long-context extension phase to 256k tokens."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that the second phase of the continued pretraining stage is a 'long-context extension phase that increases the sequence length to 256k', which directly supports the statement.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the second phase of the continued pretraining stage is a 'long-context extension phase that increases the sequence length to 256k', which directly supports the statement.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the second phase of the continued pretraining stage is a 'long-context extension phase that increases the sequence length to 256k', which directly supports the statement.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 1: Foundations of Agentic Coding and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Multi-Token Prediction Training Strategy",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "To serve the Composer 2 model faster in production, additional Multi-Token Prediction (MTP) layers are trained to enable speculative decoding. These MTP layers are initialized from scratch and trained on the same data mix as the main model, utilizing self-distillation to teach the layers to predict the exact logit distribution of the main language model head. To ensure this process generalizes effectively, the MTP layers are trained atop a checkpoint cut from the middle of the continued pretraining run. During the final two phases of training, which include long-context extension and SFT, the MTP layers are included and trained jointly with the rest of the model.",
+          "question": "How are the Multi-Token Prediction (MTP) layers initialized and trained to ensure they generalize effectively?",
+          "answer": 3,
+          "choices": [
+            "Initialized from the final SFT checkpoint and trained independently from the main model",
+            "Initialized from the base model weights and trained only during the long-context extension phase",
+            "Initialized from scratch and trained solely on the final 32k token sequence length data",
+            "Initialized from scratch and trained atop a checkpoint cut from the middle of the continued pretraining run"
+          ],
+          "explanation": "The source content states that MTP layers are initialized from scratch, trained with self-distillation, and specifically trained atop a checkpoint cut from the middle of the continued pretraining run to ensure generalization.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'We initialize the MTP layers from scratch... To ensure that this process generalizes, the MTP layers are trained atop a checkpoint cut from the middle of the continued pretraining run.' This matches choice 3."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair is well-formed, self-contained, and accurately reflects the information provided in the 'Multi-Token Prediction' section of the source text."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that the MTP layers are 'initialized from scratch' and 'trained atop a checkpoint cut from the middle of the continued pretraining run' to ensure effective generalization, which directly supports the correct answer choice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that the MTP layers are 'initialized from scratch' and 'trained atop a checkpoint cut from the middle of the continued pretraining run' to ensure effective generalization, which directly supports the correct answer choice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that the MTP layers are 'initialized from scratch' and 'trained atop a checkpoint cut from the middle of the continued pretraining run' to ensure effective generalization, which directly supports the correct answer choice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Asynchronous Reinforcement Learning and Agent Behavior Optimization",
+          "moduleIndex": 1,
+          "lessonTitle": "Asynchronous RL Training Regime and Policy Stability",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2's reinforcement learning pipeline operates in a highly asynchronous regime with independent training and rollout generation workers. To maintain stability in this environment, the system utilizes a single-epoch regime where the same prompt is never trained on twice. A critical strategy to minimize off-policy divergence involves fast weight synchronization and in-flight weight updates, allowing inference workers to update weights mid-rollout. Additionally, the system replays MoE routing to reduce divergence between the sampling and training policies. Unlike some prior works, the team opted not to mask rollouts that exceed the maximum sequence length, as benefits were not observed at small scale.",
+          "question": "What specific regime is used in the asynchronous RL training to ensure that the same prompt is never trained on twice?",
+          "answer": "single-epoch regime",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 4.1: 'We operate in the single-epoch regime, i.e., the same prompt is never trained on twice.'"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is accurate, directly addresses the question, and is fully supported by the provided source text (Section 4.1)."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that the system utilizes a 'single-epoch regime' to ensure that the same prompt is never trained on twice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that the system utilizes a 'single-epoch regime' to ensure that the same prompt is never trained on twice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that the system utilizes a 'single-epoch regime' to ensure that the same prompt is never trained on twice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Asynchronous Reinforcement Learning and Agent Behavior Optimization",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator Selection for RL",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "In the reinforcement learning process for Composer 2, Kullback–Leibler divergence is used for regularization, defined as KL(q ∥p) = Ex∼q[−log r(x)], where r(x) = p(x)/q(x). While the k3 estimator (defined as (r −1) −log r) is unbiased and reduces variance when policies p and q are close, its variance increases drastically as the policies diverge. The k2 estimator avoids this variance blow-up but is biased. Consequently, the training pipeline explicitly uses the standard estimator k1, defined as −log r, instead of k3. This choice ensures stable training by avoiding the extreme variance associated with large KL values found in the k3 estimator when policy distributions shift significantly.",
+          "question": "Is it true that the Composer 2 training pipeline uses the k3 estimator for KL divergence because it provides the lowest variance across all policy distances?",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The statement claims the Composer 2 training pipeline uses the k3 estimator for KL divergence. However, the source content explicitly states: 'Therefore, we use the standard estimator k1 = -log r instead' because the k3 estimator's variance increases drastically as p and q diverge. Thus, the statement is false."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is a direct, self-contained, and accurate response to the true-false question. It is correctly grounded in the provided lesson content, which explicitly states that the k1 estimator is used instead of k3 to ensure stable training by avoiding the extreme variance associated with the k3 estimator."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that the training pipeline uses the k1 estimator instead of the k3 estimator, and explains that the k3 estimator's variance increases drastically as policies diverge, directly contradicting the claim in the statement.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the training pipeline uses the k1 estimator instead of the k3 estimator, and explains that the k3 estimator's variance increases drastically as policies diverge, directly contradicting the claim in the statement.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the training pipeline uses the k1 estimator instead of the k3 estimator, and explains that the k3 estimator's variance increases drastically as policies diverge, directly contradicting the claim in the statement.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Asynchronous Reinforcement Learning and Agent Behavior Optimization",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalties for Agent Behavior",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "To optimize agent behavior, Composer 2 applies a concave down and increasing nonlinear length penalty to the reward function. This penalty incentivizes the model to produce solutions quickly on easy requests while allowing it to think longer on hard requests. The input for this penalty is a weighted combination of thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns. The nonlinearity ensures that on easy tasks, achievable with few tool calls, every additional bit of effort is felt more acutely than in long-horizon tasks. This approach enables the model to learn efficient behaviors, such as making multiple tool calls in parallel.",
+          "question": "Which specific combination of factors serves as the input 'x' for the nonlinear length penalty function applied to Composer 2's reward?",
+          "answer": 3,
+          "choices": [
+            "The ratio of correct code lines to the total number of lines changed in the environment",
+            "The total number of tokens generated minus the number of successful tool calls",
+            "Only the count of thinking tokens and the total duration of the rollout in seconds",
+            "A weighted combination of thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns"
+          ],
+          "explanation": "The source content explicitly states that the input x is a weighted combination of thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 4.2 that the input 'x' for the nonlinear length penalty function is a weighted combination of thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair is well-formed, self-contained, and accurately reflects the information provided in the source text (specifically Section 4.2, which defines the input 'x' for the length penalty function)."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly lists the components that make up the weighted combination used as the input for the length penalty, which directly corresponds to the correct answer choice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists the components that make up the weighted combination used as the input for the length penalty, which directly corresponds to the correct answer choice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists the components that make up the weighted combination used as the input for the length penalty, which directly corresponds to the correct answer choice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Real-World Evaluation, Infrastructure, and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Structural Characteristics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "CursorBench is an internal evaluation suite designed to reflect the true distribution of real-world software engineering tasks by avoiding train-set contamination. Unlike public benchmarks that often feature highly specified prompts and isolated bug fixes, CursorBench tasks are derived from actual coding sessions within the engineering team. A key structural difference is the extent of code modification required; CursorBench tasks necessitate a median of 181 lines changed, whereas public benchmarks like SWE-bench Verified and Multilingual typically require only 7 to 10 lines. Additionally, the prompts in CursorBench are significantly more under-specified, with a median description length of just 390 characters compared to the 1,185 to 3,055 characters found in public benchmarks. This combination of broad execution scope and high intent ambiguity accurately captures the complexity of real-world development.",
+          "question": "What is the median number of lines changed required for tasks in the CursorBench evaluation suite?",
+          "answer": "181",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 5, Figure 7a, that CursorBench tasks have a median of 181 lines changed."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is a direct, specific, and accurate value derived from the provided lesson content. It does not rely on external context or meta-references to the source material."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that CursorBench tasks necessitate a median of 181 lines changed.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that CursorBench tasks necessitate a median of 181 lines changed.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that CursorBench tasks necessitate a median of 181 lines changed.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Real-World Evaluation, Infrastructure, and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Router Replay in MoE Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "During the reinforcement learning of Composer 2, the model utilizes a Mixture-of-Experts architecture where numerical differences between the inference engine and the trainer can cause different experts to be selected for the same token. If the trainer and inference engine do not agree on expert routing, the log-probabilities computed during training may not match the distribution from which tokens were sampled, introducing noise into the policy gradient. To address this discrepancy, the system employs a technique called router replay. In this process, the inference engine returns the selected expert indices for every token at every MoE layer, and during the training forward pass, the router's expert assignment is overridden to match these returned indices. This ensures that the gradients flow correctly and maintains alignment between the sampling and training policies.",
+          "question": "Is it true that router replay involves overriding the training router's expert assignment to match the indices returned by the inference engine?",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'during the training forward pass the router’s expert assignment is overridden to match [the indices returned by the inference engine]'. This confirms the statement is true."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is a direct, self-contained, and concrete response to the true-false question. It is accurately grounded in the 'Inference and Weight Sync' section of the provided source text, which explicitly describes the router replay process as overriding the training router's expert assignment to match the inference engine's indices."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that 'during the training forward pass, the router's expert assignment is overridden to match these returned indices' from the inference engine, which directly supports the statement.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that 'during the training forward pass, the router's expert assignment is overridden to match these returned indices' from the inference engine, which directly supports the statement.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that 'during the training forward pass, the router's expert assignment is overridden to match these returned indices' from the inference engine, which directly supports the statement.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Real-World Evaluation, Infrastructure, and Performance Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Iteration Evolution",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "The CursorBench evaluation suite is continually updated to remain aligned with evolving user workflows and increasing agent capabilities. As the benchmark iterates, the complexity of the tasks grows significantly to prevent performance saturation. Specifically, tasks from CursorBench-3 involve changing more than twice as many files and lines of code on average compared to earlier versions of the benchmark. This increase in problem size is accompanied by a shift in the distribution of task types, as developers increasingly delegate long-running command execution, experiment monitoring, and data analysis to agents. This continual refresh ensures that the evaluations reflect the shifting frontier of real-world difficulty rather than static, solved challenges.",
+          "question": "How does the task complexity in CursorBench-3 compare to earlier versions of the benchmark?",
+          "answer": 1,
+          "choices": [
+            "Tasks focus exclusively on isolated bug fixes with highly specified prompts.",
+            "Tasks involve changing more than twice as many files and lines of code on average.",
+            "Tasks are derived from public repositories to ensure broad community validation.",
+            "Tasks require fewer lines of code changes but significantly longer prompt descriptions."
+          ],
+          "explanation": "The source content explicitly states that compared to earlier versions, tasks from CursorBench-3 involve changing more than twice as many files and lines of code on average.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 5 that 'compared to earlier versions of CursorBench, tasks from CursorBench-3 involve changing more than twice as many files and lines of code on average.' This matches choice 1."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair is well-formed, self-contained, and directly supported by the provided lesson content. The answer accurately reflects the information regarding task complexity in CursorBench-3."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that 'tasks from CursorBench-3 involve changing more than twice as many files and lines of code on average compared to earlier versions of the benchmark,' which directly provides the information needed to select the correct answer.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'tasks from CursorBench-3 involve changing more than twice as many files and lines of code on average compared to earlier versions of the benchmark,' which directly provides the information needed to select the correct answer.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'tasks from CursorBench-3 involve changing more than twice as many files and lines of code on average compared to earlier versions of the benchmark,' which directly provides the information needed to select the correct answer.\"}",
+          "sufficiencyParseStatus": "parsed"
+        }
+      ]
+    }
+  ]
+}

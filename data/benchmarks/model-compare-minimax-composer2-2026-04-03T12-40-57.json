@@ -1,0 +1,534 @@
+{
+  "tag": "model-compare-minimax-composer2",
+  "timestamp": "2026-04-03T12:40:57.542Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "openrouter/google/gemini-3.1-flash-lite-preview",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural",
+    "correctness",
+    "grounding",
+    "duplicates",
+    "sufficiency"
+  ],
+  "totalTimeMs": 89829,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 12,
+      "correct": 11,
+      "accuracy": "92%"
+    },
+    "grounding": {
+      "totalGraded": 12,
+      "fullyGrounded": "12/12 (100%)",
+      "selfContained": "12/12 (100%)",
+      "concrete": "12/12 (100%)",
+      "grounded": "12/12 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 12,
+      "sufficient": 12,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "2/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 108,
+      "generationTimeMs": 85681,
+      "judgingTimeMs": 4028,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Module 1: Introduction and Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose and Capabilities of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "Composer 2 is a specialized model designed for agentic software engineering. The model demonstrates strong long-term planning and coding intelligence while maintaining the ability to efficiently solve problems for interactive use. It scores strongly on CursorBench, which is a benchmark of real-world software engineering, while also scoring at frontier levels on public software engineering benchmarks such as SWE-bench Multilingual and Terminal-Bench. Composer 2 is trained in two phases: first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance through stronger reasoning, accurate multi-step execution, and coherence on long-horizon realistic coding problems. A core tenet of Composer training is to emulate real-world user challenges as closely as possible to minimize train-test mismatch.",
+          "question": "What is the primary domain or task for which Composer 2 was designed?",
+          "answer": "Agentic software engineering",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in the introduction that 'Composer 2 is a specialized model designed for agentic software engineering.'"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is direct, accurate, and fully supported by the provided lesson content, which explicitly states that Composer 2 is a specialized model designed for agentic software engineering."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states in the first sentence that 'Composer 2 is a specialized model designed for agentic software engineering.'",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states in the first sentence that 'Composer 2 is a specialized model designed for agentic software engineering.'\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states in the first sentence that 'Composer 2 is a specialized model designed for agentic software engineering.'\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Tools Available to Composer 2",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Composer 2 has access to a small set of general tools that allow it to read and edit files, run shell commands, search the codebase using grep or semantic search, and search the web. Its prompt includes a system message, the tool call format specification, recent file information, past user messages, and the current task. The most common end result of this process is a set of changes to files in the codebase environment, although there are many other common use cases such as answering questions, writing plans, resolving version control issues, or monitoring long-running jobs. Software engineering agents aim to autonomously act to solve a given task prompt, producing a rollout consisting of a series of actions, where each action may modify the underlying environment.",
+          "question": "Composer 2 is a frontier-level coding model that cannot autonomously navigate repositories and solve complex engineering tasks.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": false,
+            "explanation": "The statement provided in the question is false, as the source content explicitly describes Composer 2 as a 'specialized model designed for agentic software engineering' that is capable of autonomously navigating repositories and solving complex engineering tasks. Since the statement is false, the given answer 'false' is correct. The judge correctly identified that the statement is false, but mistakenly marked the answer 'false' as 'INCORRECT', thereby contradicting its own reasoning."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is a direct, self-contained, and concrete response to the true-false question. It is grounded in the source material, which explicitly states that Composer 2 is a 'frontier-level coding model' and that software engineering agents (which Composer 2 is designed for) aim to 'autonomously act to solve a given task prompt' and 'navigate repositories'."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that 'Software engineering agents aim to autonomously act to solve a given task prompt,' which provides the necessary context to evaluate the claim that Composer 2 cannot autonomously navigate repositories and solve tasks.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'Software engineering agents aim to autonomously act to solve a given task prompt,' which provides the necessary context to evaluate the claim that Composer 2 cannot autonomously navigate repositories and solve tasks.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'Software engineering agents aim to autonomously act to solve a given task prompt,' which provides the necessary context to evaluate the claim that Composer 2 cannot autonomously navigate repositories and solve tasks.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Training Phases of Composer 2",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 is trained through two distinct training phases. The first phase is continued pretraining, which aims to improve the language model's base knowledge specifically in the domain of coding. This phase uses a large code-dominated data mix to specialize the model on coding knowledge and capabilities. The second phase is large-scale reinforcement learning, which improves end-to-end coding performance through stronger reasoning, accurate multi-step execution, and coherence on long-horizon realistic coding problems. The continued pretraining stage is divided into three phases: spending the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.",
+          "question": "What are the two distinct training phases used to develop Composer 2?",
+          "answer": 3,
+          "choices": [
+            "Continual learning and direct preference optimization",
+            "Supervised fine-tuning and instruction tuning",
+            "Pre-training and instruction tuning",
+            "Continued pretraining and reinforcement learning"
+          ],
+          "explanation": "The content explicitly states that Composer 2 is trained in two phases: first continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in the Introduction: 'The model is trained in two phases: first, continued pretraining to improve the model’s knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance.' This matches choice 3."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair is well-formed, self-contained, and accurately reflects the information provided in the source text regarding the two training phases of Composer 2."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that 'Composer 2 is trained through two distinct training phases' and identifies them as 'continued pretraining' and 'large-scale reinforcement learning', which directly corresponds to the correct choice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'Composer 2 is trained through two distinct training phases' and identifies them as 'continued pretraining' and 'large-scale reinforcement learning', which directly corresponds to the correct choice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'Composer 2 is trained through two distinct training phases' and identifies them as 'continued pretraining' and 'large-scale reinforcement learning', which directly corresponds to the correct choice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The continued pretraining stage for Composer 2 is divided into three sequential phases. First, the bulk of compute is spent at 32k token sequence length to build foundational coding knowledge. Second, a shorter long-context extension phase extends the sequence length to 256k to enable the model to handle longer codebases. Third, a short SFT phase on targeted coding tasks further specializes the model for software engineering work.",
+          "question": "What is the correct order of phases in the Composer 2 continued pretraining pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Phase",
+            "256k Long-Context Phase",
+            "Targeted Coding SFT"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content in Section 3.1 states: 'We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the order [0, 1, 2]."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair accurately reflect the three-phase continued pretraining process described in Section 3.1 of the source text. The ordering is correct, and the choices are specific and self-contained."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly lists the three sequential phases of the Composer 2 continued pretraining pipeline in order: first, the 32k token sequence length phase; second, the 256k long-context extension phase; and third, the targeted coding SFT phase.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly lists the three sequential phases of the Composer 2 continued pretraining pipeline in order: first, the 32k token sequence length phase; second, the 256k long-context extension phase; and third, the targeted coding SFT phase.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly lists the three sequential phases of the Composer 2 continued pretraining pipeline in order: first, the 32k token sequence length phase; second, the 256k long-context extension phase; and third, the targeted coding SFT phase.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 Base Model Selection",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "The Composer 2 model was built upon Kimi K2.5 as its base model, which is a Mixture-of-Experts architecture with 1.04 trillion total parameters and 32 billion active parameters. This base model was selected after evaluating several potential open-source models including GLM-5, Kimi K2.5, and DeepSeek V3.2. The selection was guided by internal evaluations measuring internal codebase perplexity, coding knowledge through FreshBench, and state tracking capabilities. Kimi K2.5 was chosen due to its strong overall performance and efficiency within the training infrastructure.",
+          "question": "What are the total parameter count and active parameter count of the Kimi K2.5 base model used for Composer 2?",
+          "answer": "1.04 trillion total parameters and 32 billion active parameters",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states in Section 3 that Kimi K2.5 is a '1.04T parameter / 32B active parameter Mixture-of-Experts model'."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is accurate, directly addresses the question, and is fully supported by the provided lesson content."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that the Kimi K2.5 base model has 1.04 trillion total parameters and 32 billion active parameters, which directly provides the information needed to answer the question.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the Kimi K2.5 base model has 1.04 trillion total parameters and 32 billion active parameters, which directly provides the information needed to answer the question.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that the Kimi K2.5 base model has 1.04 trillion total parameters and 32 billion active parameters, which directly provides the information needed to answer the question.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Training Configuration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "Composer 2 employs reinforcement learning training that operates in a highly asynchronous regime with independent training and rollout generation workers. The training uses a policy gradient algorithm with multiple samples per prompt and a fixed group size. A key characteristic is that it operates in the single-epoch regime, meaning the same prompt is never trained on twice. The underlying optimizer used is Adam, which updates the full parameter set. For regularization, the model uses Kullback-Leibler divergence with the standard k1 estimator (-log r) rather than the k3 estimator, because the k3 estimator's variance increases drastically as the policies diverge.",
+          "question": "Composer 2 uses the k1 estimator (-log r) for KL divergence regularization rather than the k3 estimator.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly states: 'Many open-source implementations of RL estimate KL with the estimator k3 = (r −1) −log r... Therefore, we use the standard estimator k1 = −log r instead.'"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are clear, self-contained, and directly supported by the provided technical report (Section 4.1, paragraph 4)."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that the model uses the k1 estimator (-log r) rather than the k3 estimator for KL divergence regularization, which directly supports the statement provided.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that the model uses the k1 estimator (-log r) rather than the k3 estimator for KL divergence regularization, which directly supports the statement provided.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that the model uses the k1 estimator (-log r) rather than the k3 estimator for KL divergence regularization, which directly supports the statement provided.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalty Formula Components",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "To incentivize the model to produce solutions quickly on easy requests while allowing it to think longer on hard requests, Composer 2 adds a concave down and increasing nonlinear length penalty to the reward. The formula is: Clength{k,q}(x) = ((1 + kx)^(1-q) - 1) / (k(1-q)), where k and q are hyperparameters which define the curvature of the penalty. The input x is a weighted combination of multiple factors including thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout. This nonlinearity reflects that on easy tasks achievable with only a few tool calls, every additional bit of effort is felt more acutely than in long-horizon tasks.",
+          "question": "Which of the following is NOT a component included in the input x for the nonlinear length penalty formula in Composer 2 RL training?",
+          "answer": 2,
+          "choices": [
+            "Tool calling tokens",
+            "Number of turns of a rollout",
+            "Number of files edited",
+            "Thinking tokens"
+          ],
+          "explanation": "The input x for the nonlinear length penalty is explicitly described as 'a weighted combination of thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout.' Number of files edited is not mentioned as a component.",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content explicitly lists the components of the input x for the nonlinear length penalty formula as 'thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout.' 'Number of files edited' is not included in this list."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed and directly supported by the provided lesson content. The lesson explicitly lists the components of the input x, and the answer correctly identifies the item not included in that list."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly lists the factors included in the input x: thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout. This allows the student to identify that 'Number of files edited' is not among the listed components.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists the factors included in the input x: thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout. This allows the student to identify that 'Number of files edited' is not among the listed components.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly lists the factors included in the input x: thinking tokens, tool calling tokens, tool output tokens, final message tokens, number of tool calls, and number of turns of a rollout. This allows the student to identify that 'Number of files edited' is not among the listed components.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology",
+          "moduleIndex": 1,
+          "lessonTitle": "Module 2: Training Methodology",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "The reinforcement learning training pipeline in Composer 2 involves a systematic process where the model learns to improve its coding capabilities. First, a problem is sampled from the training distribution. Then, the agent simulates multiple rollouts to generate different potential solutions. Finally, the model weights are updated based on the quality of these solutions, as measured by reward signals.",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Simulate Rollouts",
+            "Update Model Weights"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content in Section 4 (Reinforcement Learning) explicitly states: 'At a high level, RL training consists of sampling a problem, simulating a group of rollouts from the agent with different solutions, and then updating the model weights based on solution quality.' This matches the order [0, 1, 2]."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair accurately reflect the reinforcement learning training pipeline described in the source text (Section 4, paragraph 1), which explicitly lists the steps as sampling a problem, simulating rollouts, and updating model weights."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly describes the sequence of the reinforcement learning training pipeline in Composer 2, stating 'First, a problem is sampled...', 'Then, the agent simulates multiple rollouts...', and 'Finally, the model weights are updated...'. This directly maps to the steps required to answer the question.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly describes the sequence of the reinforcement learning training pipeline in Composer 2, stating 'First, a problem is sampled...', 'Then, the agent simulates multiple rollouts...', and 'Finally, the model weights are updated...'. This directly maps to the steps required to answer the question.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly describes the sequence of the reinforcement learning training pipeline in Composer 2, stating 'First, a problem is sampled...', 'Then, the agent simulates multiple rollouts...', and 'Finally, the model weights are updated...'. This directly maps to the steps required to answer the question.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Purpose and Design Rationale",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "lessonContent": "CursorBench is an internal evaluation suite introduced to address limitations in public benchmarks for coding agents. The creators identified four primary problems with existing benchmarks: domain mismatch (where SWE-bench focuses on isolated bug-fixing), prompt over-specification (where public benchmarks are highly specified while real developer requests are often under-specified), data contamination and overfitting (where benchmarks get leaked into training data), and narrow evaluation scope (where only functional correctness is measured). CursorBench tasks originate from actual coding sessions of the Cursor engineering team rather than curated public repositories, which better reflects the true distribution of software engineering tasks while completely avoiding train-set contamination.",
+          "question": "What is the primary reason CursorBench was created to replace public benchmarks for evaluating coding agents?",
+          "answer": "Public benchmarks correlate only loosely with real-world utility due to domain mismatch, over-specified prompts, data contamination, and narrow evaluation scope",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The provided answer accurately summarizes the four primary factors listed in Section 5 of the source text (Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope) that explain why public benchmarks correlate only loosely with real-world utility."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is well-formed, directly addresses the question using the specific reasons provided in the source text, and does not rely on meta-references to the lesson content."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that CursorBench was introduced to address four primary problems with existing benchmarks (domain mismatch, prompt over-specification, data contamination, and narrow evaluation scope), which directly supports the answer provided.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that CursorBench was introduced to address four primary problems with existing benchmarks (domain mismatch, prompt over-specification, data contamination, and narrow evaluation scope), which directly supports the answer provided.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly states that CursorBench was introduced to address four primary problems with existing benchmarks (domain mismatch, prompt over-specification, data contamination, and narrow evaluation scope), which directly supports the answer provided.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "lessonContent": "CursorBench tasks have distinct structural characteristics compared to public benchmarks. Specifically, CursorBench tasks require substantially more extensive code modifications, with a median of 181 lines changed compared to just 7–10 lines for SWE-bench Verified and Multilingual. Additionally, CursorBench prompts are more under-specified, featuring a median description length of only 390 characters versus 1,185–3,055 characters for public benchmarks. This combination of broad execution scope and high intent ambiguity reflects the intrinsic difficulty of real-world software engineering where developers must synthesize context from production logs, sparse user bug reports, and large existing codebases.",
+          "question": "True or False: CursorBench has shorter problem description lengths but requires more code changes than SWE-bench Verified.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "According to Figure 7 and the accompanying text in Section 5, CursorBench tasks have a median description length of 390 characters (compared to 1,185–3,055 for public benchmarks) and require a median of 181 lines changed (compared to 7–10 for SWE-bench Verified). Thus, the statement is true."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is a direct, self-contained, and concrete response to the true-false question. It is accurately grounded in the provided source text, specifically the section describing CursorBench, which states that CursorBench tasks have a median description length of 390 characters (shorter than the 1,185–3,055 characters for public benchmarks) and require a median of 181 lines changed (more than the 7–10 lines for SWE-bench Verified and Multilingual)."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that CursorBench has a median description length of 390 characters compared to 1,185–3,055 for public benchmarks (including SWE-bench Verified) and requires a median of 181 lines changed compared to 7–10 lines for SWE-bench Verified, providing all necessary information to verify the statement.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that CursorBench has a median description length of 390 characters compared to 1,185–3,055 for public benchmarks (including SWE-bench Verified) and requires a median of 181 lines changed compared to 7–10 lines for SWE-bench Verified, providing all necessary information to verify the statement.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that CursorBench has a median description length of 390 characters compared to 1,185–3,055 for public benchmarks (including SWE-bench Verified) and requires a median of 181 lines changed compared to 7–10 lines for SWE-bench Verified, providing all necessary information to verify the statement.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Infrastructure Parallelism Configuration",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "lessonContent": "Composer 2 employs multiple parallelism strategies for efficient training. The model uses Context Parallelism (CP) as the primary long-context scaling axis because it requires less communication than Tensor Parallelism and improves compute efficiency by preserving full hidden dimensions. Composer 2 also uses Expert Parallelism (EP) configured differently depending on the training phase: EP=8, CP=2 for the continued pretraining phase and EP=8, CP=8 for the RL phase. The system uses DeepEP to implement high-throughput token dispatch and combine, with communication buffers having relatively low overhead and kernels using 20 SMs by default.",
+          "question": "Which parallelism configuration does Composer 2 use during the RL training phase?",
+          "answer": 3,
+          "choices": [
+            "EP=8, CP=2",
+            "EP=16, CP=4",
+            "EP=4, CP=4",
+            "EP=8, CP=8"
+          ],
+          "explanation": "The content explicitly states that Composer 2 uses EP=8, CP=8 for the RL phase, while EP=8, CP=2 is used for continued pretraining",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "The source content in Section 6.1 explicitly states: 'We use EP=8, CP=2 for the continued pretraining phase and EP=8, CP=8 for the RL phase.' The provided answer correctly identifies EP=8, CP=8 for the RL training phase."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer are well-formed, self-contained, and directly supported by the provided source text (Section 6.1, which explicitly states: 'We use EP=8, CP=2 for the continued pretraining phase and EP=8, CP=8 for the RL phase')."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that Composer 2 uses 'EP=8, CP=8 for the RL phase', which directly provides the information needed to identify the correct choice.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that Composer 2 uses 'EP=8, CP=8 for the RL phase', which directly provides the information needed to identify the correct choice.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that Composer 2 uses 'EP=8, CP=8 for the RL phase', which directly provides the information needed to identify the correct choice.\"}",
+          "sufficiencyParseStatus": "parsed"
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation, Infrastructure, and Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Module 3: Evaluation Process Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "lessonContent": "In the CursorBench evaluation pipeline, the model performance is assessed through a systematic process. First, the codebase environment is initialized for each task. Then the task prompt is loaded to provide the agent with its objective. The agent is subsequently run in the environment to generate solutions. After execution, accuracy metrics are computed to measure correctness, which are then aggregated over multiple passes to reduce variance. Finally, efficiency metrics such as completion tokens, latency, and inference cost are measured to ensure the model remains useful for interactive developer workflows.",
+          "question": "What is the correct order of steps in the CursorBench evaluation pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Initialize codebase environment",
+            "Load task prompt",
+            "Run agent in environment"
+          ],
+          "slots": [
+            "First",
+            "Second",
+            "Third"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "According to Section 7.1, 'For each task in CursorBench, we initialize the codebase environment and initial task prompt, and we run the agent exactly as it would execute in our production environment.' This corresponds to the order: 0 (Initialize codebase environment), 1 (Load task prompt), 2 (Run agent in environment)."
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The question and answer pair accurately reflect the evaluation pipeline described in the lesson content. The steps are correctly ordered based on the provided text, and the answer is self-contained and grounded in the source material."
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly lists the steps of the CursorBench evaluation pipeline in chronological order using transition words like 'First', 'Then', 'subsequently', 'After', and 'Finally', which provides all the information necessary to order the steps correctly.",
+            "parseStatus": "parsed",
+            "rawResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly lists the steps of the CursorBench evaluation pipeline in chronological order using transition words like 'First', 'Then', 'subsequently', 'After', and 'Finally', which provides all the information necessary to order the steps correctly.\"}"
+          },
+          "rawSufficiencyResponse": "{\"sufficient\": true, \"explanation\": \"The content explicitly lists the steps of the CursorBench evaluation pipeline in chronological order using transition words like 'First', 'Then', 'subsequently', 'After', and 'Finally', which provides all the information necessary to order the steps correctly.\"}",
+          "sufficiencyParseStatus": "parsed"
+        }
+      ]
+    }
+  ]
+}

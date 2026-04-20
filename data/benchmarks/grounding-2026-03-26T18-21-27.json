@@ -1,0 +1,816 @@
+{
+  "tag": "grounding",
+  "timestamp": "2026-03-26T18:21:27.751Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4",
+  "totalTimeMs": 360602,
+  "aggregate": {
+    "totalGraded": 31,
+    "selfContained": "29/31 (94%)",
+    "concrete": "30/31 (97%)",
+    "grounded": "21/31 (68%)",
+    "overallPass": "20/31 (65%)",
+    "byQuestionType": {
+      "short-answer": {
+        "total": 9,
+        "selfContained": "7/9",
+        "concrete": "8/9",
+        "grounded": "6/9",
+        "overall": "5/9"
+      },
+      "true-false": {
+        "total": 9,
+        "selfContained": "9/9",
+        "concrete": "9/9",
+        "grounded": "7/9",
+        "overall": "7/9"
+      },
+      "multiple-choice": {
+        "total": 9,
+        "selfContained": "9/9",
+        "concrete": "9/9",
+        "grounded": "5/9",
+        "overall": "5/9"
+      },
+      "flow-diagram": {
+        "total": 4,
+        "selfContained": "4/4",
+        "concrete": "4/4",
+        "grounded": "3/4",
+        "overall": "3/4"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "stats": {
+        "selfContained": {
+          "pass": 8,
+          "fail": 2
+        },
+        "concrete": {
+          "pass": 10,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 6,
+          "fail": 4
+        },
+        "overallPass": 5,
+        "overallFail": 5
+      },
+      "generationTimeMs": 129149,
+      "judgingTimeMs": 5627,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Definition of Multi-Agent Systems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is a multi-agent system according to the Anthropic article?",
+          "answer": "A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together",
+          "verdict": {
+            "selfContained": false,
+            "concrete": true,
+            "grounded": true,
+            "issues": [
+              "Answer references 'according to the Anthropic article' but the question asks about 'the Anthropic article' while the lesson content doesn't identify itself as being from an Anthropic article"
+            ],
+            "explanation": "The answer provides a concrete and accurate definition that matches the source content, but fails self-containedness because it implicitly references the framing from the question about 'the Anthropic article' rather than standing alone as a complete definition."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Token Usage in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Multi-agent systems are always more cost-effective than single-agent systems for any task.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is self-contained and directly addresses the statement. The lesson content clearly supports this answer by explaining that multi-agent systems use about 15 times more tokens than chats and require 'tasks where the value of the task is high enough to pay for the increased performance,' indicating they are not always more cost-effective for any task."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Foundations of Multi-Agent Research Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Architecture Pattern of Research System",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What architecture pattern does Anthropic's Research system use?",
+          "answer": 1,
+          "choices": [
+            "A peer-to-peer pattern where agents communicate directly",
+            "An orchestrator-worker pattern with a lead agent coordinating subagents",
+            "A hierarchical pattern with multiple levels of management",
+            "A sequential pipeline pattern where agents process tasks one after another"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is well-formed across all dimensions. It stands alone without referencing the source material, provides a specific architectural pattern name, and is directly supported by the source content which explicitly states 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern, where a lead agent coordinates the process while delegating to specialized subagents.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Designing, Prompting, and Evaluating Multi-Agent Systems",
+          "moduleIndex": 1,
+          "lessonTitle": "Starting Broad, Then Narrowing Down",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What prompt engineering principle helps agents avoid returning few results by starting with short, broad queries?",
+          "answer": "Start wide, then narrow down",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Start wide, then narrow down' is self-contained, concrete, and well-grounded. It stands alone without referencing the source material, provides a specific actionable principle, and accurately captures the core concept from the lesson about prompting agents to begin with broad queries before progressively narrowing focus."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Designing, Prompting, and Evaluating Multi-Agent Systems",
+          "moduleIndex": 1,
+          "lessonTitle": "Parallel Tool Calling Performance",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Parallel tool calling can cut research time by up to 90% for complex queries.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The specific claim that parallel tool calling can cut research time by up to 90% is not found in the source material. The source mentions a 90.2% performance improvement for multi-agent systems over single-agent systems, but this is about overall performance on research evaluations, not specifically about time reduction from parallel tool calling."
+            ],
+            "explanation": "While the answer format is self-contained and concrete, it makes a specific claim about 90% time reduction from parallel tool calling that is not supported by the source material. The source discusses performance improvements and mentions 90.2% better performance, but this refers to overall research evaluation performance, not time savings from parallelization."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Designing, Prompting, and Evaluating Multi-Agent Systems",
+          "moduleIndex": 1,
+          "lessonTitle": "Scaling Effort Based on Query Complexity",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to Anthropic's prompt engineering guidelines, how many subagents with clearly divided responsibilities are recommended for complex research tasks?",
+          "answer": 2,
+          "choices": [
+            "2-4 subagents with 10-15 calls each",
+            "More than 10 subagents with clearly divided responsibilities",
+            "5-7 subagents with 20-30 calls each",
+            "1-2 subagents with 5-10 calls each"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The correct answer '5-7 subagents with 20-30 calls each' is not mentioned anywhere in the source material",
+              "The source only mentions 'more than 10 subagents with clearly divided responsibilities' for complex research, which corresponds to choice 1, not choice 2"
+            ],
+            "explanation": "While the question and answer choices are self-contained and concrete, the marked correct answer is not supported by the source content. The source clearly states that complex research 'might use more than 10 subagents with clearly divided responsibilities,' making choice 1 the correct answer, not choice 2."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Production Reliability and Engineering Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "Agentic System Behavioral Changes",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "According to the Anthropic article, why is it difficult to write code for complex agents?",
+          "answer": "Because agents must maintain state in a long-running process and minor changes cascade into large behavioral changes",
+          "verdict": {
+            "selfContained": false,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "Answer references 'According to the Anthropic article' but the lesson content does not identify itself as being from an Anthropic article",
+              "The claim about maintaining state in long-running processes is not present in the source material - this appears to be hallucinated content"
+            ],
+            "explanation": "The answer fails self-containedness by referencing 'the Anthropic article' when the lesson doesn't identify itself this way. More critically, it fails grounding because the source material discusses cascading behavioral changes but does not mention anything about 'maintaining state in a long-running process' - this appears to be hallucinated content not present in the source."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Production Reliability and Engineering Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "Error Characteristics in Multi-Agent Systems",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "In agentic systems, errors tend to compound because agents can run for long periods of time while maintaining state.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The true/false answer is inherently self-contained and concrete. The statement about error compounding in agentic systems due to long runtime and state maintenance is directly supported by the lesson content, which explicitly states that 'Errors in agentic systems compound over time because agents can run for extended periods and maintain state throughout their execution.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Production Reliability and Engineering Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluating Multi-Agent System Outputs",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which evaluation criterion is NOT mentioned as part of the LLM-as-judge evaluation rubric in the Anthropic article?",
+          "answer": 3,
+          "choices": [
+            "Factual accuracy",
+            "Citation accuracy",
+            "Code syntax correctness",
+            "Source quality"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The answer 'Source quality' is actually mentioned in the lesson content as one of the evaluation criteria, making it an incorrect answer to a question asking for what is NOT mentioned"
+            ],
+            "explanation": "The answer is self-contained and concrete, but fails grounding because 'Source quality' is explicitly listed in the lesson content as one of the LLM-as-judge evaluation criteria, yet the answer treats it as the correct choice for what is NOT mentioned."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Production Reliability and Engineering Challenges",
+          "moduleIndex": 2,
+          "lessonTitle": "Multi-Agent Research System Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent research delegation process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Create Specialized Subagents",
+            "Parallel Web Searches",
+            "Return Findings to Lead"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow diagram presents a clear, self-contained sequence of steps that accurately reflects the multi-agent research process described in the source. The steps (Create Specialized Subagents → Parallel Web Searches → Return Findings to Lead) are specific to the documented workflow and don't reference external materials or meta-structures."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "stats": {
+        "selfContained": {
+          "pass": 0,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 0,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 0,
+          "fail": 0
+        },
+        "overallPass": 0,
+        "overallFail": 0
+      },
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "stats": {
+        "selfContained": {
+          "pass": 11,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 11,
+          "fail": 0
+        },
+        "grounded": {
+          "pass": 9,
+          "fail": 2
+        },
+        "overallPass": 9,
+        "overallFail": 2
+      },
+      "generationTimeMs": 72788,
+      "judgingTimeMs": 4634,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Module 1: Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Overview of Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three benchmarks mentioned as being used to evaluate Composer 2?",
+          "answer": "CursorBench, SWE-bench Multilingual, and Terminal-Bench",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer directly lists the three specific benchmarks (CursorBench, SWE-bench Multilingual, and Terminal-Bench) without any meta-references. It provides concrete, specific names that are clearly supported by the source material, which explicitly mentions these exact three benchmarks in the introduction."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose of Training Environment Design",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Composer training uses the same Cursor harness as the deployed model.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'true' is self-contained as true/false answers naturally stand alone. It's concrete by providing a definitive response. It's well-grounded as the source explicitly states 'We develop infrastructure to support training in the same Cursor harness that is used by the deployed model, with equivalent tools and structure' which directly supports the statement being evaluated."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 1: Introduction and Background",
+          "moduleIndex": 0,
+          "lessonTitle": "Purpose of Code Generation in LLMs",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What evolution in code generation applications is described in the background section?\n\nOptions:\n0: From instruction tuning to autocomplete\n1: From autocomplete to instruction-tuned coding assistants\n2: From coding assistants to autonomous agents\n3: From code completion to code review",
+          "answer": 1,
+          "choices": [
+            "From instruction tuning to autocomplete",
+            "From autocomplete to instruction-tuned coding assistants",
+            "From coding assistants to autonomous agents",
+            "From code completion to code review"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer correctly identifies the evolution from autocomplete to instruction-tuned coding assistants as described in the lesson content. The multiple-choice format is inherently self-contained and concrete, and the answer is directly supported by the source material which states 'Early applications of code generation typically focused on autocomplete applications. Subsequently, instruction tuning turned models into coding assistants capable of responding to user requests.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What base model was selected for Composer 2 continued pretraining?",
+          "answer": "Kimi K2.5",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'Kimi K2.5' is self-contained, specific, and directly supported by the source material which explicitly states 'These evaluations led us to select Kimi K2.5 [67], a 1.04T parameter / 32B active parameter Mixture-of-Experts model as our base model for Composer 2.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Uses Single-Epoch Regime",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: In Composer 2's RL training, the same prompt can be trained on multiple times across different epochs.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The lesson content claims Composer 2 operates in a 'single-epoch regime' where the same prompt is never trained on twice, but this specific claim is not found anywhere in the source material"
+            ],
+            "explanation": "While the true/false format is self-contained and concrete, the answer 'false' is based on lesson content that appears to be fabricated - the source contains no mention of single-epoch training or restrictions on training prompts multiple times."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalty Design",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What does the nonlinear length penalty in Composer 2's RL training incentivize the model to do?",
+          "answer": 0,
+          "choices": [
+            "Produce solutions quickly on easy requests while thinking longer on hard requests",
+            "Avoid using tool calls in all scenarios",
+            "Always produce the longest possible responses",
+            "Minimize the number of training samples per prompt"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is well-formed and self-contained. Choice 0 correctly captures that the nonlinear penalty incentivizes efficiency by encouraging quick solutions for easy tasks while allowing longer thinking time for complex tasks. This directly follows from the lesson content explaining that 'additional effort is felt more acutely on easy tasks versus long-horizon tasks.' All answer choices are self-contained without meta-references, and the correct choice is both specific and properly grounded in the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 2: Training Methodology - Continued Pretraining and Reinforcement Learning",
+          "moduleIndex": 1,
+          "lessonTitle": "Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Training",
+            "Long-Context 256k",
+            "Coding SFT Phase"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer provides a clear, specific ordering of the three phases in Composer 2's continued pretraining stage. The choices are self-contained without meta-references, concrete in describing the actual process steps, and accurately grounded in the source material which explicitly states the sequential phases: 32k token training, long-context extension to 256k, and coding SFT phase."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Affecting Real-World Coding Benchmark Relevance",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the four factors identified in the content that cause public benchmarks to only loosely correlate with real-world utility?",
+          "answer": "Domain mismatch, prompt over-specification, data contamination and overfitting, and narrow evaluation scope",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The lesson content mentions 'Section 5 discusses why public coding benchmarks often fail to correlate with real-world utility' but the source material provided does not contain Section 5 or any discussion of these four specific factors"
+            ],
+            "explanation": "While the answer is self-contained and provides specific factors, it cannot be verified against the source material since the relevant Section 5 content is not present in the provided source document."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Characteristics",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: CursorBench tasks are constructed from historical open-source repository scrapes, similar to public benchmarks.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is self-contained as a true/false response. It is concrete by nature of the format. It is well-grounded in the source, which clearly states that CursorBench comprises tasks from 'actual coding sessions' and 'real agent sessions,' explicitly contrasting this with 'public benchmarks constructed from historical open-source repositories.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Performance on Different Benchmarks",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Based on the following scores [61.3, 61.7, 73.7], which one represents Composer 2's performance on SWE-bench Multilingual?",
+          "answer": 2,
+          "choices": [
+            "61.3 (CursorBench)",
+            "61.7 (Terminal-Bench)",
+            "73.7 (SWE-bench Multilingual)",
+            "95.0 (HumanEval)"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer is well-formed and meets all criteria. It's self-contained as it directly provides the score without referencing external material. It's concrete by giving a specific numerical value with benchmark identification. It's properly grounded as both the lesson content and source material confirm that Composer 2 scores 73.7 on SWE-bench Multilingual."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Module 3: Evaluation and Real-World Performance",
+          "moduleIndex": 2,
+          "lessonTitle": "Module 3: RL Training Pipeline Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the RL training loop for Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problems",
+            "Generate Rollouts",
+            "Compute Rewards"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The flow diagram question and answer are well-formed. The three steps (Sample Problems, Generate Rollouts, Compute Rewards) are clearly defined and self-contained. The ordering [0,1,2] represents a concrete sequence that corresponds to the RL training process described in the source material, where the model 'iterates through a cycle of sampling coding problems, generating solution rollouts, and computing rewards to update policy weights.'"
+          },
+          "heuristicFlags": []
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 10,
+      "stats": {
+        "selfContained": {
+          "pass": 10,
+          "fail": 0
+        },
+        "concrete": {
+          "pass": 9,
+          "fail": 1
+        },
+        "grounded": {
+          "pass": 6,
+          "fail": 4
+        },
+        "overallPass": 6,
+        "overallFail": 4
+      },
+      "generationTimeMs": 64065,
+      "judgingTimeMs": 5824,
+      "gradedQuestions": [
+        {
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Understanding CLAUDE.md Files",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the recommended naming convention for a CLAUDE.md file that you want to .gitignore?",
+          "answer": "CLAUDE.local.md",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'CLAUDE.local.md' is self-contained, provides a specific naming convention, and is directly supported by the source which states 'name it CLAUDE.local.md and .gitignore it' when describing files that should not be checked into git."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "CLAUDE.md File Placement Options",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "You can place a CLAUDE.md file in your home folder to have it apply to all Claude sessions.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'true' is self-contained, concrete, and well-grounded. The source clearly states that you can place CLAUDE.md files 'in your home folder (~/.claude/CLAUDE.md), which applies it to all your claude sessions,' which directly supports the true/false statement."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Setting Up and Customizing Claude Code",
+          "moduleIndex": 0,
+          "lessonTitle": "Managing Allowed Tools in Claude Code",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT mentioned as a way to manage allowed tools in Claude Code?",
+          "answer": 3,
+          "choices": [
+            "Select 'Always allow' when prompted during a session",
+            "Use the /permissions command to add or remove tools",
+            "Configure tools in the .claude directory manually",
+            "Use the --dangerously-skip-permissions CLI flag to bypass all permission checks"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer correctly identifies option 3 as NOT mentioned in the source. The lesson content states there are four ways to manage permissions, and the source material confirms three of the four methods mentioned in the choices (Always allow during sessions, /permissions command, and manual .claude directory configuration), but does not mention the --dangerously-skip-permissions CLI flag. The answer is self-contained, concrete, and properly grounded in the source material."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Custom Slash Command Parameters",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What keyword is used in custom slash command files to pass parameters from command invocation?",
+          "answer": "$ARGUMENTS",
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer '$ARGUMENTS' is a specific keyword that directly answers the question without any meta-references. It stands alone as a complete answer and is explicitly mentioned in both the lesson content and source material as the keyword used to pass parameters in custom slash command files."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "MCP Configuration Methods",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Claude Code can function as an MCP client and connect to MCP servers through project config, global config, and a checked-in .mcp.json file.",
+          "answer": true,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'true' is self-contained and concrete by nature of being a true-false response. The statement is well-grounded in the source material, which explicitly states that Claude Code can connect to MCP servers 'in three ways: In project config (available when running Claude Code in that directory), In global config (available in all projects), In a checked-in .mcp.json file (available to anyone working in your codebase).' The statement accurately captures that Claude Code functions as an MCP client with these three connection methods."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Extending Claude's Capabilities with Tools and Commands",
+          "moduleIndex": 1,
+          "lessonTitle": "Making Custom Bash Tools Available to Claude",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How can you make custom bash tools available to Claude Code?",
+          "answer": 2,
+          "choices": [
+            "Claude automatically discovers all bash tools in your environment",
+            "By telling Claude the tool name with usage examples, running --help for documentation, or documenting in CLAUDE.md",
+            "By installing them via npm or pip package managers",
+            "By using the /tools command to register them"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The correct answer contradicts the source material, which explicitly states that custom bash tools need to be explicitly informed to Claude through specific methods, not through package manager installation"
+            ],
+            "explanation": "While the answer is self-contained and concrete, it is not grounded in the source material. The source clearly explains that custom bash tools require explicit instruction to Claude (telling Claude the tool name, running --help, or documenting in CLAUDE.md), but the marked correct answer suggests using npm/pip package managers, which is not mentioned as a method for making custom bash tools available to Claude."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Workflow Phrase for Extended Thinking",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What specific word should you use to trigger extended thinking mode and give Claude additional computation time for planning?",
+          "answer": "think",
+          "verdict": {
+            "selfContained": true,
+            "concrete": false,
+            "grounded": false,
+            "issues": [
+              "Answer is incomplete - lesson content mentions multiple trigger words ('think', 'think hard', 'think harder', 'ultrathink') but answer only provides one",
+              "Answer lacks specificity - 'think' is too generic and doesn't reflect the range of options available",
+              "Source content doesn't support the specific claims about trigger phrases for extended thinking mode - this appears to be hallucinated content not present in the actual source material"
+            ],
+            "explanation": "While the answer is self-contained, it fails on concrete and grounded criteria. The lesson content about trigger phrases for extended thinking mode is not supported by the source material, and the single-word answer doesn't capture the full range of options mentioned in the lesson content."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "YOLO Mode Safety",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The --dangerously-skip-permissions flag completely eliminates all safety risks when using Claude Code.",
+          "answer": false,
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "The answer 'false' is self-contained and concrete by nature of being a true-false response. It is well-grounded in the source material, which clearly states that the --dangerously-skip-permissions flag is risky and can result in data loss, system corruption, or data exfiltration, directly contradicting the statement that it 'completely eliminates all safety risks.'"
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Test-Driven Development Workflow",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which workflow involves explicitly telling Claude not to write any implementation code until after tests have been written and confirmed to fail?",
+          "answer": 1,
+          "choices": [
+            "Explore, plan, code, commit",
+            "Write tests, commit; code, iterate, commit",
+            "Write code, screenshot result, iterate",
+            "Codebase Q&A"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The question asks about 'explicitly telling Claude not to write any implementation code until after tests have been written and confirmed to fail', but this specific constraint is not mentioned in the source material",
+              "The source only mentions a general test-driven development workflow without the explicit restriction described in the question",
+              "The answer choice 'Write tests, commit; code, iterate, commit' does not actually specify the 'explicitly telling Claude not to write implementation code' aspect"
+            ],
+            "explanation": "While the answer is self-contained and concrete, it fails grounding because the source material does not support the specific claim about 'explicitly telling Claude not to write any implementation code until after tests have been written and confirmed to fail.' The source only mentions a general TDD workflow without this specific restriction."
+          },
+          "heuristicFlags": []
+        },
+        {
+          "moduleTitle": "Effective Workflows and Optimization Techniques",
+          "moduleIndex": 2,
+          "lessonTitle": "Agentic Coding Workflow with Claude Code",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Claude Code agentic coding workflow?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore Codebase",
+            "Create Plan",
+            "Implement Solution"
+          ],
+          "verdict": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": false,
+            "issues": [
+              "The ordering claims four steps but only shows three choices",
+              "The lesson content mentions 'committing changes' as a fourth step that is missing from the answer choices",
+              "The source content does not clearly present this as a structured workflow with these specific steps in this exact order"
+            ],
+            "explanation": "While the answer is self-contained and provides a concrete ordering, it fails grounding because it presents an incomplete workflow (missing the commit step mentioned in the lesson) and the source material doesn't clearly establish this as the definitive workflow sequence for Claude Code agentic coding."
+          },
+          "heuristicFlags": []
+        }
+      ]
+    }
+  ]
+}

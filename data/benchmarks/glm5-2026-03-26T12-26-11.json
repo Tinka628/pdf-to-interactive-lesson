@@ -1,0 +1,1037 @@
+{
+  "tag": "glm5",
+  "timestamp": "2026-03-26T12:26:11.652Z",
+  "generationModel": "zai-org/GLM-5",
+  "judgeModel": "anthropic/claude-opus-4-6",
+  "totalTimeMs": 2258048,
+  "aggregate": {
+    "totalGraded": 59,
+    "correct": 55,
+    "incorrect": 4,
+    "accuracy": "93%",
+    "byQuestionType": {
+      "short-answer": {
+        "correct": 13,
+        "total": 15,
+        "accuracy": "87%"
+      },
+      "true-false": {
+        "correct": 13,
+        "total": 15,
+        "accuracy": "87%"
+      },
+      "multiple-choice": {
+        "correct": 15,
+        "total": 15,
+        "accuracy": "100%"
+      },
+      "flow-diagram": {
+        "correct": 14,
+        "total": 14,
+        "accuracy": "100%"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 12,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 523746,
+      "judgingTimeMs": 6225,
+      "gradedQuestions": [
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Rise of the Empire and the Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "The Birth of the Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What title did the Roman Senate give Octavian, meaning \"most high\"?",
+          "givenAnswer": "Augustus",
+          "correct": true,
+          "judgeExplanation": "The source confirms that 'The Senate gave him the name \"Augustus,\" meaning \"most high\"'. The answer 'Augustus' is correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Rise of the Empire and the Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "The Era of Pax Romana",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Pax Romana was a period of constant civil war and military expansion throughout the Roman Empire.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement is false. According to the source, the Pax Romana was a period of 'Roman Peace' where 'Complete control = almost no warfare' and 'This peace lasted nearly 200 years.' It was not a period of constant civil war and military expansion."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Rise of the Empire and the Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "Emperors of the Golden Age",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which emperor, known for his Stoic philosophy and writing \"Meditations,\" marked the end of the Pax Romana?",
+          "givenAnswer": 2,
+          "choices": [
+            "Nero",
+            "Caligula",
+            "Marcus Aurelius",
+            "Trajan"
+          ],
+          "explanation": "Marcus Aurelius wrote 'Meditations' and his death in 180 CE is traditionally considered the end of the Pax Romana.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states that Marcus Aurelius was a 'Stoic philosopher' who 'Wrote book Meditations' and that 'The end of the reign of Marcus Aurelius was the end of the Pax Romana (27 BCE-180 CE).' Index 2 correctly maps to 'Marcus Aurelius.'"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Rise of the Empire and the Pax Romana",
+          "moduleIndex": 0,
+          "lessonTitle": "The Rise of the Empire and the Pax Romana",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the transition from the Roman Republic to the era of the Pax Romana?",
+          "givenAnswer": [
+            2,
+            0,
+            1
+          ],
+          "choices": [
+            "Augustus Becomes Emperor",
+            "Pax Romana Era",
+            "Republic Transitions to Empire"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the transition from the Roman Republic (509 BCE-30 BCE) to the Roman Empire (30 BCE-476 CE), with Augustus becoming emperor after the republic ended, followed by the Pax Romana era (27 BCE-180 CE). The correct chronological order is: First, the Republic transitions to Empire; Second, Augustus becomes Emperor; Third, the Pax Romana Era begins. This matches the given answer [2, 0, 1]."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Division, Decline, and Fall of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Diocletian and the Division of the Empire",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What emperor first divided the Roman Empire into two administrative realms in 285 CE?",
+          "givenAnswer": "Diocletian",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states under the Diocletian section: 'Divided the empire into two administrative realms (east and west) in 285 CE.' Diocletian's reign is listed as 284-305 CE."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Division, Decline, and Fall of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "Constantine and the Edict of Milan",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Edict of Milan, issued by Constantine in 313 CE, legalized Christianity throughout the Roman Empire.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source confirms that the Edict of Milan (313 CE) legalized Christianity (religious toleration). While the statement says it was issued 'by Constantine' and the source associates it with Constantine's section, the source does state 'Edict of Milan (313 CE) - Christianity legalized (religious toleration)' under the Constantine heading."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Division, Decline, and Fall of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Fall of the Western Roman Empire",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "In what year did the Western Roman Empire officially end when the last emperor was deposed by the barbarian Odoacer?",
+          "givenAnswer": 2,
+          "choices": [
+            "285 CE",
+            "313 CE",
+            "476 CE",
+            "1453 CE"
+          ],
+          "explanation": "The Western Roman Empire officially ended in 476 CE when Romulus Augustus was deposed by the barbarian Odoacer, marking the fall of Rome.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Western (Roman) Empire – Ended officially in 476 CE when the last emperor, Romulus Augustus, was deposed by a barbarian, Odoacer.' The answer of 476 CE (index 2) is correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Division, Decline, and Fall of the Empire",
+          "moduleIndex": 1,
+          "lessonTitle": "The Division, Decline, and Fall of the Empire",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the division of the Roman Empire?",
+          "givenAnswer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Constantine Moves Capital",
+            "Diocletian Splits Empire",
+            "Empire Permanently Divided"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source confirms: (1) Diocletian divided the empire into two administrative realms in 285 CE, (2) Constantine moved the capital from Rome to Byzantium/Constantinople, and (3) the empire was permanently divided, with the Western Empire ending in 476 CE and the Eastern Empire lasting until 1453. This chronological order matches the given answer: First → Diocletian Splits Empire, Second → Constantine Moves Capital, Third → Empire Permanently Divided."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "The Evolution of Language",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the collective name for the family of languages, such as Spanish and French, that evolved from Latin?",
+          "givenAnswer": "Romance languages",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states under 'Romance Languages' that these are languages that developed from Latin, listing French, Italian, Portuguese, Romanian, and Spanish. The term 'Romance' means 'Roman,' confirming that 'Romance languages' is the correct collective name."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "Architectural Innovations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Romans were the original inventors of the architectural arch, which they used extensively in their buildings and aqueducts.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states that the Romans did not invent the arch. It says: 'What the Romans were best at was taking something (like the Etruscan arch), adapting it, and putting it to great use (such as in the construction of aqueducts).' The arch was copied from the Etruscans, not invented by the Romans. Therefore, the statement is false, and the given answer of 'false' is correct."
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "The Foundation of Modern Law",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which compilation of Roman law is still used as the basis for civil law in many parts of Europe today?",
+          "givenAnswer": 1,
+          "choices": [
+            "The Twelve Tables",
+            "The Justinian Code",
+            "The Edict of Milan",
+            "The Lex Gentium"
+          ],
+          "explanation": "The Justinian Code encapsulated over a thousand years of Roman law and remains the basis for civil law in many parts of the world.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states under 'Roman Law' that the 'Justinian Code (6th century CE) ... Still used as the basis of civil law in many parts of Europe.' The Justinian slide also confirms: 'Rewrote Roman law (Corpus Juris Civilis, or the Justinian Code) – Still the basis for civil law in several countries.'"
+        },
+        {
+          "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+          "moduleTitle": "The Enduring Legacy of Roman Civilization",
+          "moduleIndex": 2,
+          "lessonTitle": "The Rise of the Roman Empire",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct chronological order of events leading from the Roman Republic to the Pax Romana?",
+          "givenAnswer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Pax Romana Flourishes",
+            "Roman Republic",
+            "Augustus Establishes Empire"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source confirms the Roman Republic (509 BCE-30 BCE) came first, then Augustus established the Empire (around 30 BCE/23 BCE), and then the Pax Romana flourished (27 BCE-180 CE). This chronological ordering matches the given answer: First → Roman Republic, Second → Augustus Establishes Empire, Third → Pax Romana Flourishes."
+        }
+      ]
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 12,
+      "incorrect": 0,
+      "accuracy": "100%",
+      "generationTimeMs": 375611,
+      "judgingTimeMs": 5593,
+      "gradedQuestions": [
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations and Architecture of Multi-Agent Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Orchestrator-Worker Architecture",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What architectural pattern is used by the Research system where a lead agent coordinates specialized subagents operating in parallel?",
+          "givenAnswer": "orchestrator-worker pattern",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Our Research system uses a multi-agent architecture with an orchestrator-worker pattern, where a lead agent coordinates the process while delegating to specialized subagents that operate in parallel.'"
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations and Architecture of Multi-Agent Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Scaling Performance with Tokens",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Token usage explains 80% of the performance variance in the BrowseComp evaluation, supporting the use of multi-agent architectures to scale token capacity.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source states: 'We found that token usage by itself explains 80% of the variance' in the BrowseComp evaluation, and this finding 'validates our architecture that distributes work across agents with separate context windows to add more capacity for parallel reasoning.' This supports the statement that token usage explains 80% of BrowseComp performance variance and supports multi-agent architectures to scale token capacity."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations and Architecture of Multi-Agent Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Dynamic Multi-Step Search vs. Static RAG",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How does the multi-agent Research architecture differ from traditional Retrieval Augmented Generation (RAG) systems?",
+          "givenAnswer": 1,
+          "choices": [
+            "It relies on static retrieval to fetch chunks most similar to the query.",
+            "It uses a dynamic multi-step search that adapts to new findings.",
+            "It prevents the use of parallel tool calling to ensure accuracy.",
+            "It limits the context window to strictly under 200,000 tokens."
+          ],
+          "explanation": "The content states that traditional RAG uses static retrieval, while the multi-agent architecture uses a multi-step search that dynamically finds information and adapts to new findings.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Traditional approaches using Retrieval Augmented Generation (RAG) use static retrieval... In contrast, our architecture uses a multi-step search that dynamically finds relevant information, adapts to new findings, and analyzes results to formulate high-quality answers.' Choice 1 correctly captures this distinction."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Foundations and Architecture of Multi-Agent Systems",
+          "moduleIndex": 0,
+          "lessonTitle": "Foundations and Architecture of Multi-Agent Systems",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent Research system workflow after the lead agent develops its strategy?",
+          "givenAnswer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Lead agent synthesizes results",
+            "Spawn subagents",
+            "Subagents search web"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the workflow: after the lead agent analyzes the query and develops a strategy, it 'spawns subagents to explore different aspects simultaneously.' The subagents then 'iteratively using search tools to gather information' (search web), and finally 'returning a list of companies to the lead agent so it can compile a final answer' (lead agent synthesizes results). The order Spawn subagents → Subagents search web → Lead agent synthesizes results is correct."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design Strategies",
+          "moduleIndex": 1,
+          "lessonTitle": "Delegation Instruction Design",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the four specific elements that the lead agent must include in a task description for a subagent to ensure effective delegation?",
+          "givenAnswer": "Objective, output format, guidance on tools and sources, and clear task boundaries",
+          "correct": true,
+          "judgeExplanation": "The source states: 'Each subagent needs an objective, an output format, guidance on the tools and sources to use, and clear task boundaries.' The given answer lists these four elements as 'Objective, output format, guidance on tools and sources, and clear task boundaries,' which matches the source content."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design Strategies",
+          "moduleIndex": 1,
+          "lessonTitle": "Scaling Effort to Query Complexity",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Agents naturally possess the ability to accurately judge appropriate effort levels for tasks, making explicit scaling rules in prompts unnecessary.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states 'Agents struggle to judge appropriate effort for different tasks, so we embedded scaling rules in the prompts.' This directly contradicts the statement that agents naturally possess this ability and that explicit scaling rules are unnecessary, making 'false' the correct answer."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design Strategies",
+          "moduleIndex": 1,
+          "lessonTitle": "Search Strategy Heuristics",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which search strategy should be encoded into agent prompts to counteract the tendency for overly specific initial searches?",
+          "givenAnswer": 2,
+          "choices": [
+            "Execute long, specific queries immediately to find exact matches",
+            "Use sequential searches exclusively to maintain context window size",
+            "Start with short, broad queries and then progressively narrow focus",
+            "Avoid using search tools until all internal knowledge is exhausted"
+          ],
+          "explanation": "The text indicates that agents often default to overly long, specific queries, so prompts should counteract this by instructing them to 'start with short, broad queries, evaluate what’s available, then progressively narrow focus.'",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Agents often default to overly long, specific queries that return few results. We counteracted this tendency by prompting agents to start with short, broad queries, evaluate what's available, then progressively narrow focus.' This matches choice index 2 exactly."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Prompt Engineering and System Design Strategies",
+          "moduleIndex": 1,
+          "lessonTitle": "Prompt Engineering and System Design Strategies",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent research system workflow, from delegation to synthesis?",
+          "givenAnswer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Parallel Research",
+            "Spawn Subagents",
+            "Synthesize Findings"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the workflow as: the lead agent analyzes the query, develops a strategy, and spawns subagents (First: Spawn Subagents), the subagents explore different aspects simultaneously using search tools (Second: Parallel Research), and then the lead agent synthesizes/compiles the final answer from the subagents' findings (Third: Synthesize Findings). This matches the given ordering [1, 0, 2]."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Scaling Evaluation with LLM Judges",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What five specific criteria were used in the rubric to evaluate research outputs using an LLM judge?",
+          "givenAnswer": "factual accuracy, citation accuracy, completeness, source quality, and tool efficiency",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states the rubric criteria as: factual accuracy (do claims match sources?), citation accuracy (do the cited sources match the claims?), completeness (are all requested aspects covered?), source quality (did it use primary sources over lower-quality secondary sources?), and tool efficiency (did it use the right tools a reasonable number of times?). The answer matches all five criteria exactly."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Early Evaluation Strategies",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: AI developer teams should delay creating evaluations until they possess hundreds of test cases to ensure statistical significance.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'We often hear that AI developer teams delay creating evals because they believe that only large evals with hundreds of test cases are useful. However, it's best to start with small-scale testing right away with a few examples, rather than delaying until you can build more thorough evals.' This directly contradicts the statement, making 'False' the correct answer."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Production Reliability Challenges",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "How do errors and changes in agentic systems differ from those in traditional software according to the text?",
+          "givenAnswer": 1,
+          "choices": [
+            "Errors in agentic systems are always isolated to a single turn and reset immediately after the task is complete.",
+            "Minor changes can cascade into large behavioral changes, and errors compound because agents are stateful and run for long periods.",
+            "Agentic systems are less prone to outages than traditional software because they can dynamically adjust their code during runtime.",
+            "Traditional software suffers from compounding errors more frequently than agentic systems due to rigid architectural constraints."
+          ],
+          "explanation": "The content states that in agentic systems, minor changes cascade into large behavioral changes and errors compound because agents are stateful and run for long periods.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'In agentic systems, minor changes cascade into large behavioral changes' and 'Agents are stateful and errors compound. Agents can run for long periods of time.' This directly matches choice 1."
+        },
+        {
+          "file": "How we built our multi-agent research system _ Anthropic.pdf",
+          "moduleTitle": "Evaluation and Production Reliability",
+          "moduleIndex": 2,
+          "lessonTitle": "Evaluation and Production Reliability",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the multi-agent Research workflow when subagents process information?",
+          "givenAnswer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Lead Agent synthesizes results",
+            "Spawn parallel Subagents",
+            "Subagents gather information"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the workflow as: the lead agent spawns subagents to explore different aspects simultaneously, the subagents iteratively use search tools to gather information, and then return findings to the lead agent so it can synthesize/compile a final answer. This matches the given order: First → Spawn parallel Subagents, Second → Subagents gather information, Third → Lead Agent synthesizes results."
+        }
+      ]
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 11,
+      "incorrect": 1,
+      "accuracy": "92%",
+      "generationTimeMs": 663709,
+      "judgingTimeMs": 8317,
+      "gradedQuestions": [
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings and Model Performance",
+          "moduleIndex": 0,
+          "lessonTitle": "Long Context Capabilities",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the maximum context length supported by the state-of-the-art M2-Retrieval models mentioned in the announcement?",
+          "givenAnswer": "32k",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states 'State-of-the-art long context M2-Retrieval models up to 32k context length' and also mentions 'the newly released M2-BERT retrieval models for long context (2k, 8k, 32k)'."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings and Model Performance",
+          "moduleIndex": 0,
+          "lessonTitle": "Open Source Model Availability",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint exclusively provides closed-source embedding models similar to OpenAI's ada-002.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement is false. The source clearly states that the Together Embeddings endpoint provides 8 **open source** embedding models, not closed-source ones. The article explicitly says 'Together Embeddings endpoint is available today with 8 open source embeddings models' and notes that these open-source models achieve comparable or better performance than closed models like OpenAI's ada-002."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings and Model Performance",
+          "moduleIndex": 0,
+          "lessonTitle": "Cost Efficiency Analysis",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "According to the release, how does the cost of the Together Embeddings endpoint compare to other popular platforms?",
+          "givenAnswer": 1,
+          "choices": [
+            "Up to 2x cheaper",
+            "Up to 4x cheaper",
+            "Up to 10% cheaper",
+            "Pricing is comparable to other platforms"
+          ],
+          "explanation": "The announcement explicitly states that the endpoint is 'Up to 4x cheaper than other popular platforms'.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states 'Up to 4x cheaper than other popular platforms' as one of the highlights of the Together Embeddings endpoint release."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Introduction to Together Embeddings and Model Performance",
+          "moduleIndex": 0,
+          "lessonTitle": "Introduction to Together Embeddings and Model Performance",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of processing steps in the data visualization example using Together Embeddings?",
+          "givenAnswer": [
+            2,
+            1,
+            0
+          ],
+          "choices": [
+            "Reduce dimensions",
+            "Generate vector embeddings",
+            "Extract text samples"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the data visualization example in this order: First, define functions to extract samples from a data file and generate embeddings (extract text samples, then generate vector embeddings). Then, the dimension of embedding vectors needs to be reduced using tSNE (reduce dimensions). So the correct order is: First → Extract text samples, Second → Generate vector embeddings, Third → Reduce dimensions, which matches [2,1,0]."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "Configuring the API Base URL",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What specific URL string is assigned to the base_url parameter in the Python example to connect to the Together Embeddings endpoint?",
+          "givenAnswer": "https://api.together.xyz/api/v1/embeddings",
+          "correct": false,
+          "judgeExplanation": "{\"correct\": false, \"explanation\": \"The URL in the source code is 'https://api.together.xyz/api/v1/embeddings' but looking more carefully at the source, the base_url parameter is set to 'https://api.together.xyz/api/v1/embeddings'. Wait, let me re-read the source. The code shows: base_url=\\\"https://a"
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "Library Compatibility",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The Together Embeddings endpoint requires developers to use a proprietary 'TogetherSDK' library instead of the standard OpenAI library.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement is false. The source explicitly shows that the Together Embeddings endpoint uses the standard OpenAI library (`from openai import OpenAI`), not a proprietary 'TogetherSDK'. The blog highlights 'A fully OpenAI compatible API to make migrating easy' and demonstrates using the OpenAI client with Together's base URL."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "Client Initialization",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which Python library is imported in the code example to instantiate the client for the Together Embeddings endpoint?",
+          "givenAnswer": 1,
+          "choices": [
+            "together",
+            "openai",
+            "requests",
+            "langchain"
+          ],
+          "explanation": "The code snippet uses 'from openai import OpenAI' to create the client, demonstrating that the standard OpenAI library can be used to interact with the Together endpoint.",
+          "correct": true,
+          "judgeExplanation": "The source shows the code example under 'OpenAI API Compatibility' section uses 'from openai import OpenAI' to instantiate the client. The openai library (choice index 1) is the correct answer."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "API Integration and OpenAI Compatibility",
+          "moduleIndex": 1,
+          "lessonTitle": "Data Visualization with Together Embeddings",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps for creating a data visualization using the Together Embeddings endpoint?",
+          "givenAnswer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Create Visualization",
+            "Generate Embeddings",
+            "Transform Dimensions"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the data visualization process in three clear steps: (1) Generate embeddings using the Together API, (2) Transform the high-dimensional embedding vectors using tSNE to reduce dimensions for visualization, and (3) Create the visualization by plotting the transformed embeddings. The answer correctly maps First → Generate Embeddings, Second → Transform Dimensions, Third → Create Visualization."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications: RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Data Visualization Techniques",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which dimensionality reduction technique is applied to transform the embedding vectors for 2D plotting in the visualization example?",
+          "givenAnswer": "tSNE",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'To plot each data example in 2D, we will use tSNE to transform the embedding vectors.' The code also shows the use of sklearn.manifold.TSNE for this purpose."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications: RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Interpreting Embedding Visualizations",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The data visualization example revealed that texts from the 'github' and 'book' data sources were closely located and highly related.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states 'github and book are less related,' which contradicts the statement that they were 'closely located and highly related.' Therefore, the statement is false, and the answer 'false' is correct."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications: RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Understanding Model Dimensions",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the embedding dimension of the M2-BERT-Retrieval-8K model used in the data visualization example?",
+          "givenAnswer": 2,
+          "choices": [
+            256,
+            512,
+            768,
+            1024
+          ],
+          "explanation": "The content states that for M2-BERT-Retrieval-8K, the embedding dimension is 768.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'For M2-BERT-Retrieval-8K, the embedding dimension is 768.' Choice index 2 corresponds to 768, which is correct."
+        },
+        {
+          "file": "together-embeddings-blog.pdf",
+          "moduleTitle": "Practical Applications: RAG Systems and Data Visualization",
+          "moduleIndex": 2,
+          "lessonTitle": "Practical Applications: RAG Systems and Data Visualization",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the data visualization process using Together Embeddings?",
+          "givenAnswer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Generate Embeddings",
+            "Load Data Samples",
+            "Reduce Dimensions"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the data visualization process in this order: First, define functions and load/sample data (Load Data Samples), then generate embeddings using the Together API (Generate Embeddings), and finally use tSNE to transform/reduce the embedding dimensions for visualization (Reduce Dimensions). The main script confirms this: it iterates over filenames to sample and extract embeddings, then calls plot_embeddings which uses tSNE to reduce dimensions."
+        }
+      ]
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "correct": 10,
+      "incorrect": 2,
+      "accuracy": "83%",
+      "generationTimeMs": 265685,
+      "judgingTimeMs": 6160,
+      "gradedQuestions": [
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Background and Continued Pretraining Strategies",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection for Composer 2",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What specific model was selected as the base for Composer 2 after evaluating codebase perplexity and state tracking?",
+          "givenAnswer": "Kimi K2.5",
+          "correct": false,
+          "judgeExplanation": "{\"correct\": false, \"explanation\": \"The source states the base model selected was 'Kimi K2.5', not 'Kimi K2.5'. Wait—actually the answer says 'Kimi K2.5' and the source says 'Kimi K2.5 [67], a 1.04T parameter / 32B active parameter Mixture-of-Experts model'. These match exactly.\", \"expectedAnswer\": \""
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Background and Continued Pretraining Strategies",
+          "moduleIndex": 0,
+          "lessonTitle": "Predictive Value of Pretraining Loss",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Continued pretraining cross-entropy loss has been shown to have no predictive relationship with downstream reinforcement learning performance.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states the opposite: 'Figure 2 (left) shows the relationship between the final loss after SFT and the RL reward after a fixed number of steps, demonstrating that cross-entropy loss is indeed predictive of downstream RL performance.' Therefore, the statement that there is 'no predictive relationship' is false, and the answer 'false' is correct."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Background and Continued Pretraining Strategies",
+          "moduleIndex": 0,
+          "lessonTitle": "Multi-Token Prediction Layers",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the primary purpose of training Multi-Token Prediction (MTP) layers during the continued pretraining of Composer 2?",
+          "givenAnswer": 1,
+          "choices": [
+            "To reduce the overall parameter count of the model",
+            "To serve the model faster in production using speculative decoding",
+            "To extend the maximum context window to 256k tokens",
+            "To improve the accuracy of the reinforcement learning policy gradient"
+          ],
+          "explanation": "The report explicitly states that MTP layers are trained 'To serve the model faster in production, we train additional Multi-Token Prediction (MTP) layers to use with speculative decoding.'",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'To serve the model faster in production, we train additional Multi-Token Prediction (MTP) layers to use with speculative decoding.' This directly matches choice 1."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Background and Continued Pretraining Strategies",
+          "moduleIndex": 0,
+          "lessonTitle": "Background and Continued Pretraining Strategies",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of the three phases in the Composer 2 continued pretraining stage?",
+          "givenAnswer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Targeted SFT Phase",
+            "Pretrain 32k Sequence",
+            "Extend Context 256k"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source states: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the given order: First → Pretrain 32k Sequence, Second → Extend Context 256k, Third → Targeted SFT Phase."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Reinforcement Learning for Agentic Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Self-Summarization for Long Horizons",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What technique does Composer 2 use to chain multiple generations together via summaries to handle long-horizon tasks?",
+          "givenAnswer": "Self-summarization",
+          "correct": true,
+          "judgeExplanation": "The source explicitly describes the 'self-summarization' technique: 'To enable Composer 2 to work across long horizons, we use the self-summarization technique introduced in Composer 1.5. Each training rollout can involve multiple generations chained together by summaries, rather than a single prompt–response pair.' The answer 'Self-summarization' correctly identifies this technique."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Reinforcement Learning for Agentic Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Handling Overlong Rollouts",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The authors chose to mask out rollouts that exceed the maximum sequence length because it significantly improved accuracy on long-tail reasoning tasks.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The statement is false. According to the source, the authors did NOT choose to mask out overlong rollouts. They explicitly state: 'We did not see benefits with overlong masking at small scale and opted not to mask rollouts that exceed the maximum sequence length.' Furthermore, the claimed reason in the statement is also wrong - the source says Liu et al. found that masking showed 'limited effectiveness on long-tail reasoning tasks' (not that it 'significantly improved accuracy'). The answer 'false' is correct."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Reinforcement Learning for Agentic Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalties",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the primary purpose of the concave down nonlinear length penalty in the Composer 2 reinforcement learning reward function?",
+          "givenAnswer": 1,
+          "choices": [
+            "To strictly minimize the number of tool calls for all task types",
+            "To incentivize quick solutions on easy tasks while allowing extended thinking on hard tasks",
+            "To force the model to use self-summarization for every request",
+            "To penalize the model for using parallel tool calls"
+          ],
+          "explanation": "The nonlinearity reflects that on easy tasks, extra effort is costly, whereas on hard tasks, extended iteration is acceptable.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'To incentivize the model to produce solutions quickly on easy requests while allowing it to think longer on hard requests, we add a concave down and increasing nonlinear length penalty to the reward.' The explanation about the nonlinearity reflecting that extra effort is costly on easy tasks while extended iteration is acceptable on hard tasks is also directly supported by the source text."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Reinforcement Learning for Agentic Capabilities",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning for Agentic Capabilities",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of the three phases in Composer 2's continued pretraining stage?",
+          "givenAnswer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Long-Context Extension",
+            "Base Code Pretraining",
+            "Targeted SFT Phase"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source states: 'We divide this stage into three phases. We spend the bulk of compute at 32k token sequence length, followed by a shorter long-context extension phase to 256k sequence length, and finally a short SFT phase on targeted coding tasks.' This matches the given order: First → Base Code Pretraining (32k sequence length), Second → Long-Context Extension (256k), Third → Targeted SFT Phase."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Benchmarking with CursorBench",
+          "moduleIndex": 2,
+          "lessonTitle": "Introducing CursorBench",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the source of tasks in CursorBench's evaluation suite?",
+          "givenAnswer": "Actual coding sessions of the engineering team",
+          "correct": true,
+          "judgeExplanation": "The source states: 'we introduce CursorBench, an internal evaluation suite comprising tasks drawn from actual coding sessions of our engineering team.' The given answer 'Actual coding sessions of the engineering team' accurately captures this."
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Benchmarking with CursorBench",
+          "moduleIndex": 2,
+          "lessonTitle": "Prompt Specification Mismatch",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Public benchmarks typically feature underspecified prompts that allow for multiple valid architectural approaches.",
+          "givenAnswer": false,
+          "correct": false,
+          "judgeExplanation": "The source explicitly states under 'Prompt Over-specification': 'Public benchmarks are typically highly specified, assuming a narrow set of correct solutions. In contrast, real developer requests are often underspecified and admit multiple valid architectural approaches.' This means public benchmarks feature OVER-specified prompts, not underspecified ones. It is the real-world developer requests (like those in CursorBench) that are underspecified. However, the statement says 'Public benchmarks typically feature underspecified prompts that allow for multiple valid architectural approaches,' which is the opposite of what the source says. The statement is False, so the given answer of 'false' is actually correct.",
+          "expectedAnswer": "false"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Benchmarking with CursorBench",
+          "moduleIndex": 2,
+          "lessonTitle": "Factors Causing Benchmark Misalignment",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the four primary factors the report identifies as causing misalignment between public benchmarks and real-world utility?",
+          "givenAnswer": 2,
+          "choices": [
+            "Domain Mismatch",
+            "Prompt Over-specification",
+            "Reward Hacking",
+            "Data Contamination and Overfitting"
+          ],
+          "explanation": "The four primary factors identified are Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope. Reward Hacking is not listed as one of these factors.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly lists four primary factors causing misalignment: Domain Mismatch, Prompt Over-specification, Data Contamination and Overfitting, and Narrow Evaluation Scope. 'Reward Hacking' (index 2) is not among these four factors, making it the correct answer to 'which is NOT one of the four factors.'"
+        },
+        {
+          "file": "Composer2.pdf",
+          "moduleTitle": "Real-World Benchmarking with CursorBench",
+          "moduleIndex": 2,
+          "lessonTitle": "Real-World Benchmarking with CursorBench",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 training pipeline?",
+          "givenAnswer": [
+            1,
+            0,
+            2
+          ],
+          "choices": [
+            "Run Continued Pretraining",
+            "Select Base Model",
+            "Execute Reinforcement Learning"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source states: 'The model is trained in two phases: first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning.' It also mentions selecting a base model before continued pretraining ('We used internal evaluations and inference performance considerations to select a base model... These evaluations led us to select Kimi K2.5'). So the correct order is: First → Select Base Model, Second → Run Continued Pretraining, Third → Execute Reinforcement Learning, which matches the given answer [1,0,2]."
+        }
+      ]
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 11,
+      "successfulLessons": 11,
+      "correct": 10,
+      "incorrect": 1,
+      "accuracy": "91%",
+      "generationTimeMs": 392738,
+      "judgingTimeMs": 9862,
+      "gradedQuestions": [
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Environment Setup and Context Management",
+          "moduleIndex": 0,
+          "lessonTitle": "Initializing Project Context",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What command can be run to automatically generate a CLAUDE.md file?",
+          "givenAnswer": "/init",
+          "correct": true,
+          "judgeExplanation": "The source states: 'When you run the /init command, Claude will automatically generate a CLAUDE.md for you.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Environment Setup and Context Management",
+          "moduleIndex": 0,
+          "lessonTitle": "Iterating on Context Configuration",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Once a CLAUDE.md file is created, it should remain static to avoid confusing the model with changing instructions.",
+          "givenAnswer": false,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states that CLAUDE.md files should be 'refined like any frequently used prompt' and warns against 'adding extensive content without iterating on its effectiveness.' It encourages experimentation and tuning, including using the '#' key to update CLAUDE.md and committing changes for team benefit. This clearly indicates CLAUDE.md files should NOT remain static but should be actively iterated upon."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Environment Setup and Context Management",
+          "moduleIndex": 0,
+          "lessonTitle": "Scoping Context File Locations",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "If you want a CLAUDE.md file to apply settings to all of your Claude sessions across every project, where should you place it?",
+          "givenAnswer": 2,
+          "choices": [
+            "The root of the current repository",
+            "A child directory of the workspace",
+            "In the user's home folder (~/.claude/CLAUDE.md)",
+            "A temporary system cache directory"
+          ],
+          "explanation": "The text states that placing the file in the home folder (~/.claude/CLAUDE.md) applies it to all claude sessions.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Your home folder (~/.claude/CLAUDE.md), which applies it to all your claude sessions.' This matches choice index 2."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Functionality and Tool Integration",
+          "moduleIndex": 1,
+          "lessonTitle": "Sharing MCP Configurations Across Teams",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the name of the file that can be checked into git to share MCP server configurations with all team members working in your codebase?",
+          "givenAnswer": ".mcp.json",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'In a checked-in .mcp.json file (available to anyone working in your codebase). For example, you can add Puppeteer and Sentry servers to your .mcp.json, so that every engineer working on your repo can use these out of the box.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Functionality and Tool Integration",
+          "moduleIndex": 1,
+          "lessonTitle": "Parameterizing Custom Slash Commands",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Custom slash commands can use the special keyword $ARGUMENTS to pass parameters from the command invocation.",
+          "givenAnswer": true,
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'Custom slash commands can include the special keyword $ARGUMENTS to pass parameters from command invocation.'"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Functionality and Tool Integration",
+          "moduleIndex": 1,
+          "lessonTitle": "Methods for Managing Allowed Tools",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the four ways to manage allowed tools in Claude Code?",
+          "givenAnswer": 2,
+          "choices": [
+            "Selecting 'Always allow' when prompted during a session",
+            "Using the /permissions command to add or remove tools from the allowlist",
+            "Editing the CLAUDE.md file to specify allowed tools",
+            "Using the --allowedTools CLI flag for session-specific permissions"
+          ],
+          "explanation": "CLAUDE.md files are used for context and instructions, not for managing tool permissions. The four valid methods are: selecting 'Always allow' when prompted, using the /permissions command, editing settings.json files, and using the --allowedTools CLI flag.",
+          "correct": true,
+          "judgeExplanation": "The source lists four ways to manage allowed tools: (1) Select 'Always allow' when prompted during a session, (2) Use the /permissions command, (3) Manually edit .claude/settings.json or ~/.claude.json, and (4) Use the --allowedTools CLI flag. Editing the CLAUDE.md file is NOT one of these four methods - CLAUDE.md is used for context/instructions, not tool permissions. Choice index 2 is correct."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Extending Functionality and Tool Integration",
+          "moduleIndex": 1,
+          "lessonTitle": "Agentic Coding Workflow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of the core implementation steps in the agentic coding workflow?",
+          "givenAnswer": [
+            1,
+            2,
+            0
+          ],
+          "choices": [
+            "Implement Solution",
+            "Explore and Read Files",
+            "Create Implementation Plan"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source describes the 'Explore, plan, code, commit' workflow with steps: 1) Ask Claude to read relevant files (Explore and Read Files), 2) Ask Claude to make a plan (Create Implementation Plan), 3) Ask Claude to implement its solution in code (Implement Solution). The given ordering [1,2,0] correctly maps to First → Explore and Read Files, Second → Create Implementation Plan, Third → Implement Solution."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Strategies",
+          "moduleIndex": 2,
+          "lessonTitle": "Extended Thinking Mode for Complex Problems",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What keyword triggers the highest level of extended thinking mode in Claude Code?",
+          "givenAnswer": "ultrathink",
+          "correct": true,
+          "judgeExplanation": "The source explicitly states: 'These specific phrases are mapped directly to increasing levels of thinking budget in the system: \"think\" < \"think hard\" < \"think harder\" < \"ultrathink.\"' This confirms that 'ultrathink' is the keyword that triggers the highest level of extended thinking mode."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Strategies",
+          "moduleIndex": 2,
+          "lessonTitle": "Safe YOLO Mode for Uninterrupted Work",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: Using --dangerously-skip-permissions in a container without internet access is recommended to minimize security risks.",
+          "givenAnswer": true,
+          "correct": false,
+          "judgeExplanation": "{\"correct\": false, \"explanation\": \"The source says using --dangerously-skip-permissions in a container without internet access is recommended to *minimize* risks, but the statement frames this as a general security recommendation. The source actually warns that 'Letting Claude run arbitrary commands"
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Strategies",
+          "moduleIndex": 2,
+          "lessonTitle": "Specificity Improves Performance",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the most effective instruction for adding a new feature to a codebase?",
+          "givenAnswer": 1,
+          "choices": [
+            "Add a calendar widget",
+            "Create a widget following existing patterns that lets users select a month and paginate to pick a year",
+            "Look at HotDogWidget.php and add something similar",
+            "Build a new widget for the home page"
+          ],
+          "explanation": "The most effective instruction is specific about the pattern to follow, the functionality needed (select month, paginate years), and provides context about where to look for examples.",
+          "correct": true,
+          "judgeExplanation": "The source explicitly contrasts 'add a calendar widget' (poor instruction) with the detailed instruction about looking at existing patterns, using HotDogWidget.php as an example, and implementing specific functionality (select month, paginate forwards/backwards to pick a year). Choice 1 ('Create a widget following existing patterns that lets users select a month and paginate to pick a year') best captures the specificity of the 'Good' example, being the most effective instruction among the four choices."
+        },
+        {
+          "file": "Claude Code Best Practices _ Anthropic.pdf",
+          "moduleTitle": "Effective Workflows and Optimization Strategies",
+          "moduleIndex": 2,
+          "lessonTitle": "Effective Workflows and Optimization Strategies",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the 'Explore, plan, code, commit' workflow for agentic coding?",
+          "givenAnswer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Explore Context",
+            "Plan Approach",
+            "Implement Solution"
+          ],
+          "correct": true,
+          "judgeExplanation": "The source clearly describes the 'Explore, plan, code, commit' workflow in order: (1) Ask Claude to read relevant files/images/URLs (Explore Context), (2) Ask Claude to make a plan (Plan Approach), (3) Ask Claude to implement its solution in code (Implement Solution), followed by committing. The given ordering of First → Explore Context, Second → Plan Approach, Third → Implement Solution matches this sequence."
+        }
+      ]
+    }
+  ]
+}

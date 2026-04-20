@@ -1,0 +1,417 @@
+{
+  "tag": "debug3",
+  "timestamp": "2026-04-02T15:33:45.135Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "claude",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "structural",
+    "sufficiency"
+  ],
+  "totalTimeMs": 128274,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "successRate": "92%",
+      "firstPassRate": "92%"
+    },
+    "correctness": {
+      "totalGraded": 11,
+      "correct": 11,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 11,
+      "fullyGrounded": "11/11 (100%)",
+      "selfContained": "11/11 (100%)",
+      "concrete": "11/11 (100%)",
+      "grounded": "11/11 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 11,
+      "sufficient": 9,
+      "rate": "82%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "2/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "2/3"
+      },
+      "flow-diagram": {
+        "total": 2,
+        "correct": "2/2",
+        "fullyGrounded": "2/2",
+        "sufficient": "2/2"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 11,
+      "firstPassSuccess": 11,
+      "ocrTimeMs": 112,
+      "generationTimeMs": 107620,
+      "judgingTimeMs": 20539,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Model Purpose and Training Approach",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two phases of Composer 2 training?",
+          "answer": "Continued pretraining followed by large-scale reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states both phases: 'continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance.'"
+          }
+        },
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Base Model",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Kimi K2.5 has a total of 1.04T parameters with 32B active parameters.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "The lesson content mentions Kimi K2.5 as the selected base model but provides no information about its parameter counts. The statement asks about a specific numerical detail (1.04T total parameters, 32B active parameters) that is entirely absent from the lesson content. A student reading this lesson would have no basis to evaluate whether that parameter count claim is true or false."
+          }
+        },
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phases",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What are the three phases of continued pretraining for Composer 2?",
+          "answer": 2,
+          "choices": [
+            "Bulk compute at 32k token length, long-context extension to 256k, and short SFT phase on coding tasks",
+            "Initial training at 8k tokens, fine-tuning at 64k tokens, and evaluation phase",
+            "Pretraining on code data, training on instruction data, and reinforcement learning phase",
+            "Multi-token prediction, expert routing, and knowledge distillation phases"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "The lesson content explicitly describes the three phases as: (1) bulk compute at 32k token sequence length, (2) long-context extension to 256k sequence length, and (3) a short SFT phase on coding tasks. This matches choice 0, not the marked correct answer (choice 2). The content contains nothing about 'pretraining on code data, training on instruction data, and reinforcement learning phase' — the terms 'instruction data' and 'reinforcement learning' do not appear at all. A student reading this lesson would correctly identify choice 0, not choice 2, making the content insufficient (or rather, contradictory) for arriving at the marked answer."
+          }
+        },
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining pipeline?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Continue Pretrain 32k Tokens",
+            "Extend Long Context 256k",
+            "SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly describes the three sequential phases in order: pretraining at 32k tokens, extending to 256k tokens for long-context capability, and supervised fine-tuning on coding tasks — directly mapping to the three choices and their correct ordering."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Process Overview",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the three steps that comprise the RL training process in Composer 2?",
+          "answer": "Sampling a problem, simulating a group of rollouts with different solutions, and updating model weights based on solution quality",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly describes all three steps of the RL training process: sampling a problem, simulating a group of rollouts from the agent with different solutions, and updating the model weights based on solution quality — matching the answer directly."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Group Advantage Normalization",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 does NOT normalize group advantages by their standard deviation because it results in small behavioral differences being massively upweighted within groups where every rollout achieves equal correctness.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that researchers do not normalize group advantages by their standard deviation, and gives the exact reason: it results in the degenerate case where small behavioral differences get massively upweighted within a group where every rollout achieves equal correctness. The statement to evaluate mirrors this claim directly, so the content fully supports answering it."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Agent Behavior",
+          "moduleIndex": 1,
+          "lessonTitle": "Nonlinear Length Penalty for Task Difficulty",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What type of reward does Composer 2 use to incentivize quick solutions on easy tasks while allowing longer thinking on hard tasks?",
+          "answer": 2,
+          "choices": [
+            "Constant time bonus",
+            "Exponential decay penalty",
+            "Concave down and increasing nonlinear length penalty",
+            "Linear length penalty"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states 'a concave down and increasing nonlinear length penalty is added to the reward' for exactly the described purpose, matching the correct answer verbatim and providing enough context to distinguish it from the distractors (constant, exponential, linear)."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Benchmark Origin and Purpose",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Where do CursorBench tasks originate from?",
+          "answer": "Actual coding sessions of the Cursor engineering team",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The content explicitly states that CursorBench tasks are 'drawn from actual coding sessions of the Cursor engineering team,' which directly provides the information needed to answer the question."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Code Modification Scope",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: CursorBench has a median of 181 lines changed per task, which is approximately 18-26 times more than SWE-bench Verified and Multilingual.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states CursorBench has a median of 181 lines changed and that SWE-bench Verified and Multilingual require only 7-10 lines changed. The student can verify the '18-26 times more' claim by simple division (181÷10=18.1, 181÷7≈25.9), making all facts needed to evaluate the statement present in the content."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Score Comparison",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "What is the CursorBench accuracy score achieved by Composer 2 according to the evaluation results table?",
+          "answer": 2,
+          "choices": [
+            "38.0",
+            "44.2",
+            "61.3",
+            "63.9"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that Composer 2 achieves a CursorBench score of 61.3%, which is exactly the information needed to select the correct answer and distinguish it from the distractors (38.0, 44.2, and 63.9)."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation Benchmarks and Infrastructure",
+          "moduleIndex": 2,
+          "lessonTitle": "Composer 2 Evaluation Infrastructure Process",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 online evaluation deployment process?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Acquire evaluation lease",
+            "Move GPUs to deployment",
+            "Sync evaluation checkpoint"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly describes the sequence: acquire a lease, move GPUs, and sync the checkpoint for inference — directly mapping to the three ordered steps in the question."
+          }
+        }
+      ]
+    }
+  ]
+}

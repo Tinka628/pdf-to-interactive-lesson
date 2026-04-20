@@ -1,0 +1,72 @@
+{
+  "tag": "answers",
+  "timestamp": "2026-03-30T15:19:42.800Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "anthropic/claude-sonnet-4-6",
+  "iterations": 1,
+  "totalTimeMs": 813912,
+  "aggregate": {
+    "totalGraded": 0,
+    "correct": 0,
+    "incorrect": 0,
+    "accuracy": "0%",
+    "byQuestionType": {}
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "together-embeddings-blog.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.pdf",
+      "totalLessons": 0,
+      "successfulLessons": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "accuracy": "0%",
+      "generationTimeMs": 0,
+      "judgingTimeMs": 0,
+      "gradedQuestions": []
+    }
+  ]
+}

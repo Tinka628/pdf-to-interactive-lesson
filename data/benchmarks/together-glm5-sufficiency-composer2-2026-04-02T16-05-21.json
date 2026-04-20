@@ -1,0 +1,380 @@
+{
+  "tag": "together-glm5-sufficiency-composer2",
+  "timestamp": "2026-04-02T16:05:21.780Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "zai-org/GLM-5",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "sufficiency"
+  ],
+  "totalTimeMs": 90548,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 10,
+      "correct": 10,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 10,
+      "fullyGrounded": "10/10 (100%)",
+      "selfContained": "10/10 (100%)",
+      "concrete": "10/10 (100%)",
+      "grounded": "10/10 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 10,
+      "sufficient": 7,
+      "rate": "70%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "2/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "2/3"
+      },
+      "flow-diagram": {
+        "total": 1,
+        "correct": "1/1",
+        "fullyGrounded": "1/1",
+        "sufficient": "0/1"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 10,
+      "successfulLessons": 10,
+      "firstPassSuccess": 10,
+      "ocrTimeMs": 113,
+      "generationTimeMs": 69050,
+      "judgingTimeMs": 21379,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction & Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Phases",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the two phases of Composer 2 training?",
+          "answer": "continued pretraining and large-scale reinforcement learning",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that the model is trained in two distinct phases: 'continued pretraining' and 'large-scale reinforcement learning', directly providing the information required to answer the question."
+          }
+        },
+        {
+          "moduleTitle": "Introduction & Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Sequence Length",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: The continued pretraining stage includes a long-context extension phase to 256k sequence length.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that the continued pretraining stage includes a 'long-context extension phase to 256k sequence length,' providing the specific fact required to evaluate the statement."
+          }
+        },
+        {
+          "moduleTitle": "Introduction & Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which model was selected as the base model for Composer 2?",
+          "answer": 0,
+          "choices": [
+            "Kimi K2.5",
+            "Qwen3-Coder-30B-A3B",
+            "DeepSeek V3.2",
+            "GLM-5"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that 'internal evaluations... led to the selection of Kimi K2.5... as the base model for Composer 2.' This directly provides the information needed to identify the correct answer and distinguish it from the other models mentioned (which are listed as evaluated but not selected) or not mentioned at all."
+          }
+        },
+        {
+          "moduleTitle": "Introduction & Training Foundations",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Training Pipeline",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 continued pretraining phase?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Training",
+            "256k Context Extension",
+            "SFT Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "The lesson content states that the continued pretraining stage is divided into three phases, but it fails to list the specific names of those phases (32k Token Training, 256k Context Extension, SFT Coding Tasks) or describe the sequence in which they occur. Without this specific information, the student cannot determine the correct order."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Development",
+          "moduleIndex": 1,
+          "lessonTitle": "RL Training Task Distribution",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "Which task category has the highest percentage in Composer 2's RL training distribution?",
+          "answer": "Iterate On Feature",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "The lesson content states that the problem distribution reflects common use cases, but it does not list specific task categories or identify which specific category has the highest percentage. Consequently, the student cannot derive the answer 'Iterate On Feature' from the provided text."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Development",
+          "moduleIndex": 1,
+          "lessonTitle": "KL Divergence Estimator Selection",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Composer 2 uses the k3 estimator for KL divergence regularization because it reduces variance.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Judge failed to parse response"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning & Agent Development",
+          "moduleIndex": 1,
+          "lessonTitle": "Agent Behavior Rewards",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which technique does Composer 2 use to incentivize quick solutions on easy requests while allowing more thinking on hard requests?",
+          "answer": 0,
+          "choices": [
+            "Nonlinear length penalty",
+            "Fixed token budget",
+            "Time-based reward",
+            "Linear length penalty"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": false,
+            "explanation": "The lesson content mentions that Composer 2 uses auxiliary rewards for resource efficiency, but it does not specify the actual techniques used (e.g., nonlinear length penalty, time-based reward). Consequently, the content fails to provide the specific information needed to identify the correct technique among the choices."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "CursorBench Task Complexity",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the median number of lines changed in CursorBench tasks compared to SWE-bench Verified and Multilingual?",
+          "answer": "181 lines versus 7-10 lines",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states the median number of lines changed for CursorBench tasks is 181 and compares this directly to the 7-10 lines for SWE-bench Verified and Multilingual, providing all specific details required to answer the question."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "KL Divergence Estimator Usage",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or false: Composer 2 uses the k1 estimator for KL divergence regularization because it avoids the variance blow-up that occurs with k3 when p and q diverge significantly.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that Composer 2 uses the k1 estimator and explains that k3's variance increases drastically when p and q diverge, making it unsuitable. This provides the necessary information to confirm the statement's claim about the reasoning for using k1."
+          }
+        },
+        {
+          "moduleTitle": "Evaluation, Infrastructure & Results",
+          "moduleIndex": 2,
+          "lessonTitle": "Benchmark Performance Scores",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is the correct set of Composer 2's scores on CursorBench, SWE-bench Multilingual, and Terminal-Bench respectively?",
+          "answer": 0,
+          "choices": [
+            "61.3, 73.7, 61.7",
+            "58.2, 75.8, 58.0",
+            "38.0, 56.9, 40.0",
+            "44.2, 65.9, 47.9"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly provides the specific scores for all three benchmarks mentioned in the question: 61.3% for CursorBench, 73.7% for SWE-bench Multilingual, and 61.7% for Terminal-Bench. This allows the student to directly match these figures to Choice 0."
+          }
+        }
+      ]
+    }
+  ]
+}

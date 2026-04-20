@@ -1,0 +1,450 @@
+{
+  "tag": "xml-baseline",
+  "model": "openai/gpt-oss-120b",
+  "pipeline": "xml",
+  "timestamp": "2026-03-25T13:37:01.327Z",
+  "aggregate": {
+    "totalTimeMs": 222588,
+    "totalLessons": 47,
+    "firstPassSuccess": 43,
+    "firstPassRate": 91,
+    "finalSuccess": 47,
+    "finalRate": 100,
+    "finalFailed": 0
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire",
+      "contentLength": 17088,
+      "courseTimeMs": 47835,
+      "modules": [
+        {
+          "title": "Foundations and the Early Empire",
+          "lessons": [
+            {
+              "title": "Roman Political Timeline",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Understanding Primus Inter Pares",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Builders of the Colosseum",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Imperial Zenith, Division, and Governance",
+          "lessons": [
+            {
+              "title": "Diocletian's Administrative Reform",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Constantine and the New Capital",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Augustus' Official Titles",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Imperial Zenith, Division, and Governance",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Decline, Fall, and Lasting Legacy",
+          "lessons": [
+            {
+              "title": "Augustus and the Foundations of the Empire",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "The Pax Romana: An Era of Stability",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Division of the Roman Empire",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Decline, Fall, and Lasting Legacy",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 11,
+      "firstPassSuccess": 10,
+      "finalSuccess": 11,
+      "finalFailed": 0
+    },
+    {
+      "file": "together-embeddings-blog",
+      "contentLength": 11122,
+      "courseTimeMs": 43259,
+      "modules": [
+        {
+          "title": "Introducing Together Embeddings: Models, API Compatibility, and Cost Efficiency",
+          "lessons": [
+            {
+              "title": "Understanding Model Advantages",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "API Compatibility True/False",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Cost Efficiency and Context Length",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Introducing Together Embeddings: Core Workflow",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Building Retrieval Augmented Generation (RAG) with Together Embeddings and Popular Frameworks",
+          "lessons": [
+            {
+              "title": "Understanding Context Length in Together Embeddings",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "OpenAI Compatibility of the Together Embeddings Endpoint",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Identifying RAG Integration Options with Together Embeddings",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Building Retrieval Augmented Generation (RAG) Flow",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Advanced Use Cases: Embedding Visualization, Performance Tuning, and Real‑World Applications",
+          "lessons": [
+            {
+              "title": "Embedding Visualization Overview",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Cost Advantage of Together Embeddings",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "OpenAI Compatibility Benefits",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Embedding Visualization Pipeline",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 12,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic",
+      "contentLength": 20038,
+      "courseTimeMs": 86620,
+      "modules": [
+        {
+          "title": "Module 1: Setting Up and Customizing Claude Code",
+          "lessons": [
+            {
+              "title": "Creating and Using CLAUDE.md Files",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Managing Allowed Tools Safely",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Effective Workflow: Explore, Plan, Code, Commit",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Module 1: Setting Up and Customizing Claude Code",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Extending Claude Code with Tools and Commands",
+          "lessons": [
+            {
+              "title": "Understanding CLAUDE.md Files",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Permission Model Safety",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Creating Custom Slash Commands",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Extending Claude Code: Core Workflow Steps",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Module 3: Effective Workflows and Optimization Strategies",
+          "lessons": [
+            {
+              "title": "Understanding CLAUDE.md Files",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Default Permission Behavior",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Choosing the Right Thinking Budget",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 3
+            },
+            {
+              "title": "Effective Workflow Sequence",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 11,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic",
+      "contentLength": 20038,
+      "courseTimeMs": 44874,
+      "modules": [
+        {
+          "title": "Foundations, Benefits, and Use Cases of Multi‑Agent Research",
+          "lessons": [
+            {
+              "title": "Understanding Multi‑Agent Benefits",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Token Consumption Trade‑off",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Research Architecture Workflow",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Foundations, Benefits, and Use Cases of Multi‑Agent Research",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "System Architecture, Orchestration, and Prompt Engineering",
+          "lessons": [
+            {
+              "title": "Lesson 1: Benefits of Parallel Subagents",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Lesson 2: Token Efficiency Myth",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Lesson 3: Prompt Scaling Rules",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": true,
+              "fixAttempts": 1
+            },
+            {
+              "title": "Lead Agent Coordination Flow",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Evaluation, Reliability, and Production Engineering",
+          "lessons": [
+            {
+              "title": "Understanding Performance Drivers",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Token Consumption in Multi-Agent Systems",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Model Impact on Performance",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Evaluation, Reliability, and Production Engineering",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 10,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    }
+  ]
+}

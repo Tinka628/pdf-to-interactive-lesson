@@ -1,0 +1,126 @@
+{
+  "tag": "baseline-xml",
+  "model": "openai/gpt-oss-120b",
+  "timestamp": "2026-03-25T13:07:11.517Z",
+  "aggregate": {
+    "totalTimeMs": 67522,
+    "totalLessons": 12,
+    "firstPassSuccess": 11,
+    "firstPassRate": 92,
+    "finalSuccess": 11,
+    "finalRate": 92,
+    "finalFailed": 1
+  },
+  "results": [
+    {
+      "file": "attention-excerpt",
+      "contentLength": 16198,
+      "timeMs": 67522,
+      "modules": [
+        {
+          "title": "Foundations of Attention and Sequence Modeling",
+          "lessons": [
+            {
+              "title": "Self-Attention Replaces Recurrence",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Positional Encoding Necessity",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Number of Attention Heads",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Foundations of Attention and Sequence Modeling",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Transformer Architecture: Encoder, Decoder, and Multi‑Head Attention",
+          "lessons": [
+            {
+              "title": "Encoder and Decoder Stacks",
+              "questionType": "short-answer",
+              "success": false,
+              "wasFixed": false,
+              "fixAttempts": 3
+            },
+            {
+              "title": "Multi‑Head Attention Mechanics",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Positional Encoding Strategy",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Transformer Architecture: Encoder, Decoder, and Multi‑Head Attention",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Training, Applications, and Advanced Topics in Transformers",
+          "lessons": [
+            {
+              "title": "Parallelism in Transformers",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Self‑Attention vs Recurrent Models",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Scaled Dot‑Product Attention Details",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Training, Applications, and Advanced Topics in Transformers",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 11,
+      "finalSuccess": 11,
+      "finalFailed": 1
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "tag": "together-glm5-sufficiency-composer2-v2",
+  "timestamp": "2026-04-02T16:12:15.420Z",
+  "generationModel": "MiniMaxAI/MiniMax-M2.5",
+  "judgeModel": "zai-org/GLM-5",
+  "iterations": 1,
+  "batchSize": 1,
+  "dimensions": [
+    "sufficiency"
+  ],
+  "totalTimeMs": 141655,
+  "aggregate": {
+    "structural": {
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "successRate": "100%",
+      "firstPassRate": "100%"
+    },
+    "correctness": {
+      "totalGraded": 12,
+      "correct": 12,
+      "accuracy": "100%"
+    },
+    "grounding": {
+      "totalGraded": 12,
+      "fullyGrounded": "12/12 (100%)",
+      "selfContained": "12/12 (100%)",
+      "concrete": "12/12 (100%)",
+      "grounded": "12/12 (100%)"
+    },
+    "sufficiency": {
+      "totalGraded": 12,
+      "sufficient": 12,
+      "rate": "100%"
+    },
+    "duplicates": {
+      "duplicateGroups": 0,
+      "questionsInDupes": 0,
+      "duplicationRate": "0%"
+    },
+    "byQuestionType": {
+      "short-answer": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "true-false": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "multiple-choice": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      },
+      "flow-diagram": {
+        "total": 3,
+        "correct": "3/3",
+        "fullyGrounded": "3/3",
+        "sufficient": "3/3"
+      }
+    }
+  },
+  "results": [
+    {
+      "file": "Composer2.pdf",
+      "totalLessons": 12,
+      "successfulLessons": 12,
+      "firstPassSuccess": 12,
+      "ocrTimeMs": 111,
+      "generationTimeMs": 113665,
+      "judgingTimeMs": 27866,
+      "duplicateGroups": [],
+      "questions": [
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Composer 2 Base Model Specifications",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the total parameter count of the Kimi K2.5 base model used for Composer 2?",
+          "answer": "1.04 trillion parameters",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states in the second sentence that 'Kimi K2.5 is a Mixture-of-Experts model with 1.04 trillion total parameters', directly providing the information needed to answer the question."
+          }
+        },
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phase Structure",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "The continued pretraining stage for Composer 2 includes a long-context extension phase that increases sequence length from 32k to 256k tokens.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly describes the second phase of the continued pretraining stage as a 'long-context extension' that expands the sequence length to 256k tokens, following the first phase which used 32k tokens. This provides all the specific details required to evaluate the statement."
+          }
+        },
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Base Model Selection Criteria",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which base model achieved the highest FreshBench score in the Composer 2 base model evaluation?",
+          "answer": 2,
+          "choices": [
+            "GLM-5 (79.2%)",
+            "DeepSeek V3.2 (68.9%)",
+            "Kimi K2.5 (83.2%)",
+            "GPT-5.4 (92.5%)"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "```json\n{\"sufficient\": true, \"explanation\": \"The lesson content explicitly states that 'Kimi K2.5 achieved the highest FreshBench score of 83.2%', providing the specific fact"
+          }
+        },
+        {
+          "moduleTitle": "Introduction and Continued Pretraining",
+          "moduleIndex": 0,
+          "lessonTitle": "Continued Pretraining Phase Ordering",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of phases in the continued pretraining stage of Composer 2?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "32k Token Phase",
+            "256k Long-Context Extension",
+            "SFT on Coding Tasks"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "```json\n{\n  \"sufficient\": true,\n  \"explanation\": \"The lesson content explicitly lists the three sequential phases of the continued pretraining stage using the transition words 'First,' 'Second,' and 'Finally.' It describes each phase in detail (32k token sequence length, long-context extension to 25"
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "Composer 2 CursorBench Performance Metrics",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What is the CursorBench score achieved by Composer 2?",
+          "answer": "61.3%",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states in the first sentence that 'Composer 2 achieves strong results on CursorBench, achieving 61.3% accuracy,' which directly provides the specific information needed to answer the question."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "Asynchronous RL Training and Gradient Estimation",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "Composer 2 does NOT use the k3 estimator for KL divergence regularization because the variance of k3 increases drastically when the sampling and training policies diverge.",
+          "answer": true,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that Composer 2 uses the k1 estimator instead of the k3 estimator and provides the specific reason that the variance of k3 increases drastically as the sampling and training policies diverge, which directly corresponds to the claim in the statement."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "Task Categories in RL Training Distribution",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT listed as a task category in the RL training distribution for Composer 2?",
+          "answer": 1,
+          "choices": [
+            "Testing",
+            "Security Auditing",
+            "Debugging",
+            "Refactor"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly lists the task categories included in the training distribution: 'Iterate On Feature, Debugging, New Feature, Refactor, Understanding Codebase, Documentation, Testing, Code Review, Optimize, Devops, Migration, Deletion, and Other.' This allows the student to identify that 'Testing', 'Debugging', and 'Refactor' are present in the text, while 'Security Auditing' is absent."
+          }
+        },
+        {
+          "moduleTitle": "Reinforcement Learning and Evaluation",
+          "moduleIndex": 1,
+          "lessonTitle": "Reinforcement Learning Training Loop",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 reinforcement learning training loop?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Sample Problem",
+            "Simulate Rollouts",
+            "Update Model Weights"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly outlines the sequence of the reinforcement learning pipeline using sequential markers ('first', 'then', 'finally') that correspond directly to the steps listed in the choices (Sample Problem, Simulate Rollouts, Update Model Weights)."
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure and Technical Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Context Parallelism Configuration in Continued Pretraining",
+          "lessonIndex": 0,
+          "questionType": "short-answer",
+          "question": "What are the Expert Parallelism (EP) and Context Parallelism (CP) values used during the continued pretraining phase of Composer 2?",
+          "answer": "EP=8, CP=2",
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states the specific configuration values used during continued pretraining, noting that 'the configuration uses EP=8 and CP=2'."
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure and Technical Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "NVFP4 Quantization Stability in Training",
+          "lessonIndex": 1,
+          "questionType": "true-false",
+          "question": "True or False: The original NVFP4 format with FP32 per-tensor scales can be used for Composer 2 training without causing instability.",
+          "answer": false,
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "The lesson content explicitly states that the original NVFP4 format with FP32 per-tensor scales is 'fragile' and causes 'RL training to diverge,' which directly contradicts the statement's claim that it can be used without causing instability. Therefore, the student has enough information to determine the statement is false."
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure and Technical Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "RL Infrastructure Service Architecture",
+          "lessonIndex": 2,
+          "questionType": "multiple-choice",
+          "question": "Which of the following is NOT one of the four decoupled services that make up the Composer 2 RL infrastructure?",
+          "answer": 2,
+          "choices": [
+            "Environments, inference, checkpointing, and metric collection",
+            "Training, rollout generation, reward computation, and weight updates",
+            "Training, environments, inference, and evaluations",
+            "Training, validation, parameter servers, and data loading"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Judge failed to parse response"
+          }
+        },
+        {
+          "moduleTitle": "Infrastructure and Technical Implementation",
+          "moduleIndex": 2,
+          "lessonTitle": "Infrastructure and Technical Implementation: Numerical Precision Flow",
+          "lessonIndex": 3,
+          "questionType": "flow-diagram",
+          "question": "What is the correct order of steps in the Composer 2 numerical precision flow for MoE layer training?",
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "choices": [
+            "Forward Pass NVFP4",
+            "Match Inference Numerics",
+            "Backward Pass MXFP8"
+          ],
+          "wasFixed": false,
+          "fixAttempts": 0,
+          "correctness": {
+            "correct": true,
+            "explanation": "skipped"
+          },
+          "grounding": {
+            "selfContained": true,
+            "concrete": true,
+            "grounded": true,
+            "issues": [],
+            "explanation": "skipped"
+          },
+          "heuristicFlags": [],
+          "sufficiency": {
+            "sufficient": true,
+            "explanation": "Judge failed to parse response"
+          }
+        }
+      ]
+    }
+  ]
+}

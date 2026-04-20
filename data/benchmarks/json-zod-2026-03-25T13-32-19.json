@@ -1,0 +1,451 @@
+{
+  "tag": "json-zod",
+  "model": "openai/gpt-oss-120b",
+  "timestamp": "2026-03-25T13:32:19.745Z",
+  "aggregate": {
+    "totalTimeMs": 172061,
+    "totalCourseTimeMs": 172061,
+    "totalLessons": 46,
+    "firstPassSuccess": 46,
+    "firstPassRate": 100,
+    "finalSuccess": 46,
+    "finalRate": 100,
+    "finalFailed": 0
+  },
+  "results": [
+    {
+      "file": "Rise-and-Fall-of-the-Roman-Empire.ocr",
+      "contentLength": 17088,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 37859,
+      "totalTimeMs": 37859,
+      "modules": [
+        {
+          "title": "Foundations of Roman Governance and the Age of Augustus",
+          "lessons": [
+            {
+              "title": "Chronology of Roman Governance",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Augustus’s Title of Princeps",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Vespasian and the Colosseum",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Imperial Leadership: Key Emperors, Pax Romana, and Empire Expansion",
+          "lessons": [
+            {
+              "title": "Augustus and the Foundations of the Empire",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "The Length of the Pax Romana",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Division of the Roman Empire",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Decline, Division, and Legacy of the Roman Civilization",
+          "lessons": [
+            {
+              "title": "The Pax Romana and Its Significance",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Diocletian's Division of the Empire",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Constantine and the Rise of Christianity",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Decline, Division, and Legacy of the Roman Civilization",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 10,
+      "firstPassSuccess": 10,
+      "finalSuccess": 10,
+      "finalFailed": 0
+    },
+    {
+      "file": "together-embeddings-blog.ocr",
+      "contentLength": 11122,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 48663,
+      "totalTimeMs": 48663,
+      "modules": [
+        {
+          "title": "Module 1: Foundations – Embedding Concepts, Model Landscape, and OpenAI‑compatible API Integration",
+          "lessons": [
+            {
+              "title": "Embedding Basics and Applications",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Cost Advantages of Together Embeddings",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Seamless OpenAI‑compatible Integration",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Embedding Workflow: From Data Sampling to Visualization",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Advanced Long‑Context Retrieval – M2‑BERT Retrieval Models, Benchmark Performance, and Cost Optimization",
+          "lessons": [
+            {
+              "title": "Understanding Long‑Context with M2‑BERT Retrieval Models",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Cost Advantages of Together Embeddings",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Benchmark Performance of Open‑Source Embedding Models",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Advanced Long‑Context Retrieval Workflow",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Module 3: Practical RAG & Visualization – Building End‑to‑End Retrieval‑Augmented Generation Pipelines with MongoDB, LangChain, LlamaIndex, and t‑SNE Data Visualization",
+          "lessons": [
+            {
+              "title": "Understanding Together Embeddings for Retrieval‑Augmented Generation",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "OpenAI Compatibility of the Together Embeddings API",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Visualizing Embeddings with t‑SNE in RAG Pipelines",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Generating and Visualizing Embeddings with the Together API",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 12,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    },
+    {
+      "file": "Claude Code Best Practices _ Anthropic.ocr",
+      "contentLength": 20038,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 47439,
+      "totalTimeMs": 47439,
+      "modules": [
+        {
+          "title": "Module 1: Setting Up and Customizing Your Claude Code Environment",
+          "lessons": [
+            {
+              "title": "Creating and Using CLAUDE.md Files",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Default Permission Model",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Managing Claude's Allowed Tools",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Module 1: Setting Up and Customizing Your Claude Code Environment",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Extending Claude Code with Tools, MCP, and Custom Commands",
+          "lessons": [
+            {
+              "title": "Creating and Tuning CLAUDE.md Files",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Understanding Safe YOLO Mode",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Managing Allowed Tools with /permissions",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Extending Claude Code with Tools, MCP, and Custom Commands",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Module 3: Effective Agentic Coding Workflows and Optimization Strategies",
+          "lessons": [
+            {
+              "title": "Creating and Using CLAUDE.md Files",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Default Permission Model",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Typical Explore‑Plan‑Code‑Commit Workflow",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Effective Agentic Coding Workflow",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 12,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    },
+    {
+      "file": "How we built our multi-agent research system _ Anthropic.ocr",
+      "contentLength": 20038,
+      "ocrTimeMs": 0,
+      "courseTimeMs": 38100,
+      "totalTimeMs": 38100,
+      "modules": [
+        {
+          "title": "Fundamentals of Multi‑Agent Architecture and Coordination",
+          "lessons": [
+            {
+              "title": "Lead Agent Role",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Token Consumption",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Parallelization Benefits",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Fundamentals of Multi‑Agent Architecture and Coordination",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Prompt Engineering, Tool Design, and Performance Optimization",
+          "lessons": [
+            {
+              "title": "Iterative Prompt Simulation for Agent Behavior",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Tool Descriptions Directly Affect Agent Success",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Impact of Parallelization on Research Speed",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Research Process Overview",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        },
+        {
+          "title": "Evaluation, Reliability, and Production Deployment",
+          "lessons": [
+            {
+              "title": "Orchestrator‑Worker Architecture",
+              "questionType": "short-answer",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Token Consumption in Multi‑Agent Systems",
+              "questionType": "true-false",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Key Drivers of Performance in BrowseComp Evaluation",
+              "questionType": "multiple-choice",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            },
+            {
+              "title": "Evaluation, Reliability, and Production Deployment",
+              "questionType": "flow-diagram",
+              "success": true,
+              "wasFixed": false,
+              "fixAttempts": 0
+            }
+          ]
+        }
+      ],
+      "totalLessons": 12,
+      "firstPassSuccess": 12,
+      "finalSuccess": 12,
+      "finalFailed": 0
+    }
+  ]
+}
