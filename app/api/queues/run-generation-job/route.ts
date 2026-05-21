@@ -2,6 +2,7 @@ import { handleCallback } from "@vercel/queue";
 import { generateCourseFromPdf } from "@/lib/generate-course-from-pdf";
 import { incrementRateLimit } from "@/lib/utils/rate-limiter";
 import { getJob, updateJob } from "@/lib/utils/job-store";
+import { tryClaimSlot, releaseSlot } from "@/lib/utils/generation-concurrency";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -30,12 +31,21 @@ export const POST = handleCallback<QueueMessage>(async (message) => {
     return;
   }
 
-  await updateJob(jobId, {
-    status: "processing",
-    startedAt: Date.now(),
-  });
+  // Cap parallel generations. If we throw, Vercel Queues redelivers after
+  // `retryAfterSeconds` (set in vercel.json), so the message effectively
+  // waits in line. We deliberately do NOT mark the job as `processing` yet
+  // — the UI keeps showing "Waiting in line..." while the message bounces.
+  const claimed = await tryClaimSlot();
+  if (!claimed) {
+    throw new Error("Generation capacity reached — requeue for retry");
+  }
 
   try {
+    await updateJob(jobId, {
+      status: "processing",
+      startedAt: Date.now(),
+    });
+
     const result = await generateCourseFromPdf({
       url: job.url,
       apiKey: job.apiKey || "",
@@ -65,6 +75,8 @@ export const POST = handleCallback<QueueMessage>(async (message) => {
     });
     // Don't re-throw — error is captured in job state and the client will
     // see it via status polling. Re-throwing would cause Vercel Queues to
-    // retry, but our generation errors are usually not transient.
+    // retry, but generation errors here are not transient.
+  } finally {
+    await releaseSlot();
   }
 });
