@@ -6,7 +6,6 @@ import { upload } from "@vercel/blob/client";
 import { getApiKey } from "@/lib/api-key-storage";
 import { getPendingFile } from "@/lib/utils/indexed-db-storage";
 import { getOrCreateUserId } from "@/lib/utils/session";
-import type { Course } from "@/lib/types";
 import { HeaderActions } from "../components/header-actions";
 import { ApiKeyDialog } from "../components/api-key-dialog";
 
@@ -119,12 +118,17 @@ export function GeneratingPageContent() {
 
     try {
       const apiKey = getApiKey();
-      
+      const userId = getOrCreateUserId();
+
       const formData = new FormData();
       formData.append("url", url);
 
-      // Prepare headers - only include API key if user has provided one
-      const headers: Record<string, string> = {};
+      // Headers — only include API key if the user has provided one.
+      // Always include X-User-ID so the worker can record course
+      // ownership when saving to Postgres.
+      const headers: Record<string, string> = {
+        "X-User-ID": userId,
+      };
       if (apiKey) {
         headers["X-Together-API-Key"] = apiKey;
       }
@@ -152,8 +156,7 @@ export function GeneratingPageContent() {
       const MAX_POLL_MS = 20 * 60 * 1000;
       const startedAt = Date.now();
 
-      let courseData: Course | null = null;
-      let courseMetadata: Record<string, unknown> | null = null;
+      let courseSlug: string | null = null;
 
       while (Date.now() - startedAt < MAX_POLL_MS) {
         await new Promise((resolve) => setTimeout(resolve, POLL_INTERVAL_MS));
@@ -181,52 +184,19 @@ export function GeneratingPageContent() {
             setProgress(state.progress);
           }
         } else if (state.status === "complete") {
-          courseData = state.course;
-          courseMetadata = state.metadata || null;
+          courseSlug = state.slug;
           break;
         } else if (state.status === "error") {
           throw new Error(state.error || "Unknown error occurred during course generation");
         }
       }
 
-      if (!courseData) {
+      if (!courseSlug) {
         throw new Error("Course generation timed out. Please try again.");
       }
 
-      // Attach generation metadata to course object (for debug panel)
-      if (courseMetadata) {
-        (courseData as unknown as Record<string, unknown>)._metadata = courseMetadata;
-      }
-
-      setProgress("Course generated successfully! Saving to database...");
-
-      // Save course to database for sharing
-      try {
-        const userId = getOrCreateUserId();
-        const saveResponse = await fetch("/api/courses", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-User-ID": userId,
-          },
-          body: JSON.stringify({ course: courseData }),
-        });
-
-        if (!saveResponse.ok) {
-          const errorData = await saveResponse.json();
-          throw new Error(errorData.error || "Failed to save course");
-        }
-
-        const savedCourse = await saveResponse.json();
-        setProgress("Course saved! Redirecting...");
-        
-        // Navigate to the course using the slug from the database
-        router.push(`/course/${savedCourse.slug}`);
-      } catch (saveError) {
-        console.error("Error saving course to database:", saveError);
-        // For now, show error - in production you might want to save locally as fallback
-        throw new Error("Failed to save course to database. Please try again.");
-      }
+      setProgress("Course ready! Redirecting...");
+      router.push(`/course/${courseSlug}`);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Failed to process PDF. Please try again.";
 

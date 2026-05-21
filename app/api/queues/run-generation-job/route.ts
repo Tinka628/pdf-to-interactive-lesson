@@ -1,5 +1,6 @@
 import { handleCallback, send } from "@vercel/queue";
 import { generateCourseFromPdf } from "@/lib/generate-course-from-pdf";
+import { saveCourse } from "@/lib/save-course";
 import { incrementRateLimit } from "@/lib/utils/rate-limiter";
 import { getJob, updateJob } from "@/lib/utils/job-store";
 import { tryClaimSlot, releaseSlot } from "@/lib/utils/generation-concurrency";
@@ -73,10 +74,18 @@ export const POST = handleCallback<QueueMessage>(async (message) => {
       await incrementRateLimit(job.clientId);
     }
 
+    // Save the full course to Postgres here (not via the client) so we
+    // never have to push a multi-megabyte payload through Upstash. The
+    // job state only carries the resulting slug for the client to
+    // navigate to.
+    const saved = await saveCourse({
+      course: result.course,
+      userId: job.userId ?? null,
+    });
+
     await updateJob(jobId, {
       status: "complete",
-      course: result.course,
-      metadata: result.metadata,
+      slug: saved.slug,
       completedAt: Date.now(),
     });
   } catch (error) {

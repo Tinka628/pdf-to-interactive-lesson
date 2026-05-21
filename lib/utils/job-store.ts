@@ -6,11 +6,15 @@
  * and lands on `complete` or `error`. The client polls the status endpoint
  * to follow along.
  *
+ * The generated course itself lives in Postgres (saved by the worker) — we
+ * only store the resulting slug here so the job payload stays well under
+ * Upstash's 1 MB request size limit, and so the status endpoint response
+ * stays tiny enough to poll cheaply.
+ *
  * Keys expire after 1 hour so dead state doesn't accumulate.
  */
 
 import { Redis } from "@upstash/redis";
-import type { GenerateCourseResult } from "@/lib/generate-course-from-pdf";
 
 const redis = Redis.fromEnv();
 
@@ -24,10 +28,10 @@ export interface JobState {
   url: string;
   apiKey?: string;
   clientId: string;
+  userId?: string;
   progress?: string;
   progressType?: string;
-  course?: GenerateCourseResult["course"];
-  metadata?: GenerateCourseResult["metadata"];
+  slug?: string;
   error?: string;
   createdAt: number;
   startedAt?: number;
@@ -40,7 +44,7 @@ function jobKey(jobId: string) {
 
 export async function createJob(
   jobId: string,
-  init: Pick<JobState, "url" | "apiKey" | "clientId">
+  init: Pick<JobState, "url" | "apiKey" | "clientId" | "userId">
 ): Promise<void> {
   const state: JobState = {
     status: "queued",

@@ -12,6 +12,10 @@ export const dynamic = "force-dynamic";
 export async function POST(request: NextRequest) {
   try {
     const apiKey = request.headers.get("X-Together-API-Key");
+    const userId =
+      request.headers.get("X-User-ID") ||
+      request.headers.get("X-Session-ID") ||
+      undefined;
     const clientId = getClientIdentifier(request);
 
     const rateLimitCheck = await checkRateLimit(clientId, !!apiKey);
@@ -36,6 +40,7 @@ export async function POST(request: NextRequest) {
       url,
       apiKey: apiKey || undefined,
       clientId,
+      userId,
     });
 
     await send("generate-course", { jobId });
