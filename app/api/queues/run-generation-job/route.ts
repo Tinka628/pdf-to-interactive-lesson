@@ -1,4 +1,4 @@
-import { handleCallback } from "@vercel/queue";
+import { handleCallback, send } from "@vercel/queue";
 import { generateCourseFromPdf } from "@/lib/generate-course-from-pdf";
 import { incrementRateLimit } from "@/lib/utils/rate-limiter";
 import { getJob, updateJob } from "@/lib/utils/job-store";
@@ -8,12 +8,13 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 800;
 
+const REQUEUE_DELAY_SECONDS = 10;
+
 interface QueueMessage {
   jobId: string;
 }
 
-export const POST = handleCallback<QueueMessage>(
-  async (message) => {
+export const POST = handleCallback<QueueMessage>(async (message) => {
   const { jobId } = message;
   if (!jobId) {
     console.warn("run-generation-job: missing jobId in message");
@@ -32,13 +33,24 @@ export const POST = handleCallback<QueueMessage>(
     return;
   }
 
-  // Cap parallel generations. If we throw, Vercel Queues redelivers after
-  // `retryAfterSeconds` (set in vercel.json), so the message effectively
-  // waits in line. We deliberately do NOT mark the job as `processing` yet
-  // — the UI keeps showing "Waiting in line..." while the message bounces.
+  // Cap parallel generations. If we can't claim a slot, re-enqueue this
+  // jobId with a short delay and acknowledge the current message. Using
+  // `send({ delaySeconds })` instead of throwing because Vercel Queues
+  // v2beta's retry-callback path doesn't reliably honor `afterSeconds`
+  // in production — delayed delivery via SendMessage is a first-class
+  // documented feature and is reliable. Job state stays at "queued"
+  // throughout, so the UI keeps showing "Waiting in line...".
   const claimed = await tryClaimSlot();
   if (!claimed) {
-    throw new Error("Generation capacity reached — requeue for retry");
+    console.log(
+      `Job ${jobId} at capacity, re-enqueueing with ${REQUEUE_DELAY_SECONDS}s delay`
+    );
+    await send(
+      "generate-course",
+      { jobId },
+      { delaySeconds: REQUEUE_DELAY_SECONDS }
+    );
+    return;
   }
 
   try {
@@ -80,13 +92,4 @@ export const POST = handleCallback<QueueMessage>(
   } finally {
     await releaseSlot();
   }
-  },
-  {
-    // The only error our handler re-throws is the capacity-hit one. Real
-    // generation errors are caught above and recorded in job state without
-    // throwing, so they never reach this callback. Anything that lands here
-    // is a queued message bouncing off the cap — retry quickly so the
-    // queued job picks up the slot as soon as one opens.
-    retry: () => ({ afterSeconds: 10 }),
-  }
-);
+});
