@@ -12,7 +12,8 @@ interface QueueMessage {
   jobId: string;
 }
 
-export const POST = handleCallback<QueueMessage>(async (message) => {
+export const POST = handleCallback<QueueMessage>(
+  async (message) => {
   const { jobId } = message;
   if (!jobId) {
     console.warn("run-generation-job: missing jobId in message");
@@ -79,4 +80,13 @@ export const POST = handleCallback<QueueMessage>(async (message) => {
   } finally {
     await releaseSlot();
   }
-});
+  },
+  {
+    // The only error our handler re-throws is the capacity-hit one. Real
+    // generation errors are caught above and recorded in job state without
+    // throwing, so they never reach this callback. Anything that lands here
+    // is a queued message bouncing off the cap — retry quickly so the
+    // queued job picks up the slot as soon as one opens.
+    retry: () => ({ afterSeconds: 10 }),
+  }
+);
