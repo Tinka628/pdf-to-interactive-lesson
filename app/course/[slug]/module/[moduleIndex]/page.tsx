@@ -166,7 +166,7 @@ export default function LessonPage() {
   // Preload celebration image
   useEffect(() => {
     const img = new Image();
-    img.src = "/great-work.svg";
+    img.src = "/great-work.webp";
   }, []);
 
 
