@@ -317,7 +317,7 @@ export function GeneratingPageContent() {
             </p>
 
             {/* Step checklist */}
-            <ol className="mt-8 w-full space-y-1 text-left">
+            <ol className="mt-8 flex flex-col items-start gap-1">
               {STAGES.map((s, i) => {
                 const done = isComplete || i < current;
                 const active = !isComplete && i === current;
