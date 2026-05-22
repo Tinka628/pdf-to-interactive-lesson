@@ -157,33 +157,23 @@ function LessonScreen({
             {lessonData.title}
           </h1>
 
-          {/* Hint toggle */}
-          {!showResult && !showHint && (
+          {/* Hint toggle — the button stays put and flips to "Hide hint";
+              the hint appears directly beneath it. */}
+          {!showResult && (
             <div className={animateClass(!showResult)} style={!showResult ? { animationDelay: "0.1s" } : {}}>
               <button
-                onClick={() => setShowHint(true)}
+                onClick={() => setShowHint((v) => !v)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-hint-bg text-hint-fg border border-hint-border hover:brightness-95 text-sm font-medium ${OPTION_TRANSITION}`}
               >
-                <Lightbulb className="w-4 h-4" />
-                Show hint
+                {showHint ? <X className="w-4 h-4" /> : <Lightbulb className="w-4 h-4" />}
+                {showHint ? "Hide hint" : "Show hint"}
               </button>
+              {showHint && (
+                <Callout variant="hint" className="mt-3">
+                  {lessonData.info}
+                </Callout>
+              )}
             </div>
-          )}
-          {showHint && !showResult && (
-            <Callout
-              variant="hint"
-              action={
-                <button
-                  onClick={() => setShowHint(false)}
-                  className="text-xs text-neutral-500 hover:text-neutral-700 flex items-center gap-1"
-                >
-                  <X className="w-4 h-4" />
-                  Hide
-                </button>
-              }
-            >
-              {lessonData.info}
-            </Callout>
           )}
 
           {/* Show answer toggle */}

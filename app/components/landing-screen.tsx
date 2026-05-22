@@ -7,9 +7,10 @@ import { storePendingFile } from "@/lib/utils/indexed-db-storage";
 import { getOrCreateUserId } from "@/lib/utils/session";
 import { ApiKeyDialog } from "./api-key-dialog";
 import { Loader } from "@/components/ai-elements/loader";
-import { LogoSvg, LandingHeroPoweredBySvg } from "./svg-icons";
+import { LogoSvg } from "./svg-icons";
 import { HeaderActions } from "./header-actions";
 import { LandingSteps } from "./landing-steps";
+import { Reveal } from "./reveal";
 import { Footer } from "./footer";
 import { Button } from "./ui/button";
 import { Callout } from "./ui/callout";
@@ -240,7 +241,7 @@ function LandingScreen() {
       </header>
 
       {/* Main */}
-      <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-6 py-16 md:py-24">
+      <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-8 md:pb-10">
         {/* Hero */}
         <div className="relative">
           {/* Decorative illustrations flanking the hero on large screens */}
@@ -251,7 +252,8 @@ function LandingScreen() {
             width={300}
             height={338}
             priority
-            className="hidden lg:block absolute left-0 top-10 w-56 xl:w-72 h-auto z-0 pointer-events-none select-none"
+            className="rise hidden lg:block absolute left-0 top-10 w-56 xl:w-72 h-auto z-0 pointer-events-none select-none"
+            style={{ animationDelay: "0.15s" }}
           />
           <Image
             src="/landing-right.webp"
@@ -260,7 +262,8 @@ function LandingScreen() {
             width={300}
             height={300}
             priority
-            className="hidden lg:block absolute right-0 top-10 w-56 xl:w-72 h-auto z-0 pointer-events-none select-none"
+            className="rise hidden lg:block absolute right-0 top-10 w-56 xl:w-72 h-auto z-0 pointer-events-none select-none"
+            style={{ animationDelay: "0.22s" }}
           />
 
           <div className="relative z-10 text-center max-w-3xl mx-auto">
@@ -269,19 +272,27 @@ function LandingScreen() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Made & powered by Together AI"
-              className="interactive inline-flex mb-6"
+              className="rise interactive inline-flex items-center gap-2 h-9 px-4 rounded-full bg-white border border-border mb-6"
+              style={{ animationDelay: "0.04s" }}
             >
-              <LandingHeroPoweredBySvg className="h-8 w-auto" />
+              <span className="text-sm font-medium text-neutral-600">Made &amp; powered by</span>
+              <img src="/together-logo-light.png" alt="Together AI" className="h-5 w-auto" />
             </a>
-            <h1 className="font-bold text-neutral-900 leading-[1.05] tracking-[-0.045em] text-balance mb-5 text-[clamp(2.5rem,7vw,4.5rem)]">
+            <h1
+              className="rise font-bold text-neutral-900 leading-[1.05] tracking-[-0.045em] text-balance mb-5 text-[clamp(2.5rem,7vw,4.5rem)]"
+              style={{ animationDelay: "0.11s" }}
+            >
               Make a tailored course for you
             </h1>
-            <p className="text-lg md:text-xl text-neutral-600 font-medium text-pretty max-w-xl mx-auto mb-10">
+            <p
+              className="rise text-lg md:text-xl text-neutral-600 font-medium text-pretty max-w-xl mx-auto mb-10"
+              style={{ animationDelay: "0.18s" }}
+            >
               Upload any material and turn it into a personalized, interactive course.
             </p>
 
           {/* Upload card */}
-          <div className="max-w-2xl mx-auto">
+          <div className="rise max-w-2xl mx-auto" style={{ animationDelay: "0.25s" }}>
             <input
               ref={fileInputRef}
               type="file"
@@ -291,7 +302,7 @@ function LandingScreen() {
               onChange={handleFileSelect}
               disabled={isProcessing}
             />
-            <div className="gradient-border p-2 shadow-sm">
+            <div className="gradient-border p-2 shadow-sm" style={{ borderWidth: "1px" }}>
               <div
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
@@ -310,11 +321,11 @@ function LandingScreen() {
                 ) : (
                   <div className="flex flex-col items-center">
                     <div
-                      className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-surface-muted text-neutral-700 transition-transform duration-300 ease-out-soft ${
+                      className={`mb-5 flex h-12 w-12 items-center justify-center text-neutral-700 transition-transform duration-300 ease-out-soft ${
                         isDragging ? "scale-110 -translate-y-0.5" : "group-hover:scale-105"
                       }`}
                     >
-                      <UploadCloud className="h-7 w-7" />
+                      <UploadCloud className="h-8 w-8" />
                     </div>
                     <Button
                       size="lg"
@@ -323,7 +334,6 @@ function LandingScreen() {
                         fileInputRef.current?.click();
                       }}
                     >
-                      <Upload className="w-5 h-5" />
                       Upload a PDF
                     </Button>
                     <p className="mt-4 text-sm text-neutral-500">
@@ -359,9 +369,9 @@ function LandingScreen() {
         <LandingSteps />
 
         {/* Section 3 — CTA */}
-        <section className="mb-20">
-          <div className="gradient-border max-w-5xl mx-auto p-8 md:p-12">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <section>
+          <Reveal className="gradient-border max-w-5xl mx-auto p-8 md:p-12">
+            <div className="flex flex-col items-center lg:flex-row lg:justify-between gap-8">
               <div className="max-w-xl text-center lg:text-left">
                 <span className="text-xs font-semibold uppercase tracking-wider text-hint-fg">
                   Ready when you are
@@ -377,6 +387,7 @@ function LandingScreen() {
                 <Button
                   size="lg"
                   onClick={() => fileInputRef.current?.click()}
+                  disabled={isProcessing}
                   className="w-full sm:w-auto"
                 >
                   <Upload className="w-5 h-5" />
@@ -386,14 +397,24 @@ function LandingScreen() {
                   variant="outline"
                   size="lg"
                   onClick={handleTryDemo}
+                  disabled={isProcessing}
                   className="w-full sm:w-auto"
                 >
-                  <Sparkles className="w-5 h-5" />
-                  Try the demo
+                  {isProcessing ? (
+                    <>
+                      <Loader size={18} />
+                      Loading demo…
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-5 h-5" />
+                      Try the demo
+                    </>
+                  )}
                 </Button>
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
       </main>
 

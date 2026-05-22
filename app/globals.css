@@ -172,6 +172,10 @@ body {
   from { opacity: 0; scale: 0.98; }
   to { opacity: 1; scale: 1; }
 }
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .animate-fadeIn,
 .animate-fade-in { animation: fadeIn var(--duration-base) var(--ease-standard) both; }
@@ -216,6 +220,22 @@ body {
     transition: background-size var(--duration-base) var(--ease-standard);
   }
   .link-underline:hover { background-size: 100% 1px; }
+
+  /* One-time landing entrance animations */
+  .rise {
+    animation: riseIn 0.5s var(--ease-out-soft) both;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s var(--ease-out-soft),
+      transform 0.5s var(--ease-out-soft);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ----------------------------------------------------------------------------

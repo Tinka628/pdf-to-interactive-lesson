@@ -12,25 +12,33 @@ interface HeaderActionsProps {
 }
 
 function HeaderActions({ showCoursesLink }: HeaderActionsProps) {
-  const credits = useCredits();
+  const { credits, loaded } = useCredits();
   const [showApiKeyDialog, setShowApiKeyDialog] = useState(false);
 
   return (
     <>
       <ApiKeyDialog open={showApiKeyDialog} onOpenChange={setShowApiKeyDialog} />
       <div className="flex items-center gap-2 flex-shrink-0">
-        {credits && (
+        {!loaded ? (
+          // Reserve the chip immediately so it appears with the rest of the
+          // header; the number fills in once the credit check resolves.
+          <div className="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-full bg-surface-muted text-sm text-neutral-400 cursor-default select-none">
+            <span className="inline-block w-3 h-3.5 rounded bg-neutral-200 animate-pulse motion-reduce:animate-none" />
+            <span className="hidden sm:inline">courses left</span>
+            <span className="sm:hidden">left</span>
+          </div>
+        ) : credits ? (
           <div
-            className="inline-flex items-center gap-1.5 h-9 pl-2.5 pr-3 rounded-full bg-surface-muted text-sm text-neutral-500 cursor-default select-none"
+            className="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-full bg-surface-muted text-sm text-neutral-500 cursor-default select-none"
             title={`${credits.coursesRemaining} free courses remaining`}
           >
-            <span className="inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full bg-neutral-900 text-white text-xs font-semibold tabular-nums">
+            <span className="font-semibold text-neutral-900 tabular-nums">
               {credits.coursesRemaining}
             </span>
             <span className="hidden sm:inline">courses left</span>
             <span className="sm:hidden">left</span>
           </div>
-        )}
+        ) : null}
         {showCoursesLink && (
           <Link
             href="/courses"

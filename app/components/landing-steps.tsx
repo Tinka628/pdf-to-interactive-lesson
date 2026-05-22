@@ -1,6 +1,7 @@
 "use client";
 
 import { BookOpen, HelpCircle, Workflow, Check } from "lucide-react";
+import { Reveal } from "./reveal";
 
 /**
  * "How it works" — three equal-size step cards with self-contained
@@ -21,15 +22,13 @@ function StepCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="group card-hover rounded-2xl border border-border bg-white p-6 flex flex-col">
+    <div className="group card-hover h-full rounded-2xl border border-border bg-white p-6 flex flex-col">
       {/* Fixed-height stage keeps every card's title + subhead on the same line */}
       <div className="relative w-full h-40 mb-6 rounded-xl bg-gradient-to-b from-surface-subtle to-white border border-border/60 overflow-hidden flex items-center justify-center">
         {children}
       </div>
-      <div className="flex items-center gap-2 mb-1.5">
-        <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white text-[10px] font-bold tabular-nums">
-          {index}
-        </span>
+      <div className="flex items-baseline gap-2 mb-1.5">
+        <span className="text-base font-bold text-neutral-400 tabular-nums">{index}</span>
         <h3 className="text-lg font-bold text-neutral-900">{title}</h3>
       </div>
       <p className="text-sm text-neutral-500">{description}</p>
@@ -58,7 +57,7 @@ function UploadScene() {
 /* 2 — one document splits into typed outputs */
 function BreakdownScene() {
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-between py-4">
+    <div className="relative w-full h-full flex flex-col items-center justify-between px-5 py-4">
       <div className="relative z-10 w-12 rounded-md bg-white border border-border shadow-sm p-1.5">
         <div className="h-1 w-3/4 rounded-full bg-neutral-200 mb-1" />
         <div className="h-1 w-full rounded-full bg-neutral-100 mb-1" />
@@ -66,7 +65,7 @@ function BreakdownScene() {
       </div>
 
       <svg
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-x-5 inset-y-0"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         aria-hidden="true"
@@ -74,7 +73,7 @@ function BreakdownScene() {
         {[18, 50, 82].map((x, i) => (
           <path
             key={x}
-            d={`M 50 32 C 50 52, ${x} 50, ${x} 66`}
+            d={`M 50 30 C 50 50, ${x} 50, ${x} 64`}
             fill="none"
             stroke="var(--color-border-strong)"
             strokeWidth="1.5"
@@ -157,25 +156,31 @@ function LearnScene() {
 export function LandingSteps() {
   return (
     <section className="mt-28 mb-20">
-      <div className="text-center mb-12">
+      <Reveal className="text-center mb-12">
         <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-hint-fg bg-hint-bg rounded-full mb-5">
           How it works
         </span>
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-[-0.03em] text-balance max-w-2xl mx-auto">
           From static PDF to guided learning, in minutes
         </h2>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <StepCard index="01" title="Upload a PDF" description="Lecture notes, textbooks, papers, or docs.">
-          <UploadScene />
-        </StepCard>
-        <StepCard index="02" title="We break it down" description="Split into short modules — lessons, quizzes, and diagrams.">
-          <BreakdownScene />
-        </StepCard>
-        <StepCard index="03" title="Learn by doing" description="Answer questions, get feedback, and track progress.">
-          <LearnScene />
-        </StepCard>
+        <Reveal className="h-full">
+          <StepCard index="1" title="Upload a PDF" description="Lecture notes, textbooks, papers, or docs.">
+            <UploadScene />
+          </StepCard>
+        </Reveal>
+        <Reveal className="h-full" delay={90}>
+          <StepCard index="2" title="We break it down" description="Split into short modules — lessons, quizzes, and diagrams.">
+            <BreakdownScene />
+          </StepCard>
+        </Reveal>
+        <Reveal className="h-full" delay={180}>
+          <StepCard index="3" title="Learn by doing" description="Answer questions, get feedback, and track progress.">
+            <LearnScene />
+          </StepCard>
+        </Reveal>
       </div>
     </section>
   );
