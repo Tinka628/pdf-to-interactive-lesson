@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BookOpen, CreditCard, KeyRound } from "lucide-react";
+import { BookOpen, KeyRound } from "lucide-react";
 import { useCredits } from "../hooks/use-credits";
 import { ApiKeyDialog } from "./api-key-dialog";
 import { Button, buttonVariants } from "./ui/button";
-import { Chip } from "./ui/chip";
 
 interface HeaderActionsProps {
   showCoursesLink?: boolean;
@@ -20,6 +19,18 @@ function HeaderActions({ showCoursesLink }: HeaderActionsProps) {
     <>
       <ApiKeyDialog open={showApiKeyDialog} onOpenChange={setShowApiKeyDialog} />
       <div className="flex items-center gap-2 flex-shrink-0">
+        {credits && (
+          <div
+            className="inline-flex items-center gap-1.5 h-9 pl-2.5 pr-3 rounded-full bg-surface-muted text-sm text-neutral-500 cursor-default select-none"
+            title={`${credits.coursesRemaining} free courses remaining`}
+          >
+            <span className="inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full bg-neutral-900 text-white text-xs font-semibold tabular-nums">
+              {credits.coursesRemaining}
+            </span>
+            <span className="hidden sm:inline">courses left</span>
+            <span className="sm:hidden">left</span>
+          </div>
+        )}
         {showCoursesLink && (
           <Link
             href="/courses"
@@ -28,12 +39,6 @@ function HeaderActions({ showCoursesLink }: HeaderActionsProps) {
             <BookOpen className="w-3.5 h-3.5" />
             Courses
           </Link>
-        )}
-        {credits && (
-          <Chip>
-            <CreditCard className="w-3.5 h-3.5" />
-            {credits.coursesRemaining} courses left
-          </Chip>
         )}
         <Button
           variant="secondary"

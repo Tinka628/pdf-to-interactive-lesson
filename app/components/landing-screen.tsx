@@ -1,18 +1,19 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { getApiKey } from "@/lib/api-key-storage";
 import { storePendingFile } from "@/lib/utils/indexed-db-storage";
 import { getOrCreateUserId } from "@/lib/utils/session";
 import { ApiKeyDialog } from "./api-key-dialog";
 import { Loader } from "@/components/ai-elements/loader";
-import { LogoSvg } from "./svg-icons";
+import { LogoSvg, LandingHeroPoweredBySvg } from "./svg-icons";
 import { HeaderActions } from "./header-actions";
 import { LandingSteps } from "./landing-steps";
 import { Footer } from "./footer";
 import { Button } from "./ui/button";
 import { Callout } from "./ui/callout";
-import { Upload, Sparkles } from "lucide-react";
+import { Upload, UploadCloud, Sparkles } from "lucide-react";
 import demoCourse from "@/lib/demo/composer2-course.json";
 
 function LandingScreen() {
@@ -222,18 +223,6 @@ function LandingScreen() {
 
   return (
     <div className="min-h-screen bg-white relative flex flex-col overflow-x-clip">
-      {/* Brand decoration — lightweight CSS orbs, purely decorative */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="hidden sm:block absolute -top-40 -left-32 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-[0.12]"
-          style={{ background: "radial-gradient(circle, var(--color-brand-1), var(--color-brand-2), transparent 70%)" }}
-        />
-        <div
-          className="hidden sm:block absolute top-24 -right-40 w-[34rem] h-[34rem] rounded-full blur-3xl opacity-[0.10]"
-          style={{ background: "radial-gradient(circle, var(--color-brand-3), var(--color-brand-4), transparent 70%)" }}
-        />
-      </div>
-
       <ApiKeyDialog
         open={isApiKeyDialogOpen}
         onOpenChange={(open) => {
@@ -253,13 +242,43 @@ function LandingScreen() {
       {/* Main */}
       <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-6 py-16 md:py-24">
         {/* Hero */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="font-bold text-neutral-900 leading-[1.05] text-balance mb-5 text-[clamp(2.5rem,7vw,4.5rem)]">
-            Make a tailored course for you
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-600 font-medium text-pretty max-w-xl mx-auto mb-10">
-            Upload any material and turn it into a personalized, interactive course.
-          </p>
+        <div className="relative">
+          {/* Decorative illustrations flanking the hero on large screens */}
+          <Image
+            src="/landing-left.webp"
+            alt=""
+            aria-hidden="true"
+            width={300}
+            height={338}
+            priority
+            className="hidden lg:block absolute left-0 top-10 w-56 xl:w-72 h-auto z-0 pointer-events-none select-none"
+          />
+          <Image
+            src="/landing-right.webp"
+            alt=""
+            aria-hidden="true"
+            width={300}
+            height={300}
+            priority
+            className="hidden lg:block absolute right-0 top-10 w-56 xl:w-72 h-auto z-0 pointer-events-none select-none"
+          />
+
+          <div className="relative z-10 text-center max-w-3xl mx-auto">
+            <a
+              href="https://together.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Made & powered by Together AI"
+              className="interactive inline-flex mb-6"
+            >
+              <LandingHeroPoweredBySvg className="h-8 w-auto" />
+            </a>
+            <h1 className="font-bold text-neutral-900 leading-[1.05] tracking-[-0.045em] text-balance mb-5 text-[clamp(2.5rem,7vw,4.5rem)]">
+              Make a tailored course for you
+            </h1>
+            <p className="text-lg md:text-xl text-neutral-600 font-medium text-pretty max-w-xl mx-auto mb-10">
+              Upload any material and turn it into a personalized, interactive course.
+            </p>
 
           {/* Upload card */}
           <div className="max-w-2xl mx-auto">
@@ -278,32 +297,40 @@ function LandingScreen() {
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
                 onClick={() => !isProcessing && fileInputRef.current?.click()}
-                className={`rounded-[14px] p-8 md:p-14 min-h-[200px] flex flex-col items-center justify-center transition-colors duration-200 ease-standard ${
-                  isDragging || isProcessing ? "bg-info-bg/60" : "bg-white"
+                className={`group rounded-[14px] px-8 py-10 md:py-12 min-h-[210px] flex flex-col items-center justify-center text-center transition-colors duration-200 ease-standard ${
+                  isDragging ? "bg-surface-subtle" : "bg-white"
                 } ${!isProcessing ? "cursor-pointer" : ""}`}
               >
                 {isProcessing ? (
                   <div className="flex flex-col items-center text-center">
-                    <Loader size={30} className="mb-4 text-info" />
-                    <p className="text-neutral-700 font-medium">{progress}</p>
+                    <Loader size={30} className="mb-4 text-neutral-900" />
+                    <p className="text-neutral-800 font-medium">{progress}</p>
                     <p className="text-sm text-neutral-500 mt-2">This may take a few minutes…</p>
                   </div>
                 ) : (
                   <div className="flex flex-col items-center">
+                    <div
+                      className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-surface-muted text-neutral-700 transition-transform duration-300 ease-out-soft ${
+                        isDragging ? "scale-110 -translate-y-0.5" : "group-hover:scale-105"
+                      }`}
+                    >
+                      <UploadCloud className="h-7 w-7" />
+                    </div>
                     <Button
                       size="lg"
                       onClick={(e) => {
                         e.stopPropagation();
                         fileInputRef.current?.click();
                       }}
-                      className="mb-4"
                     >
                       <Upload className="w-5 h-5" />
                       Upload a PDF
                     </Button>
-                    <p className="text-sm text-neutral-500">Or drag-and-drop here</p>
-                    <p className="text-xs text-neutral-400 mt-2">
-                      JSON upload available for debugging
+                    <p className="mt-4 text-sm text-neutral-500">
+                      {isDragging ? "Drop your PDF to begin" : "or drag & drop your file here"}
+                    </p>
+                    <p className="mt-1 text-xs text-neutral-400">
+                      PDF up to 100 pages · JSON for debugging
                     </p>
                   </div>
                 )}
@@ -325,6 +352,7 @@ function LandingScreen() {
               </div>
             )}
           </div>
+          </div>
         </div>
 
         {/* Section 2 — How it works */}
@@ -338,7 +366,7 @@ function LandingScreen() {
                 <span className="text-xs font-semibold uppercase tracking-wider text-hint-fg">
                   Ready when you are
                 </span>
-                <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-neutral-900 text-balance mt-2 mb-3 leading-[1.1]">
+                <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-neutral-900 tracking-[-0.04em] text-balance mt-2 mb-3 leading-[1.1]">
                   Turn your next PDF into a course you&rsquo;ll actually finish.
                 </h2>
                 <p className="text-base text-neutral-600">

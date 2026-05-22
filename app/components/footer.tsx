@@ -1,5 +1,6 @@
 import { Github } from "lucide-react";
 import { XGlyph } from "./brand-icons";
+import { LandingFooterPoweredBySvg } from "./svg-icons";
 
 function Footer() {
   return (
@@ -10,14 +11,9 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Powered by together.ai"
-          className="interactive inline-flex items-center gap-1.5 px-3 h-6 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800"
+          className="interactive inline-flex items-center rounded-full"
         >
-          <span className="text-xs font-medium text-white">Powered by</span>
-          <img
-            src="/together-ai-new-logo.png"
-            alt="Together AI"
-            className="h-3 w-auto object-contain"
-          />
+          <LandingFooterPoweredBySvg className="h-7 w-auto" />
         </a>
         <div className="flex items-center gap-2">
           <a

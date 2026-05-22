@@ -3,36 +3,33 @@
 import { BookOpen, HelpCircle, Workflow, Check } from "lucide-react";
 
 /**
- * "How it works" — three interactive step illustrations.
- * All motion is transform/opacity only and driven by `group-hover` on desktop.
- * On touch / small screens (max-md) the resolved state is shown by default,
- * and the global reduced-motion rule snaps everything instantly.
+ * "How it works" — three equal-size step cards with self-contained
+ * illustrations that "play" on hover (and show their resolved state on touch /
+ * small screens). All motion is opacity / scale / translate / stroke only, and
+ * the global reduced-motion rule snaps everything instantly.
  */
 
 function StepCard({
   index,
   title,
   description,
-  wide,
   children,
 }: {
   index: string;
   title: string;
   description: string;
-  wide?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className={`group card-hover rounded-2xl border border-border bg-gradient-to-b from-hint-bg/40 via-white to-white p-6 flex flex-col ${
-        wide ? "" : ""
-      }`}
-    >
-      <div className="w-full aspect-[5/3] flex items-center justify-center mb-5 overflow-hidden">
+    <div className="group card-hover rounded-2xl border border-border bg-white p-6 flex flex-col">
+      {/* Fixed-height stage keeps every card's title + subhead on the same line */}
+      <div className="relative w-full h-40 mb-6 rounded-xl bg-gradient-to-b from-surface-subtle to-white border border-border/60 overflow-hidden flex items-center justify-center">
         {children}
       </div>
-      <div className="flex items-baseline gap-2 mb-1">
-        <span className="text-xs font-bold text-neutral-300 tabular-nums">{index}</span>
+      <div className="flex items-center gap-2 mb-1.5">
+        <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white text-[10px] font-bold tabular-nums">
+          {index}
+        </span>
         <h3 className="text-lg font-bold text-neutral-900">{title}</h3>
       </div>
       <p className="text-sm text-neutral-500">{description}</p>
@@ -40,48 +37,44 @@ function StepCard({
   );
 }
 
-/* 1 — a page drops into a dashed dropzone */
+/* 1 — a PDF file drops into a dashed tray */
 function UploadScene() {
   return (
-    <div className="relative w-full h-full flex items-end justify-center pb-3">
-      <div className="absolute bottom-3 w-32 h-20 rounded-xl border-2 border-dashed border-border-strong transition-colors duration-300 ease-standard group-hover:border-brand-1 max-md:border-brand-1" />
-      <div className="relative z-10 w-20 -translate-y-6 group-hover:translate-y-1 max-md:translate-y-1 transition-transform duration-500 ease-out-soft will-change-transform">
-        <div className="rounded-lg bg-white border border-border shadow-sm p-2.5">
-          <div className="h-1.5 w-3/4 rounded-full bg-neutral-200 mb-1.5" />
-          <div className="h-1.5 w-full rounded-full bg-neutral-100 mb-1.5" />
-          <div className="h-1.5 w-5/6 rounded-full bg-neutral-100 mb-1.5" />
-          <div className="h-1.5 w-2/3 rounded-full bg-neutral-100" />
+    <>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-28 h-16 rounded-xl border-2 border-dashed border-border-strong transition-colors duration-300 ease-standard group-hover:border-brand-1 max-md:border-brand-1" />
+      <div className="absolute left-1/2 top-5 -translate-x-1/2 transition-transform duration-500 ease-out-soft group-hover:translate-y-6 max-md:translate-y-6">
+        <div className="w-16 rounded-lg bg-white border border-border shadow-sm p-2 transition-shadow duration-300 group-hover:shadow-md max-md:shadow-md">
+          <span className="inline-block text-[8px] font-bold text-incorrect bg-incorrect-bg rounded px-1 py-0.5 mb-1.5">
+            PDF
+          </span>
+          <div className="h-1 w-full rounded-full bg-neutral-200 mb-1" />
+          <div className="h-1 w-3/4 rounded-full bg-neutral-100" />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-/* 2 — a source page fans out into typed outputs */
+/* 2 — one document splits into typed outputs */
 function BreakdownScene() {
   return (
-    <div className="relative w-full h-full flex items-center justify-between px-1">
-      {/* source page */}
-      <div className="relative z-10 w-16 flex-shrink-0">
-        <div className="rounded-lg bg-white border border-border shadow-sm p-2">
-          <div className="h-1 w-3/4 rounded-full bg-neutral-200 mb-1" />
-          <div className="h-1 w-full rounded-full bg-neutral-100 mb-1" />
-          <div className="h-1 w-5/6 rounded-full bg-neutral-100 mb-1" />
-          <div className="h-1 w-2/3 rounded-full bg-neutral-100" />
-        </div>
+    <div className="relative w-full h-full flex flex-col items-center justify-between py-4">
+      <div className="relative z-10 w-12 rounded-md bg-white border border-border shadow-sm p-1.5">
+        <div className="h-1 w-3/4 rounded-full bg-neutral-200 mb-1" />
+        <div className="h-1 w-full rounded-full bg-neutral-100 mb-1" />
+        <div className="h-1 w-2/3 rounded-full bg-neutral-100" />
       </div>
 
-      {/* connectors */}
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        {[22, 50, 78].map((y, i) => (
+        {[18, 50, 82].map((x, i) => (
           <path
-            key={y}
-            d={`M 24 50 C 45 50, 55 ${y}, 74 ${y}`}
+            key={x}
+            d={`M 50 32 C 50 52, ${x} 50, ${x} 66`}
             fill="none"
             stroke="var(--color-border-strong)"
             strokeWidth="1.5"
@@ -96,8 +89,7 @@ function BreakdownScene() {
         ))}
       </svg>
 
-      {/* output chips */}
-      <div className="relative z-10 flex flex-col gap-2 flex-shrink-0">
+      <div className="relative z-10 flex items-end justify-between gap-1.5 w-full">
         {[
           { icon: BookOpen, label: "Lessons", d: "delay-0" },
           { icon: HelpCircle, label: "Quizzes", d: "delay-100" },
@@ -105,10 +97,10 @@ function BreakdownScene() {
         ].map(({ icon: Icon, label, d }) => (
           <div
             key={label}
-            className={`flex items-center gap-1.5 rounded-full border border-border bg-white px-2.5 py-1 shadow-sm opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 max-md:opacity-100 max-md:translate-x-0 transition-[opacity,transform] duration-300 ease-out-soft ${d}`}
+            className={`flex flex-col items-center gap-1 flex-1 rounded-lg border border-border bg-white px-1 py-1.5 shadow-sm opacity-0 translate-y-1.5 group-hover:opacity-100 group-hover:translate-y-0 max-md:opacity-100 max-md:translate-y-0 transition-[opacity,transform] duration-300 ease-out-soft ${d}`}
           >
-            <Icon className="w-3 h-3 text-neutral-500" />
-            <span className="text-[11px] font-medium text-neutral-700">{label}</span>
+            <Icon className="w-3.5 h-3.5 text-neutral-500" />
+            <span className="text-[9px] font-medium text-neutral-600">{label}</span>
           </div>
         ))}
       </div>
@@ -120,22 +112,22 @@ function BreakdownScene() {
 function LearnScene() {
   const options = ["A", "B", "C", "D"];
   return (
-    <div className="w-full max-w-[200px]">
-      <div className="h-1.5 w-2/3 rounded-full bg-neutral-200 mb-3" />
+    <div className="w-[78%]">
+      <div className="h-1.5 w-2/3 rounded-full bg-neutral-200 mb-2.5" />
       <div className="flex flex-col gap-1.5">
         {options.map((opt) => {
           const correct = opt === "B";
           return (
             <div
               key={opt}
-              className={`flex items-center gap-2 rounded-lg border px-2 py-1.5 transition-colors duration-300 ease-standard ${
+              className={`flex items-center gap-2 rounded-md border px-2 py-1 transition-colors duration-300 ease-standard ${
                 correct
                   ? "border-border bg-white group-hover:border-correct-border group-hover:bg-correct-bg max-md:border-correct-border max-md:bg-correct-bg"
                   : "border-border bg-white"
               }`}
             >
               <span
-                className={`flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-bold ${
+                className={`flex items-center justify-center w-3.5 h-3.5 rounded-full text-[8px] font-bold ${
                   correct
                     ? "bg-neutral-100 text-neutral-500 group-hover:bg-correct group-hover:text-white max-md:bg-correct max-md:text-white transition-colors duration-300"
                     : "bg-neutral-100 text-neutral-400"
@@ -143,7 +135,7 @@ function LearnScene() {
               >
                 {correct ? (
                   <>
-                    <Check className="w-2.5 h-2.5 hidden group-hover:block max-md:block" />
+                    <Check className="w-2 h-2 hidden group-hover:block max-md:block" />
                     <span className="group-hover:hidden max-md:hidden">{opt}</span>
                   </>
                 ) : (
@@ -155,7 +147,7 @@ function LearnScene() {
           );
         })}
       </div>
-      <div className="mt-3 h-1.5 w-full rounded-full bg-neutral-100 overflow-hidden">
+      <div className="mt-2.5 h-1.5 w-full rounded-full bg-neutral-100 overflow-hidden">
         <div className="h-full w-1/4 rounded-full bg-correct group-hover:w-full max-md:w-full transition-[width] duration-500 ease-out-soft" />
       </div>
     </div>
@@ -169,21 +161,16 @@ export function LandingSteps() {
         <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-hint-fg bg-hint-bg rounded-full mb-5">
           How it works
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 text-balance max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-[-0.03em] text-balance max-w-2xl mx-auto">
           From static PDF to guided learning, in minutes
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr_1fr] gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <StepCard index="01" title="Upload a PDF" description="Lecture notes, textbooks, papers, or docs.">
           <UploadScene />
         </StepCard>
-        <StepCard
-          index="02"
-          title="We break it down"
-          description="Content is split into short modules — lessons, quizzes, and diagrams."
-          wide
-        >
+        <StepCard index="02" title="We break it down" description="Split into short modules — lessons, quizzes, and diagrams.">
           <BreakdownScene />
         </StepCard>
         <StepCard index="03" title="Learn by doing" description="Answer questions, get feedback, and track progress.">

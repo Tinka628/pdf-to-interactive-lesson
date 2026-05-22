@@ -362,14 +362,14 @@ function Dashboard() {
             onDrop={handleDrop}
             onClick={() => !isProcessing && fileInputRef.current?.click()}
             className={`lg:h-64 border-[0.5px] border-dashed rounded-2xl p-8 flex flex-col items-center justify-center transition-[border-color,background-color] duration-200 ease-standard ${
-              isDragging || isProcessing
-                ? "border-info bg-info-bg/60"
+              isDragging
+                ? "border-neutral-400 bg-surface-subtle"
                 : "border-border-strong bg-white"
             } ${!isProcessing ? "cursor-pointer" : ""}`}
           >
             {isProcessing ? (
               <div className="flex flex-col items-center text-center">
-                <Loader size={28} className="mb-4 text-info" />
+                <Loader size={28} className="mb-4 text-neutral-900" />
                 <p className="text-neutral-700 font-medium">{progress}</p>
                 <p className="text-sm text-neutral-500 mt-2">
                   Redirecting to generation…

@@ -62,12 +62,12 @@
   --text-base: 1rem;      --text-base--line-height: 1.5rem;  --text-base--letter-spacing: -0.013em;
   --text-lg: 1.125rem;    --text-lg--line-height: 1.6;       --text-lg--letter-spacing: -0.015em;
   --text-xl: 1.25rem;     --text-xl--line-height: 1.4;       --text-xl--letter-spacing: -0.017em;
-  --text-2xl: 1.5rem;     --text-2xl--line-height: 1.25;     --text-2xl--letter-spacing: -0.02em;
-  --text-3xl: 1.875rem;   --text-3xl--line-height: 1.2;      --text-3xl--letter-spacing: -0.022em;
-  --text-4xl: 2.25rem;    --text-4xl--line-height: 1.15;     --text-4xl--letter-spacing: -0.025em;
-  --text-5xl: 3rem;       --text-5xl--line-height: 1.05;     --text-5xl--letter-spacing: -0.028em;
-  --text-6xl: 3.75rem;    --text-6xl--line-height: 1;        --text-6xl--letter-spacing: -0.032em;
-  --text-7xl: 4.5rem;     --text-7xl--line-height: 1;        --text-7xl--letter-spacing: -0.035em;
+  --text-2xl: 1.5rem;     --text-2xl--line-height: 1.25;     --text-2xl--letter-spacing: -0.024em;
+  --text-3xl: 1.875rem;   --text-3xl--line-height: 1.2;      --text-3xl--letter-spacing: -0.028em;
+  --text-4xl: 2.25rem;    --text-4xl--line-height: 1.12;     --text-4xl--letter-spacing: -0.034em;
+  --text-5xl: 3rem;       --text-5xl--line-height: 1.04;     --text-5xl--letter-spacing: -0.04em;
+  --text-6xl: 3.75rem;    --text-6xl--line-height: 1;        --text-6xl--letter-spacing: -0.045em;
+  --text-7xl: 4.5rem;     --text-7xl--line-height: 1;        --text-7xl--letter-spacing: -0.05em;
 
   /* motion easings */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -160,13 +160,17 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* Animate the independent `scale` property (not `transform`) so it never
+   conflicts with translate-based centering (Tailwind `translate` on dialogs,
+   Radix `transform` on popovers/tooltips). This keeps overlays perfectly
+   centered the whole time — they just fade + scale in place. */
 @keyframes contentIn {
-  from { opacity: 0; transform: translate(-50%, -48%) scale(0.97); }
-  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  from { opacity: 0; scale: 0.97; }
+  to { opacity: 1; scale: 1; }
 }
 @keyframes popIn {
-  from { opacity: 0; transform: scale(0.97); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; scale: 0.98; }
+  to { opacity: 1; scale: 1; }
 }
 
 .animate-fadeIn,
