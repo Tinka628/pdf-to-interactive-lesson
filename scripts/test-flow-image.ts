@@ -15,7 +15,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
-import { buildFlowImagePrompt } from "../lib/generate-flow-image";
+import { buildFlowImagePrompt, pickDimensions } from "../lib/generate-flow-image";
 
 const apiKey = process.env.TOGETHER_API_KEY;
 if (!apiKey) {
@@ -25,8 +25,6 @@ if (!apiKey) {
 
 const MODEL = "google/flash-image-3.1";
 const ENDPOINT = "https://api.together.ai/v1/images/generations";
-const WIDTH = 1024;
-const HEIGHT = 1024;
 
 type FlowNode = { id: string; label: string; type: "start" | "process" | "output" };
 type FlowEdge = [string, string];
@@ -223,7 +221,11 @@ type ImageResponse = {
   data: Array<{ b64_json?: string; url?: string }>;
 };
 
-async function generateImage(prompt: string): Promise<{
+async function generateImage(
+  prompt: string,
+  width: number,
+  height: number
+): Promise<{
   pngBytes: Buffer;
   durationMs: number;
 }> {
@@ -237,8 +239,8 @@ async function generateImage(prompt: string): Promise<{
     body: JSON.stringify({
       model: MODEL,
       prompt,
-      width: WIDTH,
-      height: HEIGHT,
+      width,
+      height,
       response_format: "base64",
       n: 1,
     }),
@@ -271,6 +273,8 @@ type RunResult = {
   description: string;
   nodeCount: number;
   edgeCount: number;
+  width: number;
+  height: number;
   durationMs: number;
   sizeBytes: number;
   hash?: string;
@@ -289,7 +293,7 @@ async function main() {
 
   console.log(`📁 Output: ${outDir}`);
   console.log(`🎨 Model: ${MODEL}`);
-  console.log(`📐 Dimensions: ${WIDTH}x${HEIGHT}`);
+  console.log(`📐 Dimensions: per-topology (via pickDimensions)`);
   console.log(`🧪 Cases: ${CASES.length} (${CASES.reduce((s, c) => s + (c.repeats ?? 1), 0)} total generations)\n`);
 
   const results: RunResult[] = [];
@@ -299,18 +303,19 @@ async function main() {
     mkdirSync(caseDir, { recursive: true });
 
     const prompt = buildFlowImagePrompt(testCase.flow);
+    const { width, height } = pickDimensions(testCase.flow);
     writeFileSync(join(caseDir, "flow.json"), JSON.stringify(testCase.flow, null, 2));
     writeFileSync(join(caseDir, "prompt.txt"), prompt);
 
     const repeats = testCase.repeats ?? 1;
     const repeatLabel = repeats > 1 ? ` (×${repeats})` : "";
-    console.log(`[${i + 1}/${CASES.length}] ${testCase.slug}${repeatLabel} — ${testCase.description}`);
+    console.log(`[${i + 1}/${CASES.length}] ${testCase.slug}${repeatLabel} (${width}×${height}) — ${testCase.description}`);
 
     const runMetas: Array<{ run: number; durationMs: number; sizeBytes: number; hash: string }> = [];
 
     for (let run = 1; run <= repeats; run++) {
       try {
-        const { pngBytes, durationMs } = await generateImage(prompt);
+        const { pngBytes, durationMs } = await generateImage(prompt, width, height);
         const filename = repeats > 1 ? `output-${run}.png` : "output.png";
         writeFileSync(join(caseDir, filename), pngBytes);
 
@@ -323,6 +328,8 @@ async function main() {
           description: testCase.description,
           nodeCount: testCase.flow.nodes.length,
           edgeCount: testCase.flow.edges.length,
+          width,
+          height,
           durationMs,
           sizeBytes: pngBytes.length,
           hash,
@@ -338,6 +345,8 @@ async function main() {
           description: testCase.description,
           nodeCount: testCase.flow.nodes.length,
           edgeCount: testCase.flow.edges.length,
+          width,
+          height,
           durationMs: 0,
           sizeBytes: 0,
           error: err.message,
@@ -351,12 +360,13 @@ async function main() {
       console.log(`    📊 Determinism: ${allSame ? "IDENTICAL bytes across all runs" : "DIFFERENT bytes (non-deterministic without seed)"}`);
     }
 
+    const { width: caseW, height: caseH } = pickDimensions(testCase.flow);
     const meta = {
       slug: testCase.slug,
       description: testCase.description,
       model: MODEL,
-      width: WIDTH,
-      height: HEIGHT,
+      width: caseW,
+      height: caseH,
       nodeCount: testCase.flow.nodes.length,
       edgeCount: testCase.flow.edges.length,
       runs: runMetas,
@@ -366,7 +376,7 @@ async function main() {
 
   writeFileSync(
     join(outDir, "summary.json"),
-    JSON.stringify({ timestamp, model: MODEL, width: WIDTH, height: HEIGHT, results }, null, 2)
+    JSON.stringify({ timestamp, model: MODEL, results }, null, 2)
   );
 
   console.log("\n" + "─".repeat(60));
@@ -377,8 +387,10 @@ async function main() {
   console.log(`Succeeded:  ${succeeded}/${results.length}`);
   console.log(`Total time: ${totalSec.toFixed(1)}s`);
   console.log(`Avg time:   ${(totalSec / Math.max(1, succeeded)).toFixed(1)}s per image`);
-  const mp = (WIDTH * HEIGHT) / 1_000_000;
-  console.log(`Est. cost:  $${(succeeded * mp * 0.05).toFixed(3)} (${succeeded} × ${mp.toFixed(2)} MP × $0.05)`);
+  const totalMp = results
+    .filter((r) => !r.error)
+    .reduce((s, r) => s + (r.width * r.height) / 1_000_000, 0);
+  console.log(`Est. cost:  $${(totalMp * 0.05).toFixed(3)} (${totalMp.toFixed(2)} MP total × $0.05)`);
   console.log("\nOpen the PNGs in:");
   console.log(`  ${outDir}`);
 }
