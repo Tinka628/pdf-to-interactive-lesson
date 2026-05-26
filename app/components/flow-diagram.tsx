@@ -87,13 +87,37 @@ function getLayoutedElements(simpleNodes: SimpleNode[], simpleEdges: SimpleEdge[
 interface FlowDiagramProps {
   config: FlowConfig;
   className?: string;
+  imageUrl?: string;
 }
 
-export function FlowDiagram({ config, className }: FlowDiagramProps) {
+export function FlowDiagram({ config, className, imageUrl }: FlowDiagramProps) {
   const { nodes, edges } = useMemo(
     () => getLayoutedElements(config.nodes, config.edges),
     [config]
   );
+
+  if (imageUrl) {
+    const altText = `Flow diagram: ${config.nodes.map((n) => n.label).join(', ')}`;
+    return (
+      <div
+        className={className}
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <img
+          src={imageUrl}
+          alt={altText}
+          loading="lazy"
+          style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={className} style={{ width: '100%', height: '100%' }}>

@@ -75,6 +75,7 @@ export interface FlowDiagramLesson extends LessonBase {
   answer: number[]; // Array of 3 slot indices for ordering
   choices: string[]; // Exactly 3 node labels from flow
   slots: string[]; // Exactly 3 slot labels (e.g., "First", "Second", "Third")
+  imageUrl?: string; // Optional flash-image-3.1 rendering of the flow (feature-flagged)
 }
 
 export type Lesson = ShortAnswerLesson | TrueFalseLesson | MultipleChoiceLesson | DragDropLesson | FlowDiagramLesson;
@@ -139,6 +140,7 @@ export interface LessonData {
   choices?: string[];
   slots?: string[];
   flowConfig?: FlowConfig;
+  imageUrl?: string;
   gradingResult?: GradingResult;
   explanation?: string;
 }

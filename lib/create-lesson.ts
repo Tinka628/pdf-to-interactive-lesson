@@ -24,6 +24,7 @@ import {
   getTogetherProviderOptions,
 } from "./utils/together";
 import { parseJSON } from "./utils/json";
+import { generateFlowImage } from "./generate-flow-image";
 
 export interface LessonProgressCallback {
   (type: string, message: string, data?: any): void;
@@ -229,9 +230,11 @@ ${content}`;
     // Explicit "no flow for this module" override from the orchestrator.
     if (flowFocus === null) return null;
 
+    const featureFlowImages = !!process.env.FEATURE_FLOW_IMAGES;
+
     if (flowStrategy === "combined") {
       const { generateFlowLessonCombined } = await import("./pipeline/combined-flow");
-      return generateFlowLessonCombined({
+      const combined = await generateFlowLessonCombined({
         moduleTitle: module.title,
         content,
         apiKey,
@@ -239,6 +242,12 @@ ${content}`;
         previousQuestions,
         flowFocus: flowFocus ?? undefined,
       });
+      if (!combined || !featureFlowImages) return combined;
+      const imageUrl = await generateFlowImage({
+        flowConfig: combined.flowConfig,
+        apiKey,
+      });
+      return imageUrl ? { ...combined, imageUrl } : combined;
     }
 
     // Default: 'separate' — two-call pipeline (detect, then question).
@@ -250,14 +259,25 @@ ${content}`;
       previousQuestions,
     });
     if (!flowResult?.hasFlow || !flowResult.flowConfig) return null;
-    return generateFlowQuestion({
-      flowConfig: flowResult.flowConfig,
-      moduleTitle: module.title,
-      content,
-      apiKey,
-      model,
-      previousQuestions,
-    });
+
+    // Run question gen + image gen in parallel — image latency hides behind
+    // the existing question-gen latency when the feature flag is on.
+    const [flowLesson, imageUrl] = await Promise.all([
+      generateFlowQuestion({
+        flowConfig: flowResult.flowConfig,
+        moduleTitle: module.title,
+        content,
+        apiKey,
+        model,
+        previousQuestions,
+      }),
+      featureFlowImages
+        ? generateFlowImage({ flowConfig: flowResult.flowConfig, apiKey })
+        : Promise.resolve(null as string | null),
+    ]);
+
+    if (!flowLesson) return null;
+    return imageUrl ? { ...flowLesson, imageUrl } : flowLesson;
   })();
 
   // Wait for standard lessons.

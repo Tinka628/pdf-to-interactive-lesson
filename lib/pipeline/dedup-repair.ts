@@ -19,6 +19,7 @@ import { createTogetherClient, DEFAULT_MODEL, getTogetherProviderOptions } from 
 import { singleLessonSchema, flowQuestionSchema } from "../schemas";
 import { parseJSON } from "../utils/json";
 import { generateFlowLessonCombined } from "./combined-flow";
+import { generateFlowImage } from "../generate-flow-image";
 
 // 0.5 catches semantic dupes the 0.7 threshold misses, e.g.
 // "How many parallel attention heads (h) are employed in the Transformer architecture?" vs
@@ -139,13 +140,30 @@ async function regenerateFlow(
   model: string
 ): Promise<any | null> {
   // Combined-flow generator already accepts previousQuestions for dedup.
-  return generateFlowLessonCombined({
+  const lesson = await generateFlowLessonCombined({
     moduleTitle,
     content,
     apiKey,
     model,
     previousQuestions: existingQuestions,
   });
+  if (!lesson) return null;
+
+  // Mirror the image-gen wiring from createLessons: when the feature flag is
+  // on, attach a flash-image-3.1 rendering. Without this, dedup-repair would
+  // overwrite an image-bearing lesson with an image-less regen, dropping the
+  // imageUrl on the floor.
+  if (process.env.FEATURE_FLOW_IMAGES && lesson.flowConfig) {
+    const imageUrl = await generateFlowImage({
+      flowConfig: lesson.flowConfig,
+      apiKey,
+    });
+    if (imageUrl) {
+      lesson.imageUrl = imageUrl;
+    }
+  }
+
+  return lesson;
 }
 
 /**

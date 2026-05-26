@@ -144,7 +144,7 @@ function LessonScreen({
               style={{ animationDelay: "0.3s" }}
             >
               <div className="h-[360px] sm:h-[500px]">
-                <FlowDiagram config={lessonData.flowConfig} />
+                <FlowDiagram config={lessonData.flowConfig} imageUrl={lessonData.imageUrl} />
               </div>
             </Callout>
           )}
@@ -378,7 +378,7 @@ function LessonScreen({
                         )}
                       </div>
                       <div className="h-[360px] sm:h-[500px]">
-                        <FlowDiagram config={lessonData.flowConfig} />
+                        <FlowDiagram config={lessonData.flowConfig} imageUrl={lessonData.imageUrl} />
                       </div>
                     </div>
                   )}
