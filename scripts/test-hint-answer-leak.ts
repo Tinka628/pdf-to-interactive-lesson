@@ -85,6 +85,36 @@ assertNoLeak({
   slots: ["First", "Second", "Third"],
 });
 
+assertLeak(
+  {
+    questionType: "flow-diagram",
+    hint: "Think about how the image data is first re-expressed, then broken into blocks, and finally simplified.",
+    answer: [1, 2, 0],
+    choices: [
+      "Quantize and discard high-frequency coefficients",
+      "Convert RGB to YCbCr and subsample",
+      "Divide image into 8x8 blocks and apply DCT",
+    ],
+    slots: ["First", "Second", "Third"],
+  },
+  "partial"
+);
+
+assertLeak(
+  {
+    questionType: "flow-diagram",
+    hint: "Consider how the function moves from file handling to text preparation before calling the embedding model.",
+    answer: [1, 0, 2],
+    choices: [
+      "Filter and split text based on max context length",
+      "Read data file and iterate lines",
+      "Generate embeddings for selected texts",
+    ],
+    slots: ["First", "Second", "Third"],
+  },
+  "partial"
+);
+
 assert.equal(
   standardLessonsSchema.safeParse({
     lessons: [

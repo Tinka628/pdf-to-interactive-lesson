@@ -201,7 +201,7 @@ CRITICAL: Every fact, claim, and detail in your lessons MUST come directly from 
 ${moduleContext}${dedupContext}
 Each lesson must be SELF-SUFFICIENT: the "content" field must teach the specific facts needed to answer its own question. A student who only sees that lesson content should have enough information to answer correctly.
 
-The "info" field is shown to the student as an optional hint. It must help the student think without giving away the answer. Do NOT put the short-answer text, the correct multiple-choice choice, the true/false verdict, or the ordered answer steps in "info". Use a contextual nudge, a related definition, or a pointer to what distinction to look for instead.
+The "info" field is shown to the student as an optional hint. If you include it, make it a strategy hint, not another factual sentence. It should help the student know what to compare or look for without naming, paraphrasing, ordering, or otherwise revealing the answer. Do NOT put the short-answer text, the correct multiple-choice choice, the true/false verdict, or any ordered answer step roles/transitions in "info".
 
 You must create exactly ONE lesson for EACH question type:
 1. "short-answer" - answer is a text string. The answer must be a fact EXPLICITLY stated in the source content. Do NOT ask about exact URLs, code snippets, or strings that may have formatting issues. Do NOT embed unverified claims or translations in the question itself — only state facts from the source. The lesson content must explicitly include the answer-bearing fact, not just surrounding context.
@@ -222,7 +222,7 @@ Return this exact JSON structure:
     {
       "title": "Lesson Title",
       "content": "Lesson content, 4-6 sentences long and sufficient to answer the question.",
-      "info": "A one sentence hint that does not reveal the answer",
+      "info": "A one sentence strategy hint that does not reveal the answer",
       "question": "A question to test understanding",
       "questionType": "short-answer",
       "answer": "The answer text"
@@ -230,7 +230,7 @@ Return this exact JSON structure:
     {
       "title": "Lesson Title",
       "content": "Lesson content, 4-6 sentences long and sufficient to answer the question.",
-      "info": "A one sentence hint that does not reveal the answer",
+      "info": "A one sentence strategy hint that does not reveal the answer",
       "question": "A true or false statement",
       "questionType": "true-false",
       "answer": true
@@ -238,7 +238,7 @@ Return this exact JSON structure:
     {
       "title": "Lesson Title",
       "content": "Lesson content, 4-6 sentences long and sufficient to answer the question.",
-      "info": "A one sentence hint that does not reveal the answer",
+      "info": "A one sentence strategy hint that does not reveal the answer",
       "question": "A multiple choice question",
       "questionType": "multiple-choice",
       "answer": 0,
@@ -345,7 +345,7 @@ MANDATORY RULES — do not violate any of these:
      [0] { "title", "content", "question", "questionType": "short-answer",   "answer": <string>, optional "info" }
      [1] { "title", "content", "question", "questionType": "true-false",     "answer": <boolean true or false — NOT a string, NOT a number>, optional "info" }
      [2] { "title", "content", "question", "questionType": "multiple-choice", "answer": 0, "choices": [<4 strings or numbers>], "explanation": <string>, optional "info" }
-3. If you include the "info" field, make it a one-sentence hint that does NOT reveal the answer.
+3. If you include the "info" field, make it a one-sentence strategy hint that does NOT reveal the answer.
 4. Do NOT include more than 3 lessons. Do NOT include fewer than 3 lessons.
 5. Do NOT swap the order of question types. Short-answer FIRST, true-false SECOND, multiple-choice THIRD.
 6. Ensure the JSON is syntactically valid: balanced braces, balanced brackets, commas between fields, double-quoted keys and strings.
@@ -514,7 +514,7 @@ ${failed.error.details?.join("\n") || ""}
 
 IMPORTANT: All facts must come ONLY from the source content. Do NOT infer or add information not in the source.
 The corrected lesson must be SELF-SUFFICIENT: its content must include the specific facts needed to answer its own question. If the question depends on names, numbers, categories, techniques, or an order of steps, explicitly include those in the content.
-The corrected lesson's "info" field is a hint. It must not reveal the answer, name the correct choice, give the true/false verdict, or list the ordered answer steps.
+The corrected lesson's "info" field is a strategy hint. It must not reveal the answer, name the correct choice, give the true/false verdict, describe answer-step roles/transitions, or list the ordered answer steps.
 
 Module: "${module.title}"
 Original lesson: ${JSON.stringify(failed.data, null, 2)}
@@ -712,7 +712,7 @@ Respond ONLY with JSON:
 {
   "title": "Lesson Title",
   "content": "A 4-6 sentence explanation of the process that explicitly names the steps used in the ordering question",
-  "info": "A one sentence hint that does not reveal the ordered answer",
+  "info": "A one sentence strategy hint that does not reveal the ordered answer",
   "question": "What is the correct order of steps in [specific process name]?",
   "stepsInOrder": ["First step", "Second step", "Third step"]
 }
@@ -723,7 +723,7 @@ Rules:
 - The question MUST be specific to this process — mention the actual process or topic by name. Do NOT use generic phrasing like "Put the following steps in the correct order"
 - The content MUST explicitly mention all 3 selected step names and make their order clear enough that a student can solve the question from the content alone.
 - All content and question text must come from the source content. Do NOT add facts not in the source.
-- If included, the "info" hint must not list the 3 selected steps in order or map any step to First, Second, or Third.
+- If included, the "info" hint must be a strategy hint. It must not list the 3 selected steps in order, map any step to First/Second/Third, or paraphrase the ordered transitions between steps.
 
 Source content:
 ${content}`;
@@ -771,7 +771,7 @@ ${content}`;
   • ${flowLastError}
 
 Respond with ONLY a JSON object. No prose, no markdown fences, no trailing text.
-The JSON must have: title, content, question, stepsInOrder (array of exactly 3 strings). It may include info as a safe hint that does not reveal the ordered answer.
+The JSON must have: title, content, question, stepsInOrder (array of exactly 3 strings). It may include info as a safe strategy hint that does not reveal or paraphrase the ordered answer.
 Ensure the JSON is syntactically valid with balanced braces and brackets.
 
 ${flowQuestionPrompt}`;

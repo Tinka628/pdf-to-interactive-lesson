@@ -32,6 +32,61 @@ const GENERIC_SINGLE_TOKEN_TERMS = new Set([
 
 const ORDINAL_WORDS = ["first", "second", "third", "fourth"];
 
+const COMMON_TOKENS = new Set([
+  "about",
+  "above",
+  "across",
+  "after",
+  "again",
+  "against",
+  "answer",
+  "before",
+  "between",
+  "choice",
+  "choices",
+  "compare",
+  "consider",
+  "content",
+  "correct",
+  "described",
+  "detail",
+  "during",
+  "each",
+  "fact",
+  "facts",
+  "final",
+  "finally",
+  "first",
+  "from",
+  "hint",
+  "into",
+  "lesson",
+  "look",
+  "next",
+  "order",
+  "placing",
+  "process",
+  "question",
+  "recall",
+  "remember",
+  "second",
+  "sequence",
+  "step",
+  "steps",
+  "student",
+  "that",
+  "then",
+  "third",
+  "think",
+  "through",
+  "what",
+  "when",
+  "where",
+  "which",
+  "while",
+  "with",
+]);
+
 function text(value: unknown): string {
   if (value == null) return "";
   return String(value).trim();
@@ -55,6 +110,30 @@ function meaningfulTerm(termTokens: string[]): boolean {
     return false;
   }
   return termTokens.join("").length >= 3;
+}
+
+function stemToken(token: string): string {
+  if (/\d/.test(token)) return token;
+  if (token.length > 5 && token.endsWith("ing")) {
+    let stem = token.slice(0, -3);
+    if (stem.length > 3 && stem.at(-1) === stem.at(-2)) stem = stem.slice(0, -1);
+    return stem;
+  }
+  if (token.length > 4 && token.endsWith("ies")) return `${token.slice(0, -3)}y`;
+  if (token.length > 4 && token.endsWith("ed")) return token.slice(0, -2);
+  if (token.length > 4 && token.endsWith("es")) return token.slice(0, -2);
+  if (token.length > 3 && token.endsWith("s")) return token.slice(0, -1);
+  return token;
+}
+
+function distinctiveStemSet(value: unknown): Set<string> {
+  const stems = tokenize(value)
+    .map(stemToken)
+    .filter((token) => {
+      if (COMMON_TOKENS.has(token)) return false;
+      return /\d/.test(token) || token.length >= 4;
+    });
+  return new Set(stems);
 }
 
 function findPhrase(haystack: string[], needle: string[]): number {
@@ -131,6 +210,70 @@ function strongerSeverity(a: HintLeakSeverity, b: HintLeakSeverity): HintLeakSev
   if (a === "direct" || b === "direct") return "direct";
   if (a === "partial" || b === "partial") return "partial";
   return "none";
+}
+
+function flowSequenceRisk(hintText: string, ordered: unknown[]): { reason: string; terms: string[] } | null {
+  if (ordered.length < 2) return null;
+
+  const hintNorm = ` ${normalizeForHintLeak(hintText)} `;
+  const hintStems = distinctiveStemSet(hintText);
+  const stepStemSets = ordered.map(distinctiveStemSet);
+  const stemCounts = new Map<string, number>();
+
+  for (const stems of stepStemSets) {
+    for (const stem of stems) stemCounts.set(stem, (stemCounts.get(stem) ?? 0) + 1);
+  }
+
+  const matchesAny = stepStemSets
+    .map((stems, index) => ({
+      index,
+      matched: [...stems].some((stem) => hintStems.has(stem)),
+    }))
+    .filter((match) => match.matched);
+
+  const matchesUnique = stepStemSets
+    .map((stems, index) => ({
+      index,
+      matched: [...stems].some(
+        (stem) => hintStems.has(stem) && stemCounts.get(stem) === 1
+      ),
+    }))
+    .filter((match) => match.matched);
+
+  const strongSequenceLanguage = [
+    /\bfirst\b.*\bthen\b/,
+    /\bthen\b.*\bfinally\b/,
+    /\bfirst\b.*\bfinally\b/,
+    /\bfrom\b.+\bto\b/,
+    /\bbefore\b/,
+    /\bafter\b/,
+    /\bchronological\s+order\b/,
+    /\bcorrect\s+order\b/,
+    /\bmoves?\s+from\b/,
+    /\bbegins?\s+(?:by|with)\b/,
+    /\bstarts?\s+(?:by|with)\b/,
+    /\bends?\s+(?:by|with)\b/,
+    /\bfinally\b/,
+    /\blastly\b/,
+  ].some((pattern) => pattern.test(hintNorm));
+  const weakSequenceLanguage =
+    strongSequenceLanguage ||
+    /\b(?:order|sequence|workflow|pipeline|stage|process|chronological)\b/.test(hintNorm);
+  const listLike = (hintText.match(/[,;]/g)?.length ?? 0) >= 2;
+
+  if (
+    (strongSequenceLanguage && matchesAny.length >= 1) ||
+    (weakSequenceLanguage && matchesUnique.length >= 2) ||
+    (listLike && weakSequenceLanguage && matchesAny.length >= 1)
+  ) {
+    const matchedIndexes = matchesUnique.length >= 2 ? matchesUnique : matchesAny;
+    return {
+      reason: "hint uses sequence language with answer-step terms",
+      terms: matchedIndexes.map((match) => text(ordered[match.index])),
+    };
+  }
+
+  return null;
 }
 
 export function detectHintAnswerLeak(input: HintAnswerLeakInput): HintAnswerLeakResult {
@@ -210,6 +353,12 @@ export function detectHintAnswerLeak(input: HintAnswerLeakInput): HintAnswerLeak
           );
         }
       });
+    }
+
+    const sequenceRisk = flowSequenceRisk(hintText, ordered);
+    if (sequenceRisk) {
+      mark("partial", sequenceRisk.reason);
+      matchedTerms.push(...sequenceRisk.terms);
     }
   }
 

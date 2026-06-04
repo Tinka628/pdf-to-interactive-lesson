@@ -104,7 +104,7 @@ GROUNDING REQUIREMENTS — these prevent the lesson from failing quality checks:
 - The "content" field MUST teach each of the 3 stepsInOrder with at least one full sentence per step explaining WHAT happens at that step. Don't just name-drop the step.
 - The 3 stepsInOrder MUST be a clear sequential progression with causal or temporal ordering — not bullet points of unrelated facts.
 - The "question" MUST mention the process by its full name (e.g., "the JPEG compression pipeline", not "the pipeline").
-- If included, the "info" field is a hint. It must not list the selected steps in order or map any selected step to First, Second, or Third.
+- If included, the "info" field is a strategy hint. It must not list selected steps in order, map any selected step to First/Second/Third, or paraphrase the ordered transitions between steps.
 - If you cannot find a clear sequential process with explicit ordering in the source, return {"hasFlow": false}. It is BETTER to skip the flow lesson than to fabricate one.
 
 Respond ONLY with JSON. No other text. No markdown fences.
@@ -125,7 +125,7 @@ If suitable:
   },
   "title": "Lesson title",
   "content": "A 4-6 sentence explanation that explicitly names the steps used in the ordering question.",
-  "info": "A one sentence hint that does not reveal the ordered answer",
+  "info": "A one sentence strategy hint that does not reveal the ordered answer",
   "question": "What is the correct order of steps in [specific process name]?",
   "stepsInOrder": ["First step label", "Second step label", "Third step label"]
 }

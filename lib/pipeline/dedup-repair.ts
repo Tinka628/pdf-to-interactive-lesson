@@ -16,7 +16,7 @@ import { generateText } from "ai";
 import type { CourseOutput } from "../create-course";
 import type { LessonResult } from "../types";
 import { createTogetherClient, DEFAULT_MODEL, getTogetherProviderOptions } from "../utils/together";
-import { singleLessonSchema, flowQuestionSchema } from "../schemas";
+import { singleLessonSchema } from "../schemas";
 import { parseJSON } from "../utils/json";
 import { generateFlowLessonCombined } from "./combined-flow";
 import { detectHintAnswerLeak } from "../hint-answer-leak";
@@ -147,7 +147,7 @@ ${existingQuestions.map((q, i) => `${i + 1}. "${q}"`).join("\n")}
 Pick a DIFFERENT fact or concept from the source — not just different wording for the same topic.
 Question type: ${targetType}
 All facts must come from the source content.
-The "info" field is shown as a hint. It must not reveal the answer, name the correct choice, or give the true/false verdict.
+The "info" field is shown as a strategy hint. It must not reveal the answer, name the correct choice, give the true/false verdict, or add another answer-bearing fact.
 
 Respond ONLY with JSON matching:
 ${skeleton}
