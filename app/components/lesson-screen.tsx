@@ -255,15 +255,6 @@ function LessonScreen({
           >
             {lessonData.content}
           </p>
-          {canShowInfoHint && (
-            <Callout
-              variant="hint"
-              className={animateClass()}
-              style={{ animationDelay: "0.2s" }}
-            >
-              {lessonData.info}
-            </Callout>
-          )}
 
           {lessonData.questionType === "flow-diagram" && lessonData.flowConfig && (
             <Callout
