@@ -52,9 +52,56 @@ assertLeak({
 
 assertNoLeak({
   questionType: "multiple-choice",
+  question: "What median change size does CursorBench require?",
   hint: "Compare the reported median for CursorBench against the public benchmarks.",
   answer: 3,
   choices: [390, 10, 7, 181],
+});
+
+assertLeak(
+  {
+    questionType: "multiple-choice",
+    question: "Which of the following is one of the four ways to manage Claude Code's allowed tools?",
+    hint: "Identify the option that involves an interactive prompt during a session.",
+    answer: 2,
+    choices: [
+      "Use the /init command",
+      "Edit the .bashrc file",
+      'Select "Always allow" when prompted during a session',
+      "Delete the CLAUDE.md file",
+    ],
+  },
+  "partial"
+);
+
+assertLeak(
+  {
+    questionType: "multiple-choice",
+    question:
+      "Which prompt principle stresses that agents must examine all available tools, match tool usage to user intent, and prefer specialized tools over generic ones?",
+    hint: "Match the description of the principle that focuses on tool selection and descriptions.",
+    answer: 2,
+    choices: [
+      "Let agents improve themselves - agents can diagnose failures and rewrite tool descriptions to avoid mistakes.",
+      "Teach the orchestrator how to delegate - the lead agent breaks down queries and gives clear instructions to subagents.",
+      "Tool design and selection are critical - agents should examine all tools, match usage to intent, and prefer specialized tools.",
+      "Guide the thinking process - extended thinking mode acts as a controllable scratchpad for planning and evaluation.",
+    ],
+  },
+  "partial"
+);
+
+assertNoLeak({
+  questionType: "multiple-choice",
+  question: "Which model provides a 32k context length?",
+  hint: 'Match the model name that includes the "32k" token length indicator.',
+  answer: 0,
+  choices: [
+    "togethercomputer/m2-bert-80M-32k-retrieval",
+    "togethercomputer/m2-bert-80M-8k-retrieval",
+    "BGE model",
+    "UAE-Large-v1",
+  ],
 });
 
 assertLeak({
@@ -168,6 +215,16 @@ assert.equal(
     answer: "Kimi K2.5",
   }),
   "Focus on the specific term, number, or relationship described in the lesson content."
+);
+
+assert.equal(
+  sanitizeGeneratedHint({
+    questionType: "true-false",
+    question: "Using --dangerously-skip-permissions is recommended for production environments.",
+    hint: "Compare the recommended environment for using the bypass flag with typical production use.",
+    answer: false,
+  }),
+  "Compare the statement against the specific facts described in the lesson content."
 );
 
 assert.equal(

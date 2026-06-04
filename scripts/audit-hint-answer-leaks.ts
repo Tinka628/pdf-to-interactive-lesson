@@ -136,6 +136,7 @@ for (const path of paths) {
     q,
     leak: detectHintAnswerLeak({
       questionType: q.questionType,
+      question: q.question,
       hint: q.hint,
       answer: q.answer,
       choices: q.choices,

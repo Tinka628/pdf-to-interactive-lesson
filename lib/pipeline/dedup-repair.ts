@@ -41,6 +41,7 @@ function similarity(a: string, b: string): number {
 
 interface HintSanitizableLesson {
   questionType?: string;
+  question?: unknown;
   info?: unknown;
   answer?: unknown;
   choices?: unknown[];
@@ -51,6 +52,7 @@ interface HintSanitizableLesson {
 function sanitizeInfo<T extends HintSanitizableLesson>(lesson: T): T {
   lesson.info = sanitizeGeneratedHint({
     questionType: lesson.questionType ?? "",
+    question: lesson.question,
     hint: lesson.info,
     answer: lesson.answer,
     choices: lesson.choices,

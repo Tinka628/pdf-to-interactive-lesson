@@ -2,6 +2,7 @@ export type HintLeakSeverity = "none" | "partial" | "direct";
 
 export interface HintAnswerLeakInput {
   questionType: string;
+  question?: unknown;
   hint: unknown;
   answer: unknown;
   choices?: unknown[];
@@ -140,7 +141,11 @@ export function sanitizeGeneratedHint(input: SanitizeGeneratedHintInput): string
   // Ordering hints are high-risk: even abstract labels like "setup,
   // preprocessing, request" can reveal the answer without sharing tokens with
   // the choices. Keep them neutral instead of trying to chase synonyms.
-  if (input.questionType === "flow-diagram" || input.questionType === "drag-drop") {
+  if (
+    input.questionType === "true-false" ||
+    input.questionType === "flow-diagram" ||
+    input.questionType === "drag-drop"
+  ) {
     return fallback;
   }
 
@@ -290,6 +295,51 @@ function multipleChoiceOrdinalLeak(hintTokens: string[], answer: unknown): strin
     : null;
 }
 
+function multipleChoiceUniqueTermLeak({
+  hintText,
+  question,
+  answer,
+  choices,
+}: {
+  hintText: string;
+  question: unknown;
+  answer: unknown;
+  choices?: unknown[];
+}): { reason: string; terms: string[] } | null {
+  const correctChoice = selectedChoice(answer, choices);
+  if (correctChoice == null || !Array.isArray(choices) || choices.length < 2) return null;
+
+  // This heuristic is only safe when the question is available. Terms already
+  // present in the question are fair game for hints, e.g. "32k context model".
+  const questionStems = distinctiveStemSet(question);
+  if (questionStems.size === 0) return null;
+
+  const hintStems = distinctiveStemSet(hintText);
+  const correctStems = distinctiveStemSet(correctChoice);
+  const distractorStems = new Set<string>();
+  const answerIndex = typeof answer === "number" ? answer : Number(answer);
+
+  choices.forEach((choice, index) => {
+    if (index === answerIndex) return;
+    for (const stem of distinctiveStemSet(choice)) distractorStems.add(stem);
+  });
+
+  const leakedTerms = [...correctStems].filter(
+    (stem) =>
+      hintStems.has(stem) &&
+      !questionStems.has(stem) &&
+      !distractorStems.has(stem) &&
+      (/\d/.test(stem) || stem.length >= 5)
+  );
+
+  if (leakedTerms.length === 0) return null;
+
+  return {
+    reason: "hint uses terms unique to the correct multiple-choice option",
+    terms: leakedTerms,
+  };
+}
+
 function strongerSeverity(a: HintLeakSeverity, b: HintLeakSeverity): HintLeakSeverity {
   if (a === "direct" || b === "direct") return "direct";
   if (a === "partial" || b === "partial") return "partial";
@@ -427,6 +477,16 @@ export function detectHintAnswerLeak(input: HintAnswerLeakInput): HintAnswerLeak
     );
     const ordinalReason = multipleChoiceOrdinalLeak(hintTokens, input.answer);
     if (ordinalReason) mark("direct", ordinalReason);
+    const uniqueTermLeak = multipleChoiceUniqueTermLeak({
+      hintText,
+      question: input.question,
+      answer: input.answer,
+      choices: input.choices,
+    });
+    if (uniqueTermLeak) {
+      mark("partial", uniqueTermLeak.reason);
+      matchedTerms.push(...uniqueTermLeak.terms);
+    }
   } else if (input.questionType === "true-false") {
     const truthReason = explicitTruthValueLeak(hintText, input.answer);
     if (truthReason) mark("direct", truthReason);

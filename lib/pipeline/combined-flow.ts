@@ -49,17 +49,20 @@ function topologicalSort(nodes: { id: string }[], edges: [string, string][]): st
 
 function safeFlowInfo({
   info,
+  question,
   answer,
   choices,
   slots,
 }: {
   info: unknown;
+  question: unknown;
   answer: number[];
   choices: string[];
   slots: string[];
 }): string {
   return sanitizeGeneratedHint({
     questionType: QuestionType.FlowDiagram,
+    question,
     hint: info,
     answer,
     choices,
@@ -168,7 +171,7 @@ ${content}`;
     }
     const slots = ["First", "Second", "Third"];
     const answer = correctOrder.map((step) => choices.indexOf(step));
-    const info = safeFlowInfo({ info: data.info, answer, choices, slots });
+    const info = safeFlowInfo({ info: data.info, question: data.question, answer, choices, slots });
 
     return {
       title: data.title,

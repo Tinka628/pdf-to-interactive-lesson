@@ -791,6 +791,7 @@ async function processFile(filePath: string): Promise<FileEvalResult> {
     const hintLeak = runHintLeak
       ? detectHintAnswerLeak({
           questionType: lesson.data.questionType,
+          question: lesson.data.question,
           hint: lesson.data.info,
           answer: lesson.data.answer,
           choices: lesson.data.choices,

@@ -82,6 +82,7 @@ export interface ValidationResult {
 
 interface HintSanitizableLesson {
   questionType?: string;
+  question?: unknown;
   info?: unknown;
   answer?: unknown;
   choices?: unknown[];
@@ -92,6 +93,7 @@ interface HintSanitizableLesson {
 function ensureInfo<T extends HintSanitizableLesson>(lesson: T): T {
   lesson.info = sanitizeGeneratedHint({
     questionType: lesson.questionType ?? "",
+    question: lesson.question,
     hint: lesson.info,
     answer: lesson.answer,
     choices: lesson.choices,
