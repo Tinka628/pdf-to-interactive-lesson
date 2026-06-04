@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 
 import assert from "node:assert/strict";
-import { detectHintAnswerLeak } from "../lib/hint-answer-leak";
+import { detectHintAnswerLeak, sanitizeGeneratedHint } from "../lib/hint-answer-leak";
 import {
   combinedFlowSchema,
   fixFlowDiagramSchema,
@@ -113,6 +113,61 @@ assertLeak(
     slots: ["First", "Second", "Third"],
   },
   "partial"
+);
+
+assertLeak(
+  {
+    questionType: "flow-diagram",
+    hint: "Think about how sampling, rollout generation, and weight updating are linked.",
+    answer: [2, 1, 0],
+    choices: ["Update model weights", "Generate rollouts", "Sample problem"],
+    slots: ["First", "Second", "Third"],
+  },
+  "partial"
+);
+
+assertNoLeak({
+  questionType: "flow-diagram",
+  hint: "Think about how the training loop connects attempts to improvement.",
+  answer: [2, 1, 0],
+  choices: ["Update model weights", "Generate rollouts", "Sample problem"],
+  slots: ["First", "Second", "Third"],
+});
+
+assertNoLeak({
+  questionType: "flow-diagram",
+  hint: "Trace the sequence described in the lesson content before placing the steps.",
+  answer: [0, 1, 2],
+  choices: [
+    "Bulk compute at 32k token sequence length",
+    "Long-context extension to 256k token sequence length",
+    "Short SFT on targeted coding tasks",
+  ],
+  slots: ["First", "Second", "Third"],
+});
+
+assert.equal(
+  sanitizeGeneratedHint({
+    questionType: "flow-diagram",
+    hint: "Think about how the setup, preprocessing, request, and response steps follow each other.",
+    answer: [1, 2, 0],
+    choices: [
+      "Create embedding request via client.embeddings.create",
+      "Initialize OpenAI client with Together endpoint",
+      "Prepare text by replacing newlines",
+    ],
+    slots: ["First", "Second", "Third"],
+  }),
+  "Trace the sequence described in the lesson content before placing the steps."
+);
+
+assert.equal(
+  sanitizeGeneratedHint({
+    questionType: "short-answer",
+    hint: "The base model selected for Composer 2 was Kimi K2.5.",
+    answer: "Kimi K2.5",
+  }),
+  "Focus on the specific term, number, or relationship described in the lesson content."
 );
 
 assert.equal(

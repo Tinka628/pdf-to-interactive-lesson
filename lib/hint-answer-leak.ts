@@ -16,6 +16,10 @@ export interface HintAnswerLeakResult {
   checkedTerms: string[];
 }
 
+export interface SanitizeGeneratedHintInput extends HintAnswerLeakInput {
+  content?: unknown;
+}
+
 const GENERIC_SINGLE_TOKEN_TERMS = new Set([
   "a",
   "an",
@@ -36,6 +40,8 @@ const COMMON_TOKENS = new Set([
   "about",
   "above",
   "across",
+  "action",
+  "actions",
   "after",
   "again",
   "against",
@@ -65,10 +71,13 @@ const COMMON_TOKENS = new Set([
   "next",
   "order",
   "placing",
+  "problem",
   "process",
   "question",
   "recall",
   "remember",
+  "role",
+  "roles",
   "second",
   "sequence",
   "step",
@@ -87,6 +96,19 @@ const COMMON_TOKENS = new Set([
   "with",
 ]);
 
+export function fallbackHintForQuestionType(questionType: string): string {
+  if (questionType === "multiple-choice") {
+    return "Look for the distinguishing detail that separates the supported option from the distractors.";
+  }
+  if (questionType === "true-false") {
+    return "Compare the statement against the specific facts described in the lesson content.";
+  }
+  if (questionType === "flow-diagram" || questionType === "drag-drop") {
+    return "Trace the sequence described in the lesson content before placing the steps.";
+  }
+  return "Focus on the specific term, number, or relationship described in the lesson content.";
+}
+
 function text(value: unknown): string {
   if (value == null) return "";
   return String(value).trim();
@@ -102,6 +124,34 @@ function tokenize(value: unknown): string[] {
 
 export function normalizeForHintLeak(value: unknown): string {
   return tokenize(value).join(" ");
+}
+
+function firstContentSentence(content: unknown): string | null {
+  if (typeof content !== "string") return null;
+  const trimmed = content.trim();
+  if (!trimmed) return null;
+  const match = trimmed.match(/^[^.!?\n]+[.!?]/);
+  return match ? match[0].trim() : trimmed.substring(0, 120).trim();
+}
+
+export function sanitizeGeneratedHint(input: SanitizeGeneratedHintInput): string {
+  const fallback = fallbackHintForQuestionType(input.questionType);
+
+  // Ordering hints are high-risk: even abstract labels like "setup,
+  // preprocessing, request" can reveal the answer without sharing tokens with
+  // the choices. Keep them neutral instead of trying to chase synonyms.
+  if (input.questionType === "flow-diagram" || input.questionType === "drag-drop") {
+    return fallback;
+  }
+
+  const providedHint =
+    typeof input.hint === "string" && input.hint.trim().length > 0
+      ? input.hint.trim()
+      : null;
+  const hint = providedHint ?? firstContentSentence(input.content) ?? fallback;
+  const leak = detectHintAnswerLeak({ ...input, hint });
+
+  return leak.leaksAnswer ? fallback : hint;
 }
 
 function meaningfulTerm(termTokens: string[]): boolean {
@@ -126,14 +176,48 @@ function stemToken(token: string): string {
   return token;
 }
 
+function stemTokenVariants(token: string): string[] {
+  const variants = new Set([token, stemToken(token)]);
+
+  if (!/\d/.test(token)) {
+    if (token.length > 5 && token.endsWith("ing")) {
+      let stem = token.slice(0, -3);
+      if (stem.length > 3 && stem.at(-1) === stem.at(-2)) stem = stem.slice(0, -1);
+      variants.add(stem);
+      variants.add(`${stem}e`);
+    }
+    if (token.length > 3 && token.endsWith("e")) {
+      variants.add(token.slice(0, -1));
+    }
+  }
+
+  return [...variants].filter((variant) => variant.length > 0);
+}
+
+function distinctiveStem(token: string): boolean {
+  if (COMMON_TOKENS.has(token)) return false;
+  return /\d/.test(token) || token.length >= 4;
+}
+
 function distinctiveStemSet(value: unknown): Set<string> {
-  const stems = tokenize(value)
-    .map(stemToken)
-    .filter((token) => {
-      if (COMMON_TOKENS.has(token)) return false;
-      return /\d/.test(token) || token.length >= 4;
-    });
-  return new Set(stems);
+  return new Set(
+    tokenize(value)
+      .flatMap((token) => (COMMON_TOKENS.has(token) ? [] : stemTokenVariants(token)))
+      .filter(distinctiveStem)
+  );
+}
+
+function distinctiveStemPositions(value: unknown): Map<string, number[]> {
+  const positions = new Map<string, number[]>();
+  tokenize(value).forEach((token, index) => {
+    if (COMMON_TOKENS.has(token)) return;
+    for (const stem of stemTokenVariants(token).filter(distinctiveStem)) {
+      const existing = positions.get(stem) ?? [];
+      existing.push(index);
+      positions.set(stem, existing);
+    }
+  });
+  return positions;
 }
 
 function findPhrase(haystack: string[], needle: string[]): number {
@@ -217,6 +301,7 @@ function flowSequenceRisk(hintText: string, ordered: unknown[]): { reason: strin
 
   const hintNorm = ` ${normalizeForHintLeak(hintText)} `;
   const hintStems = distinctiveStemSet(hintText);
+  const hintPositions = distinctiveStemPositions(hintText);
   const stepStemSets = ordered.map(distinctiveStemSet);
   const stemCounts = new Map<string, number>();
 
@@ -240,6 +325,24 @@ function flowSequenceRisk(hintText: string, ordered: unknown[]): { reason: strin
     }))
     .filter((match) => match.matched);
 
+  const termPositions = stepStemSets
+    .map((stems, index) => {
+      const positions = [...stems]
+        .flatMap((stem) => hintPositions.get(stem) ?? [])
+        .sort((a, b) => a - b);
+      return {
+        index,
+        term: text(ordered[index]),
+        firstPosition: positions[0] ?? -1,
+      };
+    })
+    .filter((match) => match.firstPosition >= 0);
+  const answerOrderedTermPositions =
+    termPositions.length >= 2 &&
+    termPositions.every(
+      (match, index) => index === 0 || match.firstPosition > termPositions[index - 1].firstPosition
+    );
+
   const strongSequenceLanguage = [
     /\bfirst\b.*\bthen\b/,
     /\bthen\b.*\bfinally\b/,
@@ -259,13 +362,24 @@ function flowSequenceRisk(hintText: string, ordered: unknown[]): { reason: strin
   const weakSequenceLanguage =
     strongSequenceLanguage ||
     /\b(?:order|sequence|workflow|pipeline|stage|process|chronological)\b/.test(hintNorm);
-  const listLike = (hintText.match(/[,;]/g)?.length ?? 0) >= 2;
+  const listLike =
+    (hintText.match(/[,;]/g)?.length ?? 0) >= 1 ||
+    /\b(?:and|then)\b/.test(hintNorm);
+  const fullAnswerTermList =
+    answerOrderedTermPositions && termPositions.length >= Math.min(3, ordered.length);
 
   if (
     (strongSequenceLanguage && matchesAny.length >= 1) ||
     (weakSequenceLanguage && matchesUnique.length >= 2) ||
-    (listLike && weakSequenceLanguage && matchesAny.length >= 1)
+    (listLike && weakSequenceLanguage && matchesAny.length >= 1) ||
+    (listLike && fullAnswerTermList)
   ) {
+    if (listLike && fullAnswerTermList) {
+      return {
+        reason: "hint lists answer-step terms in answer order",
+        terms: termPositions.map((match) => match.term),
+      };
+    }
     const matchedIndexes = matchesUnique.length >= 2 ? matchesUnique : matchesAny;
     return {
       reason: "hint uses sequence language with answer-step terms",

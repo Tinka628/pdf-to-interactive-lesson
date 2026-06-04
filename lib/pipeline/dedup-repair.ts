@@ -19,7 +19,7 @@ import { createTogetherClient, DEFAULT_MODEL, getTogetherProviderOptions } from 
 import { singleLessonSchema } from "../schemas";
 import { parseJSON } from "../utils/json";
 import { generateFlowLessonCombined } from "./combined-flow";
-import { detectHintAnswerLeak } from "../hint-answer-leak";
+import { sanitizeGeneratedHint } from "../hint-answer-leak";
 
 // 0.5 catches semantic dupes the 0.7 threshold misses, e.g.
 // "How many parallel attention heads (h) are employed in the Transformer architecture?" vs
@@ -39,36 +39,24 @@ function similarity(a: string, b: string): number {
   return inter.size / uni.size;
 }
 
-function fallbackHint(questionType: string): string {
-  if (questionType === "multiple-choice") {
-    return "Look for the distinguishing detail that separates the supported option from the distractors.";
-  }
-  if (questionType === "true-false") {
-    return "Compare the statement against the specific facts described in the lesson content.";
-  }
-  if (questionType === "flow-diagram" || questionType === "drag-drop") {
-    return "Trace the sequence described in the lesson content before placing the steps.";
-  }
-  return "Focus on the specific term, number, or relationship described in the lesson content.";
-}
-
 interface HintSanitizableLesson {
   questionType?: string;
   info?: unknown;
   answer?: unknown;
   choices?: unknown[];
   slots?: string[];
+  content?: unknown;
 }
 
 function sanitizeInfo<T extends HintSanitizableLesson>(lesson: T): T {
-  const leak = detectHintAnswerLeak({
+  lesson.info = sanitizeGeneratedHint({
     questionType: lesson.questionType ?? "",
     hint: lesson.info,
     answer: lesson.answer,
     choices: lesson.choices,
     slots: lesson.slots,
+    content: lesson.content,
   });
-  if (leak.leaksAnswer) lesson.info = fallbackHint(lesson.questionType ?? "");
   return lesson;
 }
 

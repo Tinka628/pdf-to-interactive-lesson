@@ -24,7 +24,7 @@ import {
   getTogetherProviderOptions,
 } from "./utils/together";
 import { parseJSON } from "./utils/json";
-import { detectHintAnswerLeak } from "./hint-answer-leak";
+import { sanitizeGeneratedHint } from "./hint-answer-leak";
 
 export interface LessonProgressCallback {
   (type: string, message: string, data?: any): void;
@@ -89,45 +89,16 @@ interface HintSanitizableLesson {
   content?: unknown;
 }
 
-/**
- * Ensures every lesson has a non-empty `info` field. MiniMax intermittently
- * drops this field; rather than fail the entire module, we derive it from the
- * first sentence of the lesson content.
- */
-function fallbackHint(lesson: HintSanitizableLesson): string {
-  if (lesson.questionType === "multiple-choice") {
-    return "Look for the distinguishing detail that separates the supported option from the distractors.";
-  }
-  if (lesson.questionType === "true-false") {
-    return "Compare the statement against the specific facts described in the lesson content.";
-  }
-  if (lesson.questionType === "flow-diagram" || lesson.questionType === "drag-drop") {
-    return "Trace the sequence described in the lesson content before placing the steps.";
-  }
-  return "Focus on the specific term, number, or relationship described in the lesson content.";
-}
-
-function sanitizeInfo<T extends HintSanitizableLesson>(lesson: T): T {
-  const leak = detectHintAnswerLeak({
+function ensureInfo<T extends HintSanitizableLesson>(lesson: T): T {
+  lesson.info = sanitizeGeneratedHint({
     questionType: lesson.questionType ?? "",
     hint: lesson.info,
     answer: lesson.answer,
     choices: lesson.choices,
     slots: lesson.slots,
+    content: lesson.content,
   });
-  if (leak.leaksAnswer) {
-    lesson.info = fallbackHint(lesson);
-  }
   return lesson;
-}
-
-function ensureInfo<T extends HintSanitizableLesson>(lesson: T): T {
-  if (!lesson.info || typeof lesson.info !== "string" || lesson.info.trim() === "") {
-    const content = typeof lesson.content === "string" ? lesson.content : "";
-    const match = content.match(/^[^.!?\n]+[.!?]/);
-    lesson.info = match ? match[0].trim() : content.substring(0, 120).trim();
-  }
-  return sanitizeInfo(lesson);
 }
 
 /**
@@ -470,7 +441,7 @@ ${standardLessonPrompt}`;
   const flowLesson = await flowLessonPromise;
 
   if (flowLesson) {
-    sanitizeInfo(flowLesson);
+    ensureInfo(flowLesson);
     if (validateContent) {
       try {
         const validation = await validateLesson({
@@ -712,7 +683,7 @@ Respond ONLY with JSON:
 {
   "title": "Lesson Title",
   "content": "A 4-6 sentence explanation of the process that explicitly names the steps used in the ordering question",
-  "info": "A one sentence strategy hint that does not reveal the ordered answer",
+  "info": "Trace the sequence described in the lesson content before placing the steps.",
   "question": "What is the correct order of steps in [specific process name]?",
   "stepsInOrder": ["First step", "Second step", "Third step"]
 }
@@ -723,7 +694,7 @@ Rules:
 - The question MUST be specific to this process — mention the actual process or topic by name. Do NOT use generic phrasing like "Put the following steps in the correct order"
 - The content MUST explicitly mention all 3 selected step names and make their order clear enough that a student can solve the question from the content alone.
 - All content and question text must come from the source content. Do NOT add facts not in the source.
-- If included, the "info" hint must be a strategy hint. It must not list the 3 selected steps in order, map any step to First/Second/Third, or paraphrase the ordered transitions between steps.
+- Do not create a task-specific hint for this ordering question. Set "info" exactly to: "Trace the sequence described in the lesson content before placing the steps."
 
 Source content:
 ${content}`;
@@ -771,7 +742,7 @@ ${content}`;
   • ${flowLastError}
 
 Respond with ONLY a JSON object. No prose, no markdown fences, no trailing text.
-The JSON must have: title, content, question, stepsInOrder (array of exactly 3 strings). It may include info as a safe strategy hint that does not reveal or paraphrase the ordered answer.
+The JSON must have: title, content, question, stepsInOrder (array of exactly 3 strings). If it includes info, set it exactly to: "Trace the sequence described in the lesson content before placing the steps."
 Ensure the JSON is syntactically valid with balanced braces and brackets.
 
 ${flowQuestionPrompt}`;
