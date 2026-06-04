@@ -124,7 +124,13 @@ function LessonScreen({
   );
   const canShowInfoHint = lessonData.info.trim().length > 0 && !hintLeak.leaksAnswer;
   const canShowFlowHint = lessonData.questionType === "flow-diagram" && !!lessonData.flowConfig;
+  const canShowHint = canShowInfoHint || canShowFlowHint;
+  const showInfoHint = showHint && canShowInfoHint;
   const showFlowHint = showHint && canShowFlowHint;
+  const showHintButtonText =
+    canShowFlowHint && !canShowInfoHint ? "Show process flow" : "Show hint";
+  const hideHintButtonText =
+    canShowFlowHint && !canShowInfoHint ? "Hide process flow" : "Hide hint";
   const revealButtonLabel = hasTrueFalseExplanation ? "Show explanation" : "Show answer";
 
   useEffect(() => {
@@ -278,28 +284,23 @@ function LessonScreen({
             {lessonData.title}
           </h1>
 
-          {!showResult && canShowInfoHint && (
-            <Callout
-              variant="hint"
-              className={animateClass(!showResult)}
-              style={!showResult ? { animationDelay: "0.1s" } : {}}
-            >
-              {lessonData.info}
-            </Callout>
-          )}
-
-          {!showResult && canShowFlowHint && (
+          {!showResult && canShowHint && (
             <div
               className={animateClass(!showResult)}
-              style={!showResult ? { animationDelay: canShowInfoHint ? "0.15s" : "0.1s" } : {}}
+              style={!showResult ? { animationDelay: "0.1s" } : {}}
             >
               <button
                 onClick={toggleHint}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-hint-bg text-hint-fg border border-hint-border hover:brightness-95 text-sm font-medium ${OPTION_TRANSITION}`}
               >
-                {showFlowHint ? <X className="w-4 h-4" /> : <Lightbulb className="w-4 h-4" />}
-                {showFlowHint ? "Hide process flow" : "Show process flow"}
+                {showHint ? <X className="w-4 h-4" /> : <Lightbulb className="w-4 h-4" />}
+                {showHint ? hideHintButtonText : showHintButtonText}
               </button>
+              {showInfoHint && (
+                <Callout variant="hint" className="mt-3">
+                  {lessonData.info}
+                </Callout>
+              )}
             </div>
           )}
 
