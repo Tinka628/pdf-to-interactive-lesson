@@ -43,9 +43,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Resolve identity once for the entire handler
+    const clerkUserId = !userApiKey ? await getClerkUserId() : null;
+    const clientId = !userApiKey ? getClientIdentifier(request, clerkUserId) : "";
+
     if (!userApiKey) {
-      const clerkUserId = await getClerkUserId();
-      const clientId = getClientIdentifier(request, clerkUserId);
       const gradingCheck = await checkGradingLimit(clientId, false);
       if (!gradingCheck.allowed) {
         return Response.json(
@@ -117,8 +119,6 @@ Respond ONLY with valid JSON in this exact format:
       }
 
       if (!userApiKey) {
-        const clerkUserId = await getClerkUserId();
-        const clientId = getClientIdentifier(request, clerkUserId);
         await incrementGradingLimit(clientId);
       }
 

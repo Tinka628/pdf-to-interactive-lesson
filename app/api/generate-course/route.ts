@@ -5,7 +5,7 @@ import {
   getClientIdentifier,
 } from "@/lib/utils/rate-limiter";
 import { createJob } from "@/lib/utils/job-store";
-import { getRequestUserId, getClerkUserId } from "@/lib/utils/auth";
+import { getRequestUserId } from "@/lib/utils/auth";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -13,8 +13,8 @@ export const dynamic = "force-dynamic";
 export async function POST(request: NextRequest) {
   try {
     const apiKey = request.headers.get("X-Together-API-Key");
-    const clerkUserId = await getClerkUserId();
     const userId = await getRequestUserId(request);
+    const clerkUserId = userId?.startsWith('user_') ? userId : null;
     const clientId = getClientIdentifier(request, clerkUserId);
 
     const rateLimitCheck = await checkRateLimit(clientId, !!apiKey);

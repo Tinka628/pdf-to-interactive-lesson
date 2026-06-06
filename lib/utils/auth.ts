@@ -15,7 +15,7 @@ export async function getRequestUserId(
 ): Promise<string | null> {
   const { userId } = await auth();
   if (userId) return userId;
-  return request.headers.get('X-Session-ID') || null;
+  return request.headers.get('X-User-ID') || request.headers.get('X-Session-ID') || null;
 }
 
 /**
