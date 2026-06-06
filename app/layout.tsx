@@ -4,6 +4,7 @@ import { Fustat } from "next/font/google";
 import { metadataBase, ogImage, twitterImage } from "./seo";
 import "./globals.css";
 import PlausibleProvider from "next-plausible";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 const geistSans = Geist({
@@ -65,15 +66,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
-      <head>
-        <PlausibleProvider domain="pdftolesson.com" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fustat.variable} antialiased bg-white`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="light">
+        <head>
+          <PlausibleProvider domain="pdftolesson.com" />
+        </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${fustat.variable} antialiased bg-white`}
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
