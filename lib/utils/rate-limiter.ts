@@ -11,22 +11,22 @@ import { Redis } from '@upstash/redis';
 const redis = Redis.fromEnv();
 
 /**
- * Get client identifier from request
- * Uses IP address, falling back to a header if available
+ * Get client identifier from request.
+ * Signed-in users: keyed by Clerk userId (portable, cross-device).
+ * Anonymous users: keyed by IP address (existing behavior).
  */
-export function getClientIdentifier(request: Request): string {
-  // Try to get IP from headers (Vercel, Cloudflare, etc.)
+export function getClientIdentifier(
+  request: Request,
+  clerkUserId?: string | null
+): string {
+  if (clerkUserId) return `clerk_${clerkUserId}`;
+
   const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim();
-  }
+  if (forwardedFor) return forwardedFor.split(",")[0].trim();
 
   const realIp = request.headers.get("x-real-ip");
-  if (realIp) {
-    return realIp;
-  }
+  if (realIp) return realIp;
 
-  // Fallback: use a default identifier (not ideal, but works)
   return "unknown";
 }
 
