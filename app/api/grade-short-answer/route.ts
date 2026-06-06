@@ -8,8 +8,8 @@ import {
   checkGradingLimit,
   incrementGradingLimit,
 } from "@/lib/utils/rate-limiter";
+import { getClerkUserId } from "@/lib/utils/auth";
 
-// Force Node.js runtime (not Edge) for native modules
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
@@ -24,7 +24,6 @@ function getErrorMessage(error: unknown) {
 
 function isInvalidApiKeyError(error: unknown) {
   const message = getErrorMessage(error).toLowerCase();
-
   return (
     message.includes("invalid api key") ||
     message.includes("invalid_api_key") ||
@@ -32,10 +31,8 @@ function isInvalidApiKeyError(error: unknown) {
   );
 }
 
-// POST /api/grade-short-answer
 export async function POST(request: NextRequest) {
   try {
-    // Get API key from headers, fall back to server key for free users
     const userApiKey = request.headers.get("X-Together-API-Key");
     const apiKey = userApiKey || process.env.TOGETHER_API_KEY;
     if (!apiKey) {
@@ -46,9 +43,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check grading limit (bypass if user has their own API key)
     if (!userApiKey) {
-      const clientId = getClientIdentifier(request);
+      const clerkUserId = await getClerkUserId();
+      const clientId = getClientIdentifier(request, clerkUserId);
       const gradingCheck = await checkGradingLimit(clientId, false);
       if (!gradingCheck.allowed) {
         return Response.json(
@@ -61,7 +58,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { userAnswer, correctAnswer, content, info, question } = body;
 
-    // Validate required fields
     if (
       typeof userAnswer !== "string" ||
       typeof correctAnswer !== "string" ||
@@ -84,7 +80,6 @@ export async function POST(request: NextRequest) {
 
     const together = createTogetherClient(apiKey);
 
-    // Use LLM to evaluate if the user's answer demonstrates understanding
     const result = await generateText({
       model: together(GRADER_MODEL),
       prompt: `You are an educational assessment evaluator. Evaluate whether a student's answer to a short-answer question demonstrates understanding of the material.
@@ -114,18 +109,16 @@ Respond ONLY with valid JSON in this exact format:
     });
 
     try {
-      // Extract JSON from response (in case there's extra text)
       const evaluation = parseJSON(result.text);
 
-      // Validate the response structure
       if (typeof evaluation.isCorrect !== "boolean") {
         debugLog.error("[API] Invalid response format", evaluation);
         throw new Error("Invalid response format: isCorrect must be boolean");
       }
 
-      // Increment grading counter for free users
       if (!userApiKey) {
-        const clientId = getClientIdentifier(request);
+        const clerkUserId = await getClerkUserId();
+        const clientId = getClientIdentifier(request, clerkUserId);
         await incrementGradingLimit(clientId);
       }
 
@@ -150,15 +143,9 @@ Respond ONLY with valid JSON in this exact format:
     const errorMessage = getErrorMessage(error);
 
     if (isInvalidApiKeyError(error)) {
-      debugLog.log("[API] User-facing grading error", {
-        code: "invalid_api_key",
-      });
-
+      debugLog.log("[API] User-facing grading error", { code: "invalid_api_key" });
       return Response.json(
-        {
-          error: INVALID_API_KEY_MESSAGE,
-          code: "invalid_api_key",
-        },
+        { error: INVALID_API_KEY_MESSAGE, code: "invalid_api_key" },
         { status: 401 }
       );
     }
@@ -169,10 +156,7 @@ Respond ONLY with valid JSON in this exact format:
     });
 
     return Response.json(
-      {
-        error: "Failed to grade answer",
-        details: errorMessage,
-      },
+      { error: "Failed to grade answer", details: errorMessage },
       { status: 500 }
     );
   }
