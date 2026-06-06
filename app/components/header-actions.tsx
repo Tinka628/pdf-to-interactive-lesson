@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { BookOpen, KeyRound, Star } from "lucide-react";
+import { SignInButton, Show, UserButton } from "@clerk/nextjs";
 import { useCredits } from "../hooks/use-credits";
 import { ApiKeyDialog } from "./api-key-dialog";
 import { Button, buttonVariants } from "./ui/button";
@@ -105,6 +106,17 @@ function HeaderActions({ showCoursesLink }: HeaderActionsProps) {
           <KeyRound className="w-3.5 h-3.5" />
           API Key
         </Button>
+        {/* Auth: show sign-in button for guests, avatar for signed-in users */}
+        <Show when="signed-out">
+          <SignInButton mode="modal">
+            <Button variant="secondary" size="sm">
+              Sign in
+            </Button>
+          </SignInButton>
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
       </div>
     </>
   );
