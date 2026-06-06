@@ -6,20 +6,17 @@ import {
   withCourseSharingMetadata,
 } from "@/lib/course-visibility";
 import { generateSlug, ensureUniqueSlug } from "@/lib/utils/slug";
+import { getRequestUserId } from "@/lib/utils/auth";
 import { eq, desc } from "drizzle-orm";
 import { handleApiError } from "@/lib/utils/api-errors";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-function getRequestUserId(request: NextRequest): string | null {
-  return request.headers.get("X-User-ID") || request.headers.get("X-Session-ID");
-}
-
-// GET /api/courses - List courses owned by this browser/session
+// GET /api/courses - List courses owned by this user/session
 export async function GET(request: NextRequest) {
   try {
-    const userId = getRequestUserId(request);
+    const userId = await getRequestUserId(request);
 
     if (!userId) {
       return NextResponse.json(
@@ -51,9 +48,7 @@ export async function GET(request: NextRequest) {
       courses: allCourses,
       total: allCourses.length,
     }, {
-      headers: {
-        "Cache-Control": "private, no-store",
-      },
+      headers: { "Cache-Control": "private, no-store" },
     });
   } catch (error) {
     console.error("Error fetching courses:", error);
@@ -66,7 +61,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { course, slug: providedSlug } = body;
-    const userId = getRequestUserId(request);
+    const userId = await getRequestUserId(request);
 
     if (!course || !course.title) {
       return NextResponse.json(
@@ -78,12 +73,8 @@ export async function POST(request: NextRequest) {
     let slug = providedSlug;
     if (!slug) {
       const baseSlug = generateSlug(course.title, Date.now().toString());
-
-      const existingSlugs: string[] = [];
       const allCourses = await db.select({ slug: courses.slug }).from(courses);
-      existingSlugs.push(...allCourses.map((c) => c.slug));
-
-      slug = ensureUniqueSlug(baseSlug, existingSlugs);
+      slug = ensureUniqueSlug(baseSlug, allCourses.map((c) => c.slug));
     } else {
       const existing = await db.select().from(courses).where(eq(courses.slug, slug)).limit(1);
       if (existing.length > 0) {

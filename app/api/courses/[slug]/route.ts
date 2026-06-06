@@ -6,14 +6,11 @@ import {
   withCourseSharingMetadata,
 } from "@/lib/course-visibility";
 import { and, eq } from "drizzle-orm";
+import { getRequestUserId } from "@/lib/utils/auth";
 import { handleApiError } from "@/lib/utils/api-errors";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function getRequestUserId(request: NextRequest): string | null {
-  return request.headers.get("X-User-ID") || request.headers.get("X-Session-ID");
-}
 
 // GET /api/courses/[slug] - Fetch a course by slug
 export async function GET(
@@ -22,13 +19,10 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
-    const userId = getRequestUserId(request);
+    const userId = await getRequestUserId(request);
 
     if (!slug) {
-      return NextResponse.json(
-        { error: "Slug is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Slug is required" }, { status: 400 });
     }
 
     const [course] = await db
@@ -38,20 +32,14 @@ export async function GET(
       .limit(1);
 
     if (!course) {
-      return NextResponse.json(
-        { error: "Course not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Course not found" }, { status: 404 });
     }
 
     const isOwner = !!userId && course.createdBy === userId;
     const isPublic = isExplicitlyPublicCourse(course.courseData, course.isPublic);
 
     if (!isPublic && !isOwner) {
-      return NextResponse.json(
-        { error: "Course is private" },
-        { status: 403 }
-      );
+      return NextResponse.json({ error: "Course is private" }, { status: 403 });
     }
 
     return NextResponse.json({
@@ -64,9 +52,7 @@ export async function GET(
       createdAt: course.createdAt,
       updatedAt: course.updatedAt,
     }, {
-      headers: {
-        "Cache-Control": "private, no-store",
-      },
+      headers: { "Cache-Control": "private, no-store" },
     });
   } catch (error) {
     console.error("Error fetching course:", error);
@@ -81,18 +67,15 @@ export async function PATCH(
 ) {
   try {
     const { slug } = await params;
-    const userId = getRequestUserId(request);
+    const userId = await getRequestUserId(request);
 
     if (!slug) {
-      return NextResponse.json(
-        { error: "Slug is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Slug is required" }, { status: 400 });
     }
 
     if (!userId) {
       return NextResponse.json(
-        { error: "User session is required" },
+        { error: "Authentication required" },
         { status: 401 }
       );
     }
@@ -130,11 +113,7 @@ export async function PATCH(
 
     const [updatedCourse] = await db
       .update(courses)
-      .set({
-        isPublic: body.isPublic,
-        courseData,
-        updatedAt: new Date(),
-      })
+      .set({ isPublic: body.isPublic, courseData, updatedAt: new Date() })
       .where(and(eq(courses.slug, slug), eq(courses.createdBy, userId)))
       .returning({
         slug: courses.slug,
@@ -145,10 +124,7 @@ export async function PATCH(
 
     return NextResponse.json({
       slug: updatedCourse.slug,
-      isPublic: isExplicitlyPublicCourse(
-        updatedCourse.courseData,
-        updatedCourse.isPublic
-      ),
+      isPublic: isExplicitlyPublicCourse(updatedCourse.courseData, updatedCourse.isPublic),
       updatedAt: updatedCourse.updatedAt,
     });
   } catch (error) {
@@ -157,25 +133,22 @@ export async function PATCH(
   }
 }
 
-// DELETE /api/courses/[slug] - Delete a course by slug
+// DELETE /api/courses/[slug] - Delete a course
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
     const { slug } = await params;
-    const userId = getRequestUserId(request);
+    const userId = await getRequestUserId(request);
 
     if (!slug) {
-      return NextResponse.json(
-        { error: "Slug is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Slug is required" }, { status: 400 });
     }
 
     if (!userId) {
       return NextResponse.json(
-        { error: "User session is required" },
+        { error: "Authentication required" },
         { status: 401 }
       );
     }
@@ -192,10 +165,7 @@ export async function DELETE(
       );
     }
 
-    return NextResponse.json({
-      success: true,
-      message: "Course deleted successfully",
-    });
+    return NextResponse.json({ success: true, message: "Course deleted successfully" });
   } catch (error) {
     console.error("Error deleting course:", error);
     return handleApiError(error, "Failed to delete course");
